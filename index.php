@@ -85,7 +85,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-12" style="color:#0097A7;background-color: #ffffff;height:250px;border-bottom: solid 1px #0097A7;">
+						<!-- <div class="col-12" style="color:#0097A7;background-color: #ffffff;height:250px;border-bottom: solid 1px #0097A7;">
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-12" style="color:#0097A7;background-color: #ffffff;">
 							<div class="row">
 								<div class="col-12">
@@ -111,23 +111,23 @@
 								</div>
 								<div class="col-12">
 									<div class="row">
-										<div class="col-2"></div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="1">
+										<div class="col-3"></div>
+										<div class="col-2 iconshop" style="padding-right:0px;padding-left:0px;" value="1">
 											<center>
-												<img src="images/home2.png"width="40" height="40">
+												<img src="images/Shoes.png"width="40" height="40">
 											</center>
 										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="2">
+										<div class="col-2 iconshop" style="padding-right:0px;padding-left:0px;" value="2">
 											<center>
-												<img src="images/home3.png"width="40" height="40">
+												<img src="images/pill.png"width="40" height="40">
 											</center>
 										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="3">
+										<div class="col-2 iconshop" style="padding-right:0px;padding-left:0px;" value="3">
 											<center>
-												<img src="images/home4.png"width="40" height="40">
+												<img src="images/shop.png"width="40" height="40">
 											</center>
 										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="4">
+										<!--<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="4">
 											<center>
 												<img src="images/home5.png"width="40" height="40">
 											</center>
@@ -151,28 +151,32 @@
 											<center>
 												<img src="images/home.png"width="40" height="40">
 											</center>
-										</div>
-										<div class="col-2"></div>
+										</div>-->
+										<div class="col-3"></div>
 									</div>
 								</div>
 								<div class="col-12 mt-1">
 									<div class="row">
-										<div class="col-2"></div>
-										<span class="col-md-1" id="1"></span>
-										<span class="col-md-1" id="2"></span>
-										<span class="col-md-1" id="3"></span>
-										<span class="col-md-1" id="4"></span>
+										<div class="col-3"></div>
+										<span class="col-2" id="1"></span>
+										<span class="col-2" id="2"></span>
+										<span class="col-2" id="3"></span>
+										<!--<span class="col-md-1" id="4"></span>
 										<span class="col-md-1" id="5"></span>
 										<span class="col-md-1" id="6"></span>
 										<span class="col-md-1" id="7"></span>
-										<span class="col-md-1" id="8"></span>
-										<div class="col-2"></div>
+										<span class="col-md-1" id="8"></span>-->
+										<div class="col-3"></div>
 									</div>
 								</div>
-								<div class="col-12 mt-5">
+								<div class="col-12 mt-3" style="margin-bottom: 8px;">
 									<div class="row">
 										<div class="col-12" style="padding-right:0px;padding-left:0px;">
-											<div id="map"></div>
+											<div class="row">
+												<div class="col-1"></div>
+												<div class="col-10" id="map" style="height:300px;"></div>
+												<div class="col-1"></div>
+											</div>
 										</div>
 									</div>
 								</div>
