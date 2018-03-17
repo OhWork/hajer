@@ -3,8 +3,8 @@
 	class db_tools{
 		var $host = 'localhost';
 		var $user = 'root';
-		var $pass = 'root';//เปลี่ยน
-		var $db_name = 'intranet';
+		var $pass = '';//เปลี่ยน
+		var $db_name = 'hajer';
 		var $sql;
 		//คำสั่งเพื่อเชื่อมต่อฐานข้อมูลโดยเลือกเทเบิ้ล
 		function connect(){
