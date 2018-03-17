@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+	include_once 'inc_js.php';
+    include_once 'village/database/db_tools.php';
+    include_once 'village/connect.php';
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -89,7 +94,11 @@
       .iw_table_icon {
         text-align: right;
       }
-    </style>    </head>
+      .showname {
+        transition: all 1s;
+    }
+    </style>
+  </head>
     <?php
 	    include_once 'inc_js.php';
     ?>
@@ -370,6 +379,24 @@
           document.getElementById('iw-website-row').style.display = 'none';
         }
       }
+    function make_autocom(autoObj,showObj){
+	    var mkAutoObj=autoObj;
+	    var mkSerValObj=showObj;
+	    new Autocomplete(mkAutoObj, function() {
+	        this.setValue = function(id) {
+	            document.getElementById(mkSerValObj).value = id;
+	        }
+	        if ( this.isModified )
+	            this.setValue("");
+	        if ( this.value.length < 1 && this.isNotClick )
+	            return ;
+	        return "out/autocomplate.php?q=" +encodeURIComponent(this.value);
+    });
+}
+
+// การใช้งาน
+// make_autocom(" id ของ input ตัวที่ต้องการกำหนด "," id ของ input ตัวที่ต้องการรับค่า");
+make_autocom("provinces","baowiwfc");
     </script>
 <?php  /*
 	 var uluru คือตัวแปรเก็บค่า ละติจูด ลองติจูด
@@ -404,8 +431,8 @@
 									<div class="row">
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">เมือง :</p></div>
-										<input class="form-control col-6" style="padding-top:0px;padding-bottom:0px;" type="search" placeholder="Search" aria-label="Search">
-										<div class="col-1"></div>
+										<input class="form-control col-6" style="padding-top:0px;padding-bottom:0px;" type="search" placeholder="Search" id="provinces" aria-label="Search" size="50">
+										<div class="col-1" id="baowiwfc"></div>
 									</div>
 								</div>
 								<div class="col-12" style="margin-bottom:8px;">
@@ -468,45 +495,15 @@
 												<img src="images/shop.png"width="40" height="40">
 											</center>
 										</div>
-										<!--<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="4">
-											<center>
-												<img src="images/home5.png"width="40" height="40">
-											</center>
-										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="5">
-											<center>
-											<img src="images/home6.png"width="40" height="40">
-											</center>
-										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="6">
-											<center>
-											<img src="images/home7.png"width="40" height="40">
-											</center>
-										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="7">
-											<center>
-											<img src="images/home8.png"width="40" height="40">
-											</center>
-										</div>
-										<div class="col-1 iconshop" style="padding-right:0px;padding-left:0px;" value="8">
-											<center>
-												<img src="images/home.png"width="40" height="40">
-											</center>
-										</div>-->
 										<div class="col-3"></div>
 									</div>
 								</div>
 								<div class="col-12 mt-1">
 									<div class="row">
-										<div class="col-3"></div>
-										<span class="col-2" id="1"></span>
-										<span class="col-2" id="2"></span>
-										<span class="col-2" id="3"></span>
-										<!--<span class="col-md-1" id="4"></span>
-										<span class="col-md-1" id="5"></span>
-										<span class="col-md-1" id="6"></span>
-										<span class="col-md-1" id="7"></span>
-										<span class="col-md-1" id="8"></span>-->
+										<div class="col-3" style="height:30px; margin-top:10px;"></div>
+										<span class="col-2 showname" id="1"></span>
+										<span class="col-2 showname" id="2"></span>
+										<span class="col-2 showname" id="3"></span>
 										<div class="col-3"></div>
 									</div>
 								</div>
@@ -591,7 +588,7 @@
     </body>
 </html>
  <script>
-	 	$(document).ready(function(){1
+	 	$(document).ready(function(){
 	    var isshowpost = false;
 	$(".iconshop").hover(function(){
 		var key = $(this).attr('value');
@@ -603,7 +600,7 @@
 					isshowpost = false;
 				}else{
 					var showname = document.getElementById("1");
-					showname.innerHTML = "<center>1</center>";
+					showname.innerHTML = "<center>ร้านรองเท้า</center>";
 					isshowpost = true;
 				}
 				return isshowpost;
@@ -614,7 +611,7 @@
 					isshowpost = false;
 				}else{
 					var showname = document.getElementById("2");
-					showname.innerHTML = "<center>2</center>";
+					showname.innerHTML = "<center>ร้ายขายยา</center>";
 					isshowpost = true;
 				}
 				return isshowpost;
@@ -625,66 +622,12 @@
 					isshowpost = false;
 				}else{
 					var showname = document.getElementById("3");
-					showname.innerHTML = "<center>3</center>";
+					showname.innerHTML = "<center>ร้านขายของชำ</center>";
 					isshowpost = true;
 				}
 				return isshowpost;
-			case '4' :
-					if(isshowpost){
-					var showname = document.getElementById("4");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("4");
-					showname.innerHTML = "<center>4</center>";
-					isshowpost = true;
 				}
-				return isshowpost;
-			case '5' :
-				if(isshowpost){
-					var showname = document.getElementById("5");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("5");
-					showname.innerHTML = "<center>5</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '6' :
-				if(isshowpost){
-					var showname = document.getElementById("6");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("6");
-					showname.innerHTML = "<center>6</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '7' :
-				if(isshowpost){
-					var showname = document.getElementById("7");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("7");
-					showname.innerHTML = "<center>7</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '8' :
-			    if(isshowpost){
-					var showname = document.getElementById("8");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("8");
-					showname.innerHTML = "<center>8</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-		}
+
 });
 	 });
 
