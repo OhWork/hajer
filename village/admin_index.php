@@ -14,13 +14,20 @@
         <link rel="stylesheet" href="../CSS/main.css">
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-  <!-- Navbar content -->
-            <a class="navbar-brand" href="#">Adminitrator</a>
-        </nav>
-        <?php
+		<div class="wrapper">
+			<div class="container">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<nav class="navbar navbar-dark bg-dark">
+					<!-- Navbar content -->
+						<a class="navbar-brand" href="#">Adminitrator</a>
+					</nav>
+				</div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<?php
 				include_once 'content.php';
 				?>
-        
+				</div>
+			</div>
+		</div>
     </body>
 </html>

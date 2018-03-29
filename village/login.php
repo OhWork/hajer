@@ -1,18 +1,32 @@
-<div class="box-login">
 <?php
 	
 	$form = new form();
 	$text_user = new textfield('member_username','','form-control','User');
 	$text_pass = new pass('member_password','form-control','Password');	
 	$submit = new buttonok('Login','','btn btn-lg btn-primary btn-block','');
-	
-	echo "<legend><h4 class='form-signin-heading'><center>Login</center></h2>";
-	echo $form->open('form-signin','','','check_login.php','');
-	echo $text_user.'<br />';
-	echo $text_pass.'<br />';
-	echo $submit;
-	echo $form->close();
-	echo "</legend>";
-
 ?>
+	<?php echo $form->open('form-signin','','','check_login.php',''); ?>
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">	
+	<div class="row">
+		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>
+		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" style="border:solid 1px rgba(0,0,0,0.125);border-radius: 0.25rem;margin-top:50px;padding-top:15px;padding-bottom:15px;">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<h4 class='form-signin-heading'><center>Login</center></h2>
+				</div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top:15px;"><?php echo $text_user ?></div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top:15px;"><?php echo $text_pass ?></div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top:15px;">
+					<div class="row">
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3"></div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+						<?php echo $submit ?></div>
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3"></div>
+					</div>
+				</div>
+		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>
+	</div>
 </div>
+<?php
+	echo $form->close();
+?>
