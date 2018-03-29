@@ -2,7 +2,7 @@
 
 
 <?php
-	$url = $_GET['url'];
+	@$url = $_GET['url'];
 
 	if(empty($_SESSION['user_name'])){
 		include_once 'login.php';

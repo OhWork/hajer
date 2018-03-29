@@ -8,8 +8,8 @@
 	
 	echo "<legend><h4 class='form-signin-heading'><center>Login</center></h2>";
 	echo $form->open('form-signin','','','check_login.php','');
-	echo $lb_user.$text_user.'<br />';
-	echo $lb_pass.$text_pass.'<br />';
+	echo $text_user.'<br />';
+	echo $text_pass.'<br />';
 	echo $submit;
 	echo $form->close();
 	echo "</legend>";
