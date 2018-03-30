@@ -408,7 +408,7 @@ make_autocom("provinces","baowiwfc");
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTkcgy7zjUHk94AZacwogA2I2nRKefAc&libraries=places&callback=initMap"async defer></script>
  <!-- สิ้นสุด ส่วน googlemap -->
     <body>
-        <div class="wrapper">
+        <div class="wrapper"  style="background-color:#B0BEC5;">
         <div class="container">
             <div class="row">
 				<div class="col-12">
