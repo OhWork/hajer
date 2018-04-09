@@ -296,7 +296,7 @@ class labeladdday{
 	class SelectFromDB{
 	public $name,$lists,$idtf,$value = null;
 	function selectFromTB($table,$value,$label,$result){
-		include_once 'database/db_tools.php';
+		include_once 'village/database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findAll($table)->execute();
 		$html = "<select id='{$this->idtf}' class='form-control css-require' name='{$this->name}' >
@@ -319,7 +319,7 @@ class labeladdday{
 		}
 
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
-		include_once 'database/db_tools.php';
+		include_once 'village/database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK($table,$type,$id)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
@@ -341,7 +341,7 @@ class labeladdday{
 		return $html;
 		}
 	function selectFromTBinDBZootype($table,$value,$label,$type,$id,$result){
-		include_once 'database/db_tools.php';
+		include_once 'village/database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK($table,$type,$id)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
@@ -364,7 +364,7 @@ class labeladdday{
 		}
 
 	function selectFromTBinDB2($table,$value,$label,$label2,$type,$id,$zoo,$idzoo,$result){
-		include_once 'database/db_tools.php';
+		include_once 'village/database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK12($table,$type,$id,$zoo,$idzoo)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
