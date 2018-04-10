@@ -62,7 +62,7 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">เมือง :</p></div>
 										<div class="col-6">
-											<?php echo $selectprovinces->selectFromTB('provinces','id','name_th',''); ?>
+											<?php echo $selectprovinces->selectFromTB('provinces','id','name_in_thai',''); ?>
 										</div>
 										<div class="col-1" id="baowiwfc"></div>
 									</div>
@@ -72,7 +72,7 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">เขต/อำเภอ :</p></div>
 										<div class="col-6">
-											<?php echo $selectdistricts->selectFromTB('amphures','id','name_th',''); ?>
+											<?php echo $selectdistricts->selectFromTB('districts','id','name_in_thai',''); ?>
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -82,7 +82,7 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">แขวง/ตำบล :</p></div>
 										<div class="col-6">
-											<?php echo $selectsubdistricts->selectFromTB('districts','id','name_th',''); ?>
+											<?php echo $selectsubdistricts->selectFromTB('subdistricts','id','name_in_thai',''); ?>
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -159,20 +159,7 @@
     </body>
 </html>
  <!-- ส่วน Google Map -->
-   <script>
-      function initMap() {
-        var uluru = {lat: 13.773959, lng: 100.516155};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-<?php  /*
+  <?php  /*
 	 var uluru คือตัวแปรเก็บค่า ละติจูด ลองติจูด
 	 var map เป็นตัวแปรเรียกมาใช้ โดยดึงมาจากชืื่อ ID คือ Map
 	 zoom คือการ เจาะลงไปในแผนที่
@@ -233,7 +220,35 @@ var isshowpost = false;
 				}
 				return isshowpost;
 				}
-
 	});
+	$('#subdistricts').on("change",function(){
+//             console.log($('#subdistricts').val());
+                var test = 
+            $.ajax({
+            url: "getdatamap.php",
+            data: {subdistricts : $('#subdistricts').val()},
+            type: "POST",
+            success: function(data) {
+                console.log(data);
+                 console.log(data);
+//                console.log(data.longitude);
+/*
+	           function initMap() {
+                    var uluru = {lat: 13.773959, lng: 100.516155};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 17,
+                      center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                      position: uluru,
+                      map: map
+                    });
+                  }
+                  */
+            }
+        });
+
+        });
+
 });
  </script>
