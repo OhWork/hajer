@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	include_once 'village/inc_js.php';
+	include_once 'inc_js.php';
     include_once 'village/database/db_tools.php';
     include_once 'village/connect.php';
     include_once 'form/main_form.php';
@@ -143,8 +143,7 @@
 										<div class="col-3"></div>
 									</div>
 									<div class="col-12 mt-1">
-										<div class="row">
-											</div> <div id="map"></div>
+										 <div id="map"></div>
 										</div>
 										</div>
 								</div>
@@ -166,7 +165,6 @@
 	เปลี่ยน key ของ api google map ตรง js?key=
        */
 ?>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTkcgy7zjUHk94AZacwogA2I2nRKefAc&libraries=places&callback=initMap"async defer></script>
  <!-- สิ้นสุด ส่วน googlemap -->
  <script>
 	 	$(document).ready(function() {
@@ -221,20 +219,9 @@ var isshowpost = false;
 				return isshowpost;
 				}
 	});
-	$('#subdistricts').on("change",function(){
-//             console.log($('#subdistricts').val());
-                var test = 
-            $.ajax({
-            url: "getdatamap.php",
-            data: {subdistricts : $('#subdistricts').val()},
-            type: "POST",
-            success: function(data) {
-                console.log(data);
-                 console.log(data);
-//                console.log(data.longitude);
-/*
-	           function initMap() {
-                    var uluru = {lat: 13.773959, lng: 100.516155};
+});
+function initMap(uluru) {
+// 					var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map'), {
                       zoom: 17,
                       center: uluru
@@ -243,12 +230,21 @@ var isshowpost = false;
                       position: uluru,
                       map: map
                     });
+                   console.log(uluru);
                   }
-                  */
+$('#subdistricts').on("change",function(){
+//             console.log($('#subdistricts').val());
+            $.ajax({
+            url: "getdatamap.php",
+            data: {subdistricts : $('#subdistricts').val()},
+            type: "POST",
+            dataType: "json",
+            success: function(data) {
+ 	            var uluru = {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)};
+// 	            console.log(uluru);
+	        	initMap(uluru);
             }
         });
-
-        });
-
-});
- </script>
+    });
+  </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTkcgy7zjUHk94AZacwogA2I2nRKefAc&libraries=places&callback=initMap"async defer></script>

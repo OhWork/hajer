@@ -4,11 +4,11 @@
         <link rel="stylesheet" href="../CSS/jquery-ui.css">
  </head>
  <?php
-	 include '../inc_js.php';
-     include '../form/main_form.php';
-     include '../form/gridview.php';
+	 include 'inc_js.php';
+     include 'form/main_form.php';
+     include 'form/gridview.php';
 	 include_once 'database/db_tools.php';
-     include_once '../connect.php';
+     include_once 'connect.php';
      error_reporting(0);
      $id = $_GET['id'];
 	$form = new form();
@@ -30,7 +30,7 @@
                 								while($objResult = mysqli_fetch_array($rs,MYSQLI_ASSOC))
                 								{
                 							?>
-                								<option value="<?=$objResult["id"];?>"><?=$objResult["name_th"];?></option>
+                								<option value="<?=$objResult["id"];?>"><?=$objResult["name_in_thai"];?></option>
                 							<?php
 												}
                 								?>

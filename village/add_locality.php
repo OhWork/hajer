@@ -4,11 +4,11 @@
         <link rel="stylesheet" href="CSS/jquery-ui.css">
  </head>
  <?php
-	 include '../inc_js.php';
-     include '../form/main_form.php';
-     include '../form/gridview.php';
+	 include 'inc_js.php';
+     include 'form/main_form.php';
+     include 'form/gridview.php';
 	 include_once 'database/db_tools.php';
-     include_once '../connect.php';
+     include_once 'connect.php';
      error_reporting(0);
      $id = $_GET['id'];
 	$form = new form();
@@ -27,15 +27,15 @@
 							</div>
 						</div>
 							<div class='col-md-12'>
-											<div class='row'>
-												<div class='col-md-8'></div>
-												<div class='col-md-2'>
-													<?php echo $button; ?>
-												</div>
-												<div class='col-md-2'>
-													<button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button>
-												</div>
-											</div>
+								<div class='row'>
+									<div class='col-md-8'></div>
+									<div class='col-md-2'>
+										<?php echo $button; ?>
 									</div>
-									<input type="hidden" value="<?php echo $_GET['id'];?>">
+									<div class='col-md-2'>
+										<button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button>
+									</div>
+								</div>
+							</div>
+						<input type="hidden" value="<?php echo $_GET['id'];?>">
 </div>
