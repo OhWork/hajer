@@ -8,7 +8,7 @@
         <style>
 		   /* Always set the map height explicitly to define the size of the div
 	       * element that contains the map. */
-	      #map {
+	      #map_canvas {
 	        height: 400px;
 	      }
 	      /* Optional: Makes the sample page fill the window. */
@@ -87,7 +87,7 @@
 	 <div class="col-12" style="margin-bottom: 16px;">
 		 <div class='row'>
 				<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbgoogleshop; ?></div>
-				<div id="map" class="col-md-8" style="padding-right: 0;padding-left: 0;padding-top:7px;"></div>
+				<div id="map_canvas" class="col-md-8" style="padding-right: 0;padding-left: 0;padding-top:7px;"></div>
 		 </div>
 	</div>
 	 <div class='col-md-12'>
@@ -104,37 +104,36 @@
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
-	var marker;
-	var i = 0;
-	function DeleteMarkers() {
-        //Loop through all the markers and remove
+      var map, GeoMarker;
 
- 		if(i >= 2){
- 	     	marker.setMap(null);
-		    console.log(i);
-         }
-    };
+      function initialize() {
+        var mapOptions = {
+          zoom: 17,
+          center: new google.maps.LatLng(-34.397, 150.644),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            mapOptions);
 
-	function initMap() {
-        var uluru = {lat: 13.774, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru,
+        GeoMarker = new GeolocationMarker();
+        GeoMarker.setCircleOptions({fillColor: '#808080'});
+
+        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+          map.setCenter(this.getPosition());
+          map.fitBounds(this.getBounds());
         });
-        map.addListener('click', function(e) {
-		    placeMarker(e.latLng, map);
-		    $('#lat').val(e.latLng.lat());
-		    $('#lng').val(e.latLng.lng());
- 		    DeleteMarkers(i++);
-		});
-		function placeMarker(position, map) {
-		    marker = new google.maps.Marker({
-		        position: position,
-		        map: map
-		    });
-		    map.panTo(position);
-		}
-	}
-      </script>
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX-mBBK_AjTs-t2_NsF1Nv8Ax52MWJ1yM&callback=initMap"></script>
+
+        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        GeoMarker.setMap(map);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      if(!navigator.geolocation) {
+        alert('Your browser does not support geolocation');
+      }
+    </script>
 <?php 	echo $form->close(); ?>
