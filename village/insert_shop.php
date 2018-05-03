@@ -66,10 +66,8 @@
     	}else if($rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
-/*
             $link = "add_shop.php";
             header( "Refresh: 2; $link" );
-*/
 }
 ?>
 </html>
