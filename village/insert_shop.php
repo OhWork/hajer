@@ -8,7 +8,15 @@
 <?php
     include 'database/db_tools.php';
 	include 'connect.php';
-
+	function generateRandomString($length = 10) {
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $randomString;
+	}
 	if(!empty($_POST['shop_id'])){
 
 		$data['locality_name'] = $_POST['locality_name'];
@@ -16,6 +24,13 @@
 		$rsfix = $db->update('locality',$data,'locality_id',$_POST['locality_id']);
 
 	}else{
+	$target_dir = '../images/temp/';
+	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
+	$img_new_name = generateRandomString(10);
+	$target_dir_save = '../images/shop/'.$img_new_name.'.jpg';
+	move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
+
+
 	$rs = $db->insert('shop',array(
 	'shop_name' => $_POST['shop_name'],
 	'shop_detail' => $_POST['shop_detail'],
@@ -23,6 +38,7 @@
 	'shop_rateprice' => $_POST['shop_rate'],
 	'shop_locationx' => $_POST['lat'],
 	'shop_locationy' => $_POST['lng'],
+	'shop_pic' => $img_new_name,
 	'chop_place' => $_POST['shop_place'],
 	'member_member_id' => 1
 	));
@@ -50,8 +66,10 @@
     	}else if($rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
+/*
             $link = "add_shop.php";
             header( "Refresh: 2; $link" );
+*/
 }
 ?>
 </html>

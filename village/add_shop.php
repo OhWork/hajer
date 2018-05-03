@@ -36,7 +36,7 @@
 	 $detailshop = new textfield('shop_detail','','form-control','','');
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic');
-	 $lbpicshop = new label('รายละเอัียดของร้านค้า');
+	 $lbpicshop = new label('รูปภาพของร้านค้า');
 	 $ocshop = new textfield('shop_oc','','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
 	 $ratepriceshop = new textfield('shop_rate','','form-control','','');
@@ -121,6 +121,10 @@
         google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
           map.setCenter(this.getPosition());
           map.fitBounds(this.getBounds());
+          $('#lat').val(GeoMarker.position.lat());
+		  $('#lng').val(GeoMarker.position.lng());
+          console.log($('#lat').val());
+          console.log($('#lng').val());
         });
 
         google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {

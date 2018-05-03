@@ -1,12 +1,21 @@
-<?php
-	
+<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../CSS/bootstrap.css">
+        <link rel="stylesheet" href="../CSS/jquery-ui.css">
+ </head>
+ <?php
+	 include 'inc_js.php';
+     include '../form/main_form.php';
+     include '../form/gridview.php';
+	 include_once 'database/db_tools.php';
+     include_once 'connect.php';
 	$form = new form();
 	$text_user = new textfield('member_username','','form-control','User');
-	$text_pass = new pass('member_password','form-control','Password');	
+	$text_pass = new pass('member_password','form-control','Password');
 	$submit = new buttonok('Login','','btn btn-lg btn-primary btn-block','');
 ?>
 	<?php echo $form->open('form-signin','','','check_login.php',''); ?>
-	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">	
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 	<div class="row">
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" style="border:solid 1px rgba(0,0,0,0.125);border-radius: 0.25rem;margin-top:50px;padding-top:15px;padding-bottom:15px;">
