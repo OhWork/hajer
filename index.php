@@ -36,6 +36,63 @@
 	        padding: 0;
 	      }
       </style>
+      <script type="text/javascript">
+         // Specify a function to execute when the DOM is fully loaded.
+        $(function(){
+        	var defaultOption = '<option value=""> ------- เลือก ------ </option>';
+        	var loadingImage  = '<img src="images/loading4.gif" alt="loading" />';
+        	// Bind an event handler to the "change" JavaScript event, or trigger that event on an element.
+        	$('#selProvince').change(function() {
+        		$("#selDistrict").html(defaultOption);
+        		$("#selSubdistrict").html(defaultOption);
+        		// Perform an asynchronous HTTP (Ajax) request.
+        		$.ajax({
+        			// A string containing the URL to which the request is sent.
+        			url: "jsonAction.php",
+        			// Data to be sent to the server.
+        			data: ({ nextList : 'district', provinceID: $('#selProvince').val() }),
+        			// The type of data that you're expecting back from the server.
+        			dataType: "json",
+        			// beforeSend is called before the request is sent
+        			beforeSend: function() {
+        				$("#waitDistrict").html(loadingImage);
+        			},
+        			// success is called if the request succeeds.
+        			success: function(json){
+        				$("#waitDistrict").html("");
+        				console.log(json);
+        				// Iterate over a jQuery object, executing a function for each matched element.
+        				$.each(json, function(index, value) {
+        					// Insert content, specified by the parameter, to the end of each element
+        					// in the set of matched elements.
+
+        					 $("#selDistrict").append('<option value="' + value.id +
+        											'">' + value.name_in_thai + '</option>');
+        				});
+        			}
+        		});
+        	});
+
+        	$('#selDistrict').change(function() {
+        		$("#selSubdistrict").html(defaultOption);
+        		$.ajax({
+        			url: "jsonAction.php",
+        			data: ({ nextList : 'subDistrict', districtID: $('#selDistrict').val() }),
+        			dataType: "json",
+        			beforeSend: function() {
+        				$("#waitSubdistrict").html(loadingImage);
+        			},
+        			success: function(json){
+        				$("#waitSubdistrict").html("");
+        				$.each(json, function(index, value) {
+        					 $("#selSubdistrict").append('<option value="' + value.id +
+        											'">' + value.name_in_thai + '</option>');
+        				});
+        			}
+        		});
+        	});
+        });
+    </script>
 	</head>
     <body>
         <div class="wrapper"  style="background-color:#B0BEC5;">
@@ -62,7 +119,15 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">เมือง :</p></div>
 										<div class="col-6">
-											<?php echo $selectprovinces->selectFromTB('provinces','id','name_in_thai',''); ?>
+											<select class="form-control col-12" id="selProvince">
+												<option value=""> ------- เลือก ------ </option>
+												<?php
+													$rs = $db->conditions2("id,name_in_thai","provinces","CONVERT(name_in_thai USING TIS620) ASC")->execute();
+													while($row = mysqli_fetch_assoc($rs)){
+														echo '<option value="', $row['id'], '">', $row['name_in_thai'],'</option>';
+													}
+												?>
+											</select>
 										</div>
 										<div class="col-1" id="baowiwfc"></div>
 									</div>
@@ -72,7 +137,10 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">เขต/อำเภอ :</p></div>
 										<div class="col-6">
-											<?php echo $selectdistricts->selectFromTB('districts','id','name_in_thai',''); ?>
+											<select class="form-control col-12" id="selDistrict">
+																				<option value=""> ------- เลือก ------ </option>
+																				</select><span id="waitDistrict"></span>
+																				</span>
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -82,7 +150,11 @@
 										<div class="col-1"></div>
 										<div class="col-4" style="padding-right:0px;"><p style="margin-bottom:0px;padding-top:2px;">แขวง/ตำบล :</p></div>
 										<div class="col-6">
-											<?php echo $selectsubdistricts->selectFromTB('subdistricts','id','name_in_thai',''); ?>
+											<select class="form-control col-12" id="selSubdistrict">
+																				<option value=""> ------- เลือก ------ </option>
+																				</select><span id="waitSubdistrict">
+																				</span>
+
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -168,15 +240,15 @@
  <!-- สิ้นสุด ส่วน googlemap -->
  <script>
 	 	$(document).ready(function() {
-		 $('#provinces').select2({
+		 $('#selProvince').select2({
 		 	placeholder: "กรุณาเลือกจังหวัด",
 		 	allowClear: true
 		 });
-		 $('#districts').select2({
+		 $('#selDistrict').select2({
 		 	placeholder: "กรุณาเลือกอำเภอ",
 		 	allowClear: true
 		 });
-		 $('#subdistricts').select2({
+		 $('#selSubdistrict').select2({
 		 	placeholder: "กรุณาเลือกตำบล",
 		 	allowClear: true
 		 });
@@ -232,11 +304,11 @@ function initMap(uluru) {
                     });
                    console.log(uluru);
                   }
-$('#subdistricts').on("change",function(){
+$('#selSubdistrict').on("change",function(){
 //             console.log($('#subdistricts').val());
             $.ajax({
             url: "getdatamap.php",
-            data: {subdistricts : $('#subdistricts').val()},
+            data: {subdistricts : $('#selSubdistrict').val()},
             type: "POST",
             dataType: "json",
             success: function(data) {

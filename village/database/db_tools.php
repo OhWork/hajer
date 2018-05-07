@@ -121,6 +121,14 @@
 			return $this;
 		}
 
+		function conditions2($select,$table,$order){
+			$this->sql = "SELECT $select FROM $table ORDER BY $order";
+			return $this;
+		}
+		function conditions3($select,$table,$condition,$order){
+			$this->sql = "SELECT $select FROM $table WHERE $condition ORDER BY $order";
+			return $this;
+		}
 
 		function specifytable($tablemain,$table,$condition){
 			$this->sql = "SELECT $tablemain FROM $table WHERE $condition";
