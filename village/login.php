@@ -28,9 +28,11 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top:15px;">
 					<div class="row">
 						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3"></div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+						<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
 						<?php echo $submit ?></div>
-						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3"></div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+							<button class="btn btn-lg btn-primary btn-block"><a class="text-white" href="register.php">สมัครสมาชิก</a></button>
+						</div>
 					</div>
 				</div>
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>

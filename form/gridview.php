@@ -1,7 +1,7 @@
 <?php
 include_once 'change2thaidate.php';
 class gridView{
-	public $name,$data,$delete,$edit,$view,$deletetxt,$edittxt,$printtxt,$viewtxt,$header,$width,$pr,$change,$changestatus,$sts,$span,$link,$special,$system;
+	public $name,$data,$delete,$edit,$img,$imgpath,$view,$deletetxt,$edittxt,$imgname,$printtxt,$viewtxt,$header,$width,$pr,$change,$changestatus,$sts,$span,$link,$special,$system,$showimg;
 
 
 	function __construct(){
@@ -13,6 +13,7 @@ class gridView{
 		$this->footer = array();
 		$this->width = array();
 	}
+
 
 	function __toString(){
 		$html = "";
@@ -136,6 +137,7 @@ class gridView{
 				}
                 @$id = $r[$this->pr];
                 @$status = $r[$this->sts];
+    			@$showimg = $r[$this->imgname];
 			/* ส่วนตรวจสอบค่า */
             @$con = mysqli_connect("localhost","root","","hajer");
 			@$sql = "SELECT * FROM problem WHERE problem_id = $id"; //ไว้แก้ เปลี่ยนสเตตัส
@@ -207,8 +209,15 @@ class gridView{
 					<a href='{$this->change}?id={$id}&&status={$status}'class='{$this->changestatus}'><span class='{$this->span}'></span>{$this->changetxt}</a>
 				</td>";
 			}
+			if($this->imgpath !=""){
 
-
+				$body .="
+				<td>
+					<a  href={$this->img} data-toggle='modal' data-target='#Modal' data-whatever='{$id}'>
+						<img id ='image' src = '{$this->imgpath}{$showimg}.jpg' width='150' height='150'>
+					</a>
+				</td>";
+			}
 
 				$body.="</td>";
 			}

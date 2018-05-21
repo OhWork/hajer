@@ -293,19 +293,57 @@ var isshowpost = false;
 	});
 });
 function initMap(uluru) {
-// 					var uluru = {lat: 13.773, lng: 100.516};
+					//var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map'), {
                       zoom: 17,
-                      center: uluru
+                      center: uluru,
+                      streetViewControl: false,
+                      disableDefaultUI: true,
+                      styles: [
+						  {
+						    "featureType": "administrative",
+						    "elementType": "geometry",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "poi",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "road",
+						    "elementType": "labels.icon",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "transit",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  }
+                      ]
                     });
                     var marker = new google.maps.Marker({
                       position: uluru,
                       map: map
                     });
-                   console.log(uluru);
+                    infoWindow.close();
                   }
+
 $('#selSubdistrict').on("change",function(){
-//             console.log($('#subdistricts').val());
             $.ajax({
             url: "getdatamap.php",
             data: {subdistricts : $('#selSubdistrict').val()},
@@ -313,7 +351,7 @@ $('#selSubdistrict').on("change",function(){
             dataType: "json",
             success: function(data) {
  	            var uluru = {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)};
-// 	            console.log(uluru);
+//  	            console.log(uluru);
 	        	initMap(uluru);
             }
         });
