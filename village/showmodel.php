@@ -1,18 +1,17 @@
-<style>
-</style>
 <div id="Modal" class="modal">
 
   <!-- The Close Button -->
   <button type="button" class="close" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id= "show">
+  <img class="modal-content" id="show">
 
 </div>
 <script>
 var modal = document.getElementById('Modal');
 var modalImg = document.getElementById("show");
 var img = document.getElementById('image');
+console.log(img);
 img.onclick = function(){
     modal.style.display = "block";
     modalImg.src = this.src;

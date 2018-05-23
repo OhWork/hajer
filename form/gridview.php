@@ -181,7 +181,15 @@ class gridView{
 				$this->changetxt = '&nbsp;ไม่ใช้งาน';
 			}
 
+			if($this->imgpath !=""){
 
+				$body .="
+				<td>
+					<a  href={$this->img} data-toggle='modal' data-target='#Modal' data-whatever='{$id}'>
+						<img id ='image' src = '{$this->imgpath}{$showimg}.jpg' width='150' height='150'>
+					</a>
+				</td>";
+			}
 			if($this->view !=""){
 				$body .="
 				<td>
@@ -209,15 +217,7 @@ class gridView{
 					<a href='{$this->change}?id={$id}&&status={$status}'class='{$this->changestatus}'><span class='{$this->span}'></span>{$this->changetxt}</a>
 				</td>";
 			}
-			if($this->imgpath !=""){
 
-				$body .="
-				<td>
-					<a  href={$this->img} data-toggle='modal' data-target='#Modal' data-whatever='{$id}'>
-						<img id ='image' src = '{$this->imgpath}{$showimg}.jpg' width='150' height='150'>
-					</a>
-				</td>";
-			}
 
 				$body.="</td>";
 			}

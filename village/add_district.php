@@ -1,21 +1,48 @@
- <head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
- </head>
  <?php
-	 include 'inc_js.php';
-     include 'form/main_form.php';
-     include 'form/gridview.php';
-	 include_once 'database/db_tools.php';
-     include_once 'connect.php';
      error_reporting(0);
-     $id = $_GET['id'];
 	$form = new form();
 	$name = new textfield('district_name','','form-control','','');
 	$lbname = new label('ชื่อเขต/อำเภอ: ');
+	$id = $_GET['id'];
+	$r = $db->findByPK('districts','id',$id)->executeRow();
+	$name->value = $r['name_in_thai'];
+	$province_id = $r['province_id'];
+
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
+<script language = "JavaScript">
+
+		//**** List subzoo (Start) ***//
+			function setDefault()
+		{
+			<?php
+				/*** ค่า Default ที่ได้จากการจัดเก็บ ***/
+				$r2 = $db->findByPK('districts','id',$id)->executeRow();
+				$strZoo = $r2['province_id'];
+			?>
+
+				<?php
+				/*** Default Zoo  ***/
+				if($strZoo != "")
+				{
+				?>
+					var objprovinces=document.frmMain.provinces;
+					for (x=0;x<objprovinces.length;x++)
+					{
+						if (objprovinces.options[x].value=="<?=$strZoo?>")
+						{
+							objprovinces.options[x].selected = true;
+							break;
+						}
+					}
+				<?php
+				}
+				?>
+				}
+			window.onload = function(){
+				setDefault(<?=$strZoo?>);
+			}
+</script>
 <div class='col-md-6'>
 <?php echo $form->open('form_reg','frmMain','','insert_district.php',''); ?>
 						<div class='row'>
@@ -23,7 +50,7 @@
 								<div class='row'>
 									<div class="col-md-4" style="padding-right: 0;padding-left: 0;padding-top:7px;"><label>จังหวัด :</label></div>
 									<div class='col-md-8 form-group has-feedback'>
-                                    <select class='form-control css-require' id="amphures" name="name_provinces">
+                                    <select class='form-control css-require' id="provinces" name="name_provinces">
                                         <option selected value="">-----โปรดระบุ-----</option>
                 							<?php
                 								$rs = $db->orderASC('provinces','id')->execute();

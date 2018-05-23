@@ -1,16 +1,3 @@
-<head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
-        <link rel="stylesheet" href="../CSS/jquery.dataTables.css">
- </head>
-  <?php
-	 include 'inc_js.php';
-     include '../form/main_form.php';
-     include '../form/gridview.php';
-	 include_once 'database/db_tools.php';
-     include_once 'connect.php';
- ?>
  <script>
             $(document).ready(function() {
 
@@ -27,18 +14,17 @@
 				} );
      		} );
  </script>
+ <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_provinces.php">เพิ่มข้อมูล</a></button>
 <?php
     $columns = array('name_in_thai','name_in_english');
     $rs = $db->findAll('provinces')->execute();
 
 			$grid = new gridView();
 			$grid->pr = 'id';
-			$grid->header = array('<b><center>ชื่อจังหวัดภาษาไทย</center></b>','<b><center>ชื่อจังหวัดภาษาอังกฤษ</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
+			$grid->header = array('<b><center>ชื่อจังหวัดภาษาไทย</center></b>','<b><center>ชื่อจังหวัดภาษาอังกฤษ</center></b>','<b><center>#</center></b>');
 			$grid->width = array('40%','40%','10%','10%');
 			$grid->name = 'table';
-			$grid->delete = '#';
-			$grid->deletetxt ='ลบ';
-			$grid->edit = '#';
+			$grid->edit = 'admin_index.php?url=add_provinces.php';
 			$grid->edittxt ='แก้ไข';
 			$grid->renderFromDB($columns,$rs);
    ?>

@@ -1,14 +1,7 @@
 <head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
  </head>
  <?php
-	 include 'inc_js.php';
-     include '../form/main_form.php';
-     include '../form/gridview.php';
-	 include_once 'database/db_tools.php';
-     include_once 'connect.php';
 	$form = new form();
 	$text_user = new textfield('member_username','','form-control','User');
 	$text_pass = new pass('member_password','form-control','Password');
@@ -30,9 +23,6 @@
 						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3"></div>
 						<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
 						<?php echo $submit ?></div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-							<button class="btn btn-lg btn-primary btn-block"><a class="text-white" href="register.php">สมัครสมาชิก</a></button>
-						</div>
 					</div>
 				</div>
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"></div>

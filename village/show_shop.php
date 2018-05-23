@@ -1,19 +1,7 @@
 <head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../CSS/main.css">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
-        <link rel="stylesheet" href="../CSS/jquery.dataTables.css">
-
  </head>
-  <?php
-	 include 'inc_js.php';
-     include '../form/main_form.php';
-     include '../form/gridview.php';
-	 include_once 'database/db_tools.php';
-     include_once 'connect.php';
- ?>
- <script>
+  <script>
             $(document).ready(function() {
 
                 $('#table').DataTable( {
@@ -29,15 +17,18 @@
 				} );
      		} );
  </script>
+ <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_shop.php">เพิ่มข้อมูล</a></button>
 <?php
     $columns = array('shop_name','shop_detail','shop_oc','shop_rateprice','chop_place','member_member_id');
     $rs = $db->findByPK2('shop','member','shop.member_member_id','member.member_id')->execute();
 
 			$grid = new gridView();
 			$grid->pr = 'shop_id';
-			$grid->header = array('<b><center>ชื่อร้านค้า</center></b>','<b><center>รายละเอียดร้าน</center></b>','<b><center>เวลาเปิด-ปิด</center></b>','<b><center>เรทราคาของร้าน</center></b>','<b><center>สถานที่ตั้งของร้าน</center></b>','<b><center>ชื่อเจ้าของร้าน</center></b>','<b><center>รูปภาพ</center></b>');
-			$grid->width = array('10%','10%','20%','10%','10%','10%','5%');
+			$grid->header = array('<b><center>ชื่อร้านค้า</center></b>','<b><center>รายละเอียดร้าน</center></b>','<b><center>เวลาเปิด-ปิด</center></b>','<b><center>เรทราคาของร้าน</center></b>','<b><center>สถานที่ตั้งของร้าน</center></b>','<b><center>ชื่อเจ้าของร้าน</center></b>','<b><center>รูปภาพ</center></b>','<b><center>#</center></b>');
+			$grid->width = array('10%','10%','20%','10%','10%','10%','5%','5%');
 			$grid->name = 'table';
+			$grid->edit = 'admin_index.php?url=add_shop.php';
+			$grid->edittxt ='แก้ไข';
 			$grid->img = '#';
 			$grid->imgpath ="../images/shop/";
 			$grid->imgname = 'shop_pic';

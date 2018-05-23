@@ -54,6 +54,7 @@
     display: block;
     width: 80%;
     max-width: 700px;
+    height: 100%;
 }
 
 /* Caption of Modal Image */

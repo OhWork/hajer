@@ -1,10 +1,4 @@
 <head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-       <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
-        <link rel="stylesheet" href="../CSS/main.css">
-        <link rel="stylesheet" href="../CSS/select2.min.css">
-
         <style>
 		   /* Always set the map height explicitly to define the size of the div
 	       * element that contains the map. */
@@ -21,13 +15,6 @@
  </head>
 
 <?php
-     include_once 'inc_js.php';
-            include_once 'database/db_tools.php';
-            include_once 'connect.php';
-            include_once 'form/main_form.php';
-            include_once 'form/gridview.php';
-             include_once 'clearsession.php';
-
      date_default_timezone_set('Asia/Bangkok');
 
      $form = new form();
@@ -35,7 +22,7 @@
 	 $lbnameshop = new label('ชื่อร้านค้า : ');
 	 $detailshop = new textfield('shop_detail','','form-control','','');
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
-	 $picshop = new uploadPic('shop_pic');
+	 $picshop = new uploadPic('shop_pic','');
 	 $lbpicshop = new label('รูปภาพของร้านค้า');
 	 $ocshop = new textfield('shop_oc','','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
@@ -44,7 +31,14 @@
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
-
+	 @$id = $_GET['id'];
+	 $r = $db->findByPK('shop','shop_id',$id)->executeRow();
+	 $nameshop->value = $r['shop_name'];
+	 $detailshop->value = $r['shop_detail'];
+	 $ocshop->value = $r['shop_oc'];
+	 $ratepriceshop->value = $r['shop_rateprice'];
+	 $placeshop->value = $r['chop_place'];
+	 $picshop->value = $r['shop_pic'];
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
@@ -81,7 +75,14 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbpicshop; ?></div>
-			<div class='col-md-8'><?php echo $picshop; ?></div>
+			<div class='col-md-6'><?php echo $picshop; ?></div>
+			<?php
+				if(!empty($id)){
+			?>
+			<div class='col-md-2 text-danger'><u><?php echo $r['shop_pic']; ?></u></div>
+			<?php
+				}
+			?>
 		</div>
 	 </div>
 	 <div class="col-12" style="margin-bottom: 16px;">

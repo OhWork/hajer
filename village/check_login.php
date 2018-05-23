@@ -14,18 +14,15 @@
 <?php
 	include_once 'database/db_tools.php';
 	include_once 'connect.php';
-
 	$db->findByAttributes('member',array(
 		'member_username =' => $_POST['member_username'],
 		'member_password =' => $_POST['member_password']
 		));
 	$rs = $db->executeRow();
-	$system_id = $rs['systemallow_systemallow_id'];
-    $rsallow = $db->findByPK('systemallow','systemallow_id',$system_id)->executeAssoc();
 	if($rs){
-    	$_SESSION['user_id'] = $rs['user_id'];
-		$_SESSION['user_name'] = $rs['user_name'];
-		$_SESSION['user_last'] = $rs['user_last'];
+    	$_SESSION['member_id'] = $rs['member_id'];
+		$_SESSION['member_username'] = $rs['member_username'];
+		$_SESSION['member_password'] = $rs['member_password'];
 		?>
 		<script>
 			alert('เข้าสู่ระบบได้เรียบร้อย');
@@ -33,6 +30,7 @@
 		</script>
 		<?php
 		//header('location: admin_index.php');
+/*
 		$log_user = $_SESSION['user_name']." ".$_SESSION['user_last'];
 		 //Log
 		if(getenv(HTTP_X_FORWARDED_FOR)){
@@ -48,6 +46,7 @@
     	'log_action_by' => $log_user,
     	'log_ip' => $ipshow
     	));
+*/
 	}else{
 		?>
 		<script>

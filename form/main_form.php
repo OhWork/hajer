@@ -391,12 +391,12 @@ class labeladdday{
 
 #---------------Upload-------------------#
 	class uploadPic{
-		public $name;
-		function __construct($name){
+		public $name,$value=null;
+		function __construct($name,$value){
 			$this->name = $name;
 		}
 		function __toString(){
-			return "<input type='file' name='{$this->name}' />";
+			return "<input type='file' name='{$this->name}' value='{$this->value}' />";
 		}
 	}
 #---------------Link-------------------#
