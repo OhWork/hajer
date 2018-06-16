@@ -128,11 +128,11 @@
 									  <img class="d-block w-100" src="images/noimage.png" height="199px" alt="Third slide">
 									</div>
 								  </div>
-								  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								  <a class="carousel-control-prev bg-dark" href="#carouselExampleIndicators" role="button" data-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 									<span class="sr-only">Previous</span>
 								  </a>
-								  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								  <a class="carousel-control-next bg-dark" href="#carouselExampleIndicators" role="button" data-slide="next">
 									<span class="carousel-control-next-icon" aria-hidden="true"></span>
 									<span class="sr-only">Next</span>
 								  </a>
@@ -197,7 +197,7 @@
 											</div>
 										</div>
 										<div class="col-2">
-											<a class="carousel-control-next" style="width:100%" href="#carouselExampleIndicatorsicon" role="button" data-slide="next">
+											<a class="carousel-control-next bg-dark" style="width:100%" href="#carouselExampleIndicatorsicon" role="button" data-slide="next">
 												<span class="carousel-control-next-icon" aria-hidden="true"></span>
 												<span class="sr-only">Next</span>
 											</a>
@@ -450,14 +450,7 @@
 								<div class="col-1"></div>
 							</div>
 						</div>
-						<div class="col-12" style="background-color:#ffffff;height:250px;">
-							<div class="row">
-								<div class="col-3"></div>
-								<div class="col-6">
-									<img src="images/maps.png" width="100%" height="240px" style="margin-top:5px;">
-								</div>
-								<div class="col-3"></div>
-							</div>
+						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:250px;">
 						</div>
 						<div class="col-12" style="background-color:#0097A7;height:200px;color:#ffffff;">
 							<div class="row">
@@ -538,57 +531,73 @@ var isshowpost = false;
 				}
 	});
 });
-function initMap(uluru) {
-// 					var uluru = {lat: 13.773, lng: 100.516};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 17,
-                      center: uluru,
-                      streetViewControl: false,
-                      disableDefaultUI: true,
-                      styles: [
-						  {
-						    "featureType": "administrative",
-						    "elementType": "geometry",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "poi",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "road",
-						    "elementType": "labels.icon",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "transit",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  }
-                      ]
-                    });
-/*
-                    var marker = new google.maps.Marker({
-                      position: {lat: <?php echo $showdata['shop_locationx'];?>, lng: <?php echo $showdata['shop_locationy'];?>},
-                      map: map,
-                    });
-*/
-                      var infoWindow = new google.maps.InfoWindow;
+ var map, GeoMarker;
+
+      function initialize() {
+        var mapOptions = {
+          zoom: 10,
+          center: new google.maps.LatLng(-34.397, 150.644),
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          streetViewControl: false,
+          disableDefaultUI: true,
+          styles: [
+		  	{
+				"featureType": "administrative",
+				"elementType": "geometry",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				 ]
+			},
+			{
+				"featureType": "poi",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.icon",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "transit",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			}
+          ]
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+            mapOptions);
+
+        GeoMarker = new GeolocationMarker();
+        GeoMarker.setCircleOptions({fillColor: '#808080'});
+
+        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+          map.setCenter(this.getPosition());
+          map.fitBounds(this.getBounds());
+          $('#lat').val(GeoMarker.position.lat());
+		  $('#lng').val(GeoMarker.position.lng());
+          console.log($('#lat').val());
+          console.log($('#lng').val());
+        });
+
+        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        GeoMarker.setMap(map);
+       var infoWindow = new google.maps.InfoWindow;
 
 			          // Change this depending on the name of your PHP or XML file
 			          downloadUrl('maker.php', function(data) {
@@ -663,19 +672,11 @@ function initMap(uluru) {
 			        request.send(null);
 			      }
 				  function doNothing() {}
+      google.maps.event.addDomListener(window, 'load', initialize);
 
-$('#selSubdistrict').on("change",function(){
-            $.ajax({
-            url: "getdatamap.php",
-            data: {subdistricts : $('#selSubdistrict').val()},
-            type: "POST",
-            dataType: "json",
-            success: function(data) {
- 	            var uluru = {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)};
-  	            console.log(data);
-	        	initMap(uluru);
-            }
-        });
-    });
+      if(!navigator.geolocation) {
+        alert('Your browser does not support geolocation');
+      }
+
   </script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTkcgy7zjUHk94AZacwogA2I2nRKefAc&libraries=places&callback=initMap"async defer></script>
