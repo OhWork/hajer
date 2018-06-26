@@ -162,37 +162,35 @@
 										<div id="carouselExampleIndicatorsicon" class="carousel slide col-8" data-ride="carousel">
 											<div class="carousel-inner">
 												<div class="carousel-item active">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
 												</div>
 												<div class="carousel-item">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
 												</div>
 												<div class="carousel-item">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/noimage.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
+													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
+
 												</div>
 											</div>
 										</div>
@@ -450,7 +448,7 @@
 								<div class="col-1"></div>
 							</div>
 						</div>
-						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:250px;">
+						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;">
 						</div>
 						<div class="col-12" style="background-color:#0097A7;height:200px;color:#ffffff;">
 							<div class="row">
@@ -531,12 +529,12 @@ var isshowpost = false;
 				}
 	});
 });
- var map, GeoMarker;
+ var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
         var mapOptions = {
           zoom: 10,
-          center: new google.maps.LatLng(-34.397, 150.644),
+          center: new google.maps.LatLng(13.724717, 100.633072),
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           streetViewControl: false,
           disableDefaultUI: true,
@@ -579,24 +577,55 @@ var isshowpost = false;
         };
         map = new google.maps.Map(document.getElementById('map_canvas'),
             mapOptions);
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+	            var pos = {
+	              lat: position.coords.latitude,
+	              lng: position.coords.longitude
+	            }
+			    infoWindow.open(map);
+	            map.setCenter(pos);
+// 	            addCircle(pos);
+	          }, function() {
+	            handleLocationError(true, infoWindow, map.getCenter());
+	          });
+	        } else {
+	          // Browser doesn't support Geolocation
+	          handleLocationError(false, infoWindow, map.getCenter());
+	        }
+	        var i =0;
+	        google.maps.event.addListener(map,'click', function(event) {
+				 if (i ==1) {
+					mycircle.setMap(null);
+					markercircle.setMap(null);
+					i=0;
+			    }
+			    else {
+			       markercircle = new google.maps.Marker({
+			                map: map,
+			                position: event.latLng,
+// 			                icon:'images/user.png',
+			              });
+					addCircle(event.latLng);
+					i++;
+			    }
+  			});
+	        function addCircle(location) {
+			  // Add the circle for this city to the map.
+			    mycircle = new google.maps.Circle({
+			      strokeColor: '#FF0000',
+			      strokeOpacity: 0.8,
+			      strokeWeight: 2,
+			      fillColor: '#FF0000',
+			      fillOpacity: 0.35,
+			      map: map,
+			      center: location,
+			      // หน่วยเป็น เมตร นะจ๊ะนะ
+			      radius: 1000,
+			      draggable:false
+			    });
+		}
 
-        GeoMarker = new GeolocationMarker();
-        GeoMarker.setCircleOptions({fillColor: '#808080'});
-
-        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-          map.setCenter(this.getPosition());
-          map.fitBounds(this.getBounds());
-          $('#lat').val(GeoMarker.position.lat());
-		  $('#lng').val(GeoMarker.position.lng());
-          console.log($('#lat').val());
-          console.log($('#lng').val());
-        });
-
-        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-          alert('There was an error obtaining your position. Message: ' + e.message);
-        });
-
-        GeoMarker.setMap(map);
        var infoWindow = new google.maps.InfoWindow;
 
 			          // Change this depending on the name of your PHP or XML file
@@ -655,7 +684,7 @@ var isshowpost = false;
 			              });
 			            });
 			          });
-                  }
+			          }
                   function downloadUrl(url, callback) {
 			        var request = window.ActiveXObject ?
 			            new ActiveXObject('Microsoft.XMLHTTP') :
@@ -679,4 +708,3 @@ var isshowpost = false;
       }
 
   </script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVTkcgy7zjUHk94AZacwogA2I2nRKefAc&libraries=places&callback=initMap"async defer></script>
