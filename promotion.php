@@ -95,20 +95,20 @@
     </script>
 	</head>
     <body>
-        <div class="wrapper" >
+        <div class="wrapper"  style="background-color:#B0BEC5;">
         <div class="container">
             <div class="row">
 				<div class="col-12">
 					<div class="row">
 						<div class="col-12">
 							<div class="row">
-								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
-									<a class="navbar-brand col-10" href="#" style="margin-right:0px; "><img src="images/logo_test.png" alt="logo_test"></a>
+								<nav class="navbar navbar-expand-lg navbar-light bg-light col-12" style="border-bottom: solid 1px #0097A7">
+									<a class="navbar-brand col-10" href="#" style="margin-right:0px;">LOGO</a>
 									<button type="button" class="btn btn-outline-primary col-2" href="#">Log in</button>
 								</nav>
 							</div>
 						</div>
-						<div class="col-12" style="background-color: #ffffff;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
+						<div class="col-12" style="background-color: #0097A7;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
 							<div class="row">
 								<div class="col-2"></div>
 								<div id="carouselExampleIndicators" class="carousel slide col-8" data-ride="carousel">
@@ -216,242 +216,23 @@
 										</div>-->
 							</div>
 						</div>
-						<div class="col-12" style="background-color: #ffffff;color:#ffffff;height:250px;">
+						</div>
+						<div class="col-12" style="color:#0097A7;background-color: #ffffff;">
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
+										<div class="col-1"></div>
 										<div class="col-10" style="padding-top:8px;">
-											<p style="margin-bottom:8px;">ร้านค้าแนะนำ</p>
+											<p style="margin-bottom:8px;">ส่วนโปรโมชั่น</p>
 										</div>
-										<div class="col-2" style="padding-top:6px;text-align:right;">
-											<a href="#" style="color:#ffffff;">ดูทั้งหมด ></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-12">
-									<div class="row">
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<div class="row">
-												<div class="col-12">
-													<img src="images/noimage.png" width="100%" height="150">
-												</div>
-												<div class="col-12" style="text-align:right;">
-													<p style="margin:0;">Shop name</p>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;margin-left:88px;">5</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:5px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
+										<div class="col-1"></div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-12" style="background-color:#ffffff;height:250px;color: #0097A7;">
-							<div class="row">
-								<div class="col-12" style="padding-top:8px;">
-									<p>Promotion</p>
-									<button type="button" class="btn btn-dark"><a class="text-white" href="promotion.php">Dark</a></button>
-								</div>
-							</div>
+						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:500px;">
 						</div>
-						<div class="col-12" style="background-color:#ffffff;height:200px;color:#ffffff;">
-							<div class="row">
-								<div class="col-1"></div>
-								<div class="col-10">
-									<div class="row">
-										<div class="col-6" style="height:200px;border-right:10px solid #ffffff;">
-											<div class="row">
-												<div class="col-12">
-													<P>REVIEW</P>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6">
-											<div class="row">
-												<div class="col-12" style="margin-top:60px;margin-bottom:8px;">
-													<div class="row">
-														<div class="col-3"></div>
-														<div class="col-8">
-															<input type="password" class="form-control" placeholder="SEARCH ONLY...">
-														</div>
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="row">
-														<div class="col-6"></div>
-														<div class="col-2">
-															<button type="button" class="btn btn-outline-light">Success</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-1"></div>
-							</div>
-						</div>
-						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;">
-						</div>
-						<div class="col-12" style="background-color:#ffffff;height:200px;color:#ffffff;">
+						<div class="col-12" style="background-color:#0097A7;height:200px;color:#ffffff;">
 							<div class="row">
 								<div class="col-3"></div>
 								<div class="col-6">
@@ -477,59 +258,6 @@
 ?>
  <!-- สิ้นสุด ส่วน googlemap -->
  <script>
-	 	$(document).ready(function() {
-		 $('#selProvince').select2({
-		 	placeholder: "กรุณาเลือกจังหวัด",
-		 	allowClear: true
-		 });
-		 $('#selDistrict').select2({
-		 	placeholder: "กรุณาเลือกอำเภอ",
-		 	allowClear: true
-		 });
-		 $('#selSubdistrict').select2({
-		 	placeholder: "กรุณาเลือกตำบล",
-		 	allowClear: true
-		 });
-var isshowpost = false;
-	$(".iconshop").hover(function(){
-		var key = $(this).attr('value');
-		switch(key){
-			case "1":
-				if(isshowpost){
-					var showname = document.getElementById("1");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("1");
-					showname.innerHTML = "<center>ร้านรองเท้า</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '2' :
-				if(isshowpost){
-					var showname = document.getElementById("2");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("2");
-					showname.innerHTML = "<center>ร้ายขายยา</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '3' :
-				if(isshowpost){
-					var showname = document.getElementById("3");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("3");
-					showname.innerHTML = "<center>ร้านขายของชำ</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-				}
-	});
-});
  var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
