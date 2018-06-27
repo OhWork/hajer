@@ -110,8 +110,7 @@
 						</div>
 						<div class="col-12" style="background-color: #ffffff;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
 							<div class="row">
-								<div class="col-2"></div>
-								<div id="carouselExampleIndicators" class="carousel slide col-8" data-ride="carousel">
+								<div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
 								  <ol class="carousel-indicators">
 									<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 									<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -137,7 +136,6 @@
 									<span class="sr-only">Next</span>
 								  </a>
 								</div>
-								<div class="col-2"></div>
 							</div>
 						</div>
 						<div class="col-12" style="color:#0097A7;background-color: #ffffff;">
