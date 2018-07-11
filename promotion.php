@@ -216,7 +216,6 @@
 										</div>-->
 							</div>
 						</div>
-						</div>
 						<div class="col-12" style="color:#0097A7;background-color: #ffffff;">
 							<div class="row">
 								<div class="col-12">
@@ -224,6 +223,17 @@
 										<div class="col-1"></div>
 										<div class="col-10" style="padding-top:8px;">
 											<p style="margin-bottom:8px;">ส่วนโปรโมชั่น</p>
+										</div>
+										<div class="col-1"></div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row">
+										<div class="col-1"></div>
+										<div class="col-10" style="padding-top:8px;">
+											<button type="button" class="btn btn-dark col-md-2 rangepro" value="1">Dark</button>
+											<button type="button" class="btn btn-dark col-md-2 rangepro" value="2">Dark</button>
+											<button type="button" class="btn btn-dark col-md-2 rangepro" value="3">Dark</button>
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -338,23 +348,83 @@
 					addCircle(event.latLng);
 					i++;
 			    }
-  			});
-	        function addCircle(location) {
-			  // Add the circle for this city to the map.
-			    mycircle = new google.maps.Circle({
-			      strokeColor: '#FF0000',
-			      strokeOpacity: 0.8,
-			      strokeWeight: 2,
-			      fillColor: '#FF0000',
-			      fillOpacity: 0.35,
-			      map: map,
-			      center: location,
-			      // หน่วยเป็น เมตร นะจ๊ะนะ
-			      radius: 1000,
-			      draggable:false
-			    });
-		}
+			    function addCircle(location) {
+				    $('.rangepro').on('click',function(){
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 1000,
+					      draggable:false
+					    });
+				  }
 
+			$('.rangepro').on('click',function(){
+				/*
+			  var valuebutton = $(this).val();
+			  if(valuebutton == 1){
+				  function addCircle(location) {
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 1000,
+					      draggable:false
+					    });
+					    $(this).addClass('disabled');
+				  }
+				}
+				else if(valuebutton == 2){
+				  function addCircle(location) {
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 5000,
+					      draggable:false
+					    });
+					    $(this).addClass('disabled');
+				  }
+				}
+				else if(valuebutton == 3){
+				  function addCircle(location) {
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 10000,
+					      draggable:false
+					    });
+					    $(this).addClass('disabled');
+				 }
+			  	}
+*/
+			  });
+  			});
        var infoWindow = new google.maps.InfoWindow;
 
 			          // Change this depending on the name of your PHP or XML file
@@ -435,5 +505,4 @@
       if(!navigator.geolocation) {
         alert('Your browser does not support geolocation');
       }
-
   </script>
