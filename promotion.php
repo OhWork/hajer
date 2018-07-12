@@ -349,7 +349,10 @@
 					i++;
 			    }
 			    function addCircle(location) {
-				    $('.rangepro').on('click',function(){
+					  // Add the circle for this city to the map.
+			$('.rangepro').on('click',function(){
+			  var valuebutton = $(this).val();
+			  if(valuebutton == 1){
 					  // Add the circle for this city to the map.
 					    mycircle = new google.maps.Circle({
 					      strokeColor: '#FF0000',
@@ -363,9 +366,44 @@
 					      radius: 1000,
 					      draggable:false
 					    });
+					    $(this).addClass('disabled');
+				}
+				else if(valuebutton == 2){
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 5000,
+					      draggable:false
+					    });
+					    $(this).addClass('disabled');
+				}
+				else if(valuebutton == 3){
+					  // Add the circle for this city to the map.
+					    mycircle = new google.maps.Circle({
+					      strokeColor: '#FF0000',
+					      strokeOpacity: 0.8,
+					      strokeWeight: 2,
+					      fillColor: '#FF0000',
+					      fillOpacity: 0.35,
+					      map: map,
+					      center: location,
+					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      radius: 10000,
+					      draggable:false
+					    });
+					    $(this).addClass('disabled');
+			  	}
+					    });
 				  }
 
-			$('.rangepro').on('click',function(){
+// 			$('.rangepro').on('click',function(){
 				/*
 			  var valuebutton = $(this).val();
 			  if(valuebutton == 1){
@@ -423,7 +461,7 @@
 				 }
 			  	}
 */
-			  });
+// 			  });
   			});
        var infoWindow = new google.maps.InfoWindow;
 
