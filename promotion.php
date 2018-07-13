@@ -102,13 +102,13 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="row">
-								<nav class="navbar navbar-expand-lg navbar-light bg-light col-12" style="border-bottom: solid 1px #0097A7">
+								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
 									<a class="navbar-brand col-10" href="#" style="margin-right:0px;">LOGO</a>
 									<button type="button" class="btn btn-outline-primary col-2" href="#">Log in</button>
 								</nav>
 							</div>
 						</div>
-						<div class="col-12" style="background-color: #0097A7;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
+						<div class="col-12" style="background-color: #B0E0E6;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
 							<div class="row">
 								<div class="col-2"></div>
 								<div id="carouselExampleIndicators" class="carousel slide col-8" data-ride="carousel">
@@ -250,7 +250,7 @@
 						</div>
 						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:500px;">
 						</div>
-						<div class="col-12" style="background-color:#0097A7;height:200px;color:#ffffff;">
+						<div class="col-12" style="background-color:#B0E0E6;height:200px;color:#ffffff;">
 							<div class="row">
 								<div class="col-3"></div>
 								<div class="col-6">
@@ -355,6 +355,10 @@
 			              });
 					addCircle(event.latLng);
 					i++;
+					google.maps.Circle.prototype.contains = function(latLng) {
+					return this.getBounds().contains(latLng) && google.maps.geometry.spherical.computeDistanceBetween(this.getCenter(), latLng) <= this.getRadius();
+					console.log('test');
+					}
 			    }
 			    function addCircle(location) {
 					  // Add the circle for this city to the map.
@@ -405,7 +409,7 @@
 					});
 				}
   			});
-       var infoWindow = new google.maps.InfoWindow;
+  	       var infoWindow = new google.maps.InfoWindow;
 
 			          // Change this depending on the name of your PHP or XML file
 			          downloadUrl('maker.php', function(data) {

@@ -6,3 +6,4 @@
 <script src="jquery/autocomplete.js"></script>
 <script src="jquery/select2.min.js"></script>
 <script src="jquery/geolocation-marker.js"></script>
+<!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false"></script> -->

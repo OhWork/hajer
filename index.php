@@ -108,7 +108,7 @@
 								</nav>
 							</div>
 						</div>
-						<div class="col-12" style="background-color: #ffffff;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
+						<div class="col-12" style="background-color: #B0E0E6;color:#ffffff; height: 200px;border-bottom:1px solid #0097A7;">
 							<div class="row">
 								<div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
 								  <ol class="carousel-indicators">
@@ -214,7 +214,7 @@
 										</div>-->
 							</div>
 						</div>
-						<div class="col-12" style="background-color: #ffffff;color:#ffffff;height:250px;">
+						<div class="col-12" style="background-color: #B0E0E6;color:#ffffff;height:250px;">
 							<div class="row">
 								<div class="col-12">
 									<div class="row">
@@ -360,7 +360,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-12" style="background-color:#ffffff;height:200px;color:#ffffff;">
+						<div class="col-12" style="background-color:#B0E0E6;height:200px;color:#ffffff;">
 							<div class="row">
 								<div class="col-1"></div>
 								<div class="col-10">
@@ -449,7 +449,7 @@
 						</div>
 						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;">
 						</div>
-						<div class="col-12" style="background-color:#ffffff;height:200px;color:#ffffff;">
+						<div class="col-12" style="background-color:#B0E0E6;height:200px;color:#ffffff;">
 							<div class="row">
 								<div class="col-3"></div>
 								<div class="col-6">
