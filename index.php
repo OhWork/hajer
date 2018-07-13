@@ -356,7 +356,7 @@
 							<div class="row">
 								<div class="col-12" style="padding-top:8px;">
 									<p>Promotion</p>
-									<button type="button" class="btn btn-dark"><a class="text-white" href="promotion.php">Dark</a></button>
+									<button type="button" class="btn btn-dark"><a class="text-white" href="promotion.php">เลือกราคาโปรโมชั่น</a></button>
 								</div>
 							</div>
 						</div>
