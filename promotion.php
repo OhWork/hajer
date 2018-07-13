@@ -231,9 +231,17 @@
 									<div class="row">
 										<div class="col-1"></div>
 										<div class="col-10" style="padding-top:8px;">
-											<button type="button" class="btn btn-dark col-md-2 rangepro" value="1">Dark</button>
-											<button type="button" class="btn btn-dark col-md-2 rangepro" value="2">Dark</button>
-											<button type="button" class="btn btn-dark col-md-2 rangepro" value="3">Dark</button>
+											<div class="btn-group btn-group-toggle" data-toggle="buttons">
+												<label class="btn btn-secondary active">
+												    <input type="radio" class="rangepro" name="options" id="option1" autocomplete="off" value="1" checked> 50 บาท
+												  </label>
+												  <label class="btn btn-secondary">
+												    <input type="radio" class="rangepro" name="options" id="option2" autocomplete="off" value="2"> 100 บาท
+												  </label>
+												  <label class="btn btn-secondary">
+												    <input type="radio"class="rangepro"  name="options" id="option3" autocomplete="off" value="3"> 300 บาท
+												  </label>
+											</div>
 										</div>
 										<div class="col-1"></div>
 									</div>
@@ -350,11 +358,10 @@
 			    }
 			    function addCircle(location) {
 					  // Add the circle for this city to the map.
-			$('.rangepro').on('click',function(){
-			  var valuebutton = $(this).val();
-			  if(valuebutton == 1){
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
+					$("input[type='radio']:checked").each(function() {
+					var valuebutton = $(this).val();
+					  if(valuebutton == 1){
+						mycircle = new google.maps.Circle({
 					      strokeColor: '#FF0000',
 					      strokeOpacity: 0.8,
 					      strokeWeight: 2,
@@ -362,15 +369,13 @@
 					      fillOpacity: 0.35,
 					      map: map,
 					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      draggable:false,
+					       	// หน่วยเป็น เมตร นะจ๊ะนะ
 					      radius: 1000,
-					      draggable:false
 					    });
-					    $(this).addClass('disabled');
-				}
-				else if(valuebutton == 2){
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
+						}
+						else if(valuebutton == 2){
+						mycircle = new google.maps.Circle({
 					      strokeColor: '#FF0000',
 					      strokeOpacity: 0.8,
 					      strokeWeight: 2,
@@ -378,15 +383,13 @@
 					      fillOpacity: 0.35,
 					      map: map,
 					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      draggable:false,
+					       	// หน่วยเป็น เมตร นะจ๊ะนะ
 					      radius: 5000,
-					      draggable:false
 					    });
-					    $(this).addClass('disabled');
-				}
-				else if(valuebutton == 3){
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
+						}
+						else if(valuebutton == 3){
+						mycircle = new google.maps.Circle({
 					      strokeColor: '#FF0000',
 					      strokeOpacity: 0.8,
 					      strokeWeight: 2,
@@ -394,74 +397,13 @@
 					      fillOpacity: 0.35,
 					      map: map,
 					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
+					      draggable:false,
+					       	// หน่วยเป็น เมตร นะจ๊ะนะ
 					      radius: 10000,
-					      draggable:false
 					    });
-					    $(this).addClass('disabled');
-			  	}
-					    });
-				  }
-
-// 			$('.rangepro').on('click',function(){
-				/*
-			  var valuebutton = $(this).val();
-			  if(valuebutton == 1){
-				  function addCircle(location) {
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
-					      strokeColor: '#FF0000',
-					      strokeOpacity: 0.8,
-					      strokeWeight: 2,
-					      fillColor: '#FF0000',
-					      fillOpacity: 0.35,
-					      map: map,
-					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
-					      radius: 1000,
-					      draggable:false
-					    });
-					    $(this).addClass('disabled');
-				  }
+					  	}
+					});
 				}
-				else if(valuebutton == 2){
-				  function addCircle(location) {
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
-					      strokeColor: '#FF0000',
-					      strokeOpacity: 0.8,
-					      strokeWeight: 2,
-					      fillColor: '#FF0000',
-					      fillOpacity: 0.35,
-					      map: map,
-					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
-					      radius: 5000,
-					      draggable:false
-					    });
-					    $(this).addClass('disabled');
-				  }
-				}
-				else if(valuebutton == 3){
-				  function addCircle(location) {
-					  // Add the circle for this city to the map.
-					    mycircle = new google.maps.Circle({
-					      strokeColor: '#FF0000',
-					      strokeOpacity: 0.8,
-					      strokeWeight: 2,
-					      fillColor: '#FF0000',
-					      fillOpacity: 0.35,
-					      map: map,
-					      center: location,
-					      // หน่วยเป็น เมตร นะจ๊ะนะ
-					      radius: 10000,
-					      draggable:false
-					    });
-					    $(this).addClass('disabled');
-				 }
-			  	}
-*/
-// 			  });
   			});
        var infoWindow = new google.maps.InfoWindow;
 
