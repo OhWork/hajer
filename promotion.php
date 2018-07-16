@@ -103,7 +103,7 @@
 						<div class="col-12">
 							<div class="row">
 								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
-									<a class="navbar-brand col-10" href="#" style="margin-right:0px;">LOGO</a>
+									<a class="navbar-brand col-10" href="#" style="margin-right:0px; "><img src="images/Hajers2.png" width="80" height="50" alt="logo_test"></a>
 									<button type="button" class="btn btn-outline-primary col-2" href="#">Log in</button>
 								</nav>
 							</div>
@@ -355,10 +355,7 @@
 			              });
 					addCircle(event.latLng);
 					i++;
-					google.maps.Circle.prototype.contains = function(latLng) {
-					return this.getBounds().contains(latLng) && google.maps.geometry.spherical.computeDistanceBetween(this.getCenter(), latLng) <= this.getRadius();
-					console.log('test');
-					}
+					 bounds = Circle.getBounds()
 			    }
 			    function addCircle(location) {
 					  // Add the circle for this city to the map.
