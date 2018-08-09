@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <?php
+	session_start();
 	include_once 'inc_js.php';
     include_once 'village/database/db_tools.php';
     include_once 'village/connect.php';
     include_once 'form/main_form.php';
     include_once 'form/gridview.php';
 
+	if(empty($_SESSION['member_username'])){
+		include_once 'login.php';
+	}
+	else{
 	$selectprovinces = new selectFromDB();
 	$selectprovinces->name = 'provinces_name';
 	$selectprovinces->idtf = 'provinces';
@@ -487,3 +492,6 @@
         alert('Your browser does not support geolocation');
       }
   </script>
+<?php
+	}
+?>
