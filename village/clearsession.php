@@ -5,7 +5,7 @@ $inactive = 1800;
 	$session_life = time() - $_SESSION['timeout'];
 	if($session_life > $inactive){
 		session_destroy();
-			header('location: index.php');
+			header('location: login.php');
 	}
 	$_SESSION['timeout']=time();
 

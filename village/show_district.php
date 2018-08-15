@@ -1,9 +1,9 @@
- <script>
+<script>
             $(document).ready(function() {
 
                 $('#table').DataTable( {
 	                "ordering": false,
-	                "lengthMenu": [[100, 200, 254, -1], [100, 200, 254, "ทุกหน้า"]],
+	                "lengthMenu": [[10, 50, 255, -1], [10, 50, 254, "ทุกหน้า"]],
 	                "language": {
 	                    "lengthMenu": "แสดง _MENU_ แถวต่อหน้า",
 	                    "zeroRecords": "ไม่พบข้อมูล",
@@ -14,8 +14,10 @@
 				} );
      		} );
  </script>
+ <div class="col-md-12">
  <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_district.php">เพิ่มข้อมูล</a></button>
-
+ </div>
+ <div class="col-md-12">
 <?php
     $columns = array('name_in_thai','name_in_english');
     $rs = $db->findAll('districts')->execute();
@@ -23,9 +25,10 @@
 			$grid = new gridView();
 			$grid->pr = 'id';
 			$grid->header = array('<b><center>ชื่อจังหวัดภาษาไทย</center></b>','<b><center>ชื่อจังหวัดภาษาอังกฤษ</center></b>','<b><center>#</center></b>');
-			$grid->width = array('40%','40%','10%','10%');
+			$grid->width = array('40%','40%','20%');
 			$grid->name = 'table';
 			$grid->edit = 'admin_index.php?url=add_district.php';
 			$grid->edittxt ='แก้ไข';
 			$grid->renderFromDB($columns,$rs);
    ?>
+ </div>

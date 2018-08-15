@@ -4,13 +4,6 @@
 	date_default_timezone_set('Asia/Bangkok');
 	$date = date("Y-m-d H:i");
 ?>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-        <link rel="stylesheet" href="CSS/bootstrap.css">
-        <link rel="stylesheet" href="CSS/main.css">
-          <title>ระบบintranet</title>
-	</head>
 <?php
 	include_once 'database/db_tools.php';
 	include_once 'connect.php';
@@ -51,7 +44,7 @@
 		?>
 		<script>
 			alert('ไอดีหรือรหัสผิดพลาด กรุณาลองใหม่');
-			window.location.href = 'index.php';
+			window.location.href = 'login.php';
 		</script>
 		<?php
 		//header('location: admin_index.php');

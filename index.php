@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/main.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
+        <link rel="stylesheet" href="CSS/owl.carousel.min.css">
+        <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
 		<style>
 		   /* Always set the map height explicitly to define the size of the div
 	       * element that contains the map. */
@@ -104,7 +106,7 @@
 							<div class="row">
 								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
 									<a class="navbar-brand col-10" href="index.php" style="margin-right:0px; "><img src="images/Hajers2.png" width="80" height="50" alt="logo_test"></a>
-									<a class="btn btn-outline-primary col-2" href="village/admin_index.php">Log in</a>
+									<a class="btn btn-outline-primary col-2" href="village/login.php">Log in</a>
 								</nav>
 							</div>
 						</div>
@@ -151,67 +153,20 @@
 								</div>
 								<div class="col-12">
 									<div class="row">
-										<div class="col-2">
-											<a class="carousel-control-prev" style="width:100%" href="#carouselExampleIndicatorsicon" role="button" data-slide="prev">
-												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-												<span class="sr-only">Previous</span>
-											</a>
-										</div>
-										<div id="carouselExampleIndicatorsicon" class="carousel slide col-8" data-ride="carousel">
-											<div class="carousel-inner">
-												<div class="carousel-item active">
-													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
-												</div>
-												<div class="carousel-item">
-													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
-												</div>
-												<div class="carousel-item">
-													<img class="d-block" src="images/home.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home2.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home3.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home4.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home5.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home6.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home7.png" height="80px" width="80px" alt="First slide" style="float:left;">
-													<img class="d-block" src="images/home8.png" height="80px" width="80px" alt="First slide" style="float:left;">
-
-												</div>
-											</div>
-										</div>
-										<div class="col-2">
-											<a class="carousel-control-next bg-dark" style="width:100%" href="#carouselExampleIndicatorsicon" role="button" data-slide="next">
-												<span class="carousel-control-next-icon" aria-hidden="true"></span>
-												<span class="sr-only">Next</span>
-											</a>
+										<div class="owl-carousel owl-theme">
+										    <img class="item col-5" src="images/home.png">
+										    <img class="item col-5" src="images/home2.png">
+										    <img class="item col-5" src="images/home3.png">
+										    <img class="item col-5" src="images/home4.png">
+										    <img class="item col-5" src="images/home5.png">
+										    <img class="item col-5" src="images/home6.png">
+										    <img class="item col-5" src="images/home7.png">
+										    <img class="item col-5" src="images/home8.png">
+										    <img class="item col-5" src="images/home.png">
+										    <img class="item col-5"src="images/home2.png">
 										</div>
 									</div>
 								</div>
-								<!--<div class="col-12 mt-1">
-									<div class="row">
-										<div class="col-3" style="height:30px; margin-top:10px;"></div>
-										<span class="col-2 showname" id="1"></span>
-										<span class="col-2 showname" id="2"></span>
-										<span class="col-2 showname" id="3"></span>
-										<div class="col-3"></div>
-									</div>
-									<div class="col-12 mt-1">
-										 <div id="map"></div>
-										</div>
-										</div>-->
 							</div>
 						</div>
 						<div class="col-12" style="background-color: #B0E0E6;color:#ffffff;height:250px;">
@@ -465,69 +420,7 @@
         </div> <!--end wrapper-->
     </body>
 </html>
- <!-- ส่วน Google Map -->
-  <?php  /*
-	 var uluru คือตัวแปรเก็บค่า ละติจูด ลองติจูด
-	 var map เป็นตัวแปรเรียกมาใช้ โดยดึงมาจากชืื่อ ID คือ Map
-	 zoom คือการ เจาะลงไปในแผนที่
-	เปลี่ยน key ของ api google map ตรง js?key=
-       */
-?>
- <!-- สิ้นสุด ส่วน googlemap -->
  <script>
-	 	$(document).ready(function() {
-		 $('#selProvince').select2({
-		 	placeholder: "กรุณาเลือกจังหวัด",
-		 	allowClear: true
-		 });
-		 $('#selDistrict').select2({
-		 	placeholder: "กรุณาเลือกอำเภอ",
-		 	allowClear: true
-		 });
-		 $('#selSubdistrict').select2({
-		 	placeholder: "กรุณาเลือกตำบล",
-		 	allowClear: true
-		 });
-var isshowpost = false;
-	$(".iconshop").hover(function(){
-		var key = $(this).attr('value');
-		switch(key){
-			case "1":
-				if(isshowpost){
-					var showname = document.getElementById("1");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("1");
-					showname.innerHTML = "<center>ร้านรองเท้า</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '2' :
-				if(isshowpost){
-					var showname = document.getElementById("2");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("2");
-					showname.innerHTML = "<center>ร้ายขายยา</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-			case '3' :
-				if(isshowpost){
-					var showname = document.getElementById("3");
-					showname.innerHTML = " ";
-					isshowpost = false;
-				}else{
-					var showname = document.getElementById("3");
-					showname.innerHTML = "<center>ร้านขายของชำ</center>";
-					isshowpost = true;
-				}
-				return isshowpost;
-				}
-	});
-});
  var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
@@ -705,5 +598,24 @@ var isshowpost = false;
       if(!navigator.geolocation) {
         alert('Your browser does not support geolocation');
       }
-
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    nav: true,
+    responsive:{
+        0:{
+            items:1,
+        },
+        600:{
+            items:3,
+        },
+        1000:{
+            items:5,
+        }
+    }
+});
   </script>

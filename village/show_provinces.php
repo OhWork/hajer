@@ -14,7 +14,10 @@
 				} );
      		} );
  </script>
- <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_provinces.php">เพิ่มข้อมูล</a></button>
+ <div class="col-md-12">
+ 	<button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_provinces.php">เพิ่มข้อมูล</a></button>
+ </div>
+ <div class="col-md-12">
 <?php
     $columns = array('name_in_thai','name_in_english');
     $rs = $db->findAll('provinces')->execute();
@@ -28,3 +31,4 @@
 			$grid->edittxt ='แก้ไข';
 			$grid->renderFromDB($columns,$rs);
    ?>
+ </div>

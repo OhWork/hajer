@@ -2,5 +2,5 @@
 ob_start();
 session_start();
 session_destroy();
-header('location: admin_index.php');
+header('location: ../index.php');
 ?>

@@ -1,11 +1,4 @@
-<?php  ob_start();?>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/main.css">
-	</head>
-<?php
+<?php  ob_start();
     include 'database/db_tools.php';
 	include '../connect.php';
 
@@ -43,11 +36,8 @@
     	}else if($rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
-            $link = "add_country.php";
+            $link = "admin_index.php?url=show_subdistrict.php";
             header( "Refresh: 2; $link" );
 }
-?>
-</html>
-<?php
 ob_end_flush();
 ?>

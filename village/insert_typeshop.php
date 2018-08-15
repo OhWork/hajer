@@ -1,11 +1,4 @@
-<?php  ob_start();?>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/main.css">
-	</head>
-<?php
+<?php  ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
 
@@ -13,10 +6,10 @@
 
 		$data['typeshop_name'] = $_POST['typeshop_name'];
 
-		$rsfix = $db->update('locality',$data,'typeshop_id',$_POST['typeshop_id']);
+		@$rsfix = $db->update('locality',$data,'typeshop_id',$_POST['typeshop_id']);
 
 	}else{
-	$rs = $db->insert('typeshop',array(
+	@$rs = $db->insert('typeshop',array(
 	'typeshop_name' => $_POST['typeshop_name']
 	));
 /*
@@ -37,17 +30,14 @@
 */
 	}
 
-	if($rs || $rsfix){
-    	if($rs){
+	if(@$rs || @$rsfix){
+    	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
-    	}else if($rsfix){
+    	}else if(@$rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
-            $link = "show_typeshop.php";
+            @$link = "admin_index.php?url=show_typeshop.php";
             header( "Refresh: 2; $link" );
 }
-?>
-</html>
-<?php
 ob_end_flush();
 ?>
