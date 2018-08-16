@@ -5,11 +5,12 @@
 	@$url = $_GET['url'];
 		if(empty($_SESSION['member_username'])){
 		include_once 'login.php';
-		}
+		
 	if(!empty($url)){
 		include_once $url;
 }else{
-    include_once 'admin_index.php';
+    include_once 'index.php';
+}
 }
 
 ?>
