@@ -1,14 +1,4 @@
- <head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../CSS/bootstrap.css">
-        <link rel="stylesheet" href="../CSS/jquery-ui.css">
- </head>
  <?php
-	 include 'inc_js.php';
-     include 'form/main_form.php';
-     include 'form/gridview.php';
-	 include_once 'database/db_tools.php';
-     include_once 'connect.php';
      error_reporting(0);
      $id = $_GET['id'];
 	$form = new form();

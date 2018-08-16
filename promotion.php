@@ -403,7 +403,7 @@
 					      fillOpacity: 0.35,
 					      map: map,
 					      center: location,
-					      draggable:false,
+					      draggable: true,
 					       	// หน่วยเป็น เมตร นะจ๊ะนะ
 					      radius: 10000,
 					    });

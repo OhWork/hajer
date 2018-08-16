@@ -102,81 +102,151 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
-      var map, GeoMarker;
+		var checkid = $('#idnaja').val();
+ 		if(checkid == ""){
+	      var map, GeoMarker;
 
-      function initialize() {
-        var mapOptions = {
-          zoom: 17,
-          center: new google.maps.LatLng(-34.397, 150.644),
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          streetViewControl: false,
-          disableDefaultUI: true,
-          styles: [
-		  	{
-				"featureType": "administrative",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				 ]
-			},
-			{
-				"featureType": "poi",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "labels.icon",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "transit",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			}
-          ]
-        };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            mapOptions);
+	      function initialize() {
+	        var mapOptions = {
+	          zoom: 17,
+	          center: new google.maps.LatLng(-34.397, 150.644),
+	          mapTypeId: google.maps.MapTypeId.ROADMAP,
+	          streetViewControl: false,
+	          disableDefaultUI: true,
+	          styles: [
+			  	{
+					"featureType": "administrative",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					 ]
+				},
+				{
+					"featureType": "poi",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "transit",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				}
+	          ]
+	        };
+	        map = new google.maps.Map(document.getElementById('map_canvas'),
+	            mapOptions);
 
-        GeoMarker = new GeolocationMarker();
-        GeoMarker.setCircleOptions({fillColor: '#808080'});
+	        GeoMarker = new GeolocationMarker();
+	        GeoMarker.setCircleOptions({fillColor: '#808080'});
 
-        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-          map.setCenter(this.getPosition());
-          map.fitBounds(this.getBounds());
-          $('#lat').val(GeoMarker.position.lat());
-		  $('#lng').val(GeoMarker.position.lng());
-          console.log($('#lat').val());
-          console.log($('#lng').val());
-        });
+	        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+	          map.setCenter(this.getPosition());
+	          map.fitBounds(this.getBounds());
+	          $('#lat').val(GeoMarker.position.lat());
+			  $('#lng').val(GeoMarker.position.lng());
+	          console.log($('#lat').val());
+	          console.log($('#lng').val());
+	        });
 
-        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-          alert('There was an error obtaining your position. Message: ' + e.message);
-        });
+	        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+	          alert('There was an error obtaining your position. Message: ' + e.message);
+	        });
 
-        GeoMarker.setMap(map);
+	        GeoMarker.setMap(map);
+	      }
+
+	      google.maps.event.addDomListener(window, 'load', initialize);
+
+	      if(!navigator.geolocation) {
+	        alert('Your browser does not support geolocation');
+	      }
       }
 
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-      if(!navigator.geolocation) {
-        alert('Your browser does not support geolocation');
+      else{
+	       function initMap(uluru) {
+// 					var uluru = {lat: 13.773, lng: 100.516};
+                    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                      zoom: 17,
+                      center: uluru,
+                      streetViewControl: false,
+                      disableDefaultUI: true,
+                      styles: [
+						  {
+						    "featureType": "administrative",
+						    "elementType": "geometry",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "poi",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "road",
+						    "elementType": "labels.icon",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "transit",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  }
+                      ]
+                    });
+                    var marker = new google.maps.Marker({
+	                    position: uluru,
+	                    map: map,
+	                    draggable:true,
+	                });
+			}
+	  	$.ajax({
+            type: "POST",
+            url: "getmarker.php",
+            data: {checkid : $('#idnaja').val()},
+            dataType: "json",
+            success: function(data) {
+				var latt =  parseFloat(data.shop_locationx);
+				var lngg =  parseFloat(data.shop_locationy);
+				console.log(data);
+				var uluru = {lat: latt, lng: lngg};
+	            initMap(uluru);
+            }
+        });
       }
     </script>
 <?php 	echo $form->close(); ?>
