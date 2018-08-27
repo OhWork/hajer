@@ -6,4 +6,4 @@
 <script src="jquery/select2.min.js"></script>
 <script src="jquery/geolocation-marker.js"></script>
 <script src="jquery/owl.carousel.js"></script>
-
+<script src="jquery/feather-icon/feather.min.js"></script>

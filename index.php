@@ -102,6 +102,7 @@
             <div class="row">
 				<div class="col-12">
 					<div class="row">
+						<?php include "menutop.php" ?>
 						<div class="col-12">
 							<div class="row">
 								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
