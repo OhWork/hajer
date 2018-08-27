@@ -107,11 +107,7 @@
 							<div class="row">
 								<nav class="navbar navbar-expand-lg  col-12" style="border-bottom: solid 1px #0097A7; background-color : #B0E0E6;">
 									<a class="navbar-brand col-10" href="index.php" style="margin-right:0px; "><img src="images/Hajers2.png" width="80" height="50" alt="logo_test"></a>
-<<<<<<< HEAD
-									<a class="btn btn-outline-primary col-2" href="village/login.php">Login</a>
-=======
-									<a class="btn btn-outline-primary col-2" href="village/login.php">Log in</a>
->>>>>>> 717a7977bb915b375dc10c2c605b4dc8538247ee
+									<a class="btn btn-outline-primary col-2" href="village/login.php"><span data-feather="chevron-right"></span>Log in</a>
 								</nav>
 							</div>
 						</div>
@@ -426,6 +422,7 @@
     </body>
 </html>
  <script>
+feather.replace();
  var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
