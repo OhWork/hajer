@@ -99,6 +99,7 @@
     <body>
 		<?php include "menutop.php" ?>
 		<?php include "slide.php" ?>
+		<?php include "shopshow.php" ?>
 						<div class="col-12" style="color:#0097A7;background-color: #ffffff;">
 							<div class="row">
 								<div class="col-12">

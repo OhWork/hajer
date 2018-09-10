@@ -1,14 +1,12 @@
 /* menutop */
 .boxtop {
 	padding:5px 200px;
-	border-bottom: 1px solid #0336ff;
 }
 .hvmenu:hover {
 	opacity:.7;
 }
 .circlemenutop {
-	background-color:#0336ff;
-	color:#ffde03;
+	background-color:#f5fb50;
 	width: 40px;
 	height:40px;
 	padding-top:7px;
@@ -21,16 +19,15 @@
 	margin-left:5px;
 	float:left;
 	margin-top: 12px;
-	color:#0336ff;
 }
 /* slide */
 .boxslide {
-	height : 420px;
+	height : 570px;
 	display:block;
 }
 .picslide {
 	width:100%;
-	max-height: 420px !important;
+	max-height: 570px !important;
 }
 .inner_position_top{
     position:absolute;
@@ -45,7 +42,8 @@
 }
 /* on slide */
 .textos {
-	color: #ffde03;
+	color: #ffffff;
+	text-shadow: 2px 2px 4px #000000;
 }
 .shadow {
 	box-shadow: 0 8px 6px -6px black;
@@ -55,6 +53,4 @@
 	padding-right:0px;
 	padding-top:5px;
 	padding-bottom:0px;
-	color: #ffde03;
-	background-color:#0336ff;
 }
