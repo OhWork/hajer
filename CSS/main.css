@@ -1,0 +1,80 @@
+/* menutop */
+.boxtop {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.hvmenu:hover {
+	opacity:.7;
+}
+.circlemenutop {
+	background-color:#f5fb50;
+	width: 40px;
+	height:40px;
+	padding-top:7px;
+	padding-left:8px;
+	float:left;
+	margin-top:5px;
+	margin-left:87%;
+}
+.menutoptext {
+	margin-left:5px;
+	float:left;
+	margin-top: 12px;
+}
+.logomn {
+	font-size:2rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+.lg1 {
+	color:#BDBDBD;
+}
+.lg2 {
+	color:#EF6C00;
+}
+.lg3 {
+	background-color:#EF6C00;
+	color:#bdbdbd;
+}
+.lgb {
+	border:solid 1px #EF6C00; 
+}
+.lgb:hover {
+	background-color:#EF6C00;
+	border:solid 1px #EF6C00; 
+}
+/* slide */
+.boxslide {
+	height : 570px;
+	display:block;
+}
+.picslide {
+	width:100%;
+	max-height: 570px !important;
+}
+.inner_position_top{
+    position:absolute;
+    display:block;
+    height:50px; /* กำหนดความสูงส่วนของเนื้อหาที่นำมาซ้อนทับ */
+    width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
+    top:61px; /* css กำหนดชิดด้านบน  */
+    z-index:999;
+	padding: 0px 200px;
+	background-color:#ffggee;
+	padding-top:150px;
+}
+/* on slide */
+.textos {
+	text-shadow: 2px 2px 4px #000000;
+}
+.shadow {
+	box-shadow: 0 8px 6px -6px black;
+}
+.searchbt {
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:5px;
+	padding-bottom:0px;
+}
