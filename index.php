@@ -37,6 +37,9 @@
 	        margin: 0;
 	        padding: 0;
 	      }
+	      .item{
+		      height: 250px;
+	      }
       </style>
       <script type="text/javascript">
          // Specify a function to execute when the DOM is fully loaded.
@@ -114,16 +117,16 @@
 								<div class="col-12">
 									<div class="row">
 										<div class="owl-carousel owl-theme">
-										    <img class="item col-5" src="images/home.png">
-										    <img class="item col-5" src="images/home2.png">
-										    <img class="item col-5" src="images/home3.png">
-										    <img class="item col-5" src="images/home4.png">
-										    <img class="item col-5" src="images/home5.png">
-										    <img class="item col-5" src="images/home6.png">
-										    <img class="item col-5" src="images/home7.png">
-										    <img class="item col-5" src="images/home8.png">
-										    <img class="item col-5" src="images/home.png">
-										    <img class="item col-5"src="images/home2.png">
+										    <a href="#"><img class="item" src="images/home.png"></a>
+										    <a href="#"><img class="item" src="images/home2.png"></a>
+										    <a href="#"><img class="item" src="images/home3.png"></a>
+										    <a href="#"><img class="item" src="images/home4.png"></a>
+										    <a href="#"><img class="item" src="images/home5.png"></a>
+										    <a href="#"><img class="item" src="images/home6.png"></a>
+										    <a href="#"><img class="item" src="images/home7.png"></a>
+										    <a href="#"><img class="item" src="images/home8.png"></a>
+										    <a href="#"><img class="item" src="images/home.png"></a>
+										    <a href="#"><img class="item" src="images/home2.png"></a>
 										</div>
 									</div>
 								</div>
