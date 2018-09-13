@@ -32,18 +32,18 @@
 	color:#BDBDBD;
 }
 .lg2 {
-	color:#EF6C00;
+	color:#039BE5;
 }
 .lg3 {
-	background-color:#EF6C00;
+	background-color:#039BE5;
 	color:#bdbdbd;
 }
 .lgb {
-	border:solid 1px #EF6C00; 
+	border:solid 1px #039BE5; 
 }
 .lgb:hover {
-	background-color:#EF6C00;
-	border:solid 1px #EF6C00; 
+	background-color:#039BE5;
+	border:solid 1px #039BE5; 
 }
 /* slide */
 .boxslide {
