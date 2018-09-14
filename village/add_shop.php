@@ -20,6 +20,7 @@
      $form = new form();
 	 $nameshop = new textfield('shop_name','','form-control','','');
 	 $lbnameshop = new label('ชื่อร้านค้า : ');
+	 $lbnameshop = new label('ประเภทร้านค้า : ');
 	 $detailshop = new textfield('shop_detail','','form-control','','');
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
@@ -31,6 +32,9 @@
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
+	 $selectcatshop = new selectFromDB();
+	 $selectcatshop->name = 'catshop';
+	 $selectcatshop->idtf = 'catshop_id';
 	 @$id = $_GET['id'];
 	 $r = $db->findByPK('shop','shop_id',$id)->executeRow();
 	 $nameshop->value = $r['shop_name'];
@@ -42,6 +46,12 @@
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
+	 <div class='col-md-12' style="margin-bottom: 16px;">
+		<div class='row'>
+			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
+			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name',''); ; ?></div>
+		</div>
+	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
@@ -93,7 +103,9 @@
 	</div>
 	 <div class='col-md-12'>
 		<div class='row'>
-			<div class='col-md-8'></div>
+			<div class='col-md-8'>
+				<input type="text" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
+			</div>
 			<div class='col-md-2'>
 				<?php echo $button; ?>
 			</div>

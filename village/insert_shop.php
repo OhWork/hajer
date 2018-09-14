@@ -33,7 +33,8 @@
 	'shop_locationy' => $_POST['lng'],
 	'shop_pic' => $img_new_name,
 	'chop_place' => $_POST['shop_place'],
-	'member_member_id' => 1
+	'member_member_id' => $_POST['mem_id'],
+	'typeshop_typeshop_id' => $_POST['catshop']
 	));
 /*
                 //Log

@@ -296,7 +296,7 @@ class labeladdday{
 	class SelectFromDB{
 	public $name,$lists,$idtf,$value = null;
 	function selectFromTB($table,$value,$label,$result){
-		include_once 'village/database/db_tools.php';
+		include_once 'database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findAll($table)->execute();
 		$html = "<select id='{$this->idtf}' class='form-control css-require' name='{$this->name}' >

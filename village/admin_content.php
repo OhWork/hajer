@@ -7,11 +7,11 @@
 	if(empty($_SESSION['member_username'])){
 		include_once 'login.php';
 	}
+	else{
 	if(!empty($url)){
 		include_once $url;
-}else{
-    include_once 'index.php';
-}
+	}
+	}
 //     include_once 'admin_mainmenu.php';
 
 ?>
