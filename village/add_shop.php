@@ -49,7 +49,7 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
-			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name',''); ; ?></div>
+			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name',''); ?></div>
 		</div>
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">

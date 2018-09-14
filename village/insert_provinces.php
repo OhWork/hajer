@@ -1,18 +1,19 @@
 <?php  ob_start();
     include 'database/db_tools.php';
-	include '../connect.php';
+	include 'connect.php';
 
-	if(!empty($_POST['id'])){
+	if(!empty($_POST['province_id'])){
 
-		$data['name_th'] = $_POST['name_th'];
-		$data['geography_id'] = $_POST['name_geo'];
+		$data['name_in_thai'] = $_POST['province_name'];
+		$data['name_in_english'] = $_POST['province_nameeng'];
 
-		$rsfix = $db->update('provinces',$data,'id',$_POST['id']);
+		$rsfix = $db->update('provinces',$data,'id',$_POST['province_id']);
 
 	}else{
 	$rs = $db->insert('provinces',array(
-	'name_th' => $_POST['name_th'],
-	'geography_id' => $_POST['name_geo']
+	'name_in_thai' => $_POST['province_name'],
+	'name_in_english' => $_POST['province_nameeng'],
+
 
 	));
 /*
@@ -39,7 +40,7 @@
     	}else if($rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
-            $link = "admin_index.php?url=show_country.php";
+            $link = "admin_index.php?url=show_provinces.php";
             header( "Refresh: 2; $link" );
 }
 ob_end_flush();

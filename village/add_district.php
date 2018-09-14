@@ -3,9 +3,12 @@
 	$form = new form();
 	$name = new textfield('district_name','','form-control','','');
 	$lbname = new label('ชื่อเขต/อำเภอ: ');
+	$nameeng = new textfield('district_nameeng','','form-control','','');
+	$lbnameeng = new label('ชื่อเขต/อำเภอภาษาอังกฤษ: ');
 	$id = $_GET['id'];
 	$r = $db->findByPK('districts','id',$id)->executeRow();
 	$name->value = $r['name_in_thai'];
+	$nameeng->value = $r['name_in_english'];
 	$province_id = $r['province_id'];
 
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
@@ -72,6 +75,13 @@
 								</div>
 							</div>
 						</div>
+						<div class='col-md-12' style="margin-bottom: 16px;">
+								<div class='row'>
+									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameeng; ?></div>
+									<div class='col-md-8'><?php echo $nameeng; ?></div>
+								</div>
+							</div>
+						</div>
 							<div class='col-md-12'>
 											<div class='row'>
 												<div class='col-md-8'></div>
@@ -83,7 +93,7 @@
 												</div>
 											</div>
 									</div>
-									<input type="hidden" value="<?php echo $_GET['id'];?>">
+									<input type="hidden" name="district_id" value="<?php echo $_GET['id'];?>">
 </div>
 </form>
 </div>

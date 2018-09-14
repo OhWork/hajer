@@ -1,16 +1,20 @@
  <?php
      error_reporting(0);
 	$form = new form();
-	$name = new textfield('locality_name','','form-control','','');
+	$name = new textfield('subdistricts_name','','form-control','','');
 	$lbname = new label('ชื่อแขวง/ตำบล: ');
-	$lat = new textfield('locality_lat','','form-control','','');
+	$nameeng = new textfield('subdistricts_nameeng','','form-control','','');
+	$lbnameeng = new label('ชื่อแขวง/ตำบลภาษาอังกฤษ: ');
+	$lat = new textfield('subdistricts_lat','','form-control','','');
 	$lblat = new label('ละติจูด: ');
-	$lng = new textfield('locality_lng','','form-control','','');
+	$lng = new textfield('subdistricts_lng','','form-control','','');
 	$lblng = new label('ลองติจูด: ');
 	$id = $_GET['id'];
 	$r = $db->findByPK('subdistricts','id',$id)->executeRow();
 	$name->value = $r['name_in_thai'];
-	$province_id = $r['district_id'];
+	$nameeng->value = $r['name_in_english'];
+	$lat->value = $r['latitude'];
+	$lng->value = $r['longitude'];
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
 <script language = "JavaScript">
@@ -47,7 +51,7 @@
 			}
 </script>
 <div class='col-md-6'>
-<?php echo $form->open('form_reg','frmMain','','insert_locality.php',''); ?>
+<?php echo $form->open('form_reg','frmMain','','insert_subdistrict.php',''); ?>
 						<div class='row'>
 							<div class='col-md-12'>
 								<div class='row'>
@@ -77,6 +81,12 @@
 							</div>
 							<div class='col-md-12' style="margin-bottom: 16px;">
 								<div class='row'>
+									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameeng; ?></div>
+									<div class='col-md-8'><?php echo $nameeng; ?></div>
+								</div>
+							</div>
+							<div class='col-md-12' style="margin-bottom: 16px;">
+								<div class='row'>
 									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lblat; ?></div>
 									<div class='col-md-8'><?php echo $lat; ?></div>
 								</div>
@@ -99,5 +109,5 @@
 									</div>
 								</div>
 							</div>
-						<input type="hidden" value="<?php echo $_GET['id'];?>">
+						<input type="hidden" name="subdistricts_id"value="<?php echo $_GET['id'];?>">
 </div>

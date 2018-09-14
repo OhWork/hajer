@@ -11,7 +11,7 @@
 	                   <span data-feather="chevron-right"></span>รายการอำเภอ
 	                </a>
 	                <a class="nav-link dropuser" href="admin_index.php?url=show_provinces.php">
-	                   <span data-feather="chevron-right"></span>รายการเขต
+	                   <span data-feather="chevron-right"></span>รายการจังหวัด
 	                <a class="nav-link dropuser" href="#">
 	                   <span data-feather="chevron-right"></span>Log-การใช้งาน
 	                </a>

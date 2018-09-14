@@ -1,16 +1,24 @@
 <?php  ob_start();
     include 'database/db_tools.php';
-	include '../connect.php';
+	include 'connect.php';
 
-	if(!empty($_POST['country_id'])){
+	if(!empty($_POST['subdistricts_id'])){
 
-		$data['locality_name'] = $_POST['locality_name'];
+		$data['name_in_thai'] = $_POST['subdistricts_name'];
+		$data['name_in_english'] = $_POST['subdistricts_nameeng'];
+		$data['latitude'] = $_POST['subdistricts_lat'];
+		$data['longitude'] = $_POST['subdistricts_lng'];
+		$data['district_id'] = $_POST['name_district'];
 
-		$rsfix = $db->update('locality',$data,'locality_id',$_POST['locality_id']);
+		$rsfix = $db->update('subdistricts',$data,'id',$_POST['subdistricts_id']);
 
 	}else{
-	$rs = $db->insert('locality',array(
-	'locality_name' => $_POST['locality_name']
+	$rs = $db->insert('subdistricts',array(
+	'name_in_thai' => $_POST['subdistricts_name'],
+	'name_in_english' => $_POST['subdistricts_nameeng'],
+	'latitude' => $_POST['subdistricts_lat'],
+	'longitude' => $_POST['subdistricts_lng'],
+	'district_id' => $_POST['name_district']
 	));
 /*
                 //Log
@@ -30,10 +38,10 @@
 */
 	}
 
-	if($rs || $rsfix){
-    	if($rs){
+	if(@$rs || @$rsfix){
+    	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
-    	}else if($rsfix){
+    	}else if(@$rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
             $link = "admin_index.php?url=show_subdistrict.php";

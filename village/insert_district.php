@@ -1,17 +1,19 @@
 <?php  ob_start();
 	include 'database/db_tools.php';
-	include '../connect.php';
+	include 'connect.php';
 	print_r($_POST);
-	if(!empty($_POST['id'])){
+	if(!empty($_POST['district_id'])){
 
-		$data['name_th'] = $_POST['district_name'];
-		$data['province_id'] = $_POST['name_amphures'];
+		$data['name_in_thai'] = $_POST['district_name'];
+		$data['name_in_english'] = $_POST['district_nameeng'];
+		$data['province_id'] = $_POST['name_provinces'];
 
-		$rsfix = $db->update('amphures',$data,'id',$_POST['id']);
+		$rsfix = $db->update('districts',$data,'id',$_POST['district_id']);
 
 	}else{
-	$rs = $db->insert('amphures',array(
-	'name_th' => $_POST['district_name'],
+	$rs = $db->insert('districts',array(
+	'name_in_thai' => $_POST['district_name'],
+	'name_in_english' => $_POST['district_nameeng'],
 	'province_id'=> $_POST['name_provinces']
 	));
 /*
@@ -32,14 +34,14 @@
 */
 	}
 
-	if($rs || $rsfix){
-    	if($rs){
+	if(@$rs || @$rsfix){
+    	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
-    	}else if($rsfix){
+    	}else if(@$rsfix){
             echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
         }
-            $link = "admin_index.php?url=show_provinces.php";
-            header( "Refresh: 2; $link" );
+            $link = "admin_index.php?url=show_district.php";
+             header( "Refresh: 2; $link" );
 }
 ob_end_flush();
 ?>
