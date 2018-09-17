@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/main.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
+        <link rel="stylesheet" href="CSS/animate.min.css">
         <link rel="stylesheet" href="CSS/owl.carousel.min.css">
         <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
 		<style>
@@ -38,7 +39,7 @@
 	        padding: 0;
 	      }
 	      .item{
-		      height: 250px;
+		      height: 100px;
 	      }
       </style>
       <script type="text/javascript">
@@ -114,19 +115,19 @@
 										<div class="col-1"></div>
 									</div>
 								</div>
-								<div class="col-12">
+								<div class="mx-auto col-8">
 									<div class="row">
 										<div class="owl-carousel owl-theme">
-										    <a href="#"><img class="item" src="images/home.png"></a>
-										    <a href="#"><img class="item" src="images/home2.png"></a>
-										    <a href="#"><img class="item" src="images/home3.png"></a>
-										    <a href="#"><img class="item" src="images/home4.png"></a>
-										    <a href="#"><img class="item" src="images/home5.png"></a>
-										    <a href="#"><img class="item" src="images/home6.png"></a>
-										    <a href="#"><img class="item" src="images/home7.png"></a>
-										    <a href="#"><img class="item" src="images/home8.png"></a>
-										    <a href="#"><img class="item" src="images/home.png"></a>
-										    <a href="#"><img class="item" src="images/home2.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home2.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home3.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home4.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home5.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home6.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home7.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home8.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home.png"></a>
+										    <a href="#"><img class="item" style="width:100px" src="images/home2.png"></a>
 										</div>
 									</div>
 								</div>
@@ -564,7 +565,10 @@ $('.owl-carousel').owlCarousel({
     autoplay:true,
     autoplayTimeout:1000,
     autoplayHoverPause:true,
+    autoWidth:true,
     nav: true,
+
+/*
     responsive:{
         0:{
             items:1,
@@ -576,5 +580,6 @@ $('.owl-carousel').owlCarousel({
             items:5,
         }
     }
+*/
 });
   </script>
