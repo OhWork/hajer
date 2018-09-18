@@ -16,8 +16,11 @@
 					<div class="col-12 pl-0 pr-0">
 						<img src="images/noimage.png" width="100%">
 					</div>
-					<div class="col-12" style="text-align:right;">
-						<p style="margin:0;">Shop name</p>
+					<div class="col-12 lg6 svbd">
+						Shopname
+					</div>
+					<div class="col-12 lg5">
+						Product name
 					</div>
 					<div class="col-12">
 						<div class="row">

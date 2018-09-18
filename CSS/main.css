@@ -108,3 +108,7 @@
 .svtop {
 	border-bottom:double 3px #0277BD;
 }
+.svbd {
+	padding-bottom:6px;
+	border-bottom:solid 1px #e0e0e0;
+}
