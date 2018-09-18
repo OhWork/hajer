@@ -22,9 +22,9 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>-->
-<div class="col-12" style="opacity:0.5;">
+<div class="col-12" style="opacity:0.4;">
 	<div class="row">
-		<img class="d-block w-100 h-100" src="images/mapshow.png">
+		<img class="d-block w-100 h-100" src="images/mapshow1.png">
 	</div>
 </div>
 <div class="col-12 inner_position_top">
@@ -61,5 +61,7 @@
 				</div>
 			</div>
 		</div>
+		<?php include "shopshow.php" ?>
+		<?php include "shopinterview.php" ?>
 	</div>
 </div>
