@@ -61,7 +61,3 @@
 				</div>
 			</div>
 		</div>
-		<?php include "shopshow.php" ?>
-		<?php include "shopinterview.php" ?>
-	</div>
-</div>

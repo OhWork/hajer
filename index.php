@@ -103,6 +103,10 @@
     <body>
 		<?php include "menutop.php" ?>
 		<?php include "slide.php" ?>
+		<?php include "shopshow.php" ?>
+		<?php include "shopinterview.php" ?>
+		</div>
+		</div>
 		<!--
 						<div class="col-12" style="background-color:#ffffff;height:250px;color: #0097A7;">
 							<div class="row">
@@ -211,6 +215,9 @@
 							</div>
 						</div>-->
     </body>
+	<footer>
+		<?php include "footer.php" ?>
+	</footer>
 </html>
  <script>
 feather.replace();

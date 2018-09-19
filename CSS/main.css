@@ -44,7 +44,8 @@
 }
 .lgb:hover {
 	background-color:#039BE5;
-	border:solid 1px #039BE5; 
+	border:solid 1px #039BE5;
+	color:#ffffff;
 }
 .bgw {
 	background-color:#ffffff;
@@ -111,4 +112,16 @@
 .svbd {
 	padding-bottom:6px;
 	border-bottom:solid 1px #e0e0e0;
+}
+.svbb:hover {
+	border:solid 1px #eeeeee;
+	border-radius:7px;
+}
+.svadr {
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.boxfooter {
+	margin-top: 1200px;
 }
