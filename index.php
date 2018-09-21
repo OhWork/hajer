@@ -21,11 +21,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="CSS/bootstrap.css">
         <link rel="stylesheet" href="CSS/jquery-ui.css">
-        <link rel="stylesheet" href="CSS/main.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
         <link rel="stylesheet" href="CSS/animate.min.css">
         <link rel="stylesheet" href="CSS/owl.carousel.min.css">
         <link rel="stylesheet" href="CSS/owl.theme.default.min.css">
+		<link rel="stylesheet" href="CSS/main.css">
 		<style>
 		   /* Always set the map height explicitly to define the size of the div
 	       * element that contains the map. */
