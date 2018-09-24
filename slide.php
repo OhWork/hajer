@@ -24,18 +24,19 @@
 </div>-->
 <div class="col-12" style="opacity:0.8;">
 	<div class="row">
-		<img class="d-block w-100 h-100" src="images/mapss.jpg">
+		<img class="d-block w-100 h-100"l src="images/mapss.jpg">
 	</div>
 </div>
-<div class="col-12 inner_position_top">
+<div class="inner_position_top">
+<div class="container">
 	<div class="row">
 		<div class="col-12">
 			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-8 lg7 slh">
+				<div class="col-xl-2 col-lg-1"></div>
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lg7 slh">
 					FIND THE BEST PLACES TO BE
 				</div>
-				<div class="col-2"></div>
+				<div class="col-xl-2 col-lg-1"></div>
 			</div>
 		</div>
 		<div class="col-12">

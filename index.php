@@ -107,6 +107,7 @@
 		<?php include "shopinterview.php" ?>
 		</div>
 		</div>
+		</div>
 		<!--
 						<div class="col-12" style="background-color:#ffffff;height:250px;color: #0097A7;">
 							<div class="row">

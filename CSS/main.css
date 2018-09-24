@@ -1,20 +1,12 @@
+.fl {
+	float:left;
+}
 /* menutop */
-.boxtop {
-	padding-top:5px;
-	padding-bottom:5px;
+.mgt {
+	margin-left:35%;
 }
 .hvmenu:hover {
 	opacity:.7;
-}
-.circlemenutop {
-	background-color:#f5fb50;
-	width: 40px;
-	height:40px;
-	padding-top:7px;
-	padding-left:8px;
-	float:left;
-	margin-top:5px;
-	margin-left:87%;
 }
 .menutoptext {
 	margin-left:5px;
@@ -39,14 +31,6 @@
 	background-color:#039BE5;
 	color:#bdbdbd;
 }
-.lgb {
-	border:solid 1px #039BE5; 
-}
-.lgb:hover {
-	background-color:#039BE5;
-	border:solid 1px #039BE5;
-	color:#ffffff;
-}
 .lg4 {
 	color:#0277BD;
 }
@@ -59,11 +43,22 @@
 .lg7 {
 	color:#ffffff;
 }
+.lg8 {
+	color:#EF6C00;
+}
 .bgw {
 	background-color:#ffffff;
 }
 .bgr {
 	background-color:#E53935;
+}
+.lgb {
+	border:solid 1px #039BE5; 
+}
+.lgb:hover {
+	background-color:#039BE5;
+	border:solid 1px #039BE5;
+	color:#ffffff;
 }
 /* slide */
 .boxslide {
@@ -81,8 +76,7 @@
     width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
     top:120px; /* css กำหนดชิดด้านบน  */
     z-index:999;
-	padding: 0px 150px;
-	padding-top:100px;
+	padding-top:15%;
 }
 /* on slide */
 .textos {
