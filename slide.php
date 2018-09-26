@@ -41,26 +41,26 @@
 		</div>
 		<div class="col-12">
 			<div class="row">
-				<div class="col-3"></div>
-				<div class="col-6 lg7">
+				<div class="col-xl-2 col-lg-1"></div>
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lg7">
 					<center><p>All Location - form Shop,hair cut,drugstore and more..</p></center>
 				</div>
-				<div class="col-3"></div>
+				<div class="col-xl-2 col-lg-1"></div>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="row">
-				<div class="col-2">
+				<div class="col-xl-2 col-lg-1">
 					<div class="row">
-						<div class="col-2 bgw sll"></div>
+						<div class="col-xl-2 bgw sll"></div>
 					</div>
 				</div>
-				<div class="col-8" style="height:60px;">
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12" style="height:60px;">
 					<div class="row">
-						<div class="col-3 bgw" style="height:60px;">
+						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw" style="height:60px;">
 							<input class="sip" type="text" placeholder="Keywords" />
 						</div>
-						<div class="col-3 bgw" style="border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
+						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw" style="border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
 							<div class="dropdown" style="height:58px;">
 								<div class="lg6" style="height:58px;padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<p style="float:left;">All Locations</p>
@@ -75,7 +75,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-3 bgw">
+						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw">
 							<div class="dropdown" style="height:58px;">
 								<div class="lg6" style="height:58px;padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<p style="float:left;">All Categories</p>
@@ -90,13 +90,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-3 bgr lg7 pl-5" style="height:60px;padding-top:13px;">
+						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgr lg7 pl-5" style="height:60px;padding-top:13px;">
 							<span class="mt-1" style="float:left;" data-feather="search"></span>
 							<p class="ml-2" style="font-size: 20px;float:left;">SEARCH</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-2">
+				<div class="col-xl-2 col-lg-1">
 					<div class="row">
 						<div class="col-2 bgr slr"></div>
 					</div>
