@@ -13,16 +13,16 @@
 			<div class="mx-auto col-xl-12 col-lg-12 col-md-12 col-sm-12">
 				<div class="row">
 					<div class="owl-carousel owl-theme">
-						<a href="#"><img class="item" style="width:40px;height:40px;" src="images/home.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home2.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home3.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home4.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home5.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home6.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home7.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home8.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home.png"></a>
-						<a href="#"><img class="item" style="width:40px" src="images/home2.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home2.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home3.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home4.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home5.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home6.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home7.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home8.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home2.png"></a>
 					</div>
 				</div>
 			</div>

@@ -12,10 +12,14 @@
 		text-align:center;
 	}
 	.sll {
-		display:none;
+		border-top-left-radius:0;
+		border-bottom-left-radius:0;
+		display:initial;
 	}
 	.slr {
-		display:none;
+		border-top-right-radius:0;
+		border-bottom-right-radius:0;
+		display:initial;
 	}
 	/*shopshow*/
 	.sshbox {
@@ -41,10 +45,14 @@
 		text-align:center;
 	}
 	.sll {
-		display:none;
+		border-top-left-radius:0;
+		border-bottom-left-radius:0;
+		display:initial;
 	}
 	.slr {
-		display:none;
+		border-top-right-radius:0;
+		border-bottom-right-radius:0;
+		display:initial;
 	}
 	.sshbox {
 		padding-top:150px;
@@ -74,16 +82,13 @@
 		text-align:center;
 	}
 	.sll {
-		height:56px;
-		border-top-left-radius:50%;
-		border-bottom-left-radius:50%;
-		margin-left:85%;
+		border-top-left-radius:28px;
+		border-bottom-left-radius:28px;
 		display:initial;
 	}
 	.slr {
-		height:56px;
-		border-top-right-radius:50%;
-		border-bottom-right-radius:50%;
+		border-top-right-radius:28px;
+		border-bottom-right-radius:28px;
 		display:initial;
 	}
 	.sshbox {
@@ -167,6 +172,9 @@
 	border:solid 1px #039BE5;
 	color:#ffffff;
 }
+.bts:hover {
+	background-color:#757575;
+}
 /* slide */
 .boxslide {
 	height : 570px;
@@ -196,9 +204,12 @@
 	border: none;
 	margin-top: 15px;
 }
-
-
-
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 /*shopinterview*/
 .svtop {
 	border-bottom:double 3px #0277BD;

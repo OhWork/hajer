@@ -408,7 +408,6 @@ $('.owl-carousel').owlCarousel({
     autoplayHoverPause:true,
     autoWidth:true,
     nav: true,
-
 /*
     responsive:{
         0:{

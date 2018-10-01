@@ -51,18 +51,15 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-xl-2 col-lg-1">
-					<div class="row">
-						<div class="col-xl-2 bgw sll"></div>
-					</div>
 				</div>
 				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
 					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 							<div class="row">
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw sll pl-4" style="height:59px;">
 									<input class="sip" type="text" placeholder="Keywords" />
 								</div>
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw" style="border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw" style="height:59px;border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
 									<div class="dropdown">
 										<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<p style="float:left;">All Locations</p>
@@ -100,7 +97,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-5 pt-1" style="border:none;">
+								<button type="submit" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
 									<span class="mt-2" style="float:left;" data-feather="search"></span>
 									<p class="ml-2 mt-1" style="font-size: 20px;float:left;">SEARCH</p>
 								</button>
@@ -109,9 +106,6 @@
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-1">
-					<div class="row">
-						<div class="col-2 bgr slr"></div>
-					</div>
 				</div>
 			</div>
 		</div>
