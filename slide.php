@@ -55,44 +55,56 @@
 						<div class="col-xl-2 bgw sll"></div>
 					</div>
 				</div>
-				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12" style="height:60px;">
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
 					<div class="row">
-						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw" style="height:60px;">
-							<input class="sip" type="text" placeholder="Keywords" />
-						</div>
-						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw" style="border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
-							<div class="dropdown" style="height:58px;">
-								<div class="lg6" style="height:58px;padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<p style="float:left;">All Locations</p>
-									<span style="float:right;" data-feather="chevron-down"></span>
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw">
+									<input class="sip" type="text" placeholder="Keywords" />
 								</div>
-								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton">
-									<a class="dropdown-item" href="#" style="color:#B0BEC5;">ประวัติ</a>
-									<a class="dropdown-item" href="#" style="color:#B0BEC5;">เปลี่ยนรหัสผ่าน</a>
-									<a class="dropdown-item" href="#" style="border-bottom:1px solid #ffffff;color:#B0BEC5;">แก้ไขบัญชีส่วนตัว</a>
-									<a class="dropdown-item" href="logout.php" style="color:#17a2b8;"><span data-feather="list"></span> ช่วยเหลือ</a>
-									<a class="dropdown-item" href="logout.php" style="color:#dc3545;"><span data-feather="log-out"></span> ออกจากระบบ</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgw">
-							<div class="dropdown" style="height:58px;">
-								<div class="lg6" style="height:58px;padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<p style="float:left;">All Categories</p>
-									<span style="float:right;" data-feather="chevron-down"></span>
-								</div>
-								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton">
-									<a class="dropdown-item" href="#" style="color:#B0BEC5;">ประวัติ</a>
-									<a class="dropdown-item" href="#" style="color:#B0BEC5;">เปลี่ยนรหัสผ่าน</a>
-									<a class="dropdown-item" href="#" style="border-bottom:1px solid #ffffff;color:#B0BEC5;">แก้ไขบัญชีส่วนตัว</a>
-									<a class="dropdown-item" href="logout.php" style="color:#17a2b8;"><span data-feather="list"></span> ช่วยเหลือ</a>
-									<a class="dropdown-item" href="logout.php" style="color:#dc3545;"><span data-feather="log-out"></span> ออกจากระบบ</a>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw" style="border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
+									<div class="dropdown">
+										<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<p style="float:left;">All Locations</p>
+											<span style="float:right;" data-feather="chevron-down"></span>
+										</div>
+										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton">
+											<a class="dropdown-item" href="#">
+												<input class="sip" type="text" placeholder="Location" />
+											</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Dusit</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Prakanong</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Jomthong</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Prayathai</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 bgr lg7 pl-5" style="height:60px;padding-top:13px;">
-							<span class="mt-1" style="float:left;" data-feather="search"></span>
-							<p class="ml-2" style="font-size: 20px;float:left;">SEARCH</p>
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw">
+									<div class="dropdown">
+										<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<p style="float:left;">All Categories</p>
+											<span style="float:right;" data-feather="chevron-down"></span>
+										</div>
+										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton2">
+											<a class="dropdown-item" href="#">
+												<input class="sip" type="text" placeholder="Categories" />
+											</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Store</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Drug Store</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Phone Shop</a>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Hair Cut</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-5" style="padding-top:10px;">
+									<span class="mt-1" style="float:left;" data-feather="search"></span>
+									<p class="ml-2" style="font-size: 20px;float:left;">SEARCH</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
