@@ -100,10 +100,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-5" style="padding-top:10px;">
-									<span class="mt-1" style="float:left;" data-feather="search"></span>
-									<p class="ml-2" style="font-size: 20px;float:left;">SEARCH</p>
-								</div>
+								<button class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-5 pt-1" style="border:none;">
+									<span class="mt-2" style="float:left;" data-feather="search"></span>
+									<p class="ml-2 mt-1" style="font-size: 20px;float:left;">SEARCH</p>
+								</button>
 							</div>
 						</div>
 					</div>
