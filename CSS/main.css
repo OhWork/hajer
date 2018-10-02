@@ -35,6 +35,10 @@
 	.psl {
 		width:35px;
 	}
+	.ics {
+	width:30px;
+	height:30px;
+	}
 }
 @media (min-width: 768px){
 	.inner_position_top{
@@ -72,6 +76,10 @@
 	.psl {
 		width:35px;
 	}
+	.ics {
+	width:40px;
+	height:40px;
+	}
 }
 @media (min-width: 992px){
 	.inner_position_top{
@@ -108,6 +116,10 @@
 	}
 	.psl {
 		width:35px;
+	}
+	.ics {
+	width:60px;
+	height:60px;
 	}
 }
 .fl {

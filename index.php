@@ -422,5 +422,6 @@ $('.owl-carousel').owlCarousel({
     }
 */
 });
+$('.owl-item').addClass('ics');
 $('.img-responsive').addClass('ics');
   </script>
