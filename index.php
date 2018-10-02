@@ -401,7 +401,7 @@ feather.replace();
       }
 $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:55,
+    margin:48,
     responsiveClass:true,
     autoplay:true,
     autoplayTimeout:1000,
@@ -423,6 +423,5 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
-$('.owl-item').addClass('ics');
 $('.img-responsive').addClass('ics');
   </script>

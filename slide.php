@@ -56,7 +56,7 @@
 					<div class="row">
 						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 							<div class="row">
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw sll pl-4" style="height:59px;">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 pl-4 bgw sll" style="height:59px;">
 									<input class="sip" type="text" placeholder="Keywords" />
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw" style="height:59px;border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
