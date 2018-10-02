@@ -12,7 +12,7 @@
 	                </a>
 	                <a class="nav-link dropuser" href="admin_index.php?url=show_provinces.php">
 	                   <span data-feather="chevron-right"></span>รายการจังหวัด
-	                <a class="nav-link dropuser" href="#">
+	                <a class="nav-link dropuser" href="admin_index.php?url=log.php">
 	                   <span data-feather="chevron-right"></span>Log-การใช้งาน
 	                </a>
                 </ul>

@@ -75,7 +75,7 @@ class textfieldcalendarreadonly{
 					placeholder='{$this->hold}' readonly/>
 					<label for='{$this->labelfor}'
 					class='{$this->classlabel}'>
-					<img src='images/icons/calendar.png'/>
+					<img src='../images/icons/calendar.png'/>
 					</label>";
 		}
 	}
