@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-     <?php    include '../inc_js.php';
-              include 'form/main_form.php';
-              include 'form/gridview.php';
+     <?php    include 'inc_js.php';
+              include '../form/main_form.php';
+              include '../form/gridview.php';
               include 'database/db_tools.php';
               include 'connect.php';
       ?>
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="../CSS/floating-labels.css">
     <link rel="stylesheet" href="../CSS/sticky-footer.css">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="../CSS/jquery-ui.css"> 
+    <link rel="stylesheet" href="../CSS/jquery-ui.css">
     <link rel="stylesheet" href="../CSS/main.css">
-    
+
   </head>
 
   <body>

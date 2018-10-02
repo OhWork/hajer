@@ -6,6 +6,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>เข้าสู่ระบบ</title>
+	<?php
+			  include 'inc_js.php';
+              include 'form/main_form.php';
+              include 'form/gridview.php';
+              include 'village/database/db_tools.php';
+              include 'village/connect.php';
+      ?>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="CSS/bootstrap.css">

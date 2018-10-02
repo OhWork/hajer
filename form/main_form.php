@@ -322,7 +322,7 @@ class labeladdday{
 		include_once 'village/database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK($table,$type,$id)->execute();
-		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
+		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'s>
 			<option value=''>
 			-----{$this->lists}-----
 			</option>

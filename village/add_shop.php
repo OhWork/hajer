@@ -35,21 +35,23 @@
 	 $selectcatshop = new selectFromDB();
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
+	 $selectcatshop->value = '1';
 	 @$id = $_GET['id'];
-	 $r = $db->findByPK('shop','shop_id',$id)->executeRow();
+	 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
 	 $nameshop->value = $r['shop_name'];
 	 $detailshop->value = $r['shop_detail'];
 	 $ocshop->value = $r['shop_oc'];
 	 $ratepriceshop->value = $r['shop_rateprice'];
 	 $placeshop->value = $r['chop_place'];
 	 $picshop->value = $r['shop_pic'];
+	 $selectcatshop->value = $r['typeshop_id'];
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
-			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name',''); ?></div>
+			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?></div>
 		</div>
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
@@ -73,7 +75,7 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshop; ?></div>
-			<div class='col-md-8'><?php echo $ratepriceshop; ?></div>
+			<div class='col-md-8'>500<input type="range" name="points" min="500" max="2500">2500</div>
 		</div>
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
@@ -89,7 +91,7 @@
 			<?php
 				if(!empty($id)){
 			?>
-			<div class='col-md-2 text-danger'><u><?php echo $r['shop_pic']; ?></u></div>
+			<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>.jpg' width='100px' height='100px'></div>
 			<?php
 				}
 			?>
@@ -97,19 +99,19 @@
 	 </div>
 	 <div class="col-12" style="margin-bottom: 16px;">
 		 <div class='row'>
-				<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbgoogleshop; ?></div>
+				<div class='col-md-' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbgoogleshop; ?></div>
 				<div id="map_canvas" class="col-md-8" style="padding-right: 0;padding-left: 0;padding-top:7px;"></div>
 		 </div>
 	</div>
 	 <div class='col-md-12'>
 		<div class='row'>
-			<div class='col-md-8'>
-				<input type="text" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
-			</div>
 			<div class='col-md-2'>
+				<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
+			</div>
+			<div class='col-md-5'>
 				<?php echo $button; ?>
 			</div>
-			<div class='col-md-2'>
+			<div class='col-md-5'>
 				<button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button>
 			</div>
 		</div>

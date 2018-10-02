@@ -15,7 +15,7 @@
      		} );
  </script>
  <div class="col-md-12">
-  <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_typeshop.php">เพิ่มข้อมูล</a></button>
+  <a class="text-light" href="admin_index.php?url=add_typeshop.php"><button type="button" class="btn btn-dark mt-3 mb-3">เพิ่มข้อมูล</button></a>
  </div>
  <div class="col-md-12">
 <?php
@@ -25,7 +25,7 @@
 			$grid = new gridView();
 			$grid->pr = 'typeshop_id';
 			$grid->header = array('<b><center>ชื่อประเภทร้านค้า</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-			$grid->width = array('80%','10%','10%');
+			$grid->width = array('90%','5%','5%');
 			$grid->name = 'table';
 			$grid->delete = '#';
 			$grid->deletetxt ='ลบ';

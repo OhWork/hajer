@@ -1,3 +1,9 @@
+<?php
+ $form = new form();
+ $lbsearch = new label('ค้นหาตำบล');
+ $txtsearch = new textfield('search','','form-control css-require','','');
+ $button = new buttonok('ค้นหา','','btn btn-primary col-12','submit');
+?>
  <script>
             $(document).ready(function() {
 
@@ -15,20 +21,48 @@
      		} );
  </script>
  <div class="col-md-12">
-  <button type="button" class="btn btn-dark mt-3 mb-3"><a class="text-light" href="admin_index.php?url=add_subdistrict.php">เพิ่มข้อมูล</a></button>
+	 <div class="row">
+		 <div class="col-md-6">
+		 	<a class="text-light" href="admin_index.php?url=add_subdistrict.php"><button type="button" class="btn btn-dark mt-3 mb-3">เพิ่มข้อมูล</button></a>
+	 	 </div>
+	 	 <?php
+		 	 echo $form->open('','','col-md-6 mt-3','','');
+	 	 ?>
+	 	 	<div class="row">
+		 	 <div class="col-md-2">
+			 	 <?php
+				 	 echo $lbsearch;
+				 ?>
+		 	 </div>
+		 	 <div class="col-md-8">
+				 <?php
+				 	 echo $txtsearch;
+			 	 ?>
+		 	 </div>
+		 	 <div class="col-md-2">
+			 	  <?php
+				 	 echo $button;
+			 	 ?>
+		 	 </div>
+	 	 	</div>
+	 	 	<?php echo $form->close();?>
+	 </div>
  </div>
  <div class="col-md-12">
 <?php
-    $columns = array('name_in_thai','name_in_english','latitude','longitude');
-    $rs = $db->findAll('subdistricts')->execute();
+	if($_POST){
+		$search =$_POST['search'];
+	    $columns = array('name_in_thai','name_in_english','latitude','longitude');
+		$rs = $db->specifytable('*','subdistricts',"name_in_thai LIKE '%{$search}%'")->execute();
 
-			$grid = new gridView();
-			$grid->pr = 'id';
-			$grid->header = array('<b><center>ชื่อจังหวัดภาษาไทย</center></b>','<b><center>ชื่อจังหวัดภาษาอังกฤษ</center></b>','<b><center>ละติจูด</center></b>','<b><center>ลองติจูด</center></b>','<b><center>#</center></b>');
-			$grid->width = array('20%','20%','10%','10%','10%','10%');
-			$grid->name = 'table';
-			$grid->edit = 'admin_index.php?url=add_subdistrict.php';
-			$grid->edittxt ='แก้ไข';
-			$grid->renderFromDB($columns,$rs);
+				$grid = new gridView();
+				$grid->pr = 'id';
+				$grid->header = array('<b><center>ชื่อจังหวัดภาษาไทย</center></b>','<b><center>ชื่อจังหวัดภาษาอังกฤษ</center></b>','<b><center>ละติจูด</center></b>','<b><center>ลองติจูด</center></b>','<b><center>#</center></b>');
+				$grid->width = array('20%','20%','10%','10%','10%','10%');
+				$grid->name = 'table';
+				$grid->edit = 'admin_index.php?url=add_subdistrict.php';
+				$grid->edittxt ='แก้ไข';
+				$grid->renderFromDB($columns,$rs);
+	}
    ?>
  </div>
