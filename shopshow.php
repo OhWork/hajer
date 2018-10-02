@@ -23,6 +23,12 @@
 						<a class="item" href="#"><img class="img-responsive" src="images/home8.png"></a>
 						<a class="item" href="#"><img class="img-responsive" src="images/home.png"></a>
 						<a class="item" href="#"><img class="img-responsive" src="images/home2.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home3.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home4.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home5.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home6.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home7.png"></a>
+						<a class="item" href="#"><img class="img-responsive" src="images/home8.png"></a>
 					</div>
 				</div>
 			</div>

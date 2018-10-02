@@ -401,26 +401,27 @@ feather.replace();
       }
 $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:55,
     responsiveClass:true,
     autoplay:true,
     autoplayTimeout:1000,
     autoplayHoverPause:true,
     autoWidth:true,
-    nav: true,
-/*
+    dots: true,
     responsive:{
-        0:{
-            items:1,
+       0:{
+            items:1
         },
         600:{
-            items:3,
+            items:3
         },
-        1000:{
-            items:5,
+        960:{
+            items:5
+        },
+        1200:{
+            items:6
         }
     }
-*/
 });
 $('.owl-item').addClass('ics');
 $('.img-responsive').addClass('ics');
