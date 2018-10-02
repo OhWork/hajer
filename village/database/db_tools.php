@@ -134,7 +134,10 @@
 			$this->sql = "SELECT $tablemain FROM $table WHERE $condition";
 			return $this;
 		}
-
+		function specifytableNoWhere($tablemain,$table,$condition){
+			$this->sql = "SELECT $tablemain FROM $table $condition";
+			return $this;
+		}
 		function in($table,$field,$value){
 			$_value ="";
 			$count = 0;

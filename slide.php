@@ -69,10 +69,14 @@
 											<a class="dropdown-item" href="#">
 												<input class="sip" type="text" placeholder="Location" />
 											</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Dusit</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Prakanong</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Jomthong</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Prayathai</a>
+											<?php
+												$rs = $db->specifytableNoWhere('*','districts','ORDER BY RAND() LIMIT 4')->execute();
+												foreach ($rs as $showrs){
+											?>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs['name_in_thai'];?></a>
+											<?php
+												}
+											?>
 										</div>
 									</div>
 								</div>
@@ -90,10 +94,14 @@
 											<a class="dropdown-item" href="#">
 												<input class="sip" type="text" placeholder="Categories" />
 											</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Store</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Drug Store</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Phone Shop</a>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;">Hair Cut</a>
+											<?php
+												$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
+												foreach ($rs2 as $showrs2){
+											?>
+											<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs2['typeshop_name'];?></a>
+											<?php
+												}
+											?>
 										</div>
 									</div>
 								</div>
