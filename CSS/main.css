@@ -23,7 +23,7 @@
 	}
 	/*shopshow*/
 	.sshbox {
-		padding-top:50px;
+		padding-top:20px;
 		padding-bottom:50px;
 	}
 	.ssh {
@@ -58,13 +58,9 @@
 		border-bottom-right-radius:0;
 		display:initial;
 	}
-	.sshbox {
-		padding-top:150px;
-		padding-bottom:50px;
-	}
 	/*shopshow*/
 	.sshbox {
-		padding-top:50px;
+		padding-top:90px;
 		padding-bottom:50px;
 	}
 	.ssh {
@@ -99,13 +95,9 @@
 		border-bottom-right-radius:28px;
 		display:initial;
 	}
-	.sshbox {
-		padding-top:150px;
-		padding-bottom:50px;
-	}
 	/*shopshow*/
 	.sshbox {
-		padding-top:50px;
+		padding-top:270px;
 		padding-bottom:50px;
 	}
 	.ssh {
