@@ -399,7 +399,10 @@ feather.replace();
       if(!navigator.geolocation) {
         alert('Your browser does not support geolocation');
       }
-$('.owl-carousel').owlCarousel({
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    animateOut: 'fadeOutLeft',
+    animateIn: 'fadeInRight',
     loop:true,
     margin:48,
     responsiveClass:true,

@@ -22,12 +22,12 @@
  </div>
  <div class="col-md-12">
 <?php
-    $columns = array('shop_name','shop_detail','shop_oc','shop_rateprice','chop_place','member_member_id');
+    $columns = array('shop_name','shop_detail','shop_oc','shop_ratepricemin','shop_ratepricemax','chop_place','member_member_id');
     $rs = $db->findByPK2('shop','member','shop.member_member_id','member.member_id')->execute();
 
 			$grid = new gridView();
 			$grid->pr = 'shop_id';
-			$grid->header = array('<b><center>ชื่อร้านค้า</center></b>','<b><center>รายละเอียดร้าน</center></b>','<b><center>เวลาเปิด-ปิด</center></b>','<b><center>เรทราคาของร้าน</center></b>','<b><center>สถานที่ตั้งของร้าน</center></b>','<b><center>ชื่อเจ้าของร้าน</center></b>','<b><center>#</center></b>');
+			$grid->header = array('<b><center>ชื่อร้านค้า</center></b>','<b><center>รายละเอียดร้าน</center></b>','<b><center>เวลาเปิด-ปิด</center></b>','<b><center>เรทราคาต่ำสุดของร้าน</center></b>','<b><center>เรทราคาสูงสุดของร้าน</center></b>','<b><center>สถานที่ตั้งของร้าน</center></b>','<b><center>ชื่อเจ้าของร้าน</center></b>','<b><center>#</center></b>');
 			$grid->width = array('20%','10%','20%','10%','10%','10%','5%','5%');
 			$grid->name = 'table';
 			$grid->edit = 'admin_index.php?url=add_shop.php';

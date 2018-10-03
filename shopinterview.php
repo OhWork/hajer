@@ -26,16 +26,13 @@
 				?>
 				<div class="col-3 svbb pb-3">
 					<div class="col-12 pl-0 pr-0 mt-3">
-						<img src="images/maps.png" width="100%" height="200" style="border-radius:20px;" />
+						<img src="images/shop/<?php echo $showrs['shop_pic'];?>.jpg" width="100%" height="200" style="border-radius:20px;" />
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
 						<?php echo $showrs['shop_name'];?>
 					</div>
-					<div class="col-12 lg6 mt-2">
-						Last up date: 2 hours ago
-					</div>
 					<div class="col-12 lg5">
-						<?php echo $showrs['shop_rateprice']?>
+						<?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>
 					</div>
 					<div class="col-12 lg6 mt-3">
 						<div class="row">
@@ -57,7 +54,7 @@
 						</div>
 					</div>
 					<div class="col-12 mt-2">
-						<div class="btn lg6 lgb w-100">Show Phone Number</div>
+						<div class="btn lg6 lgb w-100">ดูรายละเอียดเพิ่มเติม</div>
 					</div>
 				</div>
 				<?php

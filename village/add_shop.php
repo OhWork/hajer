@@ -27,24 +27,26 @@
 	 $lbpicshop = new label('รูปภาพของร้านค้า');
 	 $ocshop = new textfield('shop_oc','','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
-	 $ratepriceshop = new textfield('shop_rate','','form-control','','');
-	 $lbratepriceshop = new label('เรทราคา');
+	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','','');
+	 $lbratepriceshopmin = new label('เรทราคาต่ำสุด');
+	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','','');
+	 $lbratepriceshopmax = new label('เรทราคาสูงสุด');
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
 	 $selectcatshop = new selectFromDB();
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
-	 $selectcatshop->value = '1';
 	 @$id = $_GET['id'];
 	 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
 	 $nameshop->value = $r['shop_name'];
 	 $detailshop->value = $r['shop_detail'];
 	 $ocshop->value = $r['shop_oc'];
-	 $ratepriceshop->value = $r['shop_rateprice'];
+	 $ratepriceshopmin->value = $r['shop_ratepricemin'];
+	 $ratepriceshopmax->value = $r['shop_ratepricemax'];
 	 $placeshop->value = $r['chop_place'];
 	 $picshop->value = $r['shop_pic'];
-	 $selectcatshop->value = $r['typeshop_id'];
+	 $selectcatshop->value  = $r['typeshop_id'];
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
@@ -74,8 +76,14 @@
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshop; ?></div>
-			<div class='col-md-8'>500<input type="range" name="points" min="500" max="2500">2500</div>
+			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshopmin; ?></div>
+			<div class='col-md-8'><?php echo $ratepriceshopmin; ?></div>
+		</div>
+	 </div>
+	 <div class='col-md-12' style="margin-bottom: 16px;">
+		<div class='row'>
+			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshopmax; ?></div>
+			<div class='col-md-8'><?php echo $ratepriceshopmax; ?></div>
 		</div>
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
