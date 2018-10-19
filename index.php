@@ -103,7 +103,6 @@
     <body>
 		<?php include "menutop.php" ?>
 		<?php include "slide.php" ?>
-		<?php include "shopshow.php" ?>
 		<?php include "shopinterview.php" ?>
 		</div>
 		</div>
