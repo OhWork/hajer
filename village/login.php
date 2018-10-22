@@ -30,32 +30,47 @@
 	$text_user = new textfield('member_username','inputEmail','form-control','Email address');
 	$text_pass = new pass('member_password','form-control','Password','inputPassword');
 	$submit = new buttonok('Login','','btn btn-lg btn-primary btn-block col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','');
-	echo $form->open('','','form-signin','check_login.php','');
+	echo $form->open('','','col-12','check_login.php','');
     ?>
-
-      <div class="text-center mb-4">
-<!--         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-        <h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
-      </div>
-
-      <div class="form-label-group">
-        <?php echo $text_user; ?>
-        <label for="inputEmail">User</label>
-      </div>
-
-      <div class="form-label-group">
-<!--         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
-            <?php echo $text_pass; ?>
-        <label for="inputPassword">Password</label>
-      </div>
-
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted text-center">&copy; 2014-2018</p>
+<div class="col-12 text-center">
+	<img height="100px;" src="images/Hajers2.png">
+</div>
+<div class="col-12 text-center mb-4">
+	<h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
+</div>
+<div class="col-12">
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-4" style="border-right: 1px solid #039BE5;">
+			<div class="form-label-group">
+				<?php echo $text_user; ?>
+				<label for="inputEmail">User</label>
+			</div>
+			<div class="form-label-group">
+				<!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
+				<?php echo $text_pass; ?>
+				<label for="inputPassword">Password</label>
+			</div>
+			<div class="checkbox mb-3">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		</div>
+		<div class="col-4">
+			<div class="row">
+				<div class="col-12 mt-5">
+					<a class="btn btn-primary col-12 pt-3 pb-3"><span data-feather="facebook"></span>Sign in with Facebook</a>
+				</div>
+				<div class="col-12 mt-3">
+					<a class="btn btn-danger col-12 pt-3 pb-3">Sing in with Google</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-2"></div>
+	</div>
+</div>
    <?php echo $form->close();?>
   </body>
 </html>
