@@ -35,8 +35,8 @@
 <div class="col-12 text-center">
 	<img height="100px;" src="images/Hajers2.png">
 </div>
-<div class="col-12 text-center mb-4">
-	<h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
+<div class="col-12 text-center mb-4 lg2">
+	<h1 class="h3 mb-3 font-weight-normal">Login</h1>
 </div>
 <div class="col-12">
 	<div class="row">
@@ -61,10 +61,10 @@
 		<div class="col-4">
 			<div class="row">
 				<div class="col-12 mt-5">
-					<a class="btn btn-primary col-12 pt-3 pb-3"><span data-feather="facebook"></span>Sign in with Facebook</a>
+					<button class="btn btn-primary col-12 pt-3 pb-3"><span data-feather="facebook"></span>Sign in with Facebook</button>
 				</div>
 				<div class="col-12 mt-3">
-					<a class="btn btn-danger col-12 pt-3 pb-3">Sing in with Google</a>
+					<button class="btn btn-danger col-12 pt-3 pb-3">Sing in with Google</button>
 				</div>
 			</div>
 		</div>
