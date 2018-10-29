@@ -24,7 +24,7 @@
 </div>-->
 <div class="col-12" style="opacity:0.8;">
 	<div class="row">
-		<img class="d-block w-100 h-100"l src="images/mapss.jpg">
+		<img class="d-block w-100 h-100" src="images/mapss.jpg">
 	</div>
 </div>
 <div class="inner_position_top">
@@ -54,63 +54,34 @@
 				</div>
 				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
 					<div class="row">
-						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-							<div class="row">
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 pl-4 bgw sll" style="height:59px;">
-									<input class="sip" type="text" placeholder="Keywords" />
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-4 bgw sll br2" style="height:59px;">
+							<input class="sip" type="text" placeholder="Keywords" />
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgw">
+							<div class="dropdown">
+								<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<p style="float:left;">All Categories</p>
+									<span style="float:right;" data-feather="chevron-down"></span>
 								</div>
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw" style="height:59px;border-left:solid 1px #E0E0E0;border-right:solid 1px #E0E0E0;">
-									<div class="dropdown">
-										<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<p style="float:left;">All Locations</p>
-											<span style="float:right;" data-feather="chevron-down"></span>
-										</div>
-										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton">
-											<a class="dropdown-item" href="#">
-												<input class="sip" type="text" placeholder="Location" />
-											</a>
-											<?php
-												$rs = $db->specifytableNoWhere('*','districts','ORDER BY RAND() LIMIT 4')->execute();
-												foreach ($rs as $showrs){
-											?>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs['name_in_thai'];?></a>
-											<?php
-												}
-											?>
-										</div>
-									</div>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton2">
+									<a class="dropdown-item" href="#">
+										<input class="sip" type="text" placeholder="Categories" />
+									</a>
+									<?php
+										$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
+										foreach ($rs2 as $showrs2){
+									?>
+									<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs2['typeshop_name'];?></a>
+									<?php
+									}
+									?>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-							<div class="row">
-								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgw">
-									<div class="dropdown">
-										<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<p style="float:left;">All Categories</p>
-											<span style="float:right;" data-feather="chevron-down"></span>
-										</div>
-										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton2">
-											<a class="dropdown-item" href="#">
-												<input class="sip" type="text" placeholder="Categories" />
-											</a>
-											<?php
-												$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
-												foreach ($rs2 as $showrs2){
-											?>
-											<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs2['typeshop_name'];?></a>
-											<?php
-												}
-											?>
-										</div>
-									</div>
-								</div>
-								<button type="submit" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
-									<span class="mt-2" style="float:left;" data-feather="search"></span>
-									<p class="ml-2 mt-1" style="font-size: 20px;float:left;">SEARCH</p>
-								</button>
-							</div>
-						</div>
+						<button type="submit" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
+							<span class="mt-2" style="float:left;" data-feather="search"></span>
+							<p class="ml-2 mt-1" style="font-size: 20px;float:left;">SEARCH</p>
+						</button>
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-1">
