@@ -102,8 +102,8 @@
 	</head>
     <body>
 		<?php include "menutop.php" ?>
-		<?php include "shopopen.php" ?>
-		<?php// include "shopinterview.php" ?>
+		<?php include "slide.php" ?>
+		<?php include "shopinterview.php" ?>
 		</div>
 		</div>
 		</div>
