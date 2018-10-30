@@ -20,7 +20,7 @@
      $form = new form();
 	 $nameshop = new textfield('shop_name','','form-control','','');
 	 $lbnameshop = new label('ชื่อร้านค้า : ');
-	 $lbnameshop = new label('ประเภทร้านค้า : ');
+	 $lbtypeshop = new label('ประเภทร้านค้า : ');
 	 $detailshop = new textfield('shop_detail','','form-control','','');
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
@@ -38,21 +38,23 @@
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
 	 @$id = $_GET['id'];
-	 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
-	 $nameshop->value = $r['shop_name'];
-	 $detailshop->value = $r['shop_detail'];
-	 $ocshop->value = $r['shop_oc'];
-	 $ratepriceshopmin->value = $r['shop_ratepricemin'];
-	 $ratepriceshopmax->value = $r['shop_ratepricemax'];
-	 $placeshop->value = $r['chop_place'];
-	 $picshop->value = $r['shop_pic'];
-	 $selectcatshop->value  = $r['typeshop_id'];
+	 if(!empty($id)){
+		 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
+		 $nameshop->value = $r['shop_name'];
+		 $detailshop->value = $r['shop_detail'];
+		 $ocshop->value = $r['shop_oc'];
+		 $ratepriceshopmin->value = $r['shop_ratepricemin'];
+		 $ratepriceshopmax->value = $r['shop_ratepricemax'];
+		 $placeshop->value = $r['chop_place'];
+		 $picshop->value = $r['shop_pic'];
+		 $selectcatshop->value  = $r['typeshop_id'];
+	 }
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
+			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbtypeshop; ?></div>
 			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?></div>
 		</div>
 	 </div>
@@ -124,7 +126,7 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="idnaja" value="<?php echo $id;?>">
+	<input type="text" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
@@ -256,19 +258,19 @@
 	                    draggable:true,
 	                });
 			}
-	  	$.ajax({
-            type: "POST",
-            url: "getmarker.php",
-            data: {checkid : $('#idnaja').val()},
-            dataType: "json",
-            success: function(data) {
-				var latt =  parseFloat(data.shop_locationx);
-				var lngg =  parseFloat(data.shop_locationy);
-				console.log(data);
-				var uluru = {lat: latt, lng: lngg};
-	            initMap(uluru);
-            }
-        });
+		  	$.ajax({
+	            type: "POST",
+	            url: "getmarker.php",
+	            data: {checkid : $('#idnaja').val()},
+	            dataType: "json",
+	            success: function(data) {
+					var latt =  parseFloat(data.shop_locationx);
+					var lngg =  parseFloat(data.shop_locationy);
+					console.log(data);
+					var uluru = {lat: latt, lng: lngg};
+		            initMap(uluru);
+	            }
+	        });
       }
     </script>
 <?php 	echo $form->close(); ?>
