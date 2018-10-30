@@ -1,8 +1,10 @@
 <?php
     include_once 'village/database/db_tools.php';
     include_once 'village/connect.php';
+/*
     include_once 'form/main_form.php';
     include_once 'form/gridview.php';
+*/
 
 function parseToXML($htmlStr)
 {
@@ -31,10 +33,12 @@ while ($row = @mysqli_fetch_assoc($rs)){
   echo 'shopname="' . parseToXML($row['shop_name']) . '" ';
   echo 'detailshop="' . parseToXML($row['shop_detail']) . '" ';
   echo 'ocshop="'. parseToXML($row['shop_oc']) . '" ';
-  echo 'priceshop="'. parseToXML($row['shop_rateprice']) . '" ';
+  echo 'priceshopmin="'. parseToXML($row['shop_ratepricemin']) . '" ';
+  echo 'priceshopmax="'. parseToXML($row['shop_ratepricemax']) . '" ';
   echo 'placeshop="'. parseToXML($row['chop_place']) . '" ';
   echo 'lat="' . $row['shop_locationx'] . '" ';
   echo 'lng="' . $row['shop_locationy'] . '" ';
+  echo 'typeshop="' . $row['typeshop_typeshop_id'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
