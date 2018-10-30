@@ -147,6 +147,9 @@
 .bb1 {
 	border-bottom:solid 1px #039BE5;
 }
+.bb2 {
+	border-bottom:solid 1px #ffffff;
+}
 /* slide */
 .boxslide {
 	height : 570px;
