@@ -12,12 +12,14 @@
 		$target_dir = 'temp/';
 			$target_file = $target_dir.basename($_FILES['typepic']['name']);
 			$path = '../images/icons/';
+			$pathindb = '/images/icons/';
 			$target_dir_save = $path.basename($_FILES['typepic']['name']);
+			$insertindb = $pathindb.basename($_FILES['typepic']['name']);
 			move_uploaded_file($_FILES['typepic']['tmp_name'], $target_dir_save);
 
 			@$rs = $db->insert('typeshop',array(
 			'typeshop_name' => $_POST['typeshop_name'],
-			'typeshop_pathpic' =>$target_dir_save
+			'typeshop_pathpic' =>$insertindb
 			));
 /*
                 //Log
