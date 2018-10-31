@@ -52,10 +52,11 @@
 			<div class="row">
 				<div class="col-xl-2 col-lg-1">
 				</div>
-				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+			<form action="shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-12 col-sm-12" accept-charset="utf-8">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="row">
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-4 bgw sll br2" style="height:59px;">
-							<input class="sip" type="text" placeholder="Keywords" />
+							<input class="sip" name="keyword" type="text" placeholder="Keywords" />
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgw">
 							<div class="dropdown">
@@ -65,7 +66,7 @@
 								</div>
 								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton2">
 									<a class="dropdown-item" href="#">
-										<input class="sip" type="text" placeholder="Categories" />
+										<input class="sip" name="cat" type="text" placeholder="Categories" />
 									</a>
 									<?php
 										$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
@@ -78,12 +79,13 @@
 								</div>
 							</div>
 						</div>
-						<button href=shopshow.php type="submit" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
+						<button type="submit" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
 							<span class="mt-2" style="float:left;" data-feather="search"></span>
 							<p class="ml-2 mt-1" style="font-size: 20px;float:left;">SEARCH</p>
 						</button>
 					</div>
 				</div>
+			</form>
 				<div class="col-xl-2 col-lg-1">
 				</div>
 			</div>
