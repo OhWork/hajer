@@ -102,8 +102,10 @@
     <body>
 		<?php include "menutop.php" ?>
 		<?php include "content.php" ?>
+		
 		</div>
 		</div>
+		<?php include "footer.php" ?>
 		</div>
 		<!--
 						<div class="col-12" style="background-color:#ffffff;height:250px;color: #0097A7;">
@@ -214,7 +216,7 @@
 						</div>-->
     </body>
 	<footer>
-		<?php include "footer.php" ?>
+		
 	</footer>
 </html>
  <script>
