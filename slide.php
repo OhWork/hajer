@@ -52,7 +52,7 @@
 			<div class="row">
 				<div class="col-xl-2 col-lg-1">
 				</div>
-			<form action="shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-12 col-sm-12" accept-charset="utf-8">
+			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-12 col-sm-12" accept-charset="utf-8">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="row">
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-4 bgw sll br2" style="height:59px;">
