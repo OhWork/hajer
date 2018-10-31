@@ -12,35 +12,35 @@
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 mt-3 pt-3">
 			<div class="row">
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1" style="border-bottom:solid 2px #039BE5;">
 					<div class="row">
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>ชื่อร้าน</p>
+									<p><b>ชื่อร้าน</b></p>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>เบอร์โทรติดต่อ</p>
+									<p><b>เบอร์โทรติดต่อ</b></p>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>ระยะทาง(กิโลเมตร)</p>
+									<p><b>ระยะทาง(กิโลเมตร)</b></p>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>ระดับความพึงพอใจ</p>
+									<p><b>ระดับความพึงพอใจ</b></p>
 								</div>
 							</div>
 						</div>
@@ -49,7 +49,7 @@
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 			</div>
 		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 			<div class="row">
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
