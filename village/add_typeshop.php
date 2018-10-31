@@ -4,6 +4,8 @@
 	$form = new form();
 	$typeshop = new textfield('typeshop_name','','form-control','','');
 	$lbtypeshop = new label('ประเภทร้านค้า: ');
+	$lbpictype = new label('รูปไอคอนประเภทร้านค้า: ');
+	$filepic = new inputFile('typepic','','');
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
 <div class='col-md-6'>
@@ -13,6 +15,12 @@
 								<div class='row'>
 									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbtypeshop; ?></div>
 									<div class='col-md-8'><?php echo $typeshop; ?></div>
+								</div>
+							</div>
+							<div class='col-md-12' style="margin-bottom: 16px;">
+								<div class='row'>
+									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbpictype; ?></div>
+									<div class='col-md-8'><?php echo $filepic; ?></div>
 								</div>
 							</div>
 						</div>
