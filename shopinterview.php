@@ -2,7 +2,7 @@
 	$rs = $db->findAll('shop')->execute();
 
 ?>
-<div class="col-12 mt-5">
+<div class="col-12 bmd">
 	<div class="row">
 		<div class="col-12 svtop">
 			<div class="row">

@@ -202,6 +202,9 @@ button:focus {
 	overflow:hidden;
 	text-overflow: ellipsis;
 }
+.bmd {
+	margin-top: 450px;
+}
 .boxfooter {
-	margin-top: 1200px;
+	margin-top: 16px;
 }
