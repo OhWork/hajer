@@ -54,7 +54,7 @@
 						</div>
 					</div>
 					<div class="col-12 mt-2">
-						<div class="btn lg6 lgb w-100">ดูรายละเอียดเพิ่มเติม</div>
+						<div class="btn lg6 lgb w-100"><a href="index.php?url=shopopen.php&id=<?php echo $showrs['shop_id'];?>">ดูรายละเอียดเพิ่มเติม</a></div>
 					</div>
 				</div>
 				<?php
