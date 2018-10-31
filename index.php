@@ -101,9 +101,7 @@
 	</head>
     <body>
 		<?php include "menutop.php" ?>
-		<?php include "slide.php" ?>
-		<?php include "shopinterview.php" ?>
-		<?php include "map.php" ?>
+		<?php include "content.php" ?>
 		</div>
 		</div>
 		</div>
