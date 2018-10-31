@@ -17,7 +17,7 @@ return $xmlStr;
 }
 
 // Select all the rows in the markers table
- $rs = $db->findAll('shop')->execute();
+ $rs = $db->findByPK2('shop','typeshop','shop.typeshop_typeshop_id','typeshop.typeshop_id')->execute();
 
 header("Content-type: text/xml");
 
@@ -39,6 +39,7 @@ while ($row = @mysqli_fetch_assoc($rs)){
   echo 'lat="' . $row['shop_locationx'] . '" ';
   echo 'lng="' . $row['shop_locationy'] . '" ';
   echo 'typeshop="' . $row['typeshop_typeshop_id'] . '" ';
+  echo 'icon="' . $row['typeshop_pathpic'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
