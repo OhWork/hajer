@@ -63,23 +63,7 @@ var map, GeoMarker , mycircle ,markercircle;
 	   var priceshop = markerElem.getAttribute('priceshop');
 	   var placeshop = markerElem.getAttribute('placeshop');
 	   var typeshop = markerElem.getAttribute('typeshop');
-	   if(typeshop == 1){
-			var icon = {
-			    url: "images/icons/shopsell.jpg", // url
-			    scaledSize: new google.maps.Size(50, 50), // scaled size
-			    origin: new google.maps.Point(0,0), // origin
-			    anchor: new google.maps.Point(0, 0) // anchor
-			};
-	   }else if(typeshop == 5){
-		   var icon = {
-			    url: "images/icons/shopshirt.jpg", // url
-			    scaledSize: new google.maps.Size(50, 50), // scaled size
-			    origin: new google.maps.Point(0,0), // origin
-			    anchor: new google.maps.Point(0, 0) // anchor
-			};
-
-	   }
-	   console.log(typeshop);
+	   var icon = markerElem.getAttribute('icon');
 	   var point = new google.maps.LatLng(
 	  	 parseFloat(markerElem.getAttribute('lat')),
 	  	 parseFloat(markerElem.getAttribute('lng'))
