@@ -27,13 +27,10 @@
 										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 											<img class="d-block w-100" src="images/mapshow1.png">
 										</div>
-										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg2">
 											<div class="row">
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-													ที่อยู่
-												</div>
-												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-													456 ถนนฉลองกรุง เขตบางรัก กรุงเทพฯ 10500
+													<span class="mr-3" style="float:left" data-feather="home"></span><p class="lg6" style="float:left">ที่อยู่ : 456 ถนนฉลองกรุง เขตบางรัก กรุงเทพ</p>
 												</div>
 											</div>
 										</div>
@@ -53,7 +50,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg6">
 											<div class="row">
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bb1">
 													<p>Promotion</p>

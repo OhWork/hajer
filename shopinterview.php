@@ -32,7 +32,7 @@
 						<?php echo $showrs['shop_name'];?>
 					</div>
 					<div class="col-12 lg5">
-						<?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>
+						ช่วงราคา : <?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>
 					</div>
 					<div class="col-12 lg6 mt-3">
 						<div class="row">

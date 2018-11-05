@@ -6,24 +6,7 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto mgt">
-			<li class="nav-item active lg2">
-				<a class="nav-link" href="#">
-				<div class="row">
-					<a><span data-feather="phone"></span></a>
-					<div class="ml-2 mr-2 lg1">08x-xxx-xxxx</div>
-					<a><span data-feather="facebook"></span></a>
-					<a><span data-feather="twitter"></span></a>
-					<a><span data-feather="youtube"></span></a>
-					<a><span data-feather="instagram"></span></a>
-				</div>
-				</a>
-			</li>
-		</ul>
-		<ul class="navbar-nav">
-			<li class="nav-item pt-1">
-				<a class="lg8 mr-2" href="village/login.php">Register</a>
-			</li>
+		<ul class="navbar-nav mgt">
 			<li class="nav-item pt-1">
 				<a href="village/login.php">Login</a>
 			</li>
