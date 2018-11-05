@@ -290,6 +290,8 @@
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
+	      var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay = new google.maps.DirectionsRenderer();
         var mapOptions = {
           zoom: 10,
           center: new google.maps.LatLng(13.724717, 100.633072),
@@ -339,7 +341,6 @@ var map, GeoMarker , mycircle ,markercircle;
        var infoWindow = new google.maps.InfoWindow;
 	   // Change this depending on the name of your PHP or XML file
 	   downloadUrl('maker.php', function(data) {
-	   console.log(data);
 	   var xml = data.responseXML;
 	   var markers = xml.documentElement.getElementsByTagName('marker');
 	   Array.prototype.forEach.call(markers, function(markerElem) {
@@ -407,5 +408,19 @@ function downloadUrl(url, callback) {
 	request.send(null);
 }
 function doNothing() {}
+function calcRoute() {
+  var start = document.getElementById('start').value;
+  var end = document.getElementById('end').value;
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: 'DRIVING'
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(result);
+    }
+  });
+}
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
