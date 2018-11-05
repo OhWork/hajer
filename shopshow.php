@@ -290,8 +290,8 @@
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
-	      var directionsService = new google.maps.DirectionsService();
-  var directionsDisplay = new google.maps.DirectionsRenderer();
+	    var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService = new google.maps.DirectionsService;
         var mapOptions = {
           zoom: 10,
           center: new google.maps.LatLng(13.724717, 100.633072),
@@ -337,10 +337,13 @@ var map, GeoMarker , mycircle ,markercircle;
         };
         map = new google.maps.Map(document.getElementById('map_canvas'),
             mapOptions);
+        directionsDisplay.setMap(map);
+         calculateAndDisplayRoute(directionsService, directionsDisplay);
 
        var infoWindow = new google.maps.InfoWindow;
 	   // Change this depending on the name of your PHP or XML file
 	   downloadUrl('maker.php', function(data) {
+	   console.log(data);
 	   var xml = data.responseXML;
 	   var markers = xml.documentElement.getElementsByTagName('marker');
 	   Array.prototype.forEach.call(markers, function(markerElem) {
@@ -407,20 +410,22 @@ function downloadUrl(url, callback) {
 	request.open('GET', url, true);
 	request.send(null);
 }
+ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var start = new google.maps.LatLng(42.496401, -124.413);
+        var end = new google.maps.LatLng(42.496401, -124.413126);
+        directionsService.route({
+          origin: start,
+          destination: end,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
 function doNothing() {}
-function calcRoute() {
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;
-  var request = {
-    origin: start,
-    destination: end,
-    travelMode: 'DRIVING'
-  };
-  directionsService.route(request, function(result, status) {
-    if (status == 'OK') {
-      directionsDisplay.setDirections(result);
-    }
-  });
-}
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
