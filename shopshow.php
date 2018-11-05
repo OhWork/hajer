@@ -80,195 +80,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>150m</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-			</div>
-		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pt-3">
-			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
-					<div class="row">
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-							<div class="row">
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/mapshow1.png">
-								</div>
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>Shop name</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>150m</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-			</div>
-		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pt-3">
-			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
-					<div class="row">
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-							<div class="row">
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/mapshow1.png">
-								</div>
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>Shop name</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>150m</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-			</div>
-		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pt-3">
-			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
-					<div class="row">
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-							<div class="row">
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/mapshow1.png">
-								</div>
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>Shop name</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>150m</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-			</div>
-		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pt-3">
-			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
-					<div class="row">
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-							<div class="row">
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/mapshow1.png">
-								</div>
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>Shop name</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p>150m</p>
+									<p id="distance"></p>
 								</div>
 							</div>
 						</div>
@@ -290,6 +102,8 @@
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
+	    var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService = new google.maps.DirectionsService;
         var mapOptions = {
           zoom: 10,
           center: new google.maps.LatLng(13.724717, 100.633072),
@@ -335,6 +149,8 @@ var map, GeoMarker , mycircle ,markercircle;
         };
         map = new google.maps.Map(document.getElementById('map_canvas'),
             mapOptions);
+        directionsDisplay.setMap(map);
+         calculateAndDisplayRoute(directionsService, directionsDisplay);
 
        var infoWindow = new google.maps.InfoWindow;
 	   // Change this depending on the name of your PHP or XML file
@@ -406,6 +222,24 @@ function downloadUrl(url, callback) {
 	request.open('GET', url, true);
 	request.send(null);
 }
+ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var start = new google.maps.LatLng(42.496401, -124.413);
+        var end = new google.maps.LatLng(42.496401, -124.413126);
+        directionsService.route({
+          origin: start,
+          destination: end,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+             var distance = response.routes[0].legs[0].distance.text;
+             $('#distance').append(distance);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
 function doNothing() {}
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>

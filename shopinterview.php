@@ -40,7 +40,6 @@
 								<span data-feather="navigation"></span>
 							</div>
 							<div class="col-10 pl-2 pr-0 svadr">
-								<?php echo $showrs['chop_place']?>
 							</div>
 						</div>
 					</div>
