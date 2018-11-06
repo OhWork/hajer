@@ -1,3 +1,16 @@
+<?php
+	print_r($_POST);
+	$keyword = $_POST['keyword'];
+	$cat = $_POST['cat'];
+	if($keyword != ''){
+		$rskey=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"shop_name LIKE '%{$keyword}%'")->execute();
+		foreach($rskey as $showkey){
+			print_r($showkey);
+		}
+	}else{
+
+	}
+?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 ">
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -155,7 +168,6 @@ var map, GeoMarker , mycircle ,markercircle;
        var infoWindow = new google.maps.InfoWindow;
 	   // Change this depending on the name of your PHP or XML file
 	   downloadUrl('maker.php', function(data) {
-	   console.log(data);
 	   var xml = data.responseXML;
 	   var markers = xml.documentElement.getElementsByTagName('marker');
 	   Array.prototype.forEach.call(markers, function(markerElem) {
@@ -223,23 +235,31 @@ function downloadUrl(url, callback) {
 	request.send(null);
 }
  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        var start = new google.maps.LatLng(42.496401, -124.413);
-        var end = new google.maps.LatLng(42.496401, -124.413126);
-        directionsService.route({
-          origin: start,
-          destination: end,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-             var distance = response.routes[0].legs[0].distance.text;
-             $('#distance').append(distance);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      }
+		navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+        	};
+        	var latt =  parseFloat(pos.lat);
+        	var lngg =  parseFloat(pos.lng);
+	        var start = new google.maps.LatLng(latt,lngg);
+			var end = new google.maps.LatLng(13.7764241,101.5227323);
+	        directionsService.route({
+	          origin: start,
+	          destination: end,
+	          travelMode: 'DRIVING'
+	        }, function(response, status) {
+	          if (status === 'OK') {
+	            directionsDisplay.setDirections(response);
+	             var distance = response.routes[0].legs[0].distance.text;
+	             $('#distance').append(distance);
+	          } else {
+	            window.alert('Directions request failed due to ' + status);
+	          }
+	        });
+		});
 
+      }
 function doNothing() {}
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
