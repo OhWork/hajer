@@ -37,7 +37,7 @@
 					<div class="col-12 lg6 mt-3">
 						<div class="row">
 							<div class="col-2 lg2">
-								<span data-feather="navigation"></span>
+								<a href="https://www.google.com/maps/dir/Current+Location/<?php echo $showrs['shop_locationx'],',',$showrs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 							</div>
 							<div class="col-10 pl-2 pr-0 svadr">
 							</div>
