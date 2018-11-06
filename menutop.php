@@ -7,9 +7,21 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mgt">
-			<li class="nav-item pt-1">
-				<a href="village/login.php">Login</a>
-			</li>
 		</ul>
+	</div>
+	<div class="dropdown lg2">
+		<div style="height:34px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<div style="float:left;margin-top:4px;">
+				เข้าสู่ระบบ
+			</div>
+			<div style="float:left;margin-top:4px;">
+				<span data-feather="log-in"></span>
+			</div>
+		</div>
+		<div class="dropdown-menu" aria-labelledby="dropownMenuButton" style="left:-80px;">
+			<a class="dropdown-item lg2" href="#">เข้าสู่ระบบ</a>
+			<a class="dropdown-item lg2" href="#">สมัครสมาชิก</a>
+			<a class="dropdown-item lg2 bb1" href="#">แก้ไขข้อมูลส่วนตัว</a>
+		</div>
 	</div>
 </nav>
