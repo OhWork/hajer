@@ -1,14 +1,17 @@
 <?php
 	print_r($_POST);
 	$keyword = $_POST['keyword'];
-	$cat = $_POST['cat'];
+	$typeshop = $_POST['typeshop'];
 	if($keyword != ''){
 		$rskey=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"shop_name LIKE '%{$keyword}%'")->execute();
 		foreach($rskey as $showkey){
 			print_r($showkey);
 		}
 	}else{
-
+		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
+		foreach($rstype as $showtype){
+			print_r($showtype);
+		}
 	}
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 ">

@@ -61,22 +61,16 @@
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgw">
 							<div class="dropdown">
 								<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<p style="float:left;">ประเภทร้าน</p>
-									<span style="float:right;" data-feather="chevron-down"></span>
-								</div>
-								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropownMenuButton2">
-									<a class="dropdown-item" href="#">
-										<input class="sip" name="cat" type="text" placeholder="Categories" />
-									</a>
+								<select class="form-control col-12" name="typeshop" id="typeshop">
+									<option value=""> ------- เลือก ------ </option>
 									<?php
-										$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
-										foreach ($rs2 as $showrs2){
-									?>
-									<a class="dropdown-item" href="#" style="color:#B0BEC5;"><?php echo $showrs2['typeshop_name'];?></a>
-									<?php
+									$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
+									foreach ($rs2 as $showrs2){
+										echo '<option value="', $showrs2['typeshop_id'], '">',$showrs2['typeshop_name'],'</option>';
 									}
 									?>
-								</div>
+								</select>
+							</div>
 							</div>
 						</div>
 						<button type="submit" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
