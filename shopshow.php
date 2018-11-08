@@ -101,7 +101,7 @@
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-					<input type="text" id="keyword" value="<?php echo $keyword?>">
+					<input type="hidden" id="keyword" value="<?php echo $keyword?>">
 				</div>
 			</div>
 		</div>
@@ -158,7 +158,7 @@
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-					<input type="text" id="typeshop" value="<?php echo $typeshop?>">
+					<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
 				</div>
 			</div>
 		</div>
