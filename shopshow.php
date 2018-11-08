@@ -1,19 +1,3 @@
-<?php
-	print_r($_POST);
-	$keyword = $_POST['keyword'];
-	$typeshop = $_POST['typeshop'];
-	if($keyword != ''){
-		$rskey=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"shop_name LIKE '%{$keyword}%'")->execute();
-		foreach($rskey as $showkey){
-			print_r($showkey);
-		}
-	}else{
-		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
-		foreach($rstype as $showtype){
-			print_r($showtype);
-		}
-	}
-?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 ">
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -42,7 +26,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p><b>เบอร์โทรติดต่อ</b></p>
+									<p><b>GoogleMap</b></p>
 								</div>
 							</div>
 						</div>
@@ -65,6 +49,13 @@
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 			</div>
 		</div>
+<?php
+	$keyword = $_POST['keyword'];
+	$typeshop = $_POST['typeshop'];
+	if($keyword != ''){
+		$rskey=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"shop_name LIKE '%{$keyword}%'")->execute();
+		foreach($rskey as $showkey){
+		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 			<div class="row">
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
@@ -74,7 +65,7 @@
 							<div class="row">
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/mapshow1.png">
+									<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showkey['shop_pic']; ?>">
 								</div>
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 							</div>
@@ -82,7 +73,7 @@
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>Shop name</p>
+									<p><?php echo $showkey['shop_name'];?></p>
 								</div>
 							</div>
 						</div>
@@ -96,7 +87,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p id="distance"></p>
+									<p class="distance"></p>
 								</div>
 							</div>
 						</div>
@@ -114,6 +105,66 @@
 		</div>
 	</div>
 </div>
+		<?php
+		}
+	}else{
+		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
+		foreach($rstype as $showtype){
+		?>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+			<div class="row">
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
+					<div class="row">
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+							<div class="row">
+								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+									<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showtype['shop_pic']; ?>">
+								</div>
+								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+									<p><?php echo $showtype['shop_name'];?></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+									<p>085-XXX-XXXX</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
+									<p class="distance"></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+									<p>rate : 5.0</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+		<?php
+		}
+	}
+?>
+
 <script>
 var map, GeoMarker , mycircle ,markercircle;
 

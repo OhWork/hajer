@@ -64,7 +64,7 @@
 								<select class="form-control col-12" name="typeshop" id="typeshop">
 									<option value=""> ------- เลือก ------ </option>
 									<?php
-									$rs2 = $db->specifytableNoWhere('*','typeshop','ORDER BY RAND() LIMIT 4')->execute();
+									$rs2 = $db->specifytableNoWhere('*','typeshop','')->execute();
 									foreach ($rs2 as $showrs2){
 										echo '<option value="', $showrs2['typeshop_id'], '">',$showrs2['typeshop_name'],'</option>';
 									}
