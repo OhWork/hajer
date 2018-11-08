@@ -100,7 +100,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+					<input type="text" id="keyword" value="<?php echo $keyword?>">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -155,7 +157,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+					<input type="text" id="typeshop" value="<?php echo $typeshop?>">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -220,60 +224,66 @@ var map, GeoMarker , mycircle ,markercircle;
          calculateAndDisplayRoute(directionsService, directionsDisplay);
 
        var infoWindow = new google.maps.InfoWindow;
-	   // Change this depending on the name of your PHP or XML file
-	   downloadUrl('maker.php', function(data) {
-	   var xml = data.responseXML;
-	   var markers = xml.documentElement.getElementsByTagName('marker');
-	   Array.prototype.forEach.call(markers, function(markerElem) {
-	   var id = markerElem.getAttribute('id');
-	   var shopname = markerElem.getAttribute('shopname');
-	   var detailshop = markerElem.getAttribute('detailshop');
-	   var ocshop = markerElem.getAttribute('ocshop');
-	   var priceshop = markerElem.getAttribute('priceshop');
-	   var placeshop = markerElem.getAttribute('placeshop');
-	   var typeshop = markerElem.getAttribute('typeshop');
-	   var icon = markerElem.getAttribute('icon');
-	   var point = new google.maps.LatLng(
-	  	 parseFloat(markerElem.getAttribute('lat')),
-	  	 parseFloat(markerElem.getAttribute('lng'))
-	   );
-	   var infowincontent = document.createElement('div');
-	   // เรียกตัวแปร infowincontent เพื่อ set ID ให้กับ DIV เป็น Div1
-	   infowincontent.setAttribute("id", "Div1");
-	   // เรียกตัวแปร infowincontent เพื่อ set classname ของ div
-	   infowincontent.className = "aClassName";
-	   // สิ้นสุด
-	   var strong = document.createElement('strong');
-	   strong.textContent = shopname
-	   infowincontent.appendChild(strong);
-	   infowincontent.appendChild(document.createElement('br'));
-	   var text = document.createElement('text');
-	   text.textContent = 'รายละเอียดร้านค้า : ' + detailshop
-	   infowincontent.appendChild(text);
-	   infowincontent.appendChild(document.createElement('br'));
-	   var text2 = document.createElement('text');
-	   text2.textContent ='เวลาเปิดปิดร้านค้า : ' + ocshop
-	   infowincontent.appendChild(text2);
-	   infowincontent.appendChild(document.createElement('br'));
-	   var text3 = document.createElement('text');
-	   text3.textContent ='เรทราคาของร้านค้า : ' + priceshop
-	   infowincontent.appendChild(text3);
-	   infowincontent.appendChild(document.createElement('br'));
-	   var text4 = document.createElement('text');
-	   text4.textContent ='สถานที่ตั้งของร้านค้า : ' + placeshop
-	   infowincontent.appendChild(text4);
-	   infowincontent.appendChild(document.createElement('br'));
-	   var marker = new google.maps.Marker({
-		   map: map,
-		   position: point,
-		   icon:icon
-		   });
-	   marker.addListener('click', function() {
-		   infoWindow.setContent(infowincontent);
-		   infoWindow.open(map, marker);
-		   });
-		});
-	});
+	    $.ajax({
+            url: "marker.php",
+            data: {keyword : $('#keyword').val() , typeshop : $('#typeshop').val()},
+            type: "POST",
+            success: function(data) {
+
+			   var xml = data.responseXML;
+			   var markers = xml.documentElement.getElementsByTagName('marker');
+			   Array.prototype.forEach.call(markers, function(markerElem) {
+			   var id = markerElem.getAttribute('id');
+			   var shopname = markerElem.getAttribute('shopname');
+			   var detailshop = markerElem.getAttribute('detailshop');
+			   var ocshop = markerElem.getAttribute('ocshop');
+			   var priceshop = markerElem.getAttribute('priceshop');
+			   var placeshop = markerElem.getAttribute('placeshop');
+			   var typeshop = markerElem.getAttribute('typeshop');
+			   var icon = markerElem.getAttribute('icon');
+			   var point = new google.maps.LatLng(
+			  	 parseFloat(markerElem.getAttribute('lat')),
+			  	 parseFloat(markerElem.getAttribute('lng'))
+			   );
+			   var infowincontent = document.createElement('div');
+			   // เรียกตัวแปร infowincontent เพื่อ set ID ให้กับ DIV เป็น Div1
+			   infowincontent.setAttribute("id", "Div1");
+			   // เรียกตัวแปร infowincontent เพื่อ set classname ของ div
+			   infowincontent.className = "aClassName";
+			   // สิ้นสุด
+			   var strong = document.createElement('strong');
+			   strong.textContent = shopname
+			   infowincontent.appendChild(strong);
+			   infowincontent.appendChild(document.createElement('br'));
+			   var text = document.createElement('text');
+			   text.textContent = 'รายละเอียดร้านค้า : ' + detailshop
+			   infowincontent.appendChild(text);
+			   infowincontent.appendChild(document.createElement('br'));
+			   var text2 = document.createElement('text');
+			   text2.textContent ='เวลาเปิดปิดร้านค้า : ' + ocshop
+			   infowincontent.appendChild(text2);
+			   infowincontent.appendChild(document.createElement('br'));
+			   var text3 = document.createElement('text');
+			   text3.textContent ='เรทราคาของร้านค้า : ' + priceshop
+			   infowincontent.appendChild(text3);
+			   infowincontent.appendChild(document.createElement('br'));
+			   var text4 = document.createElement('text');
+			   text4.textContent ='สถานที่ตั้งของร้านค้า : ' + placeshop
+			   infowincontent.appendChild(text4);
+			   infowincontent.appendChild(document.createElement('br'));
+			   var marker = new google.maps.Marker({
+				   map: map,
+				   position: point,
+				   icon:icon
+				   });
+			   marker.addListener('click', function() {
+				   infoWindow.setContent(infowincontent);
+				   infoWindow.open(map, marker);
+				   });
+				});
+			}
+       });
+
 }
 function downloadUrl(url, callback) {
 	var request = window.ActiveXObject ?
