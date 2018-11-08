@@ -80,7 +80,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
+									<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showkey['shop_locationx'],',',$showkey['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 								</div>
 							</div>
 						</div>
@@ -137,7 +137,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>085-XXX-XXXX</p>
+									<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 								</div>
 							</div>
 						</div>
