@@ -225,12 +225,12 @@ var map, GeoMarker , mycircle ,markercircle;
 
        var infoWindow = new google.maps.InfoWindow;
 	    $.ajax({
-            url: "marker.php",
+            url: "maker.php",
             data: {keyword : $('#keyword').val() , typeshop : $('#typeshop').val()},
             type: "POST",
             success: function(data) {
 
-			   var xml = data.responseXML;
+			   var xml = data;
 			   var markers = xml.documentElement.getElementsByTagName('marker');
 			   Array.prototype.forEach.call(markers, function(markerElem) {
 			   var id = markerElem.getAttribute('id');
