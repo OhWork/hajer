@@ -87,7 +87,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p class="distance"></p>
+									<p id="distance<?php echo $i;?>"></p>
 								</div>
 							</div>
 						</div>
@@ -102,6 +102,7 @@
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 					<input type="hidden" id="keyword" value="<?php echo $keyword?>">
+					<input type="hidden" id="lat" value="<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>">
 				</div>
 			</div>
 		</div>
@@ -111,6 +112,7 @@
 		}
 	}else{
 		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
+		 $i =0 ;
 		foreach($rstype as $showtype){
 		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -159,7 +161,8 @@
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 					<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
-					<input type="text" id="lat" value="<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>">
+					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
+					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showtype['shop_locationy'];?>">
 
 				</div>
 			</div>
@@ -167,6 +170,7 @@
 	</div>
 </div>
 		<?php
+			$i++;
 		}
 	}
 ?>
@@ -305,23 +309,30 @@ function downloadUrl(url, callback) {
               lat: position.coords.latitude,
               lng: position.coords.longitude
         	};
-        	var latt =  parseFloat(pos.lat);
-        	var lngg =  parseFloat(pos.lng);
-	        var start = new google.maps.LatLng(latt,lngg);
-			var end = new google.maps.LatLng(13.7764241,101.5227323);
+        	var numshop = $('.endlat').length;
+        	for (var i = 0 ; i<numshop; i++){
+        	var startlat =  parseFloat(pos.lat);
+        	var startlng =  parseFloat(pos.lng);
+        	var endlat = parseFloat($('#lat'+i).val());
+        	var endlng = parseFloat($('#lng'+i).val());
+	        var start = new google.maps.LatLng(startlat,startlng);
+			var end = new google.maps.LatLng(endlat,endlng);
 	        directionsService.route({
 	          origin: start,
 	          destination: end,
 	          travelMode: 'DRIVING'
 	        }, function(response, status) {
-	          if (status === 'OK') {
-	            directionsDisplay.setDirections(response);
-	             var distance = response.routes[0].legs[0].distance.text;
-	             $('.distance').append(distance);
-	          } else {
-	            window.alert('Directions request failed due to ' + status);
-	          }
+		          if (status === 'OK') {
+		            directionsDisplay.setDirections(response);
+		             var distance = [];
+		             distance.push(response.routes[0].legs[0].distance.text);
+		             console.log(distance);
+		             $('.distance').append(distance);
+		          } else {
+		            window.alert('Directions request failed due to ' + status);
+		          }
 	        });
+ 	        }
 		});
 
       }
