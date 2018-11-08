@@ -159,6 +159,8 @@
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 					<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
+					<input type="text" id="lat" value="<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>">
+
 				</div>
 			</div>
 		</div>
@@ -229,7 +231,6 @@ var map, GeoMarker , mycircle ,markercircle;
             data: {keyword : $('#keyword').val() , typeshop : $('#typeshop').val()},
             type: "POST",
             success: function(data) {
-
 			   var xml = data;
 			   var markers = xml.documentElement.getElementsByTagName('marker');
 			   Array.prototype.forEach.call(markers, function(markerElem) {
@@ -316,7 +317,7 @@ function downloadUrl(url, callback) {
 	          if (status === 'OK') {
 	            directionsDisplay.setDirections(response);
 	             var distance = response.routes[0].legs[0].distance.text;
-	             $('#distance').append(distance);
+	             $('.distance').append(distance);
 	          } else {
 	            window.alert('Directions request failed due to ' + status);
 	          }
