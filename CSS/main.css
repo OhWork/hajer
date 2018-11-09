@@ -211,3 +211,6 @@ button:focus {
 .boxfooter {
 	margin-top: 16px;
 }
+.select2-container--default .select2-selection--single {border:none;}
+.select2-container--open .select2-dropdown--below {border:none;}
+.select2-dropdown--below {top:15px;}
