@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="dropdown-menu" aria-labelledby="dropownMenuButton" style="left:-80px;">
-			<a class="dropdown-item lg2" href="login.php">เข้าสู่ระบบ</a>
+			<a class="dropdown-item lg2" href="village/login.php">เข้าสู่ระบบ</a>
 			<a class="dropdown-item lg2" href="#">สมัครสมาชิก</a>
 			<a class="dropdown-item lg2" href="#">แก้ไขข้อมูลส่วนตัว</a>
 		</div>

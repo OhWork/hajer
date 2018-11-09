@@ -326,7 +326,8 @@ function downloadUrl(url, callback) {
 	        }, function(response, status) {
 		          if (status === 'OK') {
 		            directionsDisplay.setDirections(response);
-		             var distance = new Array(response.routes[0].legs[0].distance.text);
+		             var distance = response.routes[0].legs[0].distance.text;
+		             console.log(distance);
 		             $('.distance').append(distance);
 		          } else {
 		            window.alert('Directions request failed due to ' + status);
