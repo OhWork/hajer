@@ -87,7 +87,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p id="distance<?php echo $i;?>"></p>
+									<p id="distance"></p>
 								</div>
 							</div>
 						</div>
@@ -102,7 +102,8 @@
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 					<input type="hidden" id="keyword" value="<?php echo $keyword?>">
-					<input type="hidden" id="lat" value="<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>">
+					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
+					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showtype['shop_locationy'];?>">
 				</div>
 			</div>
 		</div>
@@ -320,14 +321,16 @@ function downloadUrl(url, callback) {
 	        directionsService.route({
 	          origin: start,
 	          destination: end,
-	          travelMode: 'DRIVING'
+	          travelMode: 'DRIVING',
+	          provideRouteAlternatives: true,
 	        }, function(response, status) {
 		          if (status === 'OK') {
-		            directionsDisplay.setDirections(response);
-		             var distance = [];
-		             distance.push(response.routes[0].legs[0].distance.text);
-		             console.log(distance);
-		             $('.distance').append(distance);
+				      for (var j = 0; i < response.routes.length; j++) {
+			            directionsDisplay.setDirections(response);
+			             var distance = response.routes[0].legs[0].distance.text;
+			             console.log(response.routes.length);
+			             $('.distance').append(distance);
+			          }
 		          } else {
 		            window.alert('Directions request failed due to ' + status);
 		          }
