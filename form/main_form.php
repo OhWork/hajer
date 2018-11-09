@@ -173,19 +173,21 @@ class textfieldcalendarreadonly{
 	}
 #---------------Password-------------------#
 	class pass{
-		public $name,$cass=null,$hold = null;
+		public $name,$cass=null,$hold = null,$id;
 
 
-		function __construct($name,$cass,$hold){
+		function __construct($name,$cass,$hold,$id){
 			$this->name = $name;
 			$this->cass = $cass;
 			$this->hold = $hold;
+			$this->id = $id;
 		}
 
 		function __toString(){
 			return "<input type='password'
 							class='{$this->cass}'
 							name='{$this->name}'
+							id='{$this->id}'
 							placeholder='{$this->hold}'/>";
 		}
 	}

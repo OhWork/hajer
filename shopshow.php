@@ -325,12 +325,9 @@ function downloadUrl(url, callback) {
 	          provideRouteAlternatives: true,
 	        }, function(response, status) {
 		          if (status === 'OK') {
-				      for (var j = 0; i < response.routes.length; j++) {
-			            directionsDisplay.setDirections(response);
-			             var distance = response.routes[0].legs[0].distance.text;
-			             console.log(response.routes.length);
-			             $('.distance').append(distance);
-			          }
+		            directionsDisplay.setDirections(response);
+		             var distance = new Array(response.routes[0].legs[0].distance.text);
+		             $('.distance').append(distance);
 		          } else {
 		            window.alert('Directions request failed due to ' + status);
 		          }
