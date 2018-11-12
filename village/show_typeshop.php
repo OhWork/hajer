@@ -27,8 +27,6 @@
 			$grid->header = array('<b><center>ชื่อประเภทร้านค้า</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
 			$grid->width = array('90%','5%','5%');
 			$grid->name = 'table';
-			$grid->delete = '#';
-			$grid->deletetxt ='ลบ';
 			$grid->edit = '#';
 			$grid->edittxt ='แก้ไข';
 			$grid->renderFromDB($columns,$rs);
