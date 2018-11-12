@@ -1,5 +1,5 @@
 <?php
-	$rs = $db->findAll('shop')->execute();
+	$rs = $db->findByPK2('shop','typeshop','shop.typeshop_typeshop_id','typeshop.typeshop_id')->execute();
 
 ?>
 <div class="col-12 bmd">
@@ -26,10 +26,12 @@
 				?>
 				<div class="col-3 svbb pb-3">
 					<div class="col-12 pl-0 pr-0 mt-3">
-						<img src="images/shop/<?php echo $showrs['shop_pic'];?>.jpg" width="100%" height="200" style="border-radius:20px;" />
+						<img src="images/shop/<?php echo $showrs['shop_pic'];?>" width="100%" height="200" style="border-radius:20px;" />
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
 						<?php echo $showrs['shop_name'];?>
+						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px"/>
+
 					</div>
 					<div class="col-12 lg5">
 						ช่วงราคา : <?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>
