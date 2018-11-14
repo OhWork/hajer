@@ -52,6 +52,7 @@
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
 	 ?>
+	<h2>เพิ่มข้อมูลร้านค้า</h2>
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbtypeshop; ?></div>
@@ -97,7 +98,7 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbpicshop; ?></div>
-			<div class='col-md-6'><?php echo $picshop; ?></div>
+			<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" name="shop_pic" /></div>
 			<?php
 				if(!empty($id)){
 			?>

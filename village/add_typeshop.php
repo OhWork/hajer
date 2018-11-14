@@ -9,6 +9,7 @@
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
 <div class='col-md-6'>
+	<h2>เพิ่มข้อมูลรายละเอียด</h2>
 <?php echo $form->open('form_reg','frmMain','','insert_typeshop.php',''); ?>
 						<div class='row'>
 							<div class='col-md-12' style="margin-bottom: 16px;">

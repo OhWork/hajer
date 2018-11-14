@@ -47,6 +47,7 @@
 			}
 </script>
 <div class='col-md-6'>
+	<h2>เพิ่มข้อมูลอำเภอ</h2>
 <?php echo $form->open('form_reg','frmMain','','insert_district.php',''); ?>
 						<div class='row'>
 							<div class='col-md-12'>

@@ -5,9 +5,9 @@
 	$lbname = new label('ชื่อแขวง/ตำบล: ');
 	$nameeng = new textfield('subdistricts_nameeng','','form-control','','');
 	$lbnameeng = new label('ชื่อแขวง/ตำบลภาษาอังกฤษ: ');
-	$lat = new textfield('subdistricts_lat','','form-control','','');
+	$lat = new textfieldreadonly('subdistricts_lat','','form-control','','');
 	$lblat = new label('ละติจูด: ');
-	$lng = new textfield('subdistricts_lng','','form-control','','');
+	$lng = new textfieldreadonly('subdistricts_lng','','form-control','','');
 	$lblng = new label('ลองติจูด: ');
 	$id = $_GET['id'];
 	$r = $db->findByPK('subdistricts','id',$id)->executeRow();
@@ -51,6 +51,7 @@
 			}
 </script>
 <div class='col-md-6'>
+	<h2>เพิ่มข้อมูลตำบล</h2>
 <?php echo $form->open('form_reg','frmMain','','insert_subdistrict.php',''); ?>
 						<div class='row'>
 							<div class='col-md-12'>
