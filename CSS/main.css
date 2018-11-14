@@ -131,7 +131,7 @@
 	background-color:#E53935;
 }
 .lgb {
-	border:solid 1px #039BE5; 
+	border:solid 1px #039BE5;
 }
 .lgb:hover {
 	background-color:#039BE5;
@@ -214,3 +214,19 @@ button:focus {
 .select2-container--default .select2-selection--single {border:none;}
 .select2-container--open .select2-dropdown--below {border:none;}
 .select2-dropdown--below {top:15px;}
+.upload-btn {
+  border: 2px solid gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
