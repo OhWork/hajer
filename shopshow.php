@@ -108,7 +108,7 @@
 						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<a href="index.php?url=shopopen.php&id=<?php echo $showrs['shop_id'];?>"><span data-feather="eye"></span></a>
+									<a href="index.php?url=shopopen.php&id=<?php echo $showkey['shop_id'];?>"><span data-feather="eye"></span></a>
 								</div>
 							</div>
 						</div>
@@ -151,7 +151,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
+						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
 									<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>"><span data-feather="navigation"></span></a>
@@ -169,6 +169,13 @@
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
 									<p>rate : 5.0</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 pt-3 lg2">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+									<a href="index.php?url=shopopen.php&id=<?php echo $showtype['shop_id'];?>"><span data-feather="eye"></span></a>
 								</div>
 							</div>
 						</div>
