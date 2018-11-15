@@ -8,7 +8,29 @@
 			return "</form>";
 		}
 	}
+#---------------Hidden-------------------#
+class hiddenfield{
+		public $name,$id = null,$cass = null,$hold = null;
+		public $value=null,$functions=null;
 
+		function __construct($name,$id,$cass,$value){
+			$this->name = $name;
+			$this->cass = $cass;
+			$this->id = $id;
+			$this->value = $value;
+
+		}
+		function __toString(){
+			return "<input type='hidden'
+			        id='{$this->id}'
+					class='{$this->cass}'
+					name='{$this->name}'
+					value='{$this->value}'
+					{$this->functions}
+					placeholder='{$this->hold}'/>";
+		}
+}
+#---------------End Hidden-------------------#
 #---------------Text-------------------#
 	class textfield{
 		public $name,$id = null,$cass = null,$hold = null;
@@ -75,7 +97,7 @@ class textfieldcalendarreadonly{
 					placeholder='{$this->hold}' readonly/>
 					<label for='{$this->labelfor}'
 					class='{$this->classlabel}'>
-					<img src='../images/icons/calendar.png'/>
+					<img src='images/icons/calendar.png'/>
 					</label>";
 		}
 	}
@@ -104,18 +126,38 @@ class textfieldcalendarreadonly{
 	}
 #---------------Text Area---------------#
 	class textArea{
-		public $rows,$cols,$id,$name,$value;
+		public $rows,$cols,$idtf,$name,$value;
 
-		function __construct($name,$cass,$idtf,$hold){
+		function __construct($name,$cass,$idtf,$hold,$cols,$rows,$value){
 			$this->name = $name;
 			$this->cass = $cass;
 			$this->idtf = $idtf;
 			$this->hold = $hold;
+			$this->cols = $cols;
+			$this->rows = $rows;
+			$this->value = $value;
 
 		}
 
 		function __toString(){
-			return "<textarea cols='{$this->cols}'rows='{$this->rows}'id='{$this->id}'name='{$this->name}'class='{$this->cass}'>{$this->value}</textarea>";
+			return "<textarea cols='{$this->cols}'rows='{$this->rows}'id='{$this->idtf}'name='{$this->name}'class='{$this->cass}'>{$this->value}</textarea>";
+		}
+	}
+	class textAreareadonly{
+		public $rows,$cols,$idtf,$name,$value;
+
+		function __construct($name,$cass,$idtf,$hold,$cols,$rows,$value){
+			$this->name = $name;
+			$this->cass = $cass;
+			$this->idtf = $idtf;
+			$this->hold = $hold;
+			$this->cols = $cols;
+			$this->rows = $rows;
+			$this->value = $value;
+
+		}
+		function __toString(){
+			return "<textarea cols='{$this->cols}'rows='{$this->rows}'id='{$this->idtf}'name='{$this->name}'class='{$this->cass}' readonly>{$this->value}</textarea>";
 		}
 	}
 	class textAreaCf{
@@ -173,14 +215,14 @@ class textfieldcalendarreadonly{
 	}
 #---------------Password-------------------#
 	class pass{
-		public $name,$cass=null,$hold = null,$id;
+		public $name,$id = null,$cass=null,$hold = null;
 
 
 		function __construct($name,$cass,$hold,$id){
 			$this->name = $name;
+			$this->id = $id;
 			$this->cass = $cass;
 			$this->hold = $hold;
-			$this->id = $id;
 		}
 
 		function __toString(){
@@ -198,11 +240,11 @@ class textfieldcalendarreadonly{
 		function __toString(){
 			$html ='';
 			foreach($this->items as $item){
-			$html.="<div style='float:left;padding-right: 5px;'><input type='radio'
-					name='{$this->name}'
-					{$item[checked]}
-					value='{$item[value]}'";
-			$html.=	"/>{$item[label]}</div>";
+			$html.="<div style='float:left;padding-right: 20px;'><input type='radio'
+					name='$this->name'
+					$item[checked]
+					value='$item[value]'";
+			$html.=	"/>$item[label]</div>";
 		}
 		return $html;
 	}
@@ -321,10 +363,10 @@ class labeladdday{
 		}
 
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
-		include_once 'village/database/db_tools.php';
+		include_once 'database/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK($table,$type,$id)->execute();
-		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'s>
+		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
 			<option value=''>
 			-----{$this->lists}-----
 			</option>
@@ -342,33 +384,33 @@ class labeladdday{
 		$html.="</select>";
 		return $html;
 		}
-	function selectFromTBinDBZootype($table,$value,$label,$type,$id,$result){
-		include_once 'village/database/db_tools.php';
-		$db = new db_tools();
-		$rs = $db->findbyPK($table,$type,$id)->execute();
-		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
-			<option value=''>
-			-----{$this->lists}-----
-			</option>
-			";
+// 	function selectFromTBinDBZootype($table,$value,$label,$type,$id,$result){
+// 		include_once 'database/db_tools.php';
+// 		$db = new db_tools();
+// 		$rs = $db->findbyPK($table,$type,$id)->execute();
+// 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
+// 			<option value=''>
+// 			-----{$this->lists}-----
+// 			</option>
+// 			";
+//
+// 		while($r = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
+// 			$html.="<option value= '{$r[$value]}'";
+// 		if($r[$value]==$result){
+// 				$html.='selected';
+// 			};
+// 			$html.=">
+// 			{$r[$label]}
+// 			 </option>";
+// 			}
+// 		$html.="</select>";
+// 		return $html;
+// 		}
 
-		while($r = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
-			$html.="<option value= '{$r[$value]}'";
-		if($r[$value]==$result){
-				$html.='selected';
-			};
-			$html.=">
-			{$r[$label]}
-			 </option>";
-			}
-		$html.="</select>";
-		return $html;
-		}
-
-	function selectFromTBinDB2($table,$value,$label,$label2,$type,$id,$zoo,$idzoo,$result){
-		include_once 'village/database/db_tools.php';
+	function selectFromTBinDB2($table,$table2,$value,$label,$label2,$type,$id,$zoo,$idzoo,$sysallow,$idsysallow,$user,$iduser,$result){
+		include_once 'database/db_tools.php';
 		$db = new db_tools();
-		$rs = $db->findbyPK12($table,$type,$id,$zoo,$idzoo)->execute();
+		$rs = $db->findbyPK24($table,$table2,$type,$id,$zoo,$idzoo,$user,$iduser,$sysallow,$idsysallow)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
 			<option value=''>
 			-----{$this->lists}-----
@@ -393,12 +435,12 @@ class labeladdday{
 
 #---------------Upload-------------------#
 	class uploadPic{
-		public $name,$value=null;
-		function __construct($name,$value){
+		public $name;
+		function __construct($name){
 			$this->name = $name;
 		}
 		function __toString(){
-			return "<input type='file' name='{$this->name}' value='{$this->value}' />";
+			return "<input type='file' name='{$this->name}' />";
 		}
 	}
 #---------------Link-------------------#

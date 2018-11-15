@@ -102,7 +102,7 @@
 			<?php
 				if(!empty($id)){
 			?>
-			<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>.jpg' width='100px' height='100px'></div>
+			<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>' width='100px' height='100px'></div>
 			<?php
 				}else{
 					?>
@@ -131,11 +131,10 @@
 			</div>
 		</div>
 	</div>
-	<input type="text" id="idnaja" value="<?php echo $id;?>">
+	<input type="hidden" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
-		var checkid = $('#idnaja').val();
  		if(checkid == ""){
 	      var map, GeoMarker;
 
