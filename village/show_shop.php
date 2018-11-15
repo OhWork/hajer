@@ -30,7 +30,7 @@
 			$grid->header = array('<b><center>ชื่อร้านค้า</center></b>','<b><center>รายละเอียดร้าน</center></b>','<b><center>เวลาเปิด-ปิด</center></b>','<b><center>เรทราคาต่ำสุดของร้าน</center></b>','<b><center>เรทราคาสูงสุดของร้าน</center></b>','<b><center>สถานที่ตั้งของร้าน</center></b>','<b><center>ชื่อเจ้าของร้าน</center></b>','<b><center>#</center></b>');
 			$grid->width = array('20%','10%','20%','10%','10%','10%','5%','5%');
 			$grid->name = 'table';
-			$grid->edit = 'admin_index.php?url=add_shop.php';
+			$grid->edit = 'admin_index.php?url=shop_status.php';
 			$grid->edittxt ='แก้ไข';
 			$grid->renderFromDB($columns,$rs);
    ?>
