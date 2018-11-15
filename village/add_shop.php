@@ -98,12 +98,16 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbpicshop; ?></div>
-			<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" name="shop_pic" /></div>
+			<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" id="shop_pic" name="shop_pic" /></div>
 			<?php
 				if(!empty($id)){
 			?>
 			<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>.jpg' width='100px' height='100px'></div>
 			<?php
+				}else{
+					?>
+					<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/no_pic.png" width="100px" height="100px"></div>
+				<?php
 				}
 			?>
 		</div>
@@ -273,5 +277,21 @@
 	            }
 	        });
       }
+      function readURL(input) {
+	        if (input.files && input.files[0]) {
+		            var reader = new FileReader();
+
+		            reader.onload = function (e) {
+		                	$('#preimg').attr('src', e.target.result);
+
+		            }
+
+					reader.readAsDataURL(input.files[0]);
+	        }
+    	}
+     $('#shop_pic').on('change',function(e){
+	 	readURL(this);
+     });
+
     </script>
 <?php 	echo $form->close(); ?>
