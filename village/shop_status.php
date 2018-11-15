@@ -97,7 +97,7 @@ echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-
 					<div class='row'>
 						<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
 						<div class='col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8'>
-							<a href="admin_index.php?url=hrs_edit_certificate.php&id=<?php echo $_GET['id']; ?>" class="btn btn-warning col-12">แก้ไขข้อมูล</a>
+							<a href="admin_index.php?url=add_shop.php&id=<?php echo $_GET['id']; ?>" class="btn btn-warning col-12">แก้ไขข้อมูล</a>
 						</div>
 						<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
 					</div>
