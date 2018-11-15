@@ -135,7 +135,6 @@
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
-		var checkid = $('#idnaja').val();
  		if(checkid == ""){
 	      var map, GeoMarker;
 

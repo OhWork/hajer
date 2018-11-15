@@ -21,7 +21,7 @@
 		$id = $_GET['id'];
 		$r = $db->findByPK32('shop','member','typeshop','shop.member_member_id','member.member_id','shop.typeshop_typeshop_id','typeshop.typeshop_id')->executeRow();
 	}
-echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12","hrs_update_status.php","");
+echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12","shop_update_status.php","");
 ?>
 <div class='row'>
 <div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
