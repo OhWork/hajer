@@ -106,7 +106,7 @@
 			<?php
 				}else{
 					?>
-					<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/no_pic.png" width="100px" height="100px"></div>
+					<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/noimage.png" width="100px" height="100px"></div>
 				<?php
 				}
 			?>
