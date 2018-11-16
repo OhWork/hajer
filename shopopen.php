@@ -24,18 +24,35 @@
 										<h3>ชื่อร้าน <?php echo $rs['shop_name'];?></h3>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0 lg7">
-										จำนวนปีที่เป็นสมาชิก หาเจอ : 17ปี
-									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-										<div class="lg7">Rate :
-										<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
-										<img src="images/star.png" width="15px" height="15px" />
-										<img src="images/star.png" width="15px" height="15px" />
-										<img src="images/star.png" width="15px" height="15px" />
-										<img src="images/star.png" width="15px" height="15px" />
+										<div class="row">
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+												<div class="row">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														จำนวนปีที่เป็นสมาชิก หาเจอ : 17ปี
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+														<div class="lg7">Rate :
+														<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
+														<img src="images/star.png" width="15px" height="15px" />
+														<img src="images/star.png" width="15px" height="15px" />
+														<img src="images/star.png" width="15px" height="15px" />
+														<img src="images/star.png" width="15px" height="15px" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+												<div class="row">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<div class="row">
+															<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0 lg7" style="margin-top:180px;">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-0 lg7">
 										<div class="row">
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 												<div class="row">
@@ -63,12 +80,13 @@
 										</div>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+											<button type="button" class="btn btn-success col-xl-3 col-lg-3 col-md-3 col-sm-3">เปิดอยู่ขณะนี้</button>
+											<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9"></div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 										<div class="row">
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;"></div>
-													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg2">
 														<div class="row">
 															<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -104,9 +122,9 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw">
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgb brd">
 												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bb1">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>เวลาเปิด-ปิด <?php echo $rs['shop_oc'];?></p>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
