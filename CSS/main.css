@@ -49,6 +49,9 @@
 		width:50px;
 		height:50px;
 	}
+	.mgt {
+		margin-right:70%;
+	}
 }
 @media (min-width: 992px){
 	.inner_position_top{
@@ -72,14 +75,20 @@
 		width:80px;
 		height:80px;
 	}
+	.mgt {
+		margin-right:75%;
+	}
+}
+@media (min-width: 1254px){
+	.mgt {
+		margin-right:85%;
+	}
 }
 .fl {
 	float:left;
 }
 /* menutop */
-.mgt {
-	margin-left:95%;
-}
+
 .hvmenu:hover {
 	opacity:.7;
 }
