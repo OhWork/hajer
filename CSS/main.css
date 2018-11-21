@@ -1,11 +1,6 @@
 @media (min-width: 576px){
 	.inner_position_top{
-		position:absolute;
-		display:block;
 		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
-		top:64px; /* css กำหนดชิดด้านบน  */
-		z-index:999;
-		padding-top:6%;
 	}
 	.slh {
 		font-size:1.5rem;
@@ -52,6 +47,10 @@
 	.mgt {
 		margin-right:70%;
 	}
+	.inner_position_top{
+		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
+		top:64px; /* css กำหนดชิดด้านบน  */
+	}
 }
 @media (min-width: 992px){
 	.inner_position_top{
@@ -78,10 +77,25 @@
 	.mgt {
 		margin-right:75%;
 	}
+	.inner_position_top{
+		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
+		top:64px; /* css กำหนดชิดด้านบน  */
+	}
 }
 @media (min-width: 1254px){
 	.mgt {
 		margin-right:85%;
+	}
+	.inner_position_top{
+		position:absolute;
+		display:block;
+		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
+		top:64px; /* css กำหนดชิดด้านบน  */
+		z-index:999;
+		padding-top:6%;
+	}
+	.hrow {
+		height:59px;
 	}
 }
 .fl {

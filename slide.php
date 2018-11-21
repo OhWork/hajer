@@ -55,10 +55,10 @@
 			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-12 col-sm-12" accept-charset="utf-8">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="row">
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-4 bgw sll br2" style="height:59px;">
+						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 pl-4 bgw sll br2 hrow">
 							<input class="sip" name="keyword" type="text" placeholder="ชื่อร้าน" />
 						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgw">
+						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgw">
 							<div class="dropdown">
 								<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<select class="form-control col-12" name="typeshop" id="typeshop">
@@ -73,7 +73,7 @@
 							</div>
 							</div>
 						</div>
-						<button type="submit" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
+						<button type="submit" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
 							<span class="mt-2" style="margin-left:20%; float:left;" data-feather="search"></span>
 							<p class="ml-2 mt-1" style="font-size: 20px;float:left;">ค้นหา</p>
 						</button>
