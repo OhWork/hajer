@@ -50,9 +50,9 @@
 		</div>
 		<div class="col-12">
 			<div class="row">
-				<div class="col-xl-2 col-lg-1">
+				<div class="col-xl-2 col-lg-1 col-md-2">
 				</div>
-			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-12 col-sm-12" accept-charset="utf-8">
+			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-8 col-sm-12" accept-charset="utf-8">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="row">
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 pl-4 bgw sll br2 hrow">
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 			</form>
-				<div class="col-xl-2 col-lg-1">
+				<div class="col-xl-2 col-lg-1 col-md-2">
 				</div>
 			</div>
 		</div>
