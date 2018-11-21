@@ -61,6 +61,7 @@
 	$typeshop = $_POST['typeshop'];
 	if($keyword != ''){
 		$rskey=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"shop_name LIKE '%{$keyword}%'")->execute();
+		$i = 0;
 		foreach($rskey as $showkey){
 		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -94,7 +95,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p id="distance"></p>
+									<p class="distance<?php echo $i;?>"></p>
 								</div>
 							</div>
 						</div>
@@ -124,6 +125,7 @@
 	</div>
 </div>
 		<?php
+			$i++;
 		}
 	}else{
 		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
@@ -161,7 +163,7 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-									<p class="distance"></p>
+									<p class="distance<?php echo $i;?>"></p>
 								</div>
 							</div>
 						</div>
@@ -332,6 +334,7 @@ function downloadUrl(url, callback) {
               lng: position.coords.longitude
         	};
         	var numshop = $('.endlat').length;
+        	var j = 0 ;
         	for (var i = 0 ; i<numshop; i++){
         	var startlat =  parseFloat(pos.lat);
         	var startlng =  parseFloat(pos.lng);
@@ -348,8 +351,9 @@ function downloadUrl(url, callback) {
 		          if (status === 'OK') {
 		            directionsDisplay.setDirections(response);
 		             var distance = response.routes[0].legs[0].distance.text;
-		             console.log(distance);
-		             $('.distance').append(distance);
+		             console.log(i);
+		             $('.distance'+j).append(distance);
+		             j++;
 		          } else {
 		            window.alert('Directions request failed due to ' + status);
 		          }
