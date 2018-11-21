@@ -1,8 +1,7 @@
 <?php
-    if (!empty($_SESSION['user_name'])):
-    $zoo = $_SESSION['subzoo_zoo_zoo_id'];
+    if (!empty($_SESSION['member_username'])):
     date_default_timezone_set('Asia/Bangkok');
-    $log_user = $_SESSION['user_name']." ".$_SESSION['user_last'];
+    $log_user = $_SESSION['member_username']." ".$_SESSION['member_password'];
     $form = new form();
     $lbtypepic = new label('รูปภาพiconประเภทร้านค้า');
     $lbtypenameshop = new label('ชื่อประเภทร้านค้า');
