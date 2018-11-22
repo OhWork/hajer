@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-12 svtop">
 			<div class="row">
-				<div class="col-4 lg5">
+				<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 lg5">
 					<b><h4>Recommended stores</h4></b>
 					<p class="lg6">
 					<?php
@@ -15,8 +15,8 @@
 					?>
 					</p>
 				</div>
-				<div class="col-4 svbd"></div>
-				<div class="col-4"></div>
+				<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 svbd"></div>
+				<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12"></div>
 			</div>
 		</div>
 		<div class="col-12 mt-4">
@@ -24,7 +24,7 @@
 				<?php
 					foreach($rs as $showrs){
 				?>
-				<div class="col-3 svbb pb-3">
+				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
 					<div class="col-12 pl-0 pr-0 mt-3">
 						<img src="images/shop/<?php echo $showrs['shop_pic'];?>" width="100%" height="200" style="border-radius:20px;" />
 					</div>

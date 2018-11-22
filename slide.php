@@ -22,7 +22,7 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>-->
-<div class="col-12" style="opacity:0.8;">
+<div class="col-12 dpn" style="opacity:0.8;">
 	<div class="row">
 		<img class="d-block w-100 h-100" src="images/mapss.jpg">
 	</div>
@@ -56,7 +56,7 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="row">
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 pl-4 bgw sll br2 hrow">
-							<input class="sip" name="keyword" type="text" placeholder="ชื่อร้าน" />
+							<input class="sip w-100" name="keyword" type="text" placeholder="ชื่อร้าน" />
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgw">
 							<div class="dropdown">
