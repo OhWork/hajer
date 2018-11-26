@@ -7,11 +7,11 @@
 		<div class="col-12 svtop">
 			<div class="row">
 				<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 lg5">
-					<b><h4>Recommended stores</h4></b>
+					<b><h4>ร้านค้าที่หาเจอแนะนำ</h4></b>
 					<p class="lg6">
 					<?php
 						$rslastid = $db->findAllDESC('shop','shop_id')->executeAssoc();
-						echo 'Over ',$rslastid['shop_id'],' store ads...';
+						echo 'มากกว่า ',$rslastid['shop_id'],' ร้านที่หาเจอ...';
 					?>
 					</p>
 				</div>
