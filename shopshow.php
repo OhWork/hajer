@@ -117,8 +117,8 @@
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 					<input type="hidden" id="keyword" value="<?php echo $keyword?>">
-					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
-					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showtype['shop_locationy'];?>">
+					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showkey['shop_locationx'];?>">
+					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showkey['shop_locationy'];?>">
 				</div>
 			</div>
 		</div>
