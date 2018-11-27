@@ -47,7 +47,7 @@
 						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 pt-3 lg6 lg2">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p><b>ดูรายละเอียดเพิ่มเคิม</b></p>
+									<p><b>ดูรายละเอียดเพิ่มเติม</b></p>
 								</div>
 							</div>
 						</div>
@@ -351,9 +351,10 @@ function downloadUrl(url, callback) {
 		          if (status === 'OK') {
 		            directionsDisplay.setDirections(response);
 		             var distance = response.routes[0].legs[0].distance.text;
-		             console.log(i);
 		             $('.distance'+j).append(distance);
 		             j++;
+		             directionsDisplay.setMap(null);
+
 		          } else {
 		            window.alert('Directions request failed due to ' + status);
 		          }
