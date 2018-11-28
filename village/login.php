@@ -55,7 +55,7 @@
 							<a id="loginemail" href="#">เข้าสู่ระบบด้วยอีเมล</a>
 						</div>
 						<div class="col-6" align="center">
-							<a href="admin_index.php?url=register.php">สมัครสมาชิก</a>
+							<a href="register.php">สมัครสมาชิก</a>
 						</div>
 					</div>
 				</div>
