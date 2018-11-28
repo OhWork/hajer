@@ -55,7 +55,7 @@
 							<a href="#">เข้าสู่ระบบด้วยอีเมล</a>
 						</div>
 						<div class="col-6" align="center">
-							<a href="#">สมัครสมาชิก</a>
+							<a href="register.php">สมัครสมาชิก</a>
 						</div>
 					</div>
 				</div>
