@@ -68,7 +68,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header detialhead">
-        <h3 class="modal-title  font-weight-bold mr-3" id="exampleModalLabe">รายละเอียด</h3>
+        <h3 class="modal-title  font-weight-bold mr-3" id="exampleModalLabe">ล็อคอินเข้าสู่ระบบ</h3>
       </div>
 <div class="col-12" style="border-right: 1px solid #039BE5;">
 			<div class="form-label-group">
