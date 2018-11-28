@@ -31,7 +31,7 @@
 			$grid->width = array('20%','10%','20%','10%','10%','10%','5%','5%');
 			$grid->name = 'table';
 			$grid->edit = 'admin_index.php?url=shop_status.php';
-			$grid->edittxt ='แก้ไข';
+			$grid->edittxt ='ดูรายละเอียด';
 			$grid->renderFromDB($columns,$rs);
    ?>
 <?php
