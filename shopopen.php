@@ -17,7 +17,7 @@
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 								<div class="row">
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7" id="introshop">
 										<p>หน้าแรก > หมวดหมู่ > ร้านค้าในกรุงเทพ > ร้านค้าในเขตลาดกระบัง > ชื่อร้านที่คลิกเข้ามาดู</p>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
@@ -95,7 +95,7 @@
 														</div>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-														<img class="d-block w-100" src="images/shop/<?php echo $rs['shop_pic'];?>.jpg">
+														<img class="d-block w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 														<div class="row">
@@ -289,7 +289,36 @@ var map, GeoMarker , mycircle ,markercircle;
 			}
         });
 
+geocodeLatLng();
 }
+function geocodeLatLng() {
+		var lat = $("#lat").val();
+		var lng = $("#lng").val();
+        var latlng = new google.maps.LatLng(<?php echo $rs['shop_locationx'];?>, <?php echo $rs['shop_locationy'];?>);
+		var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[1]) {
+			  var rs = results[1].formatted_address;
+			  var tmp = rs.split(" ");
+			  console.log(results[1].formatted_address);
+			  var tumbon_name = tmp[1];
+			  var ampur_name = tmp[3];
+			  var province_name = tmp[4];
+			  var zip_code = tmp[5];
+			$("#tumbon_name").val(tumbon_name);
+			$("#ampur_name").val(ampur_name);
+			$("#province_name").val(province_name);
+			$("#zip_code").val(zip_code);
+			$("#introshop").html('<span class="text-danger">หน้าแรก >'+'<?php echo $rs['typeshop_name'];?>'+''+'</span>');
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
+      }
 function downloadUrl(url, callback) {
 	var request = window.ActiveXObject ?
 	new ActiveXObject('Microsoft.XMLHTTP') :

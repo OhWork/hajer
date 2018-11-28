@@ -89,12 +89,14 @@
 			<div class='col-md-8'><?php echo $ratepriceshopmax; ?></div>
 		</div>
 	 </div>
+<!--
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbplaceshop; ?></div>
 			<div class='col-md-8'><?php echo $placeshop; ?></div>
 		</div>
 	 </div>
+-->
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbpicshop; ?></div>

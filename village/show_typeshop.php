@@ -24,11 +24,11 @@
 
 			$grid = new gridView();
 			$grid->pr = 'typeshop_id';
-			$grid->header = array('<b><center>ชื่อประเภทร้านค้า</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
+			$grid->header = array('<b><center>ชื่อประเภทร้านค้า</center></b>','<b><center>#</center></b>');
 			$grid->width = array('90%','5%','5%');
 			$grid->name = 'table';
 			$grid->edit = 'admin_index.php?url=typeshop_status.php';
-			$grid->edittxt ='แก้ไข';
+			$grid->edittxt ='ดูรายละเอียด';
 			$grid->renderFromDB($columns,$rs);
    ?>
  </div>

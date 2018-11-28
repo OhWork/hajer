@@ -6,7 +6,7 @@
 		$target_dir = '../images/temp/';
 		$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 		$img_new_name = basename($_FILES['shop_pic']['name']);
-		$target_dir_save = '../images/shop/'.$img_new_name.'.jpg';
+		$target_dir_save = '../images/shop/'.$img_new_name;
 		move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
 
 		$data['shop_name'] = $_POST['shop_name'];
@@ -23,7 +23,7 @@
 	$target_dir = '../images/temp/';
 	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 	$img_new_name = basename($_FILES['shop_pic']['name']);
-	$target_dir_save = '../images/shop/'.$img_new_name.'.jpg';
+	$target_dir_save = '../images/shop/'.$img_new_name;
 	move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
 
 

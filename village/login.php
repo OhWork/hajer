@@ -52,7 +52,7 @@
 				<div class="col-12 mt-5">
 					<div class="row">
 						<div class="col-6" align="center">
-							<a href="#">เข้าสู่ระบบด้วยอีเมล</a>
+							<a id="loginemail" href="#">เข้าสู่ระบบด้วยอีเมล</a>
 						</div>
 						<div class="col-6" align="center">
 							<a href="register.php">สมัครสมาชิก</a>
@@ -64,16 +64,18 @@
 		<div class="col-3"></div>
 	</div>
 </div>
-   <?php echo $form->close();?>
-  </body>
-</html>
-<!--<div class="col-4" style="border-right: 1px solid #039BE5;">
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header detialhead">
+        <h3 class="modal-title  font-weight-bold mr-3" id="exampleModalLabe">ล็อคอินเข้าสู่ระบบ</h3>
+      </div>
+<div class="col-12" style="border-right: 1px solid #039BE5;">
 			<div class="form-label-group">
 				<?php echo $text_user; ?>
 				<label for="inputEmail">User</label>
 			</div>
 			<div class="form-label-group">
-				<!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 				<?php echo $text_pass; ?>
 				<label for="inputPassword">Password</label>
 			</div>
@@ -84,3 +86,16 @@
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		</div>
+    </div>
+  </div>
+</div>
+
+   <?php echo $form->close();?>
+  </body>
+</html>
+<script>
+	$('#loginemail').on('click', function () {
+		console.log(1234);
+		$('#Modal').modal('show');
+	});
+</script>
