@@ -131,7 +131,7 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="idnaja" value="<?php echo $id;?>">
+	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
