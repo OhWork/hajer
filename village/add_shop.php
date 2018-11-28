@@ -131,10 +131,11 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="idnaja" value="<?php echo $id;?>">
+	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	<script>
+		var checkid = $('#idnaja').val();
  		if(checkid == ""){
 	      var map, GeoMarker;
 
@@ -261,6 +262,17 @@
 	                    map: map,
 	                    draggable:true,
 	                });
+	                var positionStart, positionStartNew;
+	        google.maps.event.addListener(marker, 'dragend', function() {
+			    if (confirm("Are You Sure You Want To Move this marker?")) {
+			      positionStartNew = this.position;
+			      var latlng = positionStartNew.toUrlValue(6);
+			      var cutlatlng = latlng.split(",");
+				  $('#lat').val(cutlatlng[0]);
+				  $('#lng').val(cutlatlng[1]);
+			      console.log(cutlatlng);
+			    }
+			});
 			}
 		  	$.ajax({
 	            type: "POST",
@@ -270,12 +282,11 @@
 	            success: function(data) {
 					var latt =  parseFloat(data.shop_locationx);
 					var lngg =  parseFloat(data.shop_locationy);
-					console.log(data);
 					var uluru = {lat: latt, lng: lngg};
 		            initMap(uluru);
 	            }
 	        });
-      }
+		}
       function readURL(input) {
 	        if (input.files && input.files[0]) {
 		            var reader = new FileReader();

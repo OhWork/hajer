@@ -1,25 +1,28 @@
 <?php  ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
-	function generateRandomString($length = 10) {
-		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$charactersLength = strlen($characters);
-		$randomString = '';
-		for ($i = 0; $i < $length; $i++) {
-			$randomString .= $characters[rand(0, $charactersLength - 1)];
-		}
-		return $randomString;
-	}
+
 	if(!empty($_POST['shop_id'])){
+		$target_dir = '../images/temp/';
+		$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
+		$img_new_name = basename($_FILES['shop_pic']['name']);
+		$target_dir_save = '../images/shop/'.$img_new_name.'.jpg';
+		move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
 
-		$data['locality_name'] = $_POST['locality_name'];
-
-		@$rsfix = $db->update('locality',$data,'locality_id',$_POST['locality_id']);
+		$data['shop_name'] = $_POST['shop_name'];
+		$data['shop_detail'] = $_POST['shop_detail'];
+		$data['shop_oc'] = $_POST['shop_oc'];
+		$data['shop_ratepricemin'] = $_POST['shop_ratemin'];
+		$data['shop_ratepricemax'] = $_POST['shop_ratemax'];
+		$data['shop_locationx'] = $_POST['lat'];
+		$data['shop_locationy'] = $_POST['lng'];
+		$data['shop_pic'] = $img_new_name;
+		@$rsfix = $db->update('shop',$data,'shop_id',$_POST['shop_id']);
 
 	}else{
 	$target_dir = '../images/temp/';
 	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
-	$img_new_name = generateRandomString(10);
+	$img_new_name = basename($_FILES['shop_pic']['name']);
 	$target_dir_save = '../images/shop/'.$img_new_name.'.jpg';
 	move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
 
