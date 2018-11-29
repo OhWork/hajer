@@ -48,10 +48,11 @@
 					</div>
 					<div class="col-12 lg6 mt-3">
 						<div class="row">
-							<div class="col-2 lg2">
+							<div class="col-4">นำทาง : </div>
+							<div class="col-1 lg2">
 								<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showrs['shop_locationx'],',',$showrs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 							</div>
-							<div class="col-10 pl-2 pr-0 svadr">
+							<div class="col-6 pl-2 pr-0 svadr">
 							</div>
 						</div>
 					</div>
