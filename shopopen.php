@@ -18,7 +18,6 @@
 							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 								<div class="row">
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7" id="introshop">
-										<p>หน้าแรก > หมวดหมู่ > ร้านค้าในกรุงเทพ > ร้านค้าในเขตลาดกระบัง > ชื่อร้านที่คลิกเข้ามาดู</p>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
 										<h3>ชื่อร้าน <?php echo $rs['shop_name'];?></h3>
@@ -68,7 +67,7 @@
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
 															<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 																<div class="row">
-																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4"></button>
+<!-- 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4"></button> -->
 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4">เช็คอิน</button>
 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4">แชร์</button>
 																</div>
@@ -301,16 +300,15 @@ function geocodeLatLng() {
             if (results[1]) {
 			  var rs = results[1].formatted_address;
 			  var tmp = rs.split(" ");
-			  console.log(results[1].formatted_address);
 			  var tumbon_name = tmp[1];
-			  var ampur_name = tmp[3];
-			  var province_name = tmp[4];
+			  var ampur_name = tmp[7];
+			  var province_name = tmp[8];
 			  var zip_code = tmp[5];
 			$("#tumbon_name").val(tumbon_name);
 			$("#ampur_name").val(ampur_name);
 			$("#province_name").val(province_name);
 			$("#zip_code").val(zip_code);
-			$("#introshop").html('<span class="text-danger">หน้าแรก >'+'<?php echo $rs['typeshop_name'];?>'+''+'</span>');
+			$("#introshop").html('<span>หน้าแรก >'+'<?php echo $rs['typeshop_name'];?>>'+province_name+'>'+ampur_name+'>'+'<?php echo $rs['shop_name'];?>'+'</span>');
             } else {
               window.alert('No results found');
             }
