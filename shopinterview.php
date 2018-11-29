@@ -26,7 +26,17 @@
 				?>
 				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
 					<div class="col-12 pl-0 pr-0 mt-3">
-						<img src="images/shop/<?php echo $showrs['shop_pic'];?>" width="100%" height="200" style="border-radius:20px;" />
+						<?php
+							if($showrs['shop_pic'] != ''){
+						?>
+								<img src="images/shop/<?php echo $showrs['shop_pic'];?>" width="100%" height="200" style="border-radius:20px;" />
+						<?php
+							}else{
+								?>
+								<img src="images/noimage.png" width="100%" height="200" style="border-radius:20px;" />
+						<?php
+							}
+						?>
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
 						<?php echo $showrs['shop_name'];?>

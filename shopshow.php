@@ -73,7 +73,15 @@
 							<div class="row">
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showkey['shop_pic']; ?>">
+									<?php
+									if($showkey['shop_pic'] != ''){
+									?>
+										<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showkey['shop_pic']; ?>">
+							  <?php }else{ ?>
+										<img class="d-block w-100 rounded-circle" height="50" src="images/noimage.png">
+									<?php
+									}
+									?>
 								</div>
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 							</div>
@@ -141,7 +149,15 @@
 							<div class="row">
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-									<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showtype['shop_pic']; ?>">
+									<?php
+									if($showtype['shop_pic'] != ''){
+									?>
+										<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showtype['shop_pic']; ?>">
+							  <?php }else{ ?>
+										<img class="d-block w-100 rounded-circle" height="50" src="images/noimage.png">
+									<?php
+									}
+									?>
 								</div>
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 							</div>
