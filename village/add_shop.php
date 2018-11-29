@@ -129,7 +129,7 @@
 				<?php echo $button; ?>
 			</div>
 			<div class='col-md-5'>
-				<button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button>
+				<a href="admin_index.php?url=shop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
 			</div>
 		</div>
 	</div>

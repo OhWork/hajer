@@ -2,7 +2,7 @@
 	$rs = $db->findByPK2('shop','typeshop','shop.typeshop_typeshop_id','typeshop.typeshop_id')->execute();
 
 ?>
-<div class="col-12 bmd" style="margin-top:650px">
+<div class="col-12 bmd" style="margin-top:700px">
 	<div class="row">
 		<div class="col-12 svtop">
 			<div class="row">
