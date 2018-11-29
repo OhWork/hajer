@@ -24,7 +24,7 @@
 </div>-->
 <div class="col-12 dpn" style="opacity:0.8;">
 	<div class="row">
-		<img class="d-block w-100 h-100" src="images/mapss.jpg">
+		<img class="d-block w-100 h-100" src="images/bg.jpg">
 	</div>
 </div>
 <div class="inner_position_top">
