@@ -40,7 +40,7 @@
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
 						<?php echo $showrs['shop_name'];?>
-						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px"/>
+						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px" style="float: right;"/>
 
 					</div>
 					<div class="col-12 lg5">
