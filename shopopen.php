@@ -123,30 +123,55 @@
 											</div>
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgb brd">
 												<div class="row">
+													<?php if($rs['shop_oc'] != ''){ ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>เวลาเปิด-ปิด <?php echo $rs['shop_oc'];?></p>
 													</div>
+													<?php }else{ }
+/*
+														 if($rs['shop_oc'] != ''){
+													?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>เบอร์ติดต่อ</p>
 													</div>
+													<?php }else{ }
+													 if($rs['shop_oc'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>Website</p>
 													</div>
+													<?php }else{ }
+													 if($rs['shop_oc'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>Line id</p>
 													</div>
+													<?php }else{ }
+													 if($rs['shop_oc'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>Facebook/pages</p>
 													</div>
+													<?php }else{ }
+													 if($rs['shop_oc'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>E-mail</p>
 													</div>
+													<?php }else{ }
+*/
+													 if($rs['shop_detail'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>รายละเอียด <?php echo $rs['shop_detail'];?></p>
 													</div>
+													<?php }else{ }
+													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
 														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?></p>
-													</div>
+													</div><?php }else{ }
+													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">มีที่จอดรถ</p>
 													</div>
