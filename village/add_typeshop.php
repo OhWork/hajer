@@ -5,7 +5,6 @@
 	$typeshop = new textfield('typeshop_name','','form-control','','');
 	$lbtypeshop = new label('ประเภทร้านค้า: ');
 	$lbpictype = new label('รูปไอคอนประเภทร้านค้า: ');
-	$filepic = new inputFile('typepic','','');
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
 <div class='col-md-6'>
@@ -21,7 +20,18 @@
 							<div class='col-md-12' style="margin-bottom: 16px;">
 								<div class='row'>
 									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbpictype; ?></div>
-									<div class='col-md-8'><?php echo $filepic; ?></div>
+									<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" id="typepic" name="typepic" /></div>
+									<?php
+									if(!empty($id)){
+									?>
+										<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>' width='100px' height='100px'></div>
+									<?php
+									}else{
+									?>
+										<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/noimage.png" width="100px" height="100px"></div>
+									<?php
+									}
+									?>
 								</div>
 							</div>
 						</div>
@@ -38,3 +48,21 @@
 							</div>
 						<input type="hidden" value="<?php echo $_GET['id'];?>">
 </div>
+<script>
+	function readURL(input) {
+	        if (input.files && input.files[0]) {
+		            var reader = new FileReader();
+
+		            reader.onload = function (e) {
+		                	$('#preimg').attr('src', e.target.result);
+
+		            }
+
+					reader.readAsDataURL(input.files[0]);
+	        }
+    	}
+     $('#typepic').on('change',function(e){
+	 	readURL(this);
+     });
+
+</script>
