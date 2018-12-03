@@ -44,7 +44,11 @@
 												<div class="row">
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<div class="row">
-															<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div>
+<!-- 															<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div> -->
+																<div class="col-12 brd" style="background-color:#ffffff;height:300px;">
+																	<span class="text-danger">หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
+																<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+																</div>
 														</div>
 													</div>
 												</div>
@@ -204,6 +208,7 @@
 				</div>
 			</div>
 <script>
+/*
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
@@ -357,4 +362,5 @@ function downloadUrl(url, callback) {
 }
 function doNothing() {}
 google.maps.event.addDomListener(window, 'load', initialize);
+*/
 </script>
