@@ -46,8 +46,18 @@
 														<div class="row">
 <!-- 															<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div> -->
 																<div class="col-12 brd" style="background-color:#ffffff;height:300px;">
+																	<div class="col-md-12">
 																	<span class="text-danger">หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
+																	</div>
+																	<div class="col-md-12">
 																<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+																	</div>
+																	<div class="col-md-6">
+																	<span class="text-danger">ระยะทางจากท่านสู่ร้านค้า :</span>
+																	</div>
+																	<div class="col-md-6">
+																	<p id="distance" class="text-primary"></p>
+																	</div>
 																</div>
 														</div>
 													</div>
@@ -208,159 +218,45 @@
 				</div>
 			</div>
 <script>
-/*
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
-        var mapOptions = {
-          zoom: 16,
-          center: new google.maps.LatLng(<?php echo $rs['shop_locationx'];?>, <?php echo $rs['shop_locationy'];?>),
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          streetViewControl: false,
-          disableDefaultUI: true,
-          styles: [
-		  	{
-				"featureType": "administrative",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				 ]
-			},
-			{
-				"featureType": "poi",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "labels.icon",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "transit",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			}
-          ]
-        };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            mapOptions);
-       var infoWindow = new google.maps.InfoWindow;
-	   $.ajax({
-            url: "marker_shopdetail.php",
-            data: {id : $('#id_shop').val()},
-            type: "POST",
-            success: function(data) {
-               // Change this depending on the name of your PHP or XML file
-					var xml = data;
-					var markers = xml.documentElement.getElementsByTagName('marker');
-					Array.prototype.forEach.call(markers, function(markerElem) {
-					   var id = markerElem.getAttribute('id');
-					   var shopname = markerElem.getAttribute('shopname');
-					   var detailshop = markerElem.getAttribute('detailshop');
-					   var ocshop = markerElem.getAttribute('ocshop');
-					   var priceshop = markerElem.getAttribute('priceshop');
-					   var placeshop = markerElem.getAttribute('placeshop');
-					   var typeshop = markerElem.getAttribute('typeshop');
-					   var icon = markerElem.getAttribute('icon');
-					   var point = new google.maps.LatLng(
-					  	 parseFloat(markerElem.getAttribute('lat')),
-					  	 parseFloat(markerElem.getAttribute('lng'))
-					   );
-					   var infowincontent = document.createElement('div');
-					   // เรียกตัวแปร infowincontent เพื่อ set ID ให้กับ DIV เป็น Div1
-					   infowincontent.setAttribute("id", "Div1");
-					   // เรียกตัวแปร infowincontent เพื่อ set classname ของ div
-					   infowincontent.className = "aClassName";
-					   // สิ้นสุด
-					   var strong = document.createElement('strong');
-					   strong.textContent = shopname
-					   infowincontent.appendChild(strong);
-					   infowincontent.appendChild(document.createElement('br'));
-					   var text = document.createElement('text');
-					   text.textContent = 'รายละเอียดร้านค้า : ' + detailshop
-					   infowincontent.appendChild(text);
-					   infowincontent.appendChild(document.createElement('br'));
-					   var text2 = document.createElement('text');
-					   text2.textContent ='เวลาเปิดปิดร้านค้า : ' + ocshop
-					   infowincontent.appendChild(text2);
-					   infowincontent.appendChild(document.createElement('br'));
-					   var text3 = document.createElement('text');
-					   text3.textContent ='เรทราคาของร้านค้า : ' + priceshop
-					   infowincontent.appendChild(text3);
-					   infowincontent.appendChild(document.createElement('br'));
-					   var text4 = document.createElement('text');
-					   text4.textContent ='สถานที่ตั้งของร้านค้า : ' + placeshop
-					   infowincontent.appendChild(text4);
-					   infowincontent.appendChild(document.createElement('br'));
-					   var marker = new google.maps.Marker({
-						   map: map,
-						   position: point,
-						   icon:icon
-						   });
-					   marker.addListener('click', function() {
-						   infoWindow.setContent(infowincontent);
-						   infoWindow.open(map, marker);
-						   });
-					});
-			}
-        });
+	    var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService = new google.maps.DirectionsService;
+         calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-geocodeLatLng();
 }
-function geocodeLatLng() {
-		var lat = $("#lat").val();
-		var lng = $("#lng").val();
-        var latlng = new google.maps.LatLng(<?php echo $rs['shop_locationx'];?>, <?php echo $rs['shop_locationy'];?>);
-		var geocoder = new google.maps.Geocoder;
-        geocoder.geocode({'location': latlng}, function(results, status) {
-          if (status === 'OK') {
-            if (results[1]) {
-			  var rs = results[1].formatted_address;
-			  var tmp = rs.split(" ");
-			  var tumbon_name = tmp[1];
-			  var ampur_name = tmp[7];
-			  var province_name = tmp[8];
-			  var zip_code = tmp[5];
-			$("#tumbon_name").val(tumbon_name);
-			$("#ampur_name").val(ampur_name);
-			$("#province_name").val(province_name);
-			$("#zip_code").val(zip_code);
-			$("#introshop").html('<span>หน้าแรก >'+'<?php echo $rs['typeshop_name'];?>>'+province_name+'>'+ampur_name+'>'+'<?php echo $rs['shop_name'];?>'+'</span>');
-            } else {
-              window.alert('No results found');
-            }
-          } else {
-            window.alert('Geocoder failed due to: ' + status);
-          }
-        });
+ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+        	};
+        	var startlat =  parseFloat(pos.lat);
+        	var startlng =  parseFloat(pos.lng);
+        	var endlat = parseFloat(<?php echo $rs['shop_locationx'];?>);
+        	var endlng = parseFloat(<?php echo $rs['shop_locationy'];?>);
+	        var start = new google.maps.LatLng(startlat,startlng);
+			var end = new google.maps.LatLng(endlat,endlng);
+	        directionsService.route({
+	          origin: start,
+	          destination: end,
+	          travelMode: 'DRIVING',
+	          provideRouteAlternatives: true,
+	        }, function(response, status) {
+		          if (status === 'OK') {
+		            directionsDisplay.setDirections(response);
+		             var distance = response.routes[0].legs[0].distance.text;
+		             console.log(distance);
+		             $('#distance').append(distance);
+		             directionsDisplay.setMap(null);
+
+		          } else {
+		            window.alert('Directions request failed due to ' + status);
+		          }
+	        });
+		});
+
       }
-function downloadUrl(url, callback) {
-	var request = window.ActiveXObject ?
-	new ActiveXObject('Microsoft.XMLHTTP') :
-	new XMLHttpRequest;
-	request.onreadystatechange = function() {
-		 if (request.readyState == 4) {
-			 request.onreadystatechange = doNothing;
-			 callback(request, request.status);
-		 }
-	};
-	request.open('GET', url, true);
-	request.send(null);
-}
-function doNothing() {}
 google.maps.event.addDomListener(window, 'load', initialize);
-*/
 </script>
