@@ -25,7 +25,8 @@
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
 	 $lbpicshop = new label('รูปภาพของร้านค้า');
-	 $ocshop = new textfield('shop_oc','','form-control','','');
+	 $openshop = new textfield('shop_open','','form-control','','');
+	 $closeshop = new textfield('shop_close','','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
 	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','','');
 	 $lbratepriceshopmin = new label('เรทราคาต่ำสุด');
@@ -74,7 +75,10 @@
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
 			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbocshop; ?></div>
-			<div class='col-md-8'><?php echo $ocshop; ?></div>
+			<div class='col-md-3'><?php echo $openshop; ?></div>
+			<div class='col-md-1'><p>-</p></div>
+			<div class='col-md-3'><?php echo $closeshop; ?></div>
+			<div class='col-md-1'><p>น.</p></div>
 		</div>
 	 </div>
 	 <div class='col-md-12' style="margin-bottom: 16px;">

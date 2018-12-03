@@ -11,7 +11,8 @@
 
 		$data['shop_name'] = $_POST['shop_name'];
 		$data['shop_detail'] = $_POST['shop_detail'];
-		$data['shop_oc'] = $_POST['shop_oc'];
+		$data['shop_open'] = $_POST['shop_open'];
+		$data['shop_close'] = $_POST['shop_close'];
 		$data['shop_ratepricemin'] = $_POST['shop_ratemin'];
 		$data['shop_ratepricemax'] = $_POST['shop_ratemax'];
 		$data['shop_locationx'] = $_POST['lat'];
@@ -30,7 +31,8 @@
 	@$rs = $db->insert('shop',array(
 	'shop_name' => $_POST['shop_name'],
 	'shop_detail' => $_POST['shop_detail'],
-	'shop_oc' => $_POST['shop_oc'],
+	'shop_open' => $_POST['shop_open'],
+	'shop_close' => $_POST['shop_close'],
 	'shop_ratepricemin' => $_POST['shop_ratemin'],
 	'shop_ratepricemax' => $_POST['shop_ratemax'],
 	'shop_locationx' => $_POST['lat'],

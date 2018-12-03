@@ -93,7 +93,14 @@
 										</div>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-											<button type="button" class="btn btn-success col-xl-3 col-lg-3 col-md-3 col-sm-3">เปิดอยู่ขณะนี้</button>
+											<?php
+												$currenttime=date("H:i:s");
+												if(($currenttime >= $rs['shop_open']) && ($currenttime <= $rs['shop_close'])){?>
+												<button type="button" class="btn btn-success col-xl-3 col-lg-3 col-md-3 col-sm-3">เปิดอยู่ขณะนี้</button>
+											<?php }else{?>
+												<button type="button" class="btn btn-danger col-xl-3 col-lg-3 col-md-3 col-sm-3">ปิดอยู่ขณะนี้</button>
+											<?php }
+											?>
 											<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9"></div>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -137,43 +144,41 @@
 											</div>
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgb brd">
 												<div class="row">
-													<?php if($rs['shop_oc'] != ''){ ?>
+													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>เวลาเปิด-ปิด <?php echo $rs['shop_oc'];?></p>
+														<p>เวลาเปิด-ปิด <?php echo $rs['shop_open'],'-',$rs['shop_close'];?>น.</p>
 													</div>
 													<?php }else{ }
-/*
-														 if($rs['shop_oc'] != ''){
+													if($rs['shop_tel'] != ''){
 													?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>เบอร์ติดต่อ</p>
+														<p>เบอร์ติดต่อ <?php echo $rs['shop_tel'];?></p>
 													</div>
 													<?php }else{ }
-													 if($rs['shop_oc'] != ''){
+													 if($rs['shop_website'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Website</p>
+														<p>Website <?php echo $rs['shop_website'];?></p>
 													</div>
 													<?php }else{ }
-													 if($rs['shop_oc'] != ''){
+													 if($rs['shop_line'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Line id</p>
+														<p>Line id <?php echo $rs['shop_line'];?></p>
 													</div>
 													<?php }else{ }
-													 if($rs['shop_oc'] != ''){
+													 if($rs['shop_facebook'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Facebook/pages</p>
+														<p>Facebook/pages <?php echo $rs['shop_facebook'];?></p>
 													</div>
 													<?php }else{ }
-													 if($rs['shop_oc'] != ''){
+													 if($rs['shop_email'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>E-mail</p>
+														<p>E-mail <?php echo $rs['shop_email'];?></p>
 													</div>
 													<?php }else{ }
-*/
 													 if($rs['shop_detail'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
