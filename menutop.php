@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bgw">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
 	<a class="navbar-brand logomn mgt" href="#">
 		<img height="50px;" src="images/Hajers2.png">
 	</a>
