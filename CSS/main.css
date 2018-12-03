@@ -2,6 +2,7 @@
 	.dpn {display:none;}
 	.lg7 {color:#424242;}
 	.lg2 {color:#424242;}
+	.lg2:hover{color:#ffffff;}
 }
 @media (min-width: 576px){
 	.inner_position_top{
@@ -36,6 +37,7 @@
 	.dpn {display:inline;}
 	.lg7 {color:#ffffff;}
 	.lg2 {color:#039BE5;}
+	.lg2:hover{color:#ffffff;}
 }
 @media (min-width: 768px){
 	.inner_position_top{
@@ -72,6 +74,7 @@
 	.dpn {display:inline;}
 	.lg7 {color:#ffffff;}
 	.lg2 {color:#039BE5;}
+	.lg2:hover{color:#ffffff;}
 }
 @media (min-width: 992px){
 	.inner_position_top{
@@ -96,7 +99,7 @@
 		height:80px;
 	}
 	.mgt {
-		margin-right:75%;
+		margin-right:55%;
 	}
 	.inner_position_top{
 		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
@@ -108,10 +111,11 @@
 	.dpn {display:inline;}
 	.lg7 {color:#ffffff;}
 	.lg2 {color:#039BE5;}
+	.lg2:hover{color:#ffffff;}
 }
 @media (min-width: 1254px){
 	.mgt {
-		margin-right:85%;
+		margin-right:68%;
 	}
 	.inner_position_top{
 		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
@@ -170,7 +174,7 @@
 	color:#43A047;
 }
 .bgw {
-	background-color:#ffffff;
+	background-color:rgba(255, 255, 255, 0.4);
 }
 .bgr {
 	background-color:#E53935;
@@ -180,8 +184,6 @@
 }
 .lgb:hover {
 	background-color:#039BE5;
-	border:solid 1px #039BE5;
-	color:#ffffff;
 }
 .bts:hover {
 	background-color:#757575;

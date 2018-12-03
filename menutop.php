@@ -1,15 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bgw">
 	<a class="navbar-brand logomn mgt" href="#">
 		<img height="50px;" src="images/Hajers2.png">
 	</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHJ" aria-controls="#navbarHJ" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-			<div style="float:left;margin-top:4px;">
-				<a class="lg2" href="village/login.php">เข้าสู่ระบบ</a>
-			</div>
-			<div style="float:left;margin-top:4px;">
-				<span class="lg2" data-feather="log-in"></span>
-			</div>
-
+	<div class="navbar-collapse collapse" id="navbarHJ">
+		<ul class="navbar-nav">
+			<li class="navbar-item pt-1 pb-1 pl-2 pr-2">
+				<a class="navbar-link" href="#">
+					<div class="lg2" style="float:left;">หน้าแรก</div>
+				</a>
+			</li>
+			<li class="navbar-item pt-1 pb-1 pl-2 pr-2 mr-2">
+				<a class="navbar-link" href="#">
+					<div class="lg2" style="float:left;">เกี่ยวกับเรา</div>
+				</a>
+			</li>
+			<li class="navbar-item">
+				<a class="navbar-link" href="village/login.php">
+					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">เข้าสู่ระบบ</div>
+				</a>
+			</li>
+		</ul>
+	</div>
 </nav>
