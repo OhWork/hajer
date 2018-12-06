@@ -33,7 +33,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-xl-2 col-lg-1"></div>
-				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lg7 slh">
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lgw slh">
 					หาเจอเราจะค้นหาสิ่งที่คุณต้องการ
 				</div>
 				<div class="col-xl-2 col-lg-1"></div>
@@ -42,7 +42,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-xl-2 col-lg-1"></div>
-				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lg7">
+				<div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 lgw">
 					<center><p>สถานที่คุณจะค้นหา เช่น ร้ายขายของชำ ,ร้านตัดผม ,ร้านขายยา ,และอื่น ๆ .....</p></center>
 				</div>
 				<div class="col-xl-2 col-lg-1"></div>
