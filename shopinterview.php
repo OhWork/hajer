@@ -40,9 +40,9 @@
 						?>
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
-						<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showrs['shop_name'];?></p>
+						<p><?php echo $showrs['shop_name'];?>
 						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px" style="float: right;"/>
-
+						</p>
 					</div>
 					<div class="col-12 lg5">
 						ช่วงราคา : <?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>

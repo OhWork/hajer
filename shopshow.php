@@ -89,7 +89,7 @@
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-								<p><?php echo $showkey['shop_name'];?></p>
+								<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showkey['shop_name'];?></p>
 								</div>
 							</div>
 						</div>
@@ -165,7 +165,7 @@
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p><?php echo $showtype['shop_name'];?></p>
+									<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showtype['shop_name'];?></p>
 								</div>
 							</div>
 						</div>
@@ -381,4 +381,19 @@ function downloadUrl(url, callback) {
       }
 function doNothing() {}
 google.maps.event.addDomListener(window, 'load', initialize);
+function truncateText(text, length) {
+  if (text.length <= length) {
+    return text;
+  }
+
+  return text.substr(0, length) + '\u2026'
+}
+
+for(var i = 0 ; i < $('.shop_name').length; i++){
+	console.log(i);
+	let truncated;
+	truncated = truncateText($('#shop_name'+i).text(), 30);
+	$('#shop_name'+i).text(truncated);
+	console.log();
+}
 </script>

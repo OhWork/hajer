@@ -96,13 +96,6 @@
         		});
         	});
         });
-function truncateText(text, length) {
-  if (text.length <= length) {
-    return text;
-  }
-
-  return text.substr(0, length) + '\u2026'
-}
     </script>
 	</head>
     <body>
@@ -125,10 +118,5 @@ $('#typeshop').select2({
 	placeholder: "ประเภทร้านค้า",
 	allowClear: true
 });
-for(var i = 0 ; i < $('.shop_name').length; i++){
-	let truncated;
-	truncated = truncateText($('#shop_name'+i).text(), 10);
-	$('#shop_name'+i).text(truncated);
-	console.log();
-}
+
   </script>
