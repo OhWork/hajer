@@ -1,9 +1,11 @@
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mx-auto mt-3">
 	<div class="row">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-			<h3>เกี่ยวกับเรา</h3>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" align="center">
+			<h2>เกี่ยวกับเรา</h2>
 		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+		<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-5">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<h5>เกี่ยวกับเรา</h5>
@@ -13,7 +15,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-5">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<h5>พันธกิจ</h5>
@@ -23,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-5">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 					<h5>ค่านิยม</h5>
@@ -42,5 +44,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-5 mb-5">
+			<div class="row">
+				<img class="d-block w-100 h-100" src="images/aboutus.png">
+			</div>
+		</div>
+		</div>
+		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 	</div>
 </div>

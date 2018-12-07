@@ -13,7 +13,7 @@
 				</a>
 			</li>
 			<li class="navbar-item pt-1 pb-1 pl-2 pr-2 mr-2">
-				<a class="navbar-link" href="#">
+				<a class="navbar-link" href="index.php?url=aboutus.php">
 					<div class="lg2" style="float:left;">เกี่ยวกับเรา</div>
 				</a>
 			</li>
