@@ -22,6 +22,7 @@
 		<div class="col-12 mt-4">
 			<div class="row">
 				<?php
+					$i = 0;
 					foreach($rs as $showrs){
 				?>
 				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
@@ -39,7 +40,7 @@
 						?>
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
-						<?php echo $showrs['shop_name'];?>
+						<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showrs['shop_name'];?></p>
 						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px" style="float: right;"/>
 
 					</div>
@@ -70,6 +71,7 @@
 					</div>
 				</div>
 				<?php
+					$i++;
 					}
 				?>
 	</div>

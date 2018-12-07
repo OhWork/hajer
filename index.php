@@ -96,6 +96,13 @@
         		});
         	});
         });
+function truncateText(text, length) {
+  if (text.length <= length) {
+    return text;
+  }
+
+  return text.substr(0, length) + '\u2026'
+}
     </script>
 	</head>
     <body>
@@ -106,113 +113,6 @@
 		</div>
 		<?php include "footer.php" ?>
 		</div>
-		<!--
-						<div class="col-12" style="background-color:#ffffff;height:250px;color: #0097A7;">
-							<div class="row">
-								<div class="col-12" style="padding-top:8px;">
-									<p>Promotion</p>
-									<button type="button" class="btn btn-dark"><a class="text-white" href="promotion.php">เลือกราคาโปรโมชั่น</a></button>
-								</div>
-							</div>
-						</div>
-						<div class="col-12" style="background-color:#B0E0E6;height:200px;color:#ffffff;">
-							<div class="row">
-								<div class="col-1"></div>
-								<div class="col-10">
-									<div class="row">
-										<div class="col-6" style="height:200px;border-right:10px solid #ffffff;">
-											<div class="row">
-												<div class="col-12">
-													<P>REVIEW</P>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-												<div class="col-12">
-												<div class="row">
-													<p style="margin-bottom:0;">BEST OF SHOP</p>
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;margin-left:50px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-													<img src="images/star.png" width="15px" height="15px" style="margin-top:4px;">
-												</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6">
-											<div class="row">
-												<div class="col-12" style="margin-top:60px;margin-bottom:8px;">
-													<div class="row">
-														<div class="col-3"></div>
-														<div class="col-8">
-															<input type="password" class="form-control" placeholder="SEARCH ONLY...">
-														</div>
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="row">
-														<div class="col-6"></div>
-														<div class="col-2">
-															<button type="button" class="btn btn-outline-light">Success</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-1"></div>
-							</div>
-						</div>
-						<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;">
-						</div>
-						<div class="col-12" style="background-color:#B0E0E6;height:200px;color:#ffffff;">
-							<div class="row">
-								<div class="col-3"></div>
-								<div class="col-6">
-									<center><p style="margin-bottom:0;">Site MAP (want a moment)</p></center>
-								</div>
-								<div class="col-3"></div>
-							</div>
-						</div>-->
     </body>
 	<footer>
 
@@ -220,37 +120,15 @@
 </html>
  <script>
 feather.replace();
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    animateOut: 'fadeOutLeft',
-    animateIn: 'fadeInRight',
-    loop:true,
-    margin:48,
-    responsiveClass:true,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true,
-    autoWidth:true,
-    dots: true,
-    responsive:{
-       0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        960:{
-            items:5
-        },
-        1200:{
-            items:6
-        }
-    }
-});
 $('.img-responsive').addClass('ics');
 $('#typeshop').select2({
 	placeholder: "ประเภทร้านค้า",
 	allowClear: true
 });
-
+for(var i = 0 ; i < $('.shop_name').length; i++){
+	let truncated;
+	truncated = truncateText($('#shop_name'+i).text(), 10);
+	$('#shop_name'+i).text(truncated);
+	console.log();
+}
   </script>
