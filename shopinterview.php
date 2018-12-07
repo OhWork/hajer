@@ -22,6 +22,7 @@
 		<div class="col-12 mt-4">
 			<div class="row">
 				<?php
+					$i = 0;
 					foreach($rs as $showrs){
 				?>
 				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
@@ -39,9 +40,9 @@
 						?>
 					</div>
 					<div class="col-12 lg5 svbd mt-3">
-						<?php echo $showrs['shop_name'];?>
+						<p><?php echo $showrs['shop_name'];?>
 						<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px" style="float: right;"/>
-
+						</p>
 					</div>
 					<div class="col-12 lg5">
 						ช่วงราคา : <?php echo $showrs['shop_ratepricemin'],' - ',$showrs['shop_ratepricemax'],' บาท';?>
@@ -70,6 +71,7 @@
 					</div>
 				</div>
 				<?php
+					$i++;
 					}
 				?>
 	</div>
