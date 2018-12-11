@@ -9,12 +9,12 @@
 		<ul class="navbar-nav ml-auto">
 			<li class="navbar-item pt-1 pb-1 pl-2 pr-2">
 				<a class="navbar-link" href="#">
-					<div class="lg2" style="float:left;">หน้าแรก</div>
+					<div class="lg1" style="float:left;">หน้าแรก</div>
 				</a>
 			</li>
 			<li class="navbar-item pt-1 pb-1 pl-2 pr-2 mr-2">
 				<a class="navbar-link" href="index.php?url=aboutus.php">
-					<div class="lg2" style="float:left;">เกี่ยวกับเรา</div>
+					<div class="lg1" style="float:left;">เกี่ยวกับเรา</div>
 				</a>
 			</li>
 			<li class="navbar-item">

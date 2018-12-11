@@ -1,8 +1,11 @@
 @media (max-width: 575px){
 	.dpn {display:none;}
+	.bmd {margin-top: 5%;}
 	.lg7 {color:#424242;}
 	.lg2 {color:#424242;}
 	.lg2:hover{color:#ffffff;}
+	.lg1 {color:#039BE5;}
+	.lg1:hover{color:#e4a924;}
 }
 @media (min-width: 576px){
 	.inner_position_top{
@@ -32,7 +35,7 @@
 		height:40px;
 	}
 	.bmd {
-		margin-top: 30%;
+		margin-top: 45%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
@@ -40,6 +43,8 @@
 	.lg7:hover {color:#e4a924;}
 	.lg2 {color:#039BE5;}
 	.lg2:hover{color:#ffffff;}
+	.lg1 {color:#039BE5;}
+	.lg1:hover{color:#e4a924;}
 }
 @media (min-width: 768px){
 	.inner_position_top{
@@ -68,7 +73,7 @@
 		top:64px; /* css กำหนดชิดด้านบน  */
 	}
 	.bmd {
-		margin-top: 27%;
+		margin-top: 40%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
@@ -76,6 +81,8 @@
 	.lg7:hover {color:#e4a924;}
 	.lg2 {color:#039BE5;}
 	.lg2:hover{color:#ffffff;}
+	.lg1 {color:#039BE5;}
+	.lg1:hover{color:#e4a924;}
 }
 @media (min-width: 992px){
 	.inner_position_top{
@@ -104,14 +111,16 @@
 		top:64px; /* css กำหนดชิดด้านบน  */
 	}
 	.bmd {
-		margin-top: 30%;
+		margin-top: 45%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
 	.lg7 {color:#ffffff;}
 	.lg7:hover {color:#e4a924;}
 	.lg2 {color:#039BE5;}
-	.lg2:hover{color:#43A047;}
+	.lg2:hover{color:#ffffff;}
+	.lg1 {color:#039BE5;}
+	.lg1:hover{color:#e4a924;}
 }
 @media (min-width: 1254px){
 	.inner_position_top{
@@ -122,12 +131,14 @@
 		height:59px;
 	}
 	.bmd {
-		margin-top: 33%;
+		margin-top: 55%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
 	.lg7 {color:#ffffff;}
 	.lg7:hover {color:#e4a924;}
+	.lg1 {color:#039BE5;}
+	.lg1:hover{color:#e4a924;}
 }
 .fl {
 	float:left;
@@ -150,9 +161,6 @@
     color: inherit;
 }
 /*color*/
-.lg1 {
-	color:#BDBDBD;
-}
 .lg3 {
 	background-color:#039BE5;
 	color:#bdbdbd;
