@@ -9,11 +9,12 @@
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
         <link rel="stylesheet" href="CSS/bootstrap.css">
         <link rel="stylesheet" href="CSS/main.css">
-          <title>ระบบintranet</title>
-	</head>
+		  <?php
+		  include_once 'inc_js.php';
+		  ?>
 <?php
-    include_once 'village/database/db_tools.php';
-    include_once 'village/connect.php';
+	include_once 'village/database/db_tools.php';
+	include_once 'village/connect.php';
 	$db->findByAttributes('member',array(
 		'member_username =' => $_POST['member_username'],
 		'member_password =' => $_POST['member_password']
@@ -23,12 +24,85 @@
     	$_SESSION['member_id'] = $rs['member_id'];
 		$_SESSION['member_username'] = $rs['member_username'];
 		$_SESSION['member_password'] = $rs['member_password'];
+		if($rs['member_permition'] == 1){
 		?>
+		<div class="modal" id="myModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        ยินดีต้อนรับเข้าสู่ระบบ
+		      </div>
+		       <div class="modal-footer">
+			       <div id="showcountdown"></div>
+			       <a href="village/admin_index.php"><button type="button" class="btn btn-primary">Ok</button></a>
+		       </div>
+		    </div>
+		  </div>
+		</div>
 		<script>
-			alert('เข้าสู่ระบบได้เรียบร้อย');
-			window.location.href = 'promotion.php';
+
+
+			$("#myModal").modal({backdrop: 'static', keyboard: false});
+
+			setTimeout(function(){
+				window.location.href = 'village/admin_index.php';
+			}, 5000);
+			var timeLeft = 4;
+			var elem = document.getElementById('showcountdown');
+			var timerId = setInterval(countdown, 1000);
+
+			function countdown() {
+			    if (timeLeft == -1) {
+			        clearTimeout(timerId);
+			    } else {
+			        elem.innerHTML = timeLeft + ' seconds remaining';
+			        timeLeft--;
+			    }
+			}
 		</script>
 		<?php
+		}else{
+		?>
+		<div class="modal" id="myModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        ยินดีต้อนรับเข้าสู่ระบบ
+		      </div>
+		       <div class="modal-footer">
+			       <div id="showcountdown"></div>
+			       <a href="shop_index.php"><button type="button" class="btn btn-primary">Ok</button></a>
+		       </div>
+		    </div>
+		  </div>
+		</div>
+		<script>
+
+
+			$("#myModal").modal({backdrop: 'static', keyboard: false});
+
+			setTimeout(function(){
+				window.location.href = 'shop_index.php';
+			}, 5000);
+			var timeLeft = 4;
+			var elem = document.getElementById('showcountdown');
+			var timerId = setInterval(countdown, 1000);
+
+			function countdown() {
+			    if (timeLeft == -1) {
+			        clearTimeout(timerId);
+			    } else {
+			        elem.innerHTML = timeLeft + ' seconds remaining';
+			        timeLeft--;
+			    }
+			}
+
+		<?php
+		}
 		//header('location: admin_index.php');
 /*
 		$log_user = $_SESSION['user_name']." ".$_SESSION['user_last'];
@@ -51,7 +125,7 @@
 		?>
 		<script>
 			alert('ไอดีหรือรหัสผิดพลาด กรุณาลองใหม่');
-			window.location.href = 'index.php';
+			window.location.href = 'login.php';
 		</script>
 		<?php
 		//header('location: admin_index.php');

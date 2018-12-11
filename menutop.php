@@ -18,7 +18,7 @@
 				</a>
 			</li>
 			<li class="navbar-item">
-				<a class="navbar-link" href="village/login.php">
+				<a class="navbar-link" href="login.php">
 					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">เข้าสู่ระบบ</div>
 				</a>
 			</li>
