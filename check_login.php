@@ -32,7 +32,7 @@
 
 		      <!-- Modal body -->
 		      <div class="modal-body">
-		        ยินดีต้อนรับเข้าสู่ระบบ
+		        ยินดีต้อนรับเข้าสู่ระบบผู้ดูแล
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>
@@ -71,7 +71,7 @@
 
 		      <!-- Modal body -->
 		      <div class="modal-body">
-		        ยินดีต้อนรับเข้าสู่ระบบ
+		        ยินดีต้อนรับเข้าสู่ระบบผู้ใช้
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>
