@@ -17,11 +17,19 @@
 					<div class="lg1" style="float:left;">เกี่ยวกับเรา</div>
 				</a>
 			</li>
+			<?php if($_SESSION['member_id'] ==''){ ?>
 			<li class="navbar-item">
 				<a class="navbar-link" href="login.php">
 					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">เข้าสู่ระบบ</div>
 				</a>
 			</li>
+			<?php }else{ ?>
+			<li class="navbar-item">
+				<a class="navbar-link" href="login.php">
+					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">คำร้องขอสมัครเป็นร้านค้า</div>
+				</a>
+			</li>
+			<?php } ?>
 		</ul>
 	</div>
 </nav>

@@ -24,7 +24,8 @@
     	$_SESSION['member_id'] = $rs['member_id'];
 		$_SESSION['member_username'] = $rs['member_username'];
 		$_SESSION['member_password'] = $rs['member_password'];
-		if($rs['member_permition'] == 1){
+		$_SESSION['member_permition'] = $rs['member_permition'];
+		if($_SESSION['member_permition'] == 1){
 		?>
 		<div class="modal" id="myModal">
 		  <div class="modal-dialog">
@@ -64,8 +65,9 @@
 		</script>
 		<?php
 		}else{
+			print_r($_SESSION);
 		?>
-		<div class="modal" id="myModal">
+		<div class="modal" id="myModal2">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 
@@ -75,7 +77,7 @@
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>
-			       <a href="shop_index.php"><button type="button" class="btn btn-primary">Ok</button></a>
+			       <a href="index.php"><button type="button" class="btn btn-primary">Ok</button></a>
 		       </div>
 		    </div>
 		  </div>
@@ -83,10 +85,10 @@
 		<script>
 
 
-			$("#myModal").modal({backdrop: 'static', keyboard: false});
+			$("#myModal2").modal({backdrop: 'static', keyboard: false});
 
 			setTimeout(function(){
-				window.location.href = 'shop_index.php';
+				window.location.href = 'index.php';
 			}, 5000);
 			var timeLeft = 4;
 			var elem = document.getElementById('showcountdown');
@@ -100,7 +102,7 @@
 			        timeLeft--;
 			    }
 			}
-
+			</script>
 		<?php
 		}
 		//header('location: admin_index.php');
