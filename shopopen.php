@@ -188,7 +188,7 @@
 													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?></p>
+														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
 													</div><?php }else{ }
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
