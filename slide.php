@@ -60,7 +60,7 @@
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgw">
 							<div class="dropdown">
-								<div class="lg6" style="padding-top:16px;" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="lg6" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<select class="form-control col-12" name="typeshop" id="typeshop">
 									<option value=""> ------- เลือก ------ </option>
 									<?php
