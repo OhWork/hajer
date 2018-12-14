@@ -83,7 +83,7 @@
 																<div class="row">
 <!-- 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4"></button> -->
 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4">เช็คอิน</button>
-																	<!-- แก้๊URL ใน Data-href																 -->
+																	<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์-->
 																	<div class="fb-share-button"
 																    data-href="URL"
 																    data-layout="button_count"
