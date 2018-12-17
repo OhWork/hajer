@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bgw w-100">
-	<a class="navbar-brand logomn" href="#">
+	<a class="navbar-brand logomn" href="index.php">
 		<img height="50px;" src="images/Hajerlogo.png">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHJ" aria-controls="#navbarHJ" aria-expanded="false" aria-label="Toggle navigation">

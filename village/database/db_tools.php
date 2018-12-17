@@ -134,7 +134,10 @@
 			$this->sql = "SELECT $select FROM $table WHERE $condition ORDER BY $order";
 			return $this;
 		}
-
+		function findCOUNTByPK($table,$column,$value){
+			$this->sql = "SELECT COUNT(*) FROM $table WHERE $column = $value";
+			return $this;
+		}
 		function specifytable($tablemain,$table,$condition){
 			$this->sql = "SELECT $tablemain FROM $table WHERE $condition";
 			return $this;

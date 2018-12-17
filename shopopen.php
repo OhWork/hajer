@@ -299,7 +299,11 @@ $.ajax({
 	            console.log(data);
                if(data == 'เพิ่ม'){
 			    $('#buttonfav').html('<button id="fav" type="button" class="btn btn-success col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/starfull.png" width="25px" height="25px"></button>');
-               }else{
+               }
+               else if(data == 'เกิน10'){
+			   	alert('ท่านได้กด Favorite เกิน 10 ร้านแล้ว หากต้องการกดเพิ่มกรุณากดยกเลิกร้านเก่าก่อน');
+               }
+               else{
 	              $('#buttonfav').html('<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/staricon.png" width="25px" height="25px"></button>');
 
                }
