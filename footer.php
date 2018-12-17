@@ -33,39 +33,47 @@
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-3">
 					<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
-							<p>สำหรับร้านหรือธุรกิจ</p>
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+						<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
+								<p>สำหรับร้านหรือธุรกิจ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- การประชาสัมพันธ์ร้านกับหาเจอ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- ระบบจัดการร้านค้า</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- การเป็นสมาชิกร้านค้ากับหาเจอ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- บทความเกี่ยวกับการทำธุรกิจ</p>
+							</div>
 						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- การประชาสัมพันธ์ร้านกับหาเจอ</p>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- ระบบจัดการร้านค้า</p>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- การเป็นสมาชิกร้านค้ากับหาเจอ</p>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- บทความเกี่ยวกับการทำธุรกิจ</p>
-						</div>
+						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-3">
 					<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
-							<p>ติดต่อหาเจอ</p>
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"></div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
+								<p>ติดต่อหาเจอ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- สถานที่ตั้งหาเจอ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
+								<p>- ติดตามหาเจอ</p>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+								<span class="lg7 lgbw pt-1 pb-1 ml-3" data-feather="facebook"></span>
+								<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="youtube"></span>
+								<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="twitter"></span>
+							</div>
 						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- สถานที่ตั้งหาเจอ</p>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-							<p>- ติดตามหาเจอ</p>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-							<span class="lg7 lgbw pt-1 pb-1 ml-3" data-feather="facebook"></span>
-							<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="youtube"></span>
-							<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="twitter"></span>
-						</div>
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"></div>
 					</div>
 				</div>
 			</div>
