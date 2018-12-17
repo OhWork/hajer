@@ -193,6 +193,14 @@
 	background-color:#039BE5;
 	color:#ffffff;
 }
+.lgbw {
+	border:solid 1px #ffffff;
+	border-radius:3px;
+}
+.lgbw:hover {
+	color:#e4a924;
+	border-color:#e4a924;
+}
 .brd {
 	border-radius:5px;
 }
@@ -242,6 +250,9 @@ select:focus,
 textarea:focus,
 button:focus, {
     outline: none;
+}
+a:hover {
+	text-decoration:none;
 }
 /*shopinterview*/
 .svtop {
