@@ -1,6 +1,6 @@
 <?php
 	$id = $_GET['id'];
-	$rs = $db->findbyPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeAssoc();
+	$rs = $db->findbyPK33('shop','typeshop','member','typeshop_typeshop_id','typeshop_id','member_member_id','member_id','shop_id',$id)->executeAssoc();
 ?>
 <div class="col-12" style="opacity:0.8;">
 	<div class="row">
@@ -81,13 +81,32 @@
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
 															<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 																<div class="row">
-<!-- 																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4"></button> -->
-																	<button type="button" class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4">เช็คอิน</button>
-																	<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์-->
-																	<div class="fb-share-button"
-																    data-href="URL"
-																    data-layout="button_count"
-																	data-size="large">
+																	<div id="buttonfav" class="col-md-6">
+																	<?php
+																		$member_id = $rs['member_id'];
+																$rsfav = $db->findByPK12('favorite','favorite_shop_id',$id,'favorite_member_id',$member_id)->executeAssoc();
+																		if($rsfav['favorite_id'] !=''){
+																	?>
+																		<button id="fav" type="button" class="btn btn-success col-xl-12 col-lg-12 col-md-12 col-sm-12">
+																			<img src="images/starfull.png" width="25px" height="25px">
+																		</button>
+																	<?php
+																		}else{
+																	?>
+																		<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12">
+																			<img src="images/staricon.png" width="25px" height="25px">
+																		</button>
+																	<?php
+																		}
+																	?>
+																	</div>
+																	<div id="" class="col-md-6">
+																		<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์-->
+																		<div class="fb-share-button"
+																	    data-href="URL"
+																	    data-layout="button_count"
+																		data-size="large">
+																	</div>
 																  </div>
 																</div>
 															</div>
@@ -222,6 +241,7 @@
 							</div>
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 								<input type="hidden" id="id_shop" value="<?php echo $id;?>">
+								<input type="hidden" id="member_id" value="<?php echo $rs['member_id'];?>">
 							</div>
 						</div>
 					</div>
@@ -257,7 +277,6 @@ var map, GeoMarker , mycircle ,markercircle;
 		          if (status === 'OK') {
 		            directionsDisplay.setDirections(response);
 		             var distance = response.routes[0].legs[0].distance.text;
-		             console.log(distance);
 		             $('#distance').append(distance);
 		             directionsDisplay.setMap(null);
 
@@ -266,7 +285,25 @@ var map, GeoMarker , mycircle ,markercircle;
 		          }
 	        });
 		});
-
       }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$('#fav').on('click',function(){
+$.ajax({
+            url: "favorite.php",
+            data: {shop_id : $('#id_shop').val() ,
+	               member_id : $('#member_id').val(),
+	         },
+            type: "POST",
+            success: function(data) {
+	            console.log(data);
+               if(data == 'เพิ่ม'){
+			    $('#buttonfav').html('<button id="fav" type="button" class="btn btn-success col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/starfull.png" width="25px" height="25px"></button>');
+               }else{
+	              $('#buttonfav').html('<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/staricon.png" width="25px" height="25px"></button>');
+
+               }
+            }
+        });
+});
 </script>

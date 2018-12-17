@@ -49,6 +49,11 @@
 			$this->sql = "DELETE FROM $table WHERE $field = $value";
 			return mysqli_query($con,$this->sql);
 		}
+		function delete2($table,$field,$value,$field2,$value2){
+    		$con = $this->connect();
+			$this->sql = "DELETE FROM $table WHERE $field = $value AND $field2 = $value2";
+			return mysqli_query($con,$this->sql);
+		}
 
 		function update($table, $data, $field, $value){
     		$con = $this->connect();
