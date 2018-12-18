@@ -1,6 +1,6 @@
 <?php
 	$id = $_GET['id'];
-	$rs = $db->findbyPK33('shop','typeshop','member','typeshop_typeshop_id','typeshop_id','member_member_id','member_id','shop_id',$id)->executeAssoc();
+	$rs = $db->findbyPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeAssoc();
 ?>
 <div class="col-12" style="opacity:0.8;">
 	<div class="row">
