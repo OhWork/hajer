@@ -83,7 +83,7 @@
 																<div class="row">
 																	<div id="buttonfav" class="col-md-6">
 																	<?php
-																		$member_id = $rs['member_id'];
+																		$member_id = $_SESSION['member_id'];
 																$rsfav = $db->findByPK12('favorite','favorite_shop_id',$id,'favorite_member_id',$member_id)->executeAssoc();
 																		if($rsfav['favorite_id'] !=''){
 																	?>
