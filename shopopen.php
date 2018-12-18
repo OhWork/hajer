@@ -289,7 +289,7 @@ var map, GeoMarker , mycircle ,markercircle;
 google.maps.event.addDomListener(window, 'load', initialize);
 
 $('#fav').on('click',function(){
-$.ajax({
+	$.ajax({
             url: "favorite.php",
             data: {shop_id : $('#id_shop').val() ,
 	               member_id : $('#member_id').val(),
@@ -305,12 +305,13 @@ $.ajax({
                }
                else if(data == 'Login'){
 			   	alert('กรุณา Login เข้าสู่ระบบก่อนถึงจะสามารถใช้งานระบบ Favorite ได้ครับ');
+			   	 window.location.href = 'login.php';
                }
                else{
 	              $('#buttonfav').html('<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/staricon.png" width="25px" height="25px"></button>');
 
                }
             }
-        });
+    });
 });
 </script>

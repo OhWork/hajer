@@ -58,21 +58,60 @@
 						</div>
 					</div>
 					<div class="col-12">
-						<div class="lg6">Rate:
-						<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
-						<img src="images/star.png" width="15px" height="15px" />
-						<img src="images/star.png" width="15px" height="15px" />
-						<img src="images/star.png" width="15px" height="15px" />
-						<img src="images/star.png" width="15px" height="15px" />
+						<div class="row">
+							<div class="col-md-2 lg6">Rate:</div>
+							<div class="col-md-10 lg6" id="rate<?php echo $i;?>">
+							</div>
 						</div>
 					</div>
 					<div class="col-12 mt-2">
 						<a class="btn lgb w-100" href="index.php?url=shopopen.php&id=<?php echo $showrs['shop_id'];?>">ดูรายละเอียดเพิ่มเติม</a>
 					</div>
+					<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
 				</div>
 				<?php
 					$i++;
 					}
 				?>
+
 	</div>
+	<input type="hidden" id="num_shop" value="<?php echo $rslastid['shop_id'];?>">
+	<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
 </div>
+<script>
+$(document).ready(function(){
+	var num_shop = $('#num_shop').val();
+	for (var j = 0 ; j < num_shop ; j++ ){
+		$('#rate'+j).addRating(
+			$('#rate'+j).on('click',function(){
+				var shop_idshow = this ;
+				$.ajax({
+		            url: "rate.php",
+		            data: {rating : $('#rating').val() ,member_id : $('#member_id').val() ,shop_id : $('#shop_id').val()
+			         },
+		            type: "POST",
+		            success: function(data) {
+			            console.log(data);
+			            console.log(shop_idshow);
+			            if(data == 'Nologin'){
+							alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+			            }
+			            else if(data == 1){
+							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />';
+			            }else if(data == 2){
+							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;"/><img src="images/star.png" width="15px" height="15px" />';
+			            }else if(data == 3){
+				            shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+			            }else if(data == 4){
+				           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+			            }else if(data == 5){
+				           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+			            }
+
+		            }
+	    		})
+	    	})
+		);
+	}
+});
+</script>

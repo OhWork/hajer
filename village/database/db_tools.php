@@ -138,6 +138,10 @@
 			$this->sql = "SELECT COUNT(*) FROM $table WHERE $column = $value";
 			return $this;
 		}
+		function findBYSUM($tablemain,$table,$column,$value){
+			$this->sql = "SELECT SUM($tablemain) FROM $table WHERE $column = $value";
+			return $this;
+		}
 		function specifytable($tablemain,$table,$condition){
 			$this->sql = "SELECT $tablemain FROM $table WHERE $condition";
 			return $this;

@@ -4,7 +4,7 @@
 	include 'village/connect.php';
 
 	$shop_id = $_POST['shop_id'];
-  	$member_id = $_POST['member_id'];
+  	@$member_id = $_POST['member_id'];
   	if(@$_SESSION['member_id'] != ''){
 		$rs = $db->findByPK12('favorite','favorite_shop_id',$shop_id,'favorite_member_id',$member_id)->executeAssoc();
 		if($rs['favorite_id'] == ''){

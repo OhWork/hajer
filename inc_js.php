@@ -9,3 +9,4 @@
 <script src="jquery/owl.carousel.js"></script>
 <script src="jquery/select2.min.js"></script>
 <script src="jquery/feather-icon/feather.min.js"></script>
+<script src="jquery/jquery.star.rating.min.js"></script>
