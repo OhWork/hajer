@@ -241,7 +241,7 @@
 							</div>
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 								<input type="hidden" id="id_shop" value="<?php echo $id;?>">
-								<input type="hidden" id="member_id" value="<?php echo $rs['member_id'];?>">
+								<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
 							</div>
 						</div>
 					</div>
@@ -302,6 +302,9 @@ $.ajax({
                }
                else if(data == 'เกิน10'){
 			   	alert('ท่านได้กด Favorite เกิน 10 ร้านแล้ว หากต้องการกดเพิ่มกรุณากดยกเลิกร้านเก่าก่อน');
+               }
+               else if(data == 'Login'){
+			   	alert('กรุณา Login เข้าสู่ระบบก่อนถึงจะสามารถใช้งานระบบ Favorite ได้ครับ');
                }
                else{
 	              $('#buttonfav').html('<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/staricon.png" width="25px" height="25px"></button>');

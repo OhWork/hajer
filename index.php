@@ -6,6 +6,7 @@
     include_once 'village/connect.php';
     include_once 'form/main_form.php';
     include_once 'form/gridview.php';
+    error_reporting(0);
  ?>
 <html>
     <head>
