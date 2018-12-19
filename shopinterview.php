@@ -91,8 +91,6 @@ $(document).ready(function(){
 			         },
 		            type: "POST",
 		            success: function(data) {
-			            console.log(data);
-			            console.log(shop_idshow);
 			            if(data == 'Nologin'){
 							alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
 			            }
