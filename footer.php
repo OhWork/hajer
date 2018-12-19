@@ -65,7 +65,7 @@
 								<p>- สถานที่ตั้งหาเจอ</p>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-								<p>- ติดตามหาเจอ</p>
+								<p>- ติดต่อหาเจอ</p>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 								<span class="lg7 lgbw pt-1 pb-1 ml-3" data-feather="facebook"></span>

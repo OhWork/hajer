@@ -189,10 +189,6 @@
 .lgb {
 	border:solid 1px #039BE5;
 }
-.lgb:hover {
-	background-color:#039BE5;
-	color:#ffffff;
-}
 .lgbw {
 	border:solid 1px #ffffff;
 	border-radius:3px;
