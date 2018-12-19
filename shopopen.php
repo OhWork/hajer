@@ -44,21 +44,21 @@
 												<div class="row">
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<div class="row">
-<!-- 															<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div> -->
-																<div class="col-12 brd" style="background-color:#ffffff;height:300px;">
-																	<div class="col-md-12">
-																	<span class="text-danger">หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-																	</div>
-																	<div class="col-md-12">
-																<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-																	</div>
-																	<div class="col-md-6">
-																	<span class="text-danger">ระยะทางจากท่านสู่ร้านค้า :</span>
-																	</div>
-																	<div class="col-md-6">
-																	<p id="distance" class="text-primary"></p>
-																	</div>
+<!-- 														<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div> -->
+															<div class="col-12 brd" style="height:300px;">
+																<div class="col-md-12 lgw">
+																	<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
 																</div>
+																<div class="col-md-12 lgw">
+																	<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+																</div>
+																<div class="col-md-12 lgw">
+																	<span>ระยะทางจากท่านสู่ร้านค้า :</span>
+																</div>
+																<div class="col-md-12">
+																	<p id="distance" class="text-primary"></p>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
