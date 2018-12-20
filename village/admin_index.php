@@ -22,7 +22,7 @@
             include_once '../form/main_form.php';
             include_once '../form/main_change.php';
             include_once '../form/gridview.php';
-//             include_once 'clearsession.php';
+            include_once 'clearsession.php';
         ?>
          <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="../CSS/bootstrap.css">
