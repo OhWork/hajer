@@ -22,54 +22,34 @@
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
 										<h3>ชื่อร้าน <?php echo $rs['shop_name'];?></h3>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0 lg7">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														จำนวนปีที่เป็นสมาชิก หาเจอ : 17ปี
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-														<div class="lg7">Rate :
-														<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
-														<img src="images/star.png" width="15px" height="15px" />
-														<img src="images/star.png" width="15px" height="15px" />
-														<img src="images/star.png" width="15px" height="15px" />
-														<img src="images/star.png" width="15px" height="15px" />
-														</div>
-													</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
+												จำนวนปีที่เป็นสมาชิก หาเจอ : 17ปี
+											</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+												<div class="lgw">Rate :
+													<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
+													<img src="images/star.png" width="15px" height="15px" />
+													<img src="images/star.png" width="15px" height="15px" />
+													<img src="images/star.png" width="15px" height="15px" />
+													<img src="images/star.png" width="15px" height="15px" />
 												</div>
 											</div>
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<div class="row">
-<!-- 														<div class="col-12 brd" id="map_canvas"style="background-color:#ffffff;height:300px;"></div> -->
-															<div class="col-12 brd" style="height:300px;">
-																<div class="col-md-12 lgw">
-																	<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-																</div>
-																<div class="col-md-12 lgw">
-																	<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-																</div>
-																<div class="col-md-12 lgw">
-																	<span>ระยะทางจากท่านสู่ร้านค้า :</span>
-																</div>
-																<div class="col-md-12">
-																	<p id="distance" class="text-primary"></p>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lgw">
+												<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
+												<a style="background-color:#ffffff;border-radius:3px;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+											</div>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lgw">
+												<span>ระยะทางจากท่านสู่ร้านค้า :</span><p id="distance" class="text-primary"></p>
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-0 lg7">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0" style="margin-top:145px;">
 										<div class="row">
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
 														<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?></h5>
 													</div>
 												</div>
