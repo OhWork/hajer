@@ -60,26 +60,29 @@
 					<div class="col-12">
 						<div class="row">
 							<div class="col-md-2 lg6">Rate:</div>
-							<?php if($_SESSION['member_id'] != ''){ ?>
+							<?php if(@$_SESSION['member_id'] != ''){ ?>
 							<div class="col-md-10 lg6" id="rate<?php echo $i;?>">
 							</div>
 							<?php }else{
-								$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id",$shop_id)->executeAssoc();
-								$rate = $rsselect['SUM(review_rate)'];
-								$memberrate = $rsselect['COUNT(member_member_id)'];
+								$shop_id = $showrs['shop_id'];
+								$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id",$shop_id)->execute();
+								foreach($rsselect as $showrsselect){
+								$rate = $showrsselect['SUM(review_rate)'];
+								$memberrate = $showrsselect['COUNT(member_member_id)'];
 								$avgrate = ($rate/$memberrate);
-									if($avgrate < 1){
-										echo '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-									}
-									else if($avgrate < 2){
-										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-									}else if($avgrate < 3){
-										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-									}else if($avgrate < 4){
-										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-									}else{
-										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
-									}
+										if($avgrate < 1 || $avgrate == ''){
+											echo '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+										}
+										else if($avgrate < 2){
+											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+										}else if($avgrate < 3){
+											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+										}else if($avgrate < 4){
+											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+										}else{
+											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+										}
+										}
 								} ?>
 						</div>
 					</div>
