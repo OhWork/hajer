@@ -146,7 +146,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgb brd">
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgbi brd">
 												<div class="row">
 													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">

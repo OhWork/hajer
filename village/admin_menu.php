@@ -3,11 +3,11 @@
 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2" style="height: 100%;">
 	<div class="row">
 		<div class="list-group" style="height: 100%;">
-			<nav class="d-none d-md-block bg-light sidebar">
+			<nav class="d-none d-md-block bg-dark sidebar" style="position:static;">
 			  <div class="sidebar-sticky">
 				<ul class="nav flex-column">
 				  <li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link lgw" href="#">
 					  <span data-feather="home"></span>หน้าหลัก <span class="sr-only">(current)</span>
 					</a>
 				  </li>

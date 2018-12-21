@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark col-md-12">
-    <a class="navbar-brand brandedit" href="#" style="margin-right:87%;">
+    <a class="navbar-brand brandedit" href="#" style="margin-right:87%;background-color:#343a40;box-shadow:none;">
 		<h4>Hajer</h4>
 	</a>
 	<div class="dropdown" style="color:#ffffff;">
