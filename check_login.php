@@ -65,7 +65,6 @@
 		</script>
 		<?php
 		}else{
-			print_r($_SESSION);
 		?>
 		<div class="modal" id="myModal2">
 		  <div class="modal-dialog">

@@ -60,8 +60,27 @@
 					<div class="col-12">
 						<div class="row">
 							<div class="col-md-2 lg6">Rate:</div>
+							<?php if($_SESSION['member_id'] != ''){ ?>
 							<div class="col-md-10 lg6" id="rate<?php echo $i;?>">
 							</div>
+							<?php }else{
+								$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id",$shop_id)->executeAssoc();
+								$rate = $rsselect['SUM(review_rate)'];
+								$memberrate = $rsselect['COUNT(member_member_id)'];
+								$avgrate = ($rate/$memberrate);
+									if($avgrate < 1){
+										echo '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+									}
+									else if($avgrate < 2){
+										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+									}else if($avgrate < 3){
+										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+									}else if($avgrate < 4){
+										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+									}else{
+										echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+									}
+								} ?>
 						</div>
 					</div>
 					<div class="col-12 mt-2">
@@ -94,14 +113,17 @@ $(document).ready(function(){
 			            if(data == 'Nologin'){
 							alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
 			            }
+			            else if(data == 0){
+							shop_idshow.innerHTML = '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+			            }
 			            else if(data == 1){
-							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />';
+							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
 			            }else if(data == 2){
-							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;"/><img src="images/star.png" width="15px" height="15px" />';
+							shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;"/><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
 			            }else if(data == 3){
-				            shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+				            shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
 			            }else if(data == 4){
-				           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+				           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
 			            }else if(data == 5){
 				           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
 			            }

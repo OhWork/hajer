@@ -17,14 +17,15 @@
 			$rate = $rsselect['SUM(review_rate)'];
 			$memberrate = $rsselect['COUNT(member_member_id)'];
 			$avgrate = ($rate/$memberrate);
-			if($avgrate < 2){
+			if($avgrate < 1){
+				echo 0;
+			}
+			else if($avgrate < 2){
 				echo 1;
-			}else if($avgrate < 2){
-				echo 2;
 			}else if($avgrate < 3){
-				echo 3;
+				echo 2;
 			}else if($avgrate < 4){
-				echo 4;
+				echo 3;
 			}else{
 				echo 5;
 			}
