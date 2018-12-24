@@ -25,7 +25,9 @@
 			}else if($avgrate < 3){
 				echo 2;
 			}else if($avgrate < 4){
-				echo ;
+				echo 3;
+			}else if($avgrate < 5){
+				echo 4;
 			}else{
 				echo 5;
 			}
