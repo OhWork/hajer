@@ -24,6 +24,8 @@
 				<?php
 					$i = 0;
 					foreach($rs as $showrs){
+						$shop_id = $showrs['shop_id'];
+						$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id = $shop_id")->executeAssoc();
 				?>
 				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
 					<div class="col-12 pl-0 pr-0 mt-3">
@@ -64,25 +66,21 @@
 							<div class="col-md-10 lg6" id="rate<?php echo $i;?>">
 							</div>
 							<?php }else{
-								$shop_id = $showrs['shop_id'];
-								$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id",$shop_id)->execute();
-								foreach($rsselect as $showrsselect){
-								$rate = $showrsselect['SUM(review_rate)'];
-								$memberrate = $showrsselect['COUNT(member_member_id)'];
-								$avgrate = ($rate/$memberrate);
-										if($avgrate < 1 || $avgrate == ''){
-											echo '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-										}
-										else if($avgrate < 2){
-											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-										}else if($avgrate < 3){
-											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-										}else if($avgrate < 4){
-											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-										}else{
-											echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
-										}
-										}
+									    $rate = $rsselect['SUM(review_rate)'];
+									    $memberrate = $rsselect['COUNT(member_member_id)'];
+										$avgrate = ($rate/$memberrate);
+											if($avgrate < 1 || is_nan($avgrate)){
+												echo '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+											}
+											else if($avgrate < 2){
+												echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+											}else if($avgrate < 3){
+												echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+											}else if($avgrate < 4){
+												echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+											}else{
+												echo '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+											}
 								} ?>
 						</div>
 					</div>

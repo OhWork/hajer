@@ -13,7 +13,7 @@
 			'member_member_id' => $member_id
 		));
 		if(@$rs){
-			$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id",$shop_id)->executeAssoc();
+			$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id = $shop_id")->executeAssoc();
 			$rate = $rsselect['SUM(review_rate)'];
 			$memberrate = $rsselect['COUNT(member_member_id)'];
 			$avgrate = ($rate/$memberrate);
@@ -25,7 +25,7 @@
 			}else if($avgrate < 3){
 				echo 2;
 			}else if($avgrate < 4){
-				echo 3;
+				echo ;
 			}else{
 				echo 5;
 			}

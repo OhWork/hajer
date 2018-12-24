@@ -7,7 +7,7 @@
     include_once 'form/main_form.php';
     include_once 'form/gridview.php';
     include_once 'clearsession.php';
-//     error_reporting(0);
+    error_reporting(0);
  ?>
 <html>
     <head>
