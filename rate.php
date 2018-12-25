@@ -17,7 +17,7 @@
 			$rate = $rsselect['SUM(review_rate)'];
 			$memberrate = $rsselect['COUNT(member_member_id)'];
 			$avgrate = ($rate/$memberrate);
-			if($avgrate < 1){
+			if($avgrate < 1 || is_nan($avgrate){
 				echo 0;
 			}
 			else if($avgrate < 2){
