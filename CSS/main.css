@@ -210,6 +210,9 @@
 .brd {
 	border-radius:5px;
 }
+.br3 {
+	border:solid 1px #757575;
+}
 .br2 {
 	border-right:solid 1px #f5f5f5;
 }

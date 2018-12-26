@@ -19,8 +19,8 @@
 
      $form = new form();
 	 $nameshop = new textfield('shop_name','','form-control','','');
-	 $lbnameshop = new label('ชื่อร้านค้า : ');
-	 $lbtypeshop = new label('ประเภทร้านค้า : ');
+	 $lbnameshop = new label('ชื่อร้านค้า');
+	 $lbtypeshop = new label('ประเภทร้านค้า');
 	 $detailshop = new textfield('shop_detail','','form-control','','');
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
@@ -51,48 +51,57 @@
 		 $selectcatshop->value  = $r['typeshop_id'];
 	 }
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
-	 echo $form->open('form_reg','frmMain','','insert_shop.php','');
+	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shop.php','');
 	 ?>
-	<h2>เพิ่มข้อมูลร้านค้า</h2>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbtypeshop; ?></div>
-			<div class='col-md-8'><?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?></div>
+<div class="row">
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<h2>เพิ่มข้อมูลร้านค้า</h2>
 		</div>
-	 </div>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameshop; ?></div>
-			<div class='col-md-8'><?php echo $nameshop; ?></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbtypeshop; ?>
 		</div>
-	 </div>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbdetailshop; ?></div>
-			<div class='col-md-8'><?php echo $detailshop; ?></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?>
 		</div>
-	 </div>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbocshop; ?></div>
-			<div class='col-md-3'><?php echo $openshop; ?></div>
-			<div class='col-md-1'><p>-</p></div>
-			<div class='col-md-3'><?php echo $closeshop; ?></div>
-			<div class='col-md-1'><p>น.</p></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbnameshop; ?>
 		</div>
-	 </div>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshopmin; ?></div>
-			<div class='col-md-8'><?php echo $ratepriceshopmin; ?></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $nameshop; ?>
 		</div>
-	 </div>
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbratepriceshopmax; ?></div>
-			<div class='col-md-8'><?php echo $ratepriceshopmax; ?></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbdetailshop; ?>
 		</div>
-	 </div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $detailshop; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbocshop; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<div class="row">
+				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>เริ่ม</p></div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'><?php echo $openshop; ?></div>
+				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>น.</p></div>
+				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>ถึง</p></div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'><?php echo $closeshop; ?></div>
+				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>น.</p></div>
+			</div>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbratepriceshopmin; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $ratepriceshopmin; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbratepriceshopmax; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $ratepriceshopmax; ?>
+		</div>
 <!--
 	 <div class='col-md-12' style="margin-bottom: 16px;">
 		<div class='row'>
@@ -101,45 +110,56 @@
 		</div>
 	 </div>
 -->
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbpicshop; ?></div>
-			<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" id="shop_pic" name="shop_pic" /></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbpicshop; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<div class="row">
+			<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 upload-btn ml-3'><center>
+				<span data-feather="eye"></span></center>
+				<input type="file" id="shop_pic" name="shop_pic" />
+			</div>
 			<?php
 				if(!empty($id)){
 			?>
-			<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>' width='100px' height='100px'></div>
+			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
+				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width='50px' height='50px'>
+			</div>
 			<?php
 				}else{
 					?>
-					<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/noimage.png" width="100px" height="100px"></div>
+			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
+				<img id="preimg" class="preimg" src="images/noimage.png" width="50px" height="50px">
+			</div>
 				<?php
 				}
 			?>
-		</div>
-	 </div>
-	 <div class="col-12" style="margin-bottom: 16px;">
-		 <div class='row'>
-				<div class='col-md-' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbgoogleshop; ?></div>
-				<div id="map_canvas" class="col-md-8" style="padding-right: 0;padding-left: 0;padding-top:7px;"></div>
-		 </div>
-	</div>
-	 <div class='col-md-12'>
-		<div class='row'>
-			<div class='col-md-2'>
-				<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
 			</div>
-			<div class='col-md-5'>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo  $lbgoogleshop; ?>
+		</div>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pl-4 pr-0'>
+				<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
 				<?php echo $button; ?>
 			</div>
-			<div class='col-md-5'>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'>
 				<a href="admin_index.php?url=shop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
 			</div>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+			</div>
 		</div>
-	</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
+	</div>
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+</div>
 	<script>
 		var checkid = $('#idnaja').val();
  		if(checkid == ""){

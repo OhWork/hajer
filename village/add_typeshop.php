@@ -3,50 +3,64 @@
      $id = $_GET['id'];
 	$form = new form();
 	$typeshop = new textfield('typeshop_name','','form-control','','');
-	$lbtypeshop = new label('ประเภทร้านค้า: ');
-	$lbpictype = new label('รูปไอคอนประเภทร้านค้า: ');
+	$lbtypeshop = new label('ประเภทร้านค้า');
+	$lbpictype = new label('รูปไอคอนประเภทร้านค้า');
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
-<div class='col-md-6'>
-	<h2>เพิ่มข้อมูลรายละเอียด</h2>
-<?php echo $form->open('form_reg','frmMain','','insert_typeshop.php',''); ?>
-						<div class='row'>
-							<div class='col-md-12' style="margin-bottom: 16px;">
-								<div class='row'>
-									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbtypeshop; ?></div>
-									<div class='col-md-8'><?php echo $typeshop; ?></div>
-								</div>
-							</div>
-							<div class='col-md-12' style="margin-bottom: 16px;">
-								<div class='row'>
-									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbpictype; ?></div>
-									<div class='col-md-6 upload-btn'><center><span data-feather="eye"></span></center><input type="file" id="typepic" name="typepic" /></div>
-									<?php
-									if(!empty($id)){
-									?>
-										<div class='col-md-2 text-danger'><img src='../images/shop/<?php echo $r['shop_pic'];?>' width='100px' height='100px'></div>
-									<?php
-									}else{
-									?>
-										<div class='col-md-2 text-danger'><img id="preimg" class="preimg" src="images/noimage.png" width="100px" height="100px"></div>
-									<?php
-									}
-									?>
-								</div>
-							</div>
-						</div>
-							<div class='col-md-12'>
-								<div class='row'>
-									<div class='col-md-8'></div>
-									<div class='col-md-2'>
-										<?php echo $button; ?>
-									</div>
-									<div class='col-md-2'>
-										<a href="admin_index.php?url=typeshop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
-									</div>
-								</div>
-							</div>
-						<input type="hidden" value="<?php echo $_GET['id'];?>">
+<?php echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_typeshop.php',''); ?>
+<div class="row">
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<h2>เพิ่มข้อมูลรายละเอียด</h2>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbtypeshop; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $typeshop; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbpictype; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<div class="row">
+			<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 upload-btn ml-3'><center>
+				<span data-feather="eye"></span></center>
+				<input type="file" id="typepic" name="typepic"></input>
+			</div>
+				<?php
+					if(!empty($id)){
+				?>
+			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
+				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width='50px' height='50px'>
+			</div>
+				<?php
+					}else{
+				?>
+			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
+				<img id="preimg" class="preimg" src="images/noimage.png" width="50px" height="50px">
+			</div>
+				<?php
+					}
+				?>
+			</div>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pl-4 pr-0'>
+				<?php echo $button; ?>
+			</div>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'>
+				<a href="admin_index.php?url=typeshop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
+			</div>
+			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+			</div>
+		</div>
+		<input type="hidden" value="<?php echo $_GET['id'];?>">
+	</div>
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
 </div>
 <script>
 	function readURL(input) {
