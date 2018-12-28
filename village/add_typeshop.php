@@ -80,3 +80,4 @@
      });
 
 </script>
+<?php echo $form->close();?>

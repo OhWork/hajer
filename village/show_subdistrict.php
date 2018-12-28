@@ -20,33 +20,41 @@
 				} );
      		} );
  </script>
- <div class="col-md-12">
-	 <div class="row">
-		 <div class="col-md-6">
-		 	<a class="text-light" href="admin_index.php?url=add_subdistrict.php"><button type="button" class="btn btn-dark mt-3 mb-3">เพิ่มข้อมูล</button></a>
+<?php echo $form->open('','','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','',''); ?>
+<div class="row">
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+				<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6'>
+					<?php echo $lbsearch; ?>
+				</div>
+				<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6'>
+					<a class="text-light" href="admin_index.php?url=add_subdistrict.php">
+						<button type="button" class="btn btn-dark col-12">เพิ่มตำบล</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $txtsearch; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+					<?php echo $button; ?>
+				</div>
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+			</div>
+		</div>
+	</div>
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+</div>
+<?php echo $form->close();?>
+	 <div class="col-md-6">
+		 	
 	 	 </div>
-	 	 <?php
-		 	 echo $form->open('','','col-md-6 mt-3','','');
-	 	 ?>
-	 	 	<div class="row">
-		 	 <div class="col-md-2">
-			 	 <?php
-				 	 echo $lbsearch;
-				 ?>
-		 	 </div>
-		 	 <div class="col-md-8">
-				 <?php
-				 	 echo $txtsearch;
-			 	 ?>
-		 	 </div>
-		 	 <div class="col-md-2">
-			 	  <?php
-				 	 echo $button;
-			 	 ?>
-		 	 </div>
-	 	 	</div>
-	 	 	<?php echo $form->close();?>
-	 </div>
  </div>
  <div class="col-md-12">
 <?php
