@@ -12,7 +12,7 @@
 	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
 	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
-			<h2>เพิ่มข้อมูลรายละเอียด</h2>
+			<h4>เพิ่มข้อมูลรายละเอียด</h4>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo $lbtypeshop; ?>
