@@ -2,33 +2,33 @@
 	$id = $_GET['id'];
 	$rs = $db->findbyPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeAssoc();
 ?>
-<div class="col-12" style="opacity:0.8;">
+<!--<div class="col-12" style="opacity:0.8;">
 	<div class="row">
 		<img class="d-block w-100" height="440" src="images/testpic5.jpg">
 	</div>
 </div>
 <div class="inner_position_top" style="padding-top:0px;">
 	<div class="container">
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		<div class="row">-->
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 						<div class="row">
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
 							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 								<div class="row">
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7" id="introshop">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-										<h3>ชื่อร้าน <?php echo $rs['shop_name'];?></h3>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
+										<h3><?php echo $rs['shop_name'];?></h3>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
-												จำนวนปีที่เป็นสมาชิก หาเจอ : 17ปี
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
+												จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
 											</div>
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-												<div class="lgw">Rate :
+												<div class="lg6">Rate :
 													<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
 													<img src="images/star.png" width="15px" height="15px" />
 													<img src="images/star.png" width="15px" height="15px" />
@@ -36,20 +36,20 @@
 													<img src="images/star.png" width="15px" height="15px" />
 												</div>
 											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lgw">
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lg6">
 												<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-												<a style="background-color:#ffffff;border-radius:3px;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+												<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lgw">
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 												<span>ระยะทางจากท่านสู่ร้านค้า :</span><p id="distance" class="text-primary"></p>
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0" style="margin-top:145px;">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 														<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?></h5>
 													</div>
 												</div>
