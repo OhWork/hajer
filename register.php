@@ -30,7 +30,7 @@
 	$text_user = new textfield('member_username','inputEmail','form-control','Email address');
 	$text_pass = new pass('member_password','form-control','Password','inputPassword');
 	$submit = new buttonok('Login','','btn btn-lg btn-primary btn-block col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','');
-	echo $form->open('','','col-12','check_login.php','');
+	echo $form->open('','','col-12','insert_user.php','');
     ?>
 <div class="col-12 text-center mb-4 lg2">
 	<h1 class="h3 mb-3 font-weight-normal">สมัครสมาชิกกับหาเจอร์</h1>
