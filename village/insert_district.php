@@ -1,7 +1,6 @@
 <?php  ob_start();
 	include 'database/db_tools.php';
 	include 'connect.php';
-	print_r($_POST);
 	if(!empty($_POST['district_id'])){
 
 		$data['name_in_thai'] = $_POST['district_name'];
