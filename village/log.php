@@ -24,31 +24,38 @@
     $txtday = new textfieldcalendarreadonly('date','date-picker-1','','date-picker form-control datetimepicker','input-group-addon','date-picker-1');
 	$button = new buttonok('ค้นหา','','btn btn-primary col-12','submit');
 echo $form->open('','','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','',''); ?>
-	<div class='row'>
-		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"></div>
-		<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8" style="background-color:#ffffff;border:solid 1px #E0E0E0;border-radius:7px;">
-			<div class="row">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3" style="border-bottom:solid 1px #E0E0E0;">
-					<h4>เลือกวันที่ต้องการดู Log</h4>
-				</div>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3' style="padding-bottom:16px;">
-					<div class='row'>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'><?php echo $lbday;?></div>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'><?php echo $txtday;?></div>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
-					</div>
-				</div>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3' style="padding-bottom:16px;">
-					<div class='row'>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'><?php echo $button; ?></div>
-						<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+<div class="row">
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<h4>เลือกวันที่ต้องการดู Log</h4>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $lbday;?>
+		</div>
+		<div class="date-form dayinbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="form-horizontal">
+				<div class="control-group">
+					<div class="controls">
+						<div class="input-group">
+							<?php echo $txtday;?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"></div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+					<?php echo $button; ?>
+				</div>
+				<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+			</div>
+		</div>
 	</div>
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+</div>
 <?php
 	echo $form->close();
 	if($_POST){

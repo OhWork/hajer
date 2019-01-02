@@ -11,35 +11,39 @@
 	$nameeng->value = $r['name_in_english'];
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 ?>
-<div class='col-md-6'>
-	<h2>เพิ่มข้อมูลจังหวัด</h2>
-<?php echo $form->open('form_reg','frmMain','','insert_provinces.php',''); ?>
-						<div class='row'>
-							<div class='col-md-12' style="margin-bottom: 16px;">
-								<div class='row'>
-									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbname; ?></div>
-									<div class='col-md-8'><?php echo $name; ?></div>
-								</div>
-							</div>
-						</div>
-						<div class='row'>
-							<div class='col-md-12' style="margin-bottom: 16px;">
-								<div class='row'>
-									<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo $lbnameeng; ?></div>
-									<div class='col-md-8'><?php echo $nameeng; ?></div>
-								</div>
-							</div>
-						</div>
-						<div class='col-md-12'>
-							<div class='row'>
-								<div class='col-md-8'></div>
-									<div class='col-md-2'>
-										<?php echo $button; ?>
-									</div>
-									<div class='col-md-2'>
-										<button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button>
-									</div>
-								</div>
-						</div>
-									<input type="hidden" name="province_id" value="<?php echo $_GET['id'];?>">
+<?php echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_provinces.php',''); ?>
+<div class="row">
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<h4>เพิ่มข้อมูลจังหวัด</h4>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbname; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $name; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<?php echo $lbnameeng; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+			<?php echo $nameeng; ?>
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pl-4 pr-0'>
+					<?php echo $button; ?>
+				</div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'>
+					<button type="button" class="btn btn-danger col-12" data-dismiss="modal">ยกเลิก</button>
+				</div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+			</div>
+		</div>
+		<input type="hidden" name="province_id" value="<?php echo $_GET['id'];?>">
+	</div>
+	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
 </div>
+<?php echo $form->close();?>
