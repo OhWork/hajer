@@ -21,6 +21,19 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="CSS/jquery-ui.css">
     <link rel="stylesheet" href="CSS/main.css">
+	 <style>
+		   /* Always set the map height explicitly to define the size of the div
+	       * element that contains the map. */
+	      #map_canvas {
+	        height: 200px;
+	      }
+	      /* Optional: Makes the sample page fill the window. */
+	      html, body {
+	        height: 100%;
+	        margin: 0;
+	        padding: 0;
+	      }
+      </style>
 
   </head>
 
@@ -38,9 +51,9 @@
 	 $closeshop = new textfield('shop_close','','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
 	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','','');
-	 $lbratepriceshopmin = new label('เรทราคาต่ำสุด');
+	 $lbratepriceshopmin = new label('ช่วงราคาต่ำสุด');
 	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','','');
-	 $lbratepriceshopmax = new label('เรทราคาสูงสุด');
+	 $lbratepriceshopmax = new label('ช่วงราคาสูงสุด');
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
@@ -48,7 +61,7 @@
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
-	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shop.php','');
+	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shopafterreg.php','');
 	 ?>
 <div class="row">
 	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
