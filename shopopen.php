@@ -10,25 +10,25 @@
 <div class="inner_position_top" style="padding-top:0px;">
 	<div class="container">
 		<div class="row">-->
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 bgg">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 						<div class="row">
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bgw brd">
 								<div class="row">
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6 mt-3 pb-2">
 										<h3><?php echo $rs['shop_name'];?></h3>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-0 bb1">
 										<div class="row">
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-												จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
+												<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?></h5>
 											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-												<div class="lg6">Rate :
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3">
+												<div class="lg6">คะแนนเฉลี่ย :
 													<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
 													<img src="images/star.png" width="15px" height="15px" />
 													<img src="images/star.png" width="15px" height="15px" />
@@ -36,22 +36,22 @@
 													<img src="images/star.png" width="15px" height="15px" />
 												</div>
 											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 lg6">
-												<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-												<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-												<span>ระยะทางจากท่านสู่ร้านค้า :</span><p id="distance" class="text-primary"></p>
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6 mb-3">
+												จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
 											</div>
 										</div>
 									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3 lg6">
+										<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
+										<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
+										<span>ระยะทางที่จะถึง :</span><p id="distance" class="text-primary"></p>
+									</div>		
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-														<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?></h5>
-													</div>
 												</div>
 											</div>
 											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
