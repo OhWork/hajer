@@ -1,6 +1,7 @@
 <?php  ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
+	if($_POST){
 	$target_dir = '../images/temp/';
 	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 	$img_new_name = basename($_FILES['shop_pic']['name']);
@@ -43,9 +44,7 @@
 	if(@$rs || @$rsfix){
     	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
-    	}else if(@$rsfix){
-            echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
-        }
+    	}
             $link = "admin_index.php?url=show_shop.php";
             header( "Refresh: 2; $link" );
 }
