@@ -14,6 +14,7 @@
 				   <?php
 						  include_once 'admin_menu_manshop.php';
 						  include_once 'admin_menu_manweb.php';
+						  include_once 'admin_menu_manuser.php';
 					?>
 				</ul>
 			  </div>
