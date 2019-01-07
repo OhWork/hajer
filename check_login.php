@@ -64,7 +64,7 @@
 			}
 		</script>
 		<?php
-		}else{
+		}elseif($_SESSION['member_permition'] == 2){
 		?>
 		<div class="modal" id="myModal2">
 		  <div class="modal-dialog">
@@ -88,6 +88,45 @@
 
 			setTimeout(function(){
 				window.location.href = 'index.php';
+			}, 5000);
+			var timeLeft = 4;
+			var elem = document.getElementById('showcountdown');
+			var timerId = setInterval(countdown, 1000);
+
+			function countdown() {
+			    if (timeLeft == -1) {
+			        clearTimeout(timerId);
+			    } else {
+			        elem.innerHTML = timeLeft + ' seconds remaining';
+			        timeLeft--;
+			    }
+			}
+			</script>
+		<?php
+		}elseif($_SESSION['member_permition'] == 3){
+		?>
+		<div class="modal" id="myModal2">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        ยินดีต้อนรับเข้าสู่ระบบผู้ใช้(ร้านค้า)
+		      </div>
+		       <div class="modal-footer">
+			       <div id="showcountdown"></div>
+			       <a href="regshop.php"><button type="button" class="btn btn-primary">Ok</button></a>
+		       </div>
+		    </div>
+		  </div>
+		</div>
+		<script>
+
+
+			$("#myModal2").modal({backdrop: 'static', keyboard: false});
+
+			setTimeout(function(){
+				window.location.href = 'regshop.php';
 			}, 5000);
 			var timeLeft = 4;
 			var elem = document.getElementById('showcountdown');
