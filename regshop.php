@@ -16,8 +16,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="CSS/bootstrap.css">
-    <link rel="stylesheet" href="CSS/floating-labels.css">
-    <link rel="stylesheet" href="CSS/sticky-footer.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="CSS/jquery-ui.css">
     <link rel="stylesheet" href="CSS/main.css">
@@ -33,6 +31,9 @@
 	        margin: 0;
 	        padding: 0;
 	      }
+	      input[type="file"]{
+		    color: transparent;
+		  }
       </style>
 
   </head>
@@ -57,6 +58,7 @@
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
+	 $filepic = new inputFile('shop_pic','shop_pic','shop_pic');
 	 $selectcatshop = new selectFromDB();
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
@@ -125,21 +127,20 @@
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 			<div class="row">
-			<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 upload-btn ml-3'><center>
-				<span data-feather="eye"></span></center>
-				<input type="file" id="shop_pic" name="shop_pic" />
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+				<?php echo $filepic;?>
 			</div>
 			<?php
 				if(!empty($id)){
 			?>
-			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
-				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width='50px' height='50px'>
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width="150px" height="150px"'>
 			</div>
 			<?php
 				}else{
 					?>
-			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
-				<img id="preimg" class="preimg" src="images/noimage.png" width="50px" height="50px">
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+				<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px"'>
 			</div>
 				<?php
 				}
