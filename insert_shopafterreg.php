@@ -1,11 +1,11 @@
 <?php  ob_start();
-    include 'database/db_tools.php';
-	include 'connect.php';
+    include 'village/database/db_tools.php';
+	include 'village/connect.php';
 	if($_POST){
-	$target_dir = '../images/temp/';
+	$target_dir = 'images/temp/';
 	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 	$img_new_name = basename($_FILES['shop_pic']['name']);
-	$target_dir_save = '../images/shop/'.$img_new_name;
+	$target_dir_save = 'images/shop/'.$img_new_name;
 	move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
 
 
@@ -45,7 +45,7 @@
     	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
     	}
-            $link = "admin_index.php?url=show_shop.php";
+            $link = "index.php";
             header( "Refresh: 2; $link" );
 }
 ob_end_flush();
