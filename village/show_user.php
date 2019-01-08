@@ -23,7 +23,7 @@
  <div class="col-md-12">
 <?php
     $columns = array('member_id','member_username','member_password');
-    $rs = $db->findByPK('member','member_regshop',1)->execute();
+    $rs = $db->findByPK12('member','member_regshop',1,'member_permition',2)->execute();
 
 			$grid = new gridView();
 			$grid->pr = 'member_id';
