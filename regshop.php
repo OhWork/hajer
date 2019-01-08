@@ -8,7 +8,7 @@
      <?php    include 'inc_js.php';
               include 'form/main_form.php';
               include 'form/gridview.php';
-              include 'village/database/db_tools.php';
+              include 'database/db_tools.php';
               include 'village/connect.php';
       ?>
 
@@ -73,7 +73,7 @@
 			<?php echo $lbtypeshop; ?>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-<!-- 			<?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?> -->
+			<?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo $lbnameshop; ?>
