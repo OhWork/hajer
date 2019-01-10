@@ -10,7 +10,7 @@
 <div class="inner_position_top" style="padding-top:0px;">
 	<div class="container">
 		<div class="row">-->
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 bgg">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 						<div class="row">
@@ -19,43 +19,137 @@
 								<div class="row">
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6 mt-3 pb-2">
-										<h3><?php echo $rs['shop_name'];?></h3>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+										<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-0 bb1">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-												<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?></h5>
-											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3">
-												<div class="lg6">คะแนนเฉลี่ย :
-													<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" />
-													<img src="images/star.png" width="15px" height="15px" />
-													<img src="images/star.png" width="15px" height="15px" />
-													<img src="images/star.png" width="15px" height="15px" />
-													<img src="images/star.png" width="15px" height="15px" />
+												<div class="row">
+													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+														จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
+														<span class="lg6" data-feather="star"></span>
+														<span class="lg6" data-feather="star"></span>
+														<span class="lg6" data-feather="star"></span>
+														<span class="lg6" data-feather="star"></span>
+														<span class="lg6" data-feather="star"></span>
+													</div>
 												</div>
-											</div>
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6 mb-3">
-												จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3 lg6">
-										<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-										<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-										<span>ระยะทางที่จะถึง :</span><p id="distance" class="text-primary"></p>
-									</div>		
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 										<div class="row">
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+											<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
 												<div class="row">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<img class="w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<div class="row">
+															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 pr-0" height="100px" src="images/testpic3.jpg"/>
+															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4" height="100px" src="images/testpic3.jpg"/>
+															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-0" height="100px" src="images/testpic3.jpg"/>
+														</div>
+													</div>
 												</div>
 											</div>
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+											<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 lg6">
 												<div class="row">
+													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p style="float:left;">เวลาเปิด-ปิด <?php echo $rs['shop_open'],'-',$rs['shop_close'];?>น.</p>
+															<?php
+																$currenttime=date("H:i:s");
+																if(($currenttime >= $rs['shop_open']) && ($currenttime <= $rs['shop_close'])){?>
+																<button type="button" class="btn btn-success col-xl-2 col-lg-2 col-md-2 col-sm-2" style="float:right;">เปิด</button>
+															<?php }else{?>
+																<button type="button" class="btn btn-danger col-xl-2 col-lg-2 col-md-2 col-sm-2" style="float:right;">ปิด</button>
+															<?php }
+															?>
+													</div>
+													<?php }else{ }
+													if($rs['shop_tel'] != ''){
+													?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p class="lg6">ที่อยู่ : 456 ถนนฉลองกรุง เขตบางรัก กรุงเทพ</p>
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>เบอร์ติดต่อ <?php echo $rs['shop_tel'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_website'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>Website <?php echo $rs['shop_website'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_line'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>Line id <?php echo $rs['shop_line'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_facebook'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>Facebook/pages <?php echo $rs['shop_facebook'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_email'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>E-mail <?php echo $rs['shop_email'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_detail'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>รายละเอียด <?php echo $rs['shop_detail'];?></p>
+													</div>
+													<?php }else{ }
+													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
+													</div><?php }else{ }
+													 ?>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5">
+														<div class="col-12 bgr" height="2px"></div>
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> มีที่จอดรถ
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเครดิต
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> เดลิเวอรี
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> แอลกอฮอล์
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี 
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับส่งสินค้าทางไปรษณีย์
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5 mt-3">
+														<div class="col-12 bgr" height="2px"></div>
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg8">
+														<p>Promotion</p><p>10.00-14.00 = ลด 10%</p>
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3 lg6">
+														<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
+														<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+													</div>
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
+														<span>ระยะทางที่จะถึง :</span><p id="distance" class="text-primary"></p>
+													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<div class="row">
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
@@ -81,7 +175,7 @@
 																	?>
 																	</div>
 																	<div id="" class="col-md-6">
-																		<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์-->
+																		<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์ -->
 																		<div class="fb-share-button"
 																	    data-href="URL"
 																	    data-layout="button_count"
@@ -96,129 +190,6 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-											<?php
-												$currenttime=date("H:i:s");
-												if(($currenttime >= $rs['shop_open']) && ($currenttime <= $rs['shop_close'])){?>
-												<button type="button" class="btn btn-success col-xl-3 col-lg-3 col-md-3 col-sm-3">เปิดอยู่ขณะนี้</button>
-											<?php }else{?>
-												<button type="button" class="btn btn-danger col-xl-3 col-lg-3 col-md-3 col-sm-3">ปิดอยู่ขณะนี้</button>
-											<?php }
-											?>
-											<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9"></div>
-									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-										<div class="row">
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-												<div class="row">
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg2">
-														<div class="row">
-															<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-																<span class="mr-3" style="float:left" data-feather="home"></span><p class="lg6" style="float:left">ที่อยู่ : 456 ถนนฉลองกรุง เขตบางรัก กรุงเทพ</p>
-															</div>
-														</div>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-														<img class="d-block w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-														<div class="row">
-															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pr-0">
-																<img class="d-block w-100" src="images/testpic3.jpg">
-															</div>
-															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-0 pr-0">
-																<img class="d-block w-100" src="images/testpic3.jpg">
-															</div>
-															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pl-0">
-																<img class="d-block w-100" src="images/testpic3.jpg">
-															</div>
-														</div>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg6">
-														<div class="row">
-															<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bb1">
-																<p>Promotion</p>
-															</div>
-															<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-																<p>10.00-14.00 = ลด 10%</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lg6 bgw lgbi brd">
-												<div class="row">
-													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>เวลาเปิด-ปิด <?php echo $rs['shop_open'],'-',$rs['shop_close'];?>น.</p>
-													</div>
-													<?php }else{ }
-													if($rs['shop_tel'] != ''){
-													?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>เบอร์ติดต่อ <?php echo $rs['shop_tel'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_website'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Website <?php echo $rs['shop_website'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_line'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Line id <?php echo $rs['shop_line'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_facebook'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>Facebook/pages <?php echo $rs['shop_facebook'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_email'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>E-mail <?php echo $rs['shop_email'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_detail'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>รายละเอียด <?php echo $rs['shop_detail'];?></p>
-													</div>
-													<?php }else{ }
-													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 bb1">
-														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
-													</div><?php }else{ }
-													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">มีที่จอดรถ</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">รับบัตรเครดิต</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">เดลิเวอรี</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">แอลกอฮอล์</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">WiFi มี wifi ฟรี</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span><p style="float:left">รับส่งสินค้าทางไปรษณีย์</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 								<input type="hidden" id="id_shop" value="<?php echo $id;?>">
 								<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
