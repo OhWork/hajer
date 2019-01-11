@@ -29,7 +29,6 @@
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 												<div class="row">
 													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-														จำนวนปีที่เป็นสมาชิก หาเจอ : 17 ปี
 														<span class="lg6" data-feather="star"></span>
 														<span class="lg6" data-feather="star"></span>
 														<span class="lg6" data-feather="star"></span>

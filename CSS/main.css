@@ -122,7 +122,12 @@
 	.lg1 {color:#039BE5;}
 	.lg1:hover{color:#e4a924;}
 }
-@media (min-width: 1200px){
+@media (min-width: 1224px){
+	.bmd {
+		margin-top: 45%;
+	}
+}
+@media (min-width: 1360px){
 	.inner_position_top{
 		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
 		top:64px; /* css กำหนดชิดด้านบน  */
@@ -131,7 +136,7 @@
 		height:59px;
 	}
 	.bmd {
-		margin-top: 40%;
+		margin-top: 52%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
@@ -139,6 +144,16 @@
 	.lg7:hover {color:#e4a924;}
 	.lg1 {color:#039BE5;}
 	.lg1:hover{color:#e4a924;}
+}
+@media (min-width: 1510px){
+	.bmd {
+		margin-top: 60%;
+	}
+}
+@media (min-width: 1680px){
+	.bmd {
+		margin-top: 69%;
+	}
 }
 .fl {
 	float:left;
