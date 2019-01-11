@@ -20,7 +20,9 @@
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-										<h5>หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
+										<h5 style="float:left;">หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
+										<a style="float:right;"><span class="lg11" data-feather="heart"></span></a>
+										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
@@ -142,10 +144,6 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg8">
 														<p>Promotion</p><p>10.00-14.00 = ลด 10%</p>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3 mt-3 lg6">
-														<span>หากท่านต้องการ การนำทาง กรุณาคลิกที่ไอคอนเพื่อการนำทาง :</span>
-														<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 														<span>ระยะทางที่จะถึง :</span><p id="distance" class="text-primary"></p>
