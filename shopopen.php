@@ -2,14 +2,6 @@
 	$id = $_GET['id'];
 	$rs = $db->findbyPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeAssoc();
 ?>
-<!--<div class="col-12" style="opacity:0.8;">
-	<div class="row">
-		<img class="d-block w-100" height="440" src="images/testpic5.jpg">
-	</div>
-</div>
-<div class="inner_position_top" style="padding-top:0px;">
-	<div class="container">
-		<div class="row">-->
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -20,9 +12,30 @@
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-										<h5 style="float:left;">หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
-										<a style="float:right;"><span class="lg11" data-feather="heart"></span></a>
+										<div class="row">
+										<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10">
+											<h5 style="float:left;">หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
+										</div>
+										<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">
 										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+										</div>
+										<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1" id="buttonfav">
+										<?php
+											$member_id = $_SESSION['member_id'];
+											$rsfav = $db->findByPK12('favorite','favorite_shop_id',$id,'favorite_member_id',$member_id)->executeAssoc();
+											if($rsfav['favorite_id'] !=''){
+											?>
+											<a id="fav"><i class="material-icons2">favorite</i></a>
+											<?php
+											}else{
+											?>
+											<a id="fav"><i class="material-icons2">favorite_border</i></a>
+											<?php
+											}
+											?>
+										</div>
+
+										</div>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
@@ -131,7 +144,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> แอลกอฮอล์
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี 
+														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับส่งสินค้าทางไปรษณีย์
@@ -152,25 +165,6 @@
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
 															<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
 																<div class="row">
-																	<div id="buttonfav" class="col-md-6">
-																	<?php
-																		$member_id = $_SESSION['member_id'];
-																$rsfav = $db->findByPK12('favorite','favorite_shop_id',$id,'favorite_member_id',$member_id)->executeAssoc();
-																		if($rsfav['favorite_id'] !=''){
-																	?>
-																		<button id="fav" type="button" class="btn btn-success col-xl-12 col-lg-12 col-md-12 col-sm-12">
-																			<img src="images/starfull.png" width="25px" height="25px">
-																		</button>
-																	<?php
-																		}else{
-																	?>
-																		<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12">
-																			<img src="images/staricon.png" width="25px" height="25px">
-																		</button>
-																	<?php
-																		}
-																	?>
-																	</div>
 																	<div id="" class="col-md-6">
 																		<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์ -->
 																		<div class="fb-share-button"
@@ -246,17 +240,19 @@ $('#fav').on('click',function(){
             success: function(data) {
 	            console.log(data);
                if(data == 'เพิ่ม'){
-			    $('#buttonfav').html('<button id="fav" type="button" class="btn btn-success col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/starfull.png" width="25px" height="25px"></button>');
+ 			   $('#buttonfav').html('<a id="fav"><i class="material-icons2">favorite</i></a>');
+ 			   window.location.reload();
                }
                else if(data == 'เกิน10'){
-			   	alert('ท่านได้กด Favorite เกิน 10 ร้านแล้ว หากต้องการกดเพิ่มกรุณากดยกเลิกร้านเก่าก่อน');
+			   alert('ผู้ใช้กดถูกใจร้านค้าเกิน 10 ร้านค้าแล้วครับ');
                }
                else if(data == 'Login'){
 			   	alert('กรุณา Login เข้าสู่ระบบก่อนถึงจะสามารถใช้งานระบบ Favorite ได้ครับ');
 			   	 window.location.href = 'login.php';
                }
                else{
-	              $('#buttonfav').html('<button id="fav" type="button" class="btn btn-primary col-xl-12 col-lg-12 col-md-12 col-sm-12"><img src="images/staricon.png" width="25px" height="25px"></button>');
+ 	             $('#buttonfav').html('<a id="fav"><i class="material-icons2">favorite_border</i></a>');
+ 	             window.location.reload();
 
                }
             }

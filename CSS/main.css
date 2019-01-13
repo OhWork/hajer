@@ -353,7 +353,20 @@ a:hover {
 			-moz-font-feature-settings: 'liga';
 			-moz-osx-font-smoothing: grayscale;
 		}
+		.material-icons2 {
+			font-family: 'Material Icons';
+			font-weight: normal;
+			font-style: normal;
+			font-size: 24px;
+			line-height: 1;
+			letter-spacing: normal;
+			text-transform: none;
+			display: inline-block;
+			word-wrap: normal;
+			color: #ff0404;
+			-moz-font-feature-settings: 'liga';
+			-moz-osx-font-smoothing: grayscale;
+		}
 		i {
 			cursor :  pointer;
 		}
-ss
