@@ -17,9 +17,6 @@
         <link rel="stylesheet" href="CSS/animate.min.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
 		<link rel="stylesheet" href="CSS/main.css">
-		<style>
-
-		</style>
 	</head>
 	<script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
