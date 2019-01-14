@@ -12,30 +12,21 @@
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-										<div class="row">
-										<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10">
-											<h5 style="float:left;">หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
-										</div>
-										<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">
-										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-										</div>
-										<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1" id="buttonfav">
+										<h5 style="float:left;">หมวดหมู่ : <?php echo $rs['typeshop_name'];?> > <?php echo $rs['shop_name'];?></h5>
 										<?php
 											$member_id = $_SESSION['member_id'];
 											$rsfav = $db->findByPK12('favorite','favorite_shop_id',$id,'favorite_member_id',$member_id)->executeAssoc();
 											if($rsfav['favorite_id'] !=''){
 											?>
-											<a id="fav"><i class="material-icons2">favorite</i></a>
+											<a style="float:right;" id="fav"><i class="material-icons2">favorite</i></a>
 											<?php
 											}else{
 											?>
-											<a id="fav"><i class="material-icons2">favorite_border</i></a>
+											<a style="float:right;" id="fav"><i class="material-icons2">favorite_border</i></a>
 											<?php
 											}
-											?>
-										</div>
-
-										</div>
+										?>
+										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
@@ -59,7 +50,7 @@
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<img class="w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
 													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
 														<div class="row">
 															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 pr-0" height="100px" src="images/testpic3.jpg"/>
 															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4" height="100px" src="images/testpic3.jpg"/>
@@ -72,7 +63,7 @@
 												<div class="row">
 													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p style="float:left;">เวลาเปิด-ปิด <?php echo $rs['shop_open'],'-',$rs['shop_close'];?>น.</p>
+														<p style="float:left;"><b>เวลาเปิด-ปิด</b> <?php echo $rs['shop_open'],'-',$rs['shop_close'];?>น.</p>
 															<?php
 																$currenttime=date("H:i:s");
 																if(($currenttime >= $rs['shop_open']) && ($currenttime <= $rs['shop_close'])){?>
@@ -83,11 +74,14 @@
 															?>
 													</div>
 													<?php }else{ }
-													if($rs['shop_tel'] != ''){
+													if($rs['shop_address'] != ''){
 													?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<p class="lg6">ที่อยู่ : 456 ถนนฉลองกรุง เขตบางรัก กรุงเทพ</p>
 													</div>
+													<?php }else{ }
+													if($rs['shop_tel'] != ''){
+													?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<p>เบอร์ติดต่อ <?php echo $rs['shop_tel'];?></p>
 													</div>
