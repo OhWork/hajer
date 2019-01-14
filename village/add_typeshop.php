@@ -6,6 +6,10 @@
 	$lbtypeshop = new label('ประเภทร้านค้า');
 	$lbpictype = new label('รูปไอคอนประเภทร้านค้า');
 	$button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
+	 if(!empty($id)){
+	 	$r = $db->findByPK('typeshop','typeshop_id',$id)->executeRow();
+	 	$typeshop->value = $r['typeshop_name'];
+	 }
 ?>
 <?php echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_typeshop.php',''); ?>
 <div class="row">
@@ -33,7 +37,7 @@
 					if(!empty($id)){
 				?>
 			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
-				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width='50px' height='50px'>
+				<img src='../<?php echo $r['typeshop_pathpic'];?>' width='50px' height='50px'>
 			</div>
 				<?php
 					}else{
