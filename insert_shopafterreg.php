@@ -2,6 +2,7 @@
     include 'village/database/db_tools.php';
 	include 'village/connect.php';
 	if($_POST){
+		print_r($_POST);
 	$target_dir = 'images/temp/';
 	$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 	$img_new_name = basename($_FILES['shop_pic']['name']);

@@ -23,14 +23,14 @@
  <div class="col-md-12">
 <?php
     $columns = array('member_id','member_username','member_password');
-    $rs = $db->findAll('member')->execute();
+    $rs = $db->findByPK12('member','member_regshop',1,'member_permition',2)->execute();
 
 			$grid = new gridView();
 			$grid->pr = 'member_id';
 			$grid->header = array('<b><center>รหัสผู้ใช้</center></b>','<b><center>ชื่อ</center></b>','<b><center>นามสกุล</center></b>','<b><center>#</center></b>');
 			$grid->width = array('20%','10%','20%','10%','10%','10%','5%','5%');
 			$grid->name = 'table';
-			$grid->edit = 'admin_index.php?url=user_status.php';
+			$grid->edit = 'admin_index.php?url=user_status_regshop.php';
 			$grid->edittxt ='ดูรายละเอียด';
 			$grid->renderFromDB($columns,$rs);
    ?>

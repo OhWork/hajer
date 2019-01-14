@@ -9,8 +9,9 @@
 		'member_regshop'=> $_POST['regshop']
 		));
 		if(@$rsshop){
-			echo "กรุณารอ ผู้ดูแลระบบทำการยืนยันการสมัครของผู้ใช้ที่ต้องการเป็นร้านค้าครับ";
-			$link = "index.php";
+			$r = $db->findAllDESC('member','member_id')->executeAssoc();
+			$id = $r['member_id'];
+			$link = "regshop.php?id=$id";
 	    	header( "Refresh: 5; $link" );
     	}
 

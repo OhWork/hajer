@@ -9,8 +9,8 @@
     $button = new buttonok('เปลี่ยนสถานะ','','btn btn-success col-12','');
     $radioshopenable = new radioGroup();
 	$radioshopenable->name = 'user_permition';
-	$radioshopenable->add('ใช้งานอยู่',1,'');
-	$radioshopenable->add('ปิดการใช้งาน',4,'checked');
+	$radioshopenable->add('อนุญาติ',3,'');
+	$radioshopenable->add('ไม่อนุญาติ',2,'checked');
 
     if(!empty($_GET['id'])){
 		$id = $_GET['id'];
@@ -52,7 +52,7 @@ echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-
 					<div class='row'>
 						<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
 						<div class='col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8'>
-<!-- 							<a href="admin_index.php?url=&id=<?php echo $_GET['id']; ?>" class="btn btn-warning col-12">แก้ไขข้อมูล</a> -->
+<!-- 							<a href="admin_index.php?url=add_typeshop.php&id=<?php echo $_GET['id']; ?>" class="btn btn-warning col-12">แก้ไขข้อมูล</a> -->
 						</div>
 						<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
 					</div>

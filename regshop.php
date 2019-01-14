@@ -118,14 +118,6 @@
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 			<?php echo $ratepriceshopmax; ?>
 		</div>
-<!--
-	 <div class='col-md-12' style="margin-bottom: 16px;">
-		<div class='row'>
-			<div class='col-md-4' style="padding-right: 0;padding-left: 0;padding-top:7px;"><?php echo  $lbplaceshop; ?></div>
-			<div class='col-md-8'><?php echo $placeshop; ?></div>
-		</div>
-	 </div>
--->
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo  $lbpicshop; ?>
 		</div>
@@ -160,7 +152,7 @@
 			<div class="row">
 			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
 			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pl-4 pr-0'>
-				<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
+				<input type="hidden" name="mem_id" value="<?php echo $_GET['id'];?>">
 				<?php echo $button; ?>
 			</div>
 			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'>
