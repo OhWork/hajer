@@ -1,5 +1,5 @@
 <?php
-	$rs = $db->findByPK32('shop','typeshop','member','shop.typeshop_typeshop_id','typeshop.typeshop_id','member_member_id','member_id')->execute();
+	$rs = $db->findByPK33('shop','typeshop','member','shop.typeshop_typeshop_id','typeshop.typeshop_id','member_member_id','member_id','member_permition',3)->execute();
 
 ?>
 <div class="col-12 bmd">
