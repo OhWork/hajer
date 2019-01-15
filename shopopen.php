@@ -38,7 +38,8 @@
 															  $rate = $rsselect['SUM(review_rate)'];
 															  $memberrate = $rsselect['COUNT(member_member_id)'];
 															  $avgrate = ($rate/$memberrate); ?>
-														<div class="col-md-10 lg6" id="rate" class="starrate">
+													    <div class="col-md-10 lg6" id="rate" class="starrate">
+														    <input type="hidden" id="shop_id" value="<?php echo $id;?>">
 															<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
 														</div>
 													</div>
@@ -270,7 +271,11 @@ $('#rate').on('click',function(){
 			            success: function(data) {
 					            if(data == 'Nologin'){
 								alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+				            }else{
+							    window.location.reload();
+					            $('#rate').addRating({selectedRatings:avg_rating})
 				            }
+/*
 				            else if(data == 0){
 								shop_idshow.innerHTML = '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
 				            }
@@ -285,6 +290,7 @@ $('#rate').on('click',function(){
 				            }else if(data == 5){
 					           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
 				            }
+*/
 
 
 			            }
