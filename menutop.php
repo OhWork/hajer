@@ -11,7 +11,7 @@
 	<?php
 		if($url != ''){ ?>
 			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-8 col-sm-12" accept-charset="utf-8">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="padding-left:25%;">
 				<div class="row">
 					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
 						<input class="sip w-100" name="keyword" type="text" placeholder="ชื่อร้าน" />

@@ -26,7 +26,7 @@
 											<?php
 											}
 										?>
-										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+										<a class="mr-2" style="float:right;" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $rs['shop_locationx'],',',$rs['shop_locationy'];?>"><span data-feather="map-pin"></span></a>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
 										<div class="row">
@@ -83,43 +83,43 @@
 													if($rs['shop_tel'] != ''){
 													?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>เบอร์ติดต่อ <?php echo $rs['shop_tel'];?></p>
+														<p><b>เบอร์ติดต่อ</b> <?php echo $rs['shop_tel'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_website'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>Website <?php echo $rs['shop_website'];?></p>
+														<p><b>Website</b> <?php echo $rs['shop_website'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_line'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>Line id <?php echo $rs['shop_line'];?></p>
+														<p><b>Line id</b> <?php echo $rs['shop_line'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_facebook'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>Facebook/pages <?php echo $rs['shop_facebook'];?></p>
+														<p><b>Facebook/pages</b> <?php echo $rs['shop_facebook'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_email'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>E-mail <?php echo $rs['shop_email'];?></p>
+														<p><b>E-mail</b> <?php echo $rs['shop_email'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_detail'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>รายละเอียด <?php echo $rs['shop_detail'];?></p>
+														<p><b>รายละเอียด</b> <?php echo $rs['shop_detail'];?></p>
 													</div>
 													<?php }else{ }
 													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<p>ช่วงราคา <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
+														<p><b>ช่วงราคา</b> <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
 													</div><?php }else{ }
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5">
