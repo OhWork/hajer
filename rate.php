@@ -2,7 +2,6 @@
 	session_start();
     include 'village/database/db_tools.php';
 	include 'village/connect.php';
-
 	$rate = $_POST['rating'];
 	$shop_id = $_POST['shop_id'];
   	@$member_id = $_POST['member_id'];
