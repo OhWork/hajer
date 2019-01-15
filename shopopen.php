@@ -52,7 +52,19 @@
 											<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
 												<div class="row">
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-														<img class="w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
+														<?php
+															if($rs['shop_pic'] != ''){
+														?>
+																<img class="w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
+
+														<?php
+															}else{
+																?>
+																<img src="images/noimage.png"/>
+														<?php
+															}
+														?>
+
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
 														<div class="row">
