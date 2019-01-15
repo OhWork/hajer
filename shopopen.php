@@ -1,6 +1,7 @@
 <?php
 	$id = $_GET['id'];
 	$rs = $db->findbyPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeAssoc();
+	$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id = $id")->executeAssoc();
 ?>
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1">
 				<div class="row">
@@ -33,11 +34,13 @@
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 												<div class="row">
 													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-														<span class="lg6" data-feather="star"></span>
-														<span class="lg6" data-feather="star"></span>
-														<span class="lg6" data-feather="star"></span>
-														<span class="lg6" data-feather="star"></span>
-														<span class="lg6" data-feather="star"></span>
+														<?php
+															  $rate = $rsselect['SUM(review_rate)'];
+															  $memberrate = $rsselect['COUNT(member_member_id)'];
+															  $avgrate = ($rate/$memberrate); ?>
+														<div class="col-md-10 lg6" id="rate" class="starrate">
+															<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
+														</div>
 													</div>
 												</div>
 											</div>
@@ -252,4 +255,39 @@ $('#fav').on('click',function(){
             }
     });
 });
+var avg_rating = $('#rate').children('#avg_rating').val();
+$('#rate').addRating({
+            selectedRatings:avg_rating
+			})
+$('#rate').on('click',function(){
+					var shop_id = $(this).children().val();
+					var shop_idshow = this ;
+					$.ajax({
+			            url: "rate.php",
+			            data: {rating : $('#rating').val() ,member_id : $('#member_id').val() ,shop_id : shop_id
+				         },
+			            type: "POST",
+			            success: function(data) {
+					            if(data == 'Nologin'){
+								alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+				            }
+				            else if(data == 0){
+								shop_idshow.innerHTML = '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+				            }
+				            else if(data == 1){
+								shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+				            }else if(data == 2){
+								shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;"/><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+				            }else if(data == 3){
+					            shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+				            }else if(data == 4){
+					           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
+				            }else if(data == 5){
+					           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
+				            }
+
+
+			            }
+		    		})
+		    	});
 </script>
