@@ -110,8 +110,17 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
+									<?php
+								  $shop_id = $showkey['shop_id'];
+								  $rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
+								  $rate = $rsselect['SUM(review_rate)'];
+								  $memberrate = $rsselect['COUNT(member_member_id)'];
+								  $avgrate = ($rate/$memberrate); ?>
+								<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
+									<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
+									<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
 								</div>
+							</div>
 							</div>
 						</div>
 						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 pt-3 lg2">
@@ -200,7 +209,16 @@
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pt-3 lg6">
 							<div class="row">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-									<p>rate : 5.0</p>
+								<?php
+								  $shop_id = $showtype['shop_id'];
+								  $rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
+								  $rate = $rsselect['SUM(review_rate)'];
+								  $memberrate = $rsselect['COUNT(member_member_id)'];
+								  $avgrate = ($rate/$memberrate); ?>
+									<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
+										<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
+										<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
+									</div>
 								</div>
 							</div>
 						</div>
@@ -435,10 +453,33 @@ function truncateText(text, length) {
 }
 
 for(var i = 0 ; i < $('.shop_name').length; i++){
-	console.log(i);
 	let truncated;
 	truncated = truncateText($('#shop_name'+i).text(), 30);
 	$('#shop_name'+i).text(truncated);
 	console.log();
 }
+for (var j = 0 ; j < i ; j++ ){
+		var avg_rating = $('#rate'+j).children('#avg_rating').val();
+		$('#rate'+j).addRating({
+            selectedRatings:avg_rating
+			})
+			$('#rate'+j).on('click',function(){
+					var shop_id = $(this).children().val();
+					var shop_idshow = this ;
+					$.ajax({
+			            url: "rate.php",
+			            data: {rating : $('#rating').val() ,member_id : $('#member_id').val() ,shop_id : shop_id
+				         },
+			            type: "POST",
+			            success: function(data) {
+					            if(data == 'Nologin'){
+								alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+				            }else{
+							    window.location.reload();
+					            $('#rate').addRating({selectedRatings:avg_rating})
+				            }
+			            }
+		    		})
+		    	});
+	}
 </script>
