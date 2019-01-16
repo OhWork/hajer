@@ -135,6 +135,20 @@
 		<?php
 			$i++;
 		}
+		if($i == 0){
+		?>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+			<div class="row">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3">
+				<center><p class="text-danger">ไม่พบร้านที่คุณต้องการหา</p></center>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
+				<input type="hidden" id="checkmap" value="<?php echo $i;?>">
+			</div>
+	</div>
+		<?php
+		}
 	}elseif($typeshop != ''){
 		$rstype=$db->specifytable('*','shop JOIN typeshop ON shop.typeshop_typeshop_id = typeshop.typeshop_id ',"typeshop_typeshop_id = '$typeshop'")->execute();
 		 $i =0 ;
@@ -212,6 +226,20 @@
 		<?php
 			$i++;
 		}
+		if($i == 0){
+		?>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+			<div class="row">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3">
+				<center><p class="text-danger">ไม่พบร้านที่คุณต้องการหา</p></center>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
+				<input type="hidden" id="checkmap" value="<?php echo $i;?>">
+			</div>
+	</div>
+	<?php
+		}
 	}else{
 	?>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -221,6 +249,7 @@
 				<center><p class="text-danger">ไม่พบร้านที่คุณต้องการหา</p></center>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
+				<input type="hidden" id="checkmap" value="<?php echo $i;?>">
 			</div>
 	</div>
 	<?php
@@ -228,6 +257,10 @@
 ?>
 
 <script>
+	var checkid = $('#checkmap').val();
+	if(checkid == 0 ){
+		$('#map_canvas').hide();
+	}
 var map, GeoMarker , mycircle ,markercircle;
 
       function initialize() {
