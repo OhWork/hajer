@@ -60,7 +60,8 @@
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgw">
 						  <div class="row">
-								<select class="form-control col-12" name="typeshop" id="typeshop">
+							<div class="form-control mt-2" style="border:none;">
+								<select class="col-12" name="typeshop" id="typeshop">
 									<option value=""> ------- เลือก ------ </option>
 									<?php
 									$rs2 = $db->specifytableNoWhere('*','typeshop','')->execute();
@@ -69,6 +70,7 @@
 									}
 									?>
 								</select>
+							</div>
 						  </div>
 						</div>
 						<button type="submit" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
