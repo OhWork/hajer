@@ -60,7 +60,7 @@
 														<?php
 															}else{
 																?>
-																<img class="pop" src="images/noimage.png"/>
+																<img class="pop w-100" src="images/noimage.png"/>
 														<?php
 															}
 														?>
