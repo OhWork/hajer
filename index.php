@@ -41,8 +41,5 @@
 </html>
  <script>
 feather.replace();
-$('#typeshop').select2({
-	placeholder: "กรุณาประเภทร้านค้า",
-	allowClear: true
-});
+
   </script>

@@ -10,13 +10,13 @@
 	</button>
 	<?php
 		if($url != ''){ ?>
-			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-8 col-sm-12" accept-charset="utf-8">
+			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-10 col-md-8 col-sm-12 dpn2" accept-charset="utf-8">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="padding-left:25%;">
 				<div class="row">
-					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 br3 bdrl">
 						<input class="sip w-100" name="keyword" type="text" placeholder="ชื่อร้าน" />
 					</div>
-					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 br3">
 						<div class="dropdown">
 							<div class="lg6" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<select class="form-control col-12" name="typeshop" id="typeshop">
