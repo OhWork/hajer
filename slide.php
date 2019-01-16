@@ -59,8 +59,7 @@
 							<input class="sip w-100" name="keyword" type="text" placeholder="ชื่อร้าน" />
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgw">
-							<div class="dropdown">
-								<div class="lg6" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <div class="row">
 								<select class="form-control col-12" name="typeshop" id="typeshop">
 									<option value=""> ------- เลือก ------ </option>
 									<?php
@@ -70,8 +69,7 @@
 									}
 									?>
 								</select>
-							</div>
-							</div>
+						  </div>
 						</div>
 						<button type="submit" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
 							<span class="mt-2" style="margin-left:20%; float:left;" data-feather="search"></span>
