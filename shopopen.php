@@ -55,12 +55,12 @@
 														<?php
 															if($rs['shop_pic'] != ''){
 														?>
-																<img class="w-100" src="images/shop/<?php echo $rs['shop_pic'];?>">
+																<img class="w-100 pop"  src="images/shop/<?php echo $rs['shop_pic'];?>">
 
 														<?php
 															}else{
 																?>
-																<img src="images/noimage.png"/>
+																<img class="pop" src="images/noimage.png"/>
 														<?php
 															}
 														?>
@@ -199,6 +199,16 @@
 					</div>
 				</div>
 			</div>
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<img src="" class="imagepreview" style="width: 100%; height:100%;">
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 var map, GeoMarker , mycircle ,markercircle;
 
@@ -270,42 +280,28 @@ $('#fav').on('click',function(){
 });
 var avg_rating = $('#rate').children('#avg_rating').val();
 $('#rate').addRating({
-            selectedRatings:avg_rating
-			})
+    selectedRatings:avg_rating
+})
 $('#rate').on('click',function(){
-					var shop_id = $(this).children().val();
-					var shop_idshow = this ;
-					$.ajax({
-			            url: "rate.php",
-			            data: {rating : $('#rating').val() ,member_id : $('#member_id').val() ,shop_id : shop_id
-				         },
-			            type: "POST",
-			            success: function(data) {
-					            if(data == 'Nologin'){
-								alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
-				            }else{
-							    window.location.reload();
-					            $('#rate').addRating({selectedRatings:avg_rating})
-				            }
-/*
-				            else if(data == 0){
-								shop_idshow.innerHTML = '<img src="images/staricon.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-				            }
-				            else if(data == 1){
-								shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-				            }else if(data == 2){
-								shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;"/><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-				            }else if(data == 3){
-					            shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-				            }else if(data == 4){
-					           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/staricon.png" width="15px" height="15px" />';
-				            }else if(data == 5){
-					           shop_idshow.innerHTML = '<img src="images/star.png" width="15px" height="15px" style="margin-left:5px;" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" /><img src="images/star.png" width="15px" height="15px" />';
-				            }
-*/
-
-
-			            }
-		    		})
-		    	});
+	var shop_id = $(this).children().val();
+	var shop_idshow = this ;
+	$.ajax({
+		url: "rate.php",
+		data: {rating : $('#rating').val() ,member_id : $('#member_id').val() ,shop_id : shop_id
+		},
+		type: "POST",
+		success: function(data) {
+			if(data == 'Nologin'){
+				alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+			}else{
+				window.location.reload();
+				$('#rate').addRating({selectedRatings:avg_rating})
+			}
+		}
+	})
+});
+$('.pop').on('click', function() {
+    $('.imagepreview').attr('src', $(this).attr('src'));
+    $('#imagemodal').modal('show');
+});
 </script>
