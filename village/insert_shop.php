@@ -1,7 +1,6 @@
 <?php  ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
-
 	if(!empty($_POST['shop_id'])){
 		$target_dir = '../images/temp/';
 		$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
@@ -42,6 +41,20 @@
 	'member_member_id' => $_POST['mem_id'],
 	'typeshop_typeshop_id' => $_POST['catshop']
 	));
+	if(@$rs){
+		$selectrs = $db->findAllDESC('shop','shop_id')->executeAssoc();
+		print_r($selectrs);
+		@$rs = $db->insert('shop',array(
+			'shop_detail_park' => $_POST['shop_name'],
+			'shop_detail_credit' => $_POST['shop_detail'],
+			'shop_detail_delivery' => $_POST['shop_open'],
+			'shop_detail_wifi' => $_POST['shop_close'],
+			'shop_detail_thaipost' => $_POST['shop_detail'],
+			'shop_detail_debit' => $_POST['shop_open'],
+			'shop_id' => $selectrs['shop_id']
+
+		));
+	}
 /*
                 //Log
 		if(getenv(HTTP_X_FORWARDED_FOR)){
