@@ -18,6 +18,15 @@
 		$data['shop_locationy'] = $_POST['lng'];
 		$data['shop_pic'] = $img_new_name;
 		@$rsfix = $db->update('shop',$data,'shop_id',$_POST['shop_id']);
+		if(@$rsfix){
+			$data['shopdetail_park'] = $_POST['shopdetail_park'];
+			$data['shopdetail_credit'] = $_POST['shopdetail_credit'];
+			$data['shopdetail_delivery'] = $_POST['shopdetail_delivery'];
+			$data['shopdetail_wifi'] = $_POST['shopdetail_wifi'];
+			$data['shopdetail_thaipost'] = $_POST['shopdetail_thaipost'];
+			$data['shopdetail_debit'] = $_POST['shopdetail_debit'];
+			@$rsdetail = $db->update('shopdetail',$data,'shop_id',$_POST['shop_id']);
+		}
 
 	}else{
 	$target_dir = '../images/temp/';
@@ -43,14 +52,13 @@
 	));
 	if(@$rs){
 		$selectrs = $db->findAllDESC('shop','shop_id')->executeAssoc();
-		print_r($selectrs);
-		@$rs = $db->insert('shop',array(
-			'shop_detail_park' => $_POST['shop_name'],
-			'shop_detail_credit' => $_POST['shop_detail'],
-			'shop_detail_delivery' => $_POST['shop_open'],
-			'shop_detail_wifi' => $_POST['shop_close'],
-			'shop_detail_thaipost' => $_POST['shop_detail'],
-			'shop_detail_debit' => $_POST['shop_open'],
+		@$rs = $db->insert('shopdetail',array(
+			'shopdetail_park' => $_POST['shopdetail_park'],
+			'shopdetail_credit' => $_POST['shopdetail_credit'],
+			'shopdetail_delivery' => $_POST['shopdetail_delivery'],
+			'shopdetail_wifi' => $_POST['shopdetail_wifi'],
+			'shopdetail_thaipost' => $_POST['shopdetail_thaipost'],
+			'shopdetail_debit' => $_POST['shopdetail_debit'],
 			'shop_id' => $selectrs['shop_id']
 
 		));

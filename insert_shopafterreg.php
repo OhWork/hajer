@@ -24,6 +24,19 @@
 	'member_member_id' => $_POST['mem_id'],
 	'typeshop_typeshop_id' => $_POST['catshop']
 	));
+	if(@$rs){
+		$selectrs = $db->findAllDESC('shop','shop_id')->executeAssoc();
+		@$rs = $db->insert('shopdetail',array(
+			'shopdetail_park' => $_POST['shopdetail_park'],
+			'shopdetail_credit' => $_POST['shopdetail_credit'],
+			'shopdetail_delivery' => $_POST['shopdetail_delivery'],
+			'shopdetail_wifi' => $_POST['shopdetail_wifi'],
+			'shopdetail_thaipost' => $_POST['shopdetail_thaipost'],
+			'shopdetail_debit' => $_POST['shopdetail_debit'],
+			'shop_id' => $selectrs['shop_id']
+
+		));
+	}
 /*
                 //Log
 		if(getenv(HTTP_X_FORWARDED_FOR)){

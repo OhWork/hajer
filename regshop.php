@@ -66,6 +66,37 @@
 	 $selectcatshop = new selectFromDB();
 	 $selectcatshop->name = 'catshop';
 	 $selectcatshop->idtf = 'catshop_id';
+	 $lbpark = new label('ที่จอดรถ');
+     $radiopark = new radioGroup();
+	 $radiopark->name = 'shopdetail_park';
+	 $radiopark->add('มีบริการ',1,'');
+	 $radiopark->add('ไม่มีบริการ',0,'checked');
+	 $lbcredit = new label('รับบัตรเครดิต');
+     $radiocredit = new radioGroup();
+	 $radiocredit->name = 'shopdetail_credit';
+	 $radiocredit->add('มีบริการ',1,'');
+	 $radiocredit->add('ไม่มีบริการ',0,'checked');
+	 $lbdelivery = new label('รับส่งเดลิเวอร์รี่');
+     $radiodelivery = new radioGroup();
+	 $radiodelivery->name = 'shopdetail_delivery';
+	 $radiodelivery->add('มีบริการ',1,'');
+	 $radiodelivery->add('ไม่มีบริการ',0,'checked');
+	 $lbwifi = new label('ไวไฟาย');
+     $radiowifi = new radioGroup();
+	 $radiowifi->name = 'shopdetail_wifi';
+	 $radiowifi->add('มีบริการ',1,'');
+	 $radiowifi->add('ไม่มีบริการ',0,'checked');
+	 $lbthaipost = new label('ส่งไปรษณีย์');
+     $radiothaipost = new radioGroup();
+	 $radiothaipost->name = 'shopdetail_thaipost';
+	 $radiothaipost->add('มีบริการ',1,'');
+	 $radiothaipost->add('ไม่มีบริการ',0,'checked');
+	 $lbdebit = new label('รับบัตรเดบิต');
+     $radiodebit = new radioGroup();
+	 $radiodebit->name = 'shopdetail_debit';
+	 $radiodebit->add('มีบริการ',1,'');
+	 $radiodebit->add('ไม่มีบริการ',0,'checked');
+
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shopafterreg.php','');
 	 ?>
@@ -147,6 +178,60 @@
 			<?php echo  $lbgoogleshop; ?>
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
+		</div>
+		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+			<div class="row">
+				<div class="col-md-2">
+					<?php
+						echo  $lbpark;
+					?>
+				</div>
+				<div class="col-md-4">
+					<?php
+						echo  $radiopark;
+					?>
+				</div>
+				<div class="col-md-2">
+					<?php
+						echo  $lbcredit;
+					?>
+				</div>
+				<div class="col-md-4">
+					<?php
+						echo  $radiocredit;
+					?>
+				</div>
+				<div class="col-md-2">
+					<?php
+						echo  $lbdelivery;
+					?>
+				</div>
+				<div class="col-md-4">
+					<?php
+						echo  $radiodelivery;
+					?>
+				</div>
+				<div class="col-md-2">
+					<?php
+						echo  $lbthaipost;
+					?>
+				</div>
+				<div class="col-md-4">
+					<?php
+						echo  $radiothaipost;
+					?>
+				</div>
+				<div class="col-md-2">
+					<?php
+						echo  $lbdebit;
+					?>
+				</div>
+				<div class="col-md-4">
+					<?php
+						echo  $radiodebit;
+					?>
+				</div>
+			</div>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<div class="row">
