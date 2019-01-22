@@ -20,7 +20,7 @@
 									<p>ข่าวประชาสัมพันธ์</p>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-									<p>คำถามที่พบบ่อย</p>
+									<p>ข้อตกลงและเงื่อนไข</p>
 								</div>
 							</div>
 						</div>
@@ -74,7 +74,7 @@
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg3">
 			<div class="row">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7 mt-3">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw mt-3">
 					<p>copy right by hajer.co.ltd., companygroup with friends</p>
 				</div>
 			</div>

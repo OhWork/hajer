@@ -38,7 +38,7 @@
 															  $rate = $rsselect['SUM(review_rate)'];
 															  $memberrate = $rsselect['COUNT(member_member_id)'];
 															  $avgrate = ($rate/$memberrate); ?>
-													    <div class="col-md-10 lg6" id="rate" class="starrate">
+													    <div class="col-md-10 lg6 pl-0" id="rate" class="starrate">
 														    <input type="hidden" id="shop_id" value="<?php echo $id;?>">
 															<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
 														</div>
