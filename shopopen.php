@@ -149,7 +149,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> มีที่จอดรถ
 														<?php }else{
 															?>
-														<span class="mr-3 lg9" style="float:left" data-feather="x-square"></span> มีที่จอดรถ
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> มีที่จอดรถ
 														<?php
 															}
 														?>
@@ -161,7 +161,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเครดิต
 														<?php }else{
 															?>
-														<span class="mr-3 lg9" style="float:left" data-feather="x-square"></span> รับบัตรเครดิต
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> รับบัตรเครดิต
 														<?php
 															}
 														?>
@@ -173,7 +173,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> เดลิเวอรี
 														<?php }else{
 															?>
-														<span class="mr-3 lg9" style="float:left" data-feather="x-square"></span> เดลิเวอรี
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> เดลิเวอรี
 														<?php
 															}
 														?>
@@ -185,7 +185,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี
 														<?php }else{
 															?>
-														<span class="mr-3 lg9" style="float:left" data-feather="x-square"></span> ไวไฟฟรี
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> ไวไฟฟรี
 														<?php
 															}
 														?>
@@ -197,7 +197,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับส่งสินค้าทางไปรษณีย์
 														<?php }else{
 															?>
-														<span class="mr-3 lg9" style="float:left" data-feather="x-square"></span> รับส่งสินค้าทางไปรษณีย์
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> รับส่งสินค้าทางไปรษณีย์
 														<?php
 															}
 														?>
@@ -209,7 +209,7 @@
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเดบิต
 														<?php }else{
 															?>
-														<span class="mr-3 lg4" style="float:left" data-feather="x-square"></span> รับบัตรเดบิต
+														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> รับบัตรเดบิต
 														<?php
 															}
 														?>
