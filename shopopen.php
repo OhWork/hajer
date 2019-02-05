@@ -137,14 +137,13 @@
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<p><b>ช่วงราคา</b> <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
 													</div><?php }else{ }
-													$rsdetail = $db->findbyPK('shopdetail','shop_id',$id)->executeAssoc();
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5">
 														<div class="col-12 bgr" height="2px"></div>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 														<?php
-														if($rsdetail['shopdetail_park']== 1){
+														if($rs['shopdetail_park']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> มีที่จอดรถ
 														<?php }else{
@@ -156,7 +155,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rsdetail['shopdetail_credit']== 1){
+														if($rs['shopdetail_credit']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเครดิต
 														<?php }else{
@@ -168,7 +167,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rsdetail['shopdetail_delivery']== 1){
+														if($rs['shopdetail_delivery']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> เดลิเวอรี
 														<?php }else{
@@ -180,7 +179,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rsdetail['shopdetail_wifi']== 1){
+														if($rs['shopdetail_wifi']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี
 														<?php }else{
@@ -192,7 +191,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rsdetail['shopdetail_thaipost']== 1){
+														if($rs['shopdetail_thaipost']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับส่งสินค้าทางไปรษณีย์
 														<?php }else{
@@ -204,7 +203,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rsdetail['shopdetail_debit']== 1){
+														if($rs['shopdetail_debit']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเดบิต
 														<?php }else{
