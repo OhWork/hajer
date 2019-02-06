@@ -75,7 +75,7 @@
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg3">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw mt-3">
-					<p>copy right by hajer.co.ltd., companygroup with friends</p>
+					<p>copy right by Delicodes,www.Delocodes.com</p>
 				</div>
 			</div>
 		</div>
