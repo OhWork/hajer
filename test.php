@@ -14,23 +14,29 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else {
-      // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    }
+
+	    FB.login(function(response) {
+
+	      console.log('เข้า');
+	    if (response.status === 'connected') {
+	      // Logged into your app and Facebook.
+	      testAPI();
+	    } else {
+	      // The person is not logged into your app or we are unable to tell.
+	      document.getElementById('status').innerHTML = 'Please log ' +
+	        'into this app.';
+	    }
+		}, {scope: 'public_profile,email'});
+//
   }
 
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
-    FB.getLoginStatus(function(response) {
+//     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    });
+//     });
   }
 
   window.fbAsyncInit = function() {
@@ -73,7 +79,8 @@
   // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', {fields: 'name'}, function(response) {
+    // /me คือตัวเรา Fields คือ ค่าที่ต้องการจาก Facebook
+    FB.api('/me', {fields: 'name,email,gender'}, function(response) {
       console.log('Successful login for: ' + response.name);
       console.log(response);
       document.getElementById('status').innerHTML =
