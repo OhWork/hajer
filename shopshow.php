@@ -2,17 +2,17 @@
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 			<div class="row">
-				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"></div>
-				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+				<div class="col-xl-3 col-lg-3"></div>
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 					<div class="col-12" id="map_canvas"style="background-color:#ffffff;height:300px;"></div>
 				</div>
-				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"></div>
+				<div class="col-xl-3 col-lg-3"></div>
 			</div>
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bt1 mt-3 pt-3">
 			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1" style="border-bottom:solid 2px #039BE5;">
+				<div class="col-xl-2 col-lg-2"></div>
+				<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 bb1" style="border-bottom:solid 2px #039BE5;">
 					<div class="row">
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 						</div>
@@ -53,7 +53,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
+				<div class="col-xl-2 col-lg-2"></div>
 			</div>
 		</div>
 <?php
@@ -66,8 +66,8 @@
 		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
+				<div class="col-xl-2 col-lg-2"></div>
+				<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 bb1 pb-3">
 					<div class="row">
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 							<div class="row">
@@ -132,7 +132,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+				<div class="col-xl-2 col-lg-2">
 					<input type="hidden" id="keyword" value="<?php echo $keyword?>">
 					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showkey['shop_locationx'];?>">
 					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showkey['shop_locationy'];?>">
@@ -165,13 +165,13 @@
 		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 			<div class="row">
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bb1 pb-3">
+				<div class="col-xl-2 col-lg-2"></div>
+				<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 bb1 pb-3">
 					<div class="row">
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
 							<div class="row">
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+								<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1"></div>
+								<div class="col-xl-7 col-lg-8 col-md-7 col-sm-7">
 									<?php
 									if($showtype['shop_pic'] != ''){
 									?>
@@ -182,7 +182,7 @@
 									}
 									?>
 								</div>
-								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+								<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1"></div>
 							</div>
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 pt-3 lg6">
@@ -231,7 +231,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+				<div class="col-xl-2 col-lg-2">
 					<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
 					<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
 					<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showtype['shop_locationy'];?>">
