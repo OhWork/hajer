@@ -73,9 +73,9 @@
 							</div>
 						  </div>
 						</div>
-						<button type="submit" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
-							<span class="mt-2" style="margin-left:20%; float:left;" data-feather="search"></span>
-							<p class="ml-2 mt-1" style="font-size: 20px;float:left;">ค้นหา</p>
+						<button type="submit" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center bgr lg7 pl-3 pt-2 slr bts" style="border:none;">
+							<span class="mt-2" data-feather="search"></span>
+							<p class="ml-2 mt-1" style="font-size: 20px;">ค้นหา</p>
 						</button>
 					</div>
 				</div>
