@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+	  <?php //แก้ content เป็น client id ที่ config ไว้กับ google?>
+	<meta name="google-signin-client_id" content="756684911740-hi7q1a4ubgiu2i8jkc1tmgj3o7j0g032.apps.googleusercontent.com">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -23,7 +25,76 @@
     <link rel="stylesheet" href="CSS/main.css">
 
   </head>
+<script>
+// Start Facebook Login Api
+	var bFbStatus = false;
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+	    if (response.status === 'connected') {
+	      // Logged into your app and Facebook.
+	      // ล็อคอินผ่านจะให้ไปดึง function testapi สามารถแก้ได้จะให้ทำอะไร
+	      testAPI();
+	    } else {
+	      // The person is not logged into your app or we are unable to tell.
+	      // หากล็อคอินไม่ผ่านจะให้
+	    }
+  }
 
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+	if(bFbStatus == false){
+	     FB.getLoginStatus(function(response) {
+	      statusChangeCallback(response);
+	     });
+    }
+	bFbStatus = true;
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '236799303381057',
+      cookie     : true,  // enable cookies to allow the server to access
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v3.2' // The Graph API version to use for the call
+    });
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    // /me คือตัวเรา Fields คือ ค่าที่ต้องการจาก Facebook
+    FB.api('/me', {fields: 'name,email,gender'}, function(response) {
+      console.log('Successful login for: ' + response.name);
+      console.log(response);
+    });
+  }
+// End Facebook Login Api
+
+// Start Google Login Api
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+// End Google Login Api
+ </script>
   <body>
    <?php
 	$form = new form();
@@ -41,10 +112,10 @@
 		<div class="col-6">
 			<div class="row">
 				<div class="col-12 mt-5">
-					<button class="btn btn-primary col-12 pt-3 pb-3"><span data-feather="facebook"></span>Sign in with Facebook</button>
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 				</div>
 				<div class="col-12 mt-3">
-					<button class="btn btn-danger col-12 pt-3 pb-3">Sing in with Google</button>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 				</div>
 				<div class="col-12 mt-3" align="center">
 					<p>หาเจอจะไม่ทำการส่งข้อความ หรืออีเมลใดเพื่อเป็นการรบกวนสมาชิก</p>

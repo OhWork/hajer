@@ -10,3 +10,4 @@
 <script src="jquery/select2.min.js"></script>
 <script src="jquery/feather-icon/feather.min.js"></script>
 <script src="jquery/jquery.star.rating.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
