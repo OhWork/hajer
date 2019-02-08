@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+	var bFbStatus = false;
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -15,9 +16,7 @@
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
 
-	    FB.login(function(response) {
-
-	      console.log('เข้า');
+// 	    FB.login(function(response) {
 	    if (response.status === 'connected') {
 	      // Logged into your app and Facebook.
 	      testAPI();
@@ -26,7 +25,7 @@
 	      document.getElementById('status').innerHTML = 'Please log ' +
 	        'into this app.';
 	    }
-		}, {scope: 'public_profile,email'});
+// 		}, {scope: 'public_profile,email'});
 //
   }
 
@@ -34,9 +33,13 @@
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
-//     FB.getLoginStatus(function(response) {
+	if(bFbStatus == false){
+     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-//     });
+		console.log('false');
+    	});
+    }
+	bFbStatus = true;
   }
 
   window.fbAsyncInit = function() {
@@ -60,10 +63,14 @@
     //
     // These three cases are handled in the callback function.
 
+/*
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-
+	    if(bFbStatus == false){
+//       statusChangeCallback(response);
+		console.log('false');
+         }
+    	});
+*/
   };
 
   // Load the SDK asynchronously
