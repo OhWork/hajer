@@ -31,7 +31,6 @@
 		<?php include "content.php" ?>
 
 		</div>
-		</div>
 		<?php include "footer.php" ?>
 		</div>
     </body>
