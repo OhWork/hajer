@@ -4,8 +4,8 @@
 ?>
 <div class="col-12 bmd">
 	<div class="row">
-		<div class="col-xl-1 col-lg-1 col-md-2 col-sm-1"></div>
-		<div class="col-xl-10 col-lg-10 col-md-8 col-sm-10">
+		<div class="col-xl-2 col-lg-1 col-md-1 col-sm-1"></div>
+		<div class="col-xl-8 col-lg-10 col-md-10 col-sm-10">
 			<div class="col-12 svtop">
 				<div class="row">
 					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 lg5">
@@ -29,10 +29,10 @@
 							$shop_id = $showrs['shop_id'];
 							$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id = $shop_id")->executeAssoc();
 					?>
-					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 svbb pb-3">
+					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 svbb pb-3">
 						<div class="row">
-							<div class="col-md-3 col-sm-3 col-3"></div>
-							<div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 col-6 mt-3">
+							<div class="col-md-2 col-sm-3 col-3"></div>
+							<div class="col-xl-12 col-lg-12 col-md-8 col-sm-6 col-6 mt-3">
 								<?php
 									if($showrs['shop_pic'] != ''){
 								?>
@@ -78,14 +78,14 @@
 							</div>
 							<div class="col-12 mt-2">
 								<div class="row">
-									<div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-3"></div>
-									<div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 col-6">
+									<div class="col-xl-12 col-lg-12 col-md-2 col-sm-3 col-3"></div>
+									<div class="col-xl-12 col-lg-12 col-md-8 col-sm-6 col-6">
 										<a class="btn lgb w-100" href="index.php?url=shopopen.php&id=<?php echo $showrs['shop_id'];?>">ดูรายละเอียดเพิ่มเติม</a>
 									</div>
-									<div class="col-sm-3 col-3"></div>
+									<div class="col-md-2 col-sm-3 col-3"></div>
 								</div>
 							</div>
-							<div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-3"></div>
+							<div class="col-xl-12 col-lg-12 col-md-2 col-sm-3 col-3"></div>
 						</div>
 					</div>
 					<?php
@@ -98,7 +98,7 @@
 				<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
 			</div>
 		</div>
-		<div class="col-xl-1 col-lg-1 col-md-2 col-sm-1"></div>
+		<div class="col-xl-2 col-lg-1 col-md-1 col-sm-1"></div>
 <script>
 $(document).ready(function(){
 	var num_shop = $('#num_shop').val();

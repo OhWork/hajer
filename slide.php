@@ -24,30 +24,26 @@
 </div>-->
 <div class="col-12 dpn" style="opacity:0.8;">
 	<div class="row">
-		<img class="d-block w-100" height="500" src="images/bg.jpg">
+		<img class="d-block w-100 bgh" src="images/bg.jpg">
 	</div>
 </div>
 <div class="inner_position_top bt1">
 <!--<div class="container">-->
 	<div class="row">
-		<div class="col-xl-1 col-lg-1 col-md-2 col-sm-1"></div>
-		<div class="col-xl-10 col-lg-10 col-md-8 col-sm-10">
+		<div class="col-xl-2 col-lg-1 col-md-1 col-sm-1"></div>
+		<div class="col-xl-8 col-lg-10 col-md-10 col-sm-10">
 			<div class="col-12">
 				<div class="row">
-					<div class="col-xl-2"></div>
-					<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 lgw slh">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw slh">
 						หาเจอเราจะค้นหาสิ่งที่คุณต้องการ
 					</div>
-					<div class="col-xl-2"></div>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="row">
-					<div class="col-xl-2"></div>
-					<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 lgw">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw">
 						<center><p>สถานที่คุณจะค้นหา เช่น ร้ายขายของชำ ,ร้านตัดผม ,ร้านขายยา ,และอื่น ๆ .....</p></center>
 					</div>
-					<div class="col-xl-2"></div>
 				</div>
 			</div>
 			<div class="col-12">
@@ -83,4 +79,4 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-1 col-lg-1 col-md-2 col-sm-1"></div>
+		<div class="col-xl-2 col-lg-1 col-md-1 col-sm-1"></div>
