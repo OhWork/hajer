@@ -33,6 +33,7 @@
 	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','','');
 	 $lbratepriceshopmax = new label('เรทราคาสูงสุด');
 	 $placeshop = new textfield('shop_place','','form-control','','');
+	 $filepic = new inputFile('shop_pic','shop_pic','shop_pic');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
 	 $selectcatshop = new selectFromDB();
@@ -146,21 +147,20 @@
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 			<div class="row">
-			<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 upload-btn ml-3'><center>
-				<span data-feather="eye"></span></center>
-				<input type="file" id="shop_pic" name="shop_pic" />
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+				<?php echo $filepic;?>
 			</div>
 			<?php
 				if(!empty($id)){
 			?>
-			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
-				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width='50px' height='50px'>
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width="150px" height="150px"'>
 			</div>
 			<?php
 				}else{
 					?>
-			<div class='col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 text-danger'>
-				<img id="preimg" class="preimg" src="images/noimage.png" width="50px" height="50px">
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+				<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px"'>
 			</div>
 				<?php
 				}
