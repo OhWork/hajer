@@ -62,9 +62,6 @@
     border-radius: 4px;
 }
 
-.collapse {
-    display: none;
-}
 
     .collapse.in {
         display: block;

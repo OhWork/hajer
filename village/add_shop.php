@@ -25,8 +25,8 @@
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
 	 $lbpicshop = new label('รูปภาพของร้านค้า');
-	 $openshop = new textfield('shop_open','','form-control','','');
-	 $closeshop = new textfield('shop_close','','form-control','','');
+	 $openshop = new textfield('shop_open','openshop','form-control','','');
+	 $closeshop = new textfield('shop_close','closeshop','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
 	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','','');
 	 $lbratepriceshopmin = new label('เรทราคาต่ำสุด');
@@ -413,6 +413,11 @@
      $('#shop_pic').on('change',function(e){
 	 	readURL(this);
      });
-
+	 $('#openshop').datetimepicker({
+        format: 'H:mm'
+     });
+     $('#closeshop').datetimepicker({
+        format: 'H:mm'
+     });
     </script>
 <?php 	echo $form->close(); ?>

@@ -112,10 +112,10 @@ function onSignIn(googleUser) {
 		<div class="col-6">
 			<div class="row">
 				<div class="col-12 mt-5">
-					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+					<div class="fb-login-button" data-size="large" scope="public_profile,email" data-button-type="login_with" onlogin="checkLoginState();"></div>
 				</div>
 				<div class="col-12 mt-3">
-					<div class="g-signin2 col-md-12" data-onsuccess="onSignIn"></div>
+					<div class="g-signin2 col-md-12" data-width="250" data-height="50" data-onsuccess="onSignIn"></div>
 				</div>
 				<div class="col-12 mt-3" align="center">
 					<p>หาเจอจะไม่ทำการส่งข้อความ หรืออีเมลใดเพื่อเป็นการรบกวนสมาชิก</p>
