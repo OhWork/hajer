@@ -54,11 +54,11 @@
 							</div>
 							<div class="col-12 lg6 mt-2">
 								<div class="row">
-									<div class="col-4">นำทาง : </div>
-									<div class="col-1 lg2">
-										<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showrs['shop_locationx'],',',$showrs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+									<div class="pl-3">นำทาง : </div>
+									<div class="lg2">
+										<a class="ml-1" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showrs['shop_locationx'],',',$showrs['shop_locationy'];?>"><span data-feather="navigation"></span></a>
 									</div>
-									<div class="col-6 pl-2 pr-0 svadr">
+									<div class="pl-2 pr-0 svadr">
 									</div>
 								</div>
 							</div>
