@@ -103,15 +103,15 @@ function onSignIn(googleUser) {
 	$submit = new buttonok('Login','','btn btn-lg btn-primary btn-block col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','');
 	echo $form->open('','','col-12','check_login.php','');
     ?>
-<div class="col-12 text-center mb-4 lg2">
+<div class="col-12 text-center mb-3 lg">
 	<h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
 </div>
 <div class="col-12">
 	<div class="row">
-		<div class="col-3"></div>
-		<div class="col-6">
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-2"></div>
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-8">
 			<div class="row">
-				<div class="col-12 mt-5">
+				<div class="col-12" style="text-align:center;">
 					<div class="fb-login-button" data-size="large" scope="public_profile,email" data-button-type="login_with" onlogin="checkLoginState();"></div>
 				</div>
 				<div class="col-12 mt-3">
@@ -132,7 +132,7 @@ function onSignIn(googleUser) {
 				</div>
 			</div>
 		</div>
-		<div class="col-3"></div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-2"></div>
 	</div>
 </div>
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">

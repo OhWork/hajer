@@ -7,8 +7,8 @@
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 						<div class="row">
-							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 bgw brd">
+							<div class="col-xl-2 col-lg-2 col-md-1 col-sm-1"></div>
+							<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 bgw brd">
 								<div class="row">
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6" id="introshop">
 									</div>
@@ -47,9 +47,14 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
 										<div class="row">
-											<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+											<span class="pl-3">ระยะทางที่จะถึง : </span><p id="distance" class="text-primary ml-1"></p>
+										</div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+										<div class="row">
+											<div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
 												<div class="row">
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
@@ -75,7 +80,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 lg6">
+											<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 lg6 mt-3">
 												<div class="row">
 													<?php if($rs['shop_open'] != '' && $rs['shop_close'] != ''){ ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -134,13 +139,10 @@
 													<?php }else{ }
 													 if($rs['shop_ratepricemin'] != '' && $rs['shop_ratepricemax'] != ''){
 													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bb1">
 														<p><b>ช่วงราคา</b> <?php echo $rs['shop_ratepricemin'],'-',$rs['shop_ratepricemax'];?> บาท</p>
 													</div><?php }else{ }
 													 ?>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5">
-														<div class="col-12 bgr" height="2px"></div>
-													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 														<?php
 														if($rs['shopdetail_park']== 1){
@@ -201,7 +203,7 @@
 															}
 														?>
 													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pb-3 bb1">
 														<?php
 														if($rs['shopdetail_debit']== 1){
 														?>
@@ -213,17 +215,13 @@
 															}
 														?>
 													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5 mt-3">
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-5 pr-5">
 														<div class="col-12 bgr" height="2px"></div>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg8">
-														<p>Promotion</p><p>10.00-14.00 = ลด 10%</p>
+														<p><b>Promotion</b></p><p>10.00-14.00 = ลด 10%</p>
 													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg6">
-														<span>ระยะทางที่จะถึง :</span><p id="distance" class="text-primary"></p>
-													</div>
+													
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<div class="row">
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
@@ -245,7 +243,7 @@
 											</div>
 										</div>
 									</div>
-							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+							<div class="col-xl-2 col-lg-2 col-md-1 col-sm-1">
 								<input type="hidden" id="id_shop" value="<?php echo $id;?>">
 								<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
 							</div>
