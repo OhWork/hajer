@@ -169,6 +169,7 @@
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo  $lbgoogleshop; ?>
+			<input type="button" value="Locate Me" onclick="initMap()">
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
 		</div>
@@ -248,79 +249,73 @@
 	<script>
 		var checkid = $('#idnaja').val();
  		if(checkid == ""){
-	      var map, GeoMarker;
+var map, infoWindow;
+var geocoder;
+function initMap() {
+  geocoder = new google.maps.Geocoder();
+  map = new google.maps.Map(document.getElementById('map_canvas'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 17
+  });
+  infoWindow = new google.maps.InfoWindow;
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
 
-	      function initialize() {
-	        var mapOptions = {
-	          zoom: 17,
-	          center: new google.maps.LatLng(-34.397, 150.644),
-	          mapTypeId: google.maps.MapTypeId.ROADMAP,
-	          streetViewControl: false,
-	          disableDefaultUI: true,
-	          styles: [
-			  	{
-					"featureType": "administrative",
-					"elementType": "geometry",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					 ]
-				},
-				{
-					"featureType": "poi",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					]
-				},
-				{
-					"featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					]
-				},
-				{
-					"featureType": "transit",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					]
-				}
-	          ]
-	        };
-	        map = new google.maps.Map(document.getElementById('map_canvas'),
-	            mapOptions);
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            draggable: true,
+            title: 'Your position'
+        });
+        /*infoWindow.setPosition(pos);
+        infoWindow.setContent('Your position');
+        marker.addListener('click', function() {
+          infoWindow.open(map, marker);
+        });
+        infoWindow.open(map, marker);*/
+        map.setCenter(pos);
 
-	        GeoMarker = new GeolocationMarker();
-	        GeoMarker.setCircleOptions({fillColor: '#808080'});
+      geocodePosition(pos);
 
-	        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-	          map.setCenter(this.getPosition());
-	          map.fitBounds(this.getBounds());
-	          $('#lat').val(GeoMarker.position.lat());
-			  $('#lng').val(GeoMarker.position.lng());
-	          console.log($('#lat').val());
-	          console.log($('#lng').val());
-	        });
+      // Add dragging event listeners.
 
-	        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-	          alert('There was an error obtaining your position. Message: ' + e.message);
-	        });
+      google.maps.event.addListener(marker, 'dragend', function() {
+        geocodePosition(marker.getPosition());
+        map.panTo(marker.getPosition());
+	  $('#lat').val(marker.getPosition().lat());
+	  $('#lng').val(marker.getPosition().lng());
+      });
 
-	        GeoMarker.setMap(map);
-	      }
+    }, function() {
+       handleLocationError(true, infoWindow, map.getCenter());
+    });
+} else {
+  // Browser doesn't support Geolocation
+  handleLocationError(false, infoWindow, map.getCenter());
+}
 
-	      google.maps.event.addDomListener(window, 'load', initialize);
+}
+function geocodePosition(pos) {
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+  });
+  $('#lat').val(pos.lat);
+  $('#lng').val(pos.lng);
+}
 
-	      if(!navigator.geolocation) {
-	        alert('Your browser does not support geolocation');
-	      }
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+google.maps.event.addDomListener(window, 'load', initMap);
       }
 
       else{
