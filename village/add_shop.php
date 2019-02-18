@@ -75,7 +75,7 @@
 		 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
 		 $nameshop->value = $r['shop_name'];
 		 $detailshop->value = $r['shop_detail'];
-		 $ocshop->value = $r['shop_oc'];
+// 		 $ocshop->value = $r['shop_oc'];
 		 $ratepriceshopmin->value = $r['shop_ratepricemin'];
 		 $ratepriceshopmax->value = $r['shop_ratepricemax'];
 		 $placeshop->value = $r['chop_place'];
