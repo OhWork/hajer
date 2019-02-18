@@ -28,9 +28,9 @@
 	 $openshop = new textfield('shop_open','openshop','form-control','','');
 	 $closeshop = new textfield('shop_close','closeshop','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
-	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','','');
+	 $ratepriceshopmin = new textfield('shop_ratemin','','form-control','กรุณากรอกเป็นตัวเลข เช่น x','');
 	 $lbratepriceshopmin = new label('เรทราคาต่ำสุด');
-	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','','');
+	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','กรุณากรอกเป็นตัวเลข เช่น xxx','');
 	 $lbratepriceshopmax = new label('เรทราคาสูงสุด');
 	 $placeshop = new textfield('shop_place','','form-control','','');
 	 $filepic = new inputFile('shop_pic','shop_pic','shop_pic');
@@ -169,7 +169,6 @@
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo  $lbgoogleshop; ?>
-			<input type="button" value="Locate Me" onclick="initMap()">
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
 		</div>
@@ -255,7 +254,46 @@ function initMap() {
   geocoder = new google.maps.Geocoder();
   map = new google.maps.Map(document.getElementById('map_canvas'), {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 17
+    zoom: 17,
+    streetViewControl: false,
+                      disableDefaultUI: true,
+                      styles: [
+						  {
+						    "featureType": "administrative",
+						    "elementType": "geometry",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "poi",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "road",
+						    "elementType": "labels.icon",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  },
+						  {
+						    "featureType": "transit",
+						    "stylers": [
+						      {
+						        "visibility": "off"
+						      }
+						    ]
+						  }
+                      ]
+
   });
   infoWindow = new google.maps.InfoWindow;
 if (navigator.geolocation) {
@@ -409,10 +447,10 @@ google.maps.event.addDomListener(window, 'load', initMap);
 	 	readURL(this);
      });
 	 $('#openshop').datetimepicker({
-        format: 'H:mm'
+        format: 'HH.mm'
      });
      $('#closeshop').datetimepicker({
-        format: 'H:mm'
+        format: 'HH.mm'
      });
     </script>
 <?php 	echo $form->close(); ?>

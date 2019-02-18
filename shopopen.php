@@ -219,9 +219,9 @@
 														<div class="col-12 bgr" height="2px"></div>
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 lg8">
-														<p><b>Promotion</b></p><p>10.00-14.00 = ลด 10%</p>
+<!-- 														<p><b>Promotion</b></p><p>10.00-14.00 = ลด 10%</p> -->
 													</div>
-													
+
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<div class="row">
 															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
