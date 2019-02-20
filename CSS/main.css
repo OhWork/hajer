@@ -176,6 +176,9 @@
 .fl {
 	float:left;
 }
+.g-signin2 > div{
+  margin: 0 auto;
+}
 /* menutop */
 
 .hvmenu:hover {
