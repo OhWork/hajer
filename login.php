@@ -104,7 +104,7 @@ function onSignIn(googleUser) {
 	echo $form->open('','','col-12','check_login.php','');
     ?>
 <div class="col-12 text-center mb-3 lg">
-	<h1 class="h3 mb-3 font-weight-normal">เข้าสู่ระบบ</h1>
+	<h1 class="h3 mb-3 font-weight-normal">สมาชิกหาเจอ</h1>
 </div>
 <div class="col-12">
 	<div class="row">
@@ -114,8 +114,8 @@ function onSignIn(googleUser) {
 				<div class="col-12" style="text-align:center;">
 					<div class="fb-login-button" data-size="large" scope="public_profile,email" data-button-type="login_with" onlogin="checkLoginState();"></div>
 				</div>
-				<div class="col-12 mt-3">
-					<div class="g-signin2 col-md-12" data-width="250" data-height="50" data-onsuccess="onSignIn"></div>
+				<div class="col-12 mt-3" style="text-align:center;">
+					<div class="g-signin2" data-width="236" data-height="40" data-onsuccess="onSignIn"></div>
 				</div>
 				<div class="col-12 mt-3" align="center">
 					<p>หาเจอจะไม่ทำการส่งข้อความ หรืออีเมลใดเพื่อเป็นการรบกวนสมาชิก</p>
@@ -123,10 +123,10 @@ function onSignIn(googleUser) {
 				<div class="col-12 mt-5">
 					<div class="row">
 						<div class="col-6" align="center">
-							<a id="loginemail" href="#">เข้าสู่ระบบด้วยอีเมล</a>
+							<a id="loginemail" href="#">เข้าสู่ระบบด้วยชื่อผู้ใช้</a>
 						</div>
 						<div class="col-6" align="center">
-							<a href="register.php">สมัครสมาชิก</a>
+							<a href="register.php">สมัครสมาชิกหาเจอ</a>
 						</div>
 					</div>
 				</div>
@@ -139,23 +139,23 @@ function onSignIn(googleUser) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header detialhead">
-        <h3 class="modal-title  font-weight-bold mr-3" id="exampleModalLabe">ล็อคอินเข้าสู่ระบบ</h3>
+        <h3 class="modal-title  font-weight-bold" id="exampleModalLabe">ยินดีต้อนรับเข้าสู่หาเจอ</h3>
       </div>
-<div class="col-12" style="border-right: 1px solid #039BE5;">
-			<div class="form-label-group">
+		<div class="col-12">
+			<div class="form-label-group mt-3">
 				<?php echo $text_user; ?>
-				<label for="inputEmail">User</label>
+				<label for="inputEmail">ชื่อผู้ใช้</label>
 			</div>
 			<div class="form-label-group">
 				<?php echo $text_pass; ?>
-				<label for="inputPassword">Password</label>
+				<label for="inputPassword">รหัสผ่าน</label>
 			</div>
 			<div class="checkbox mb-3">
 				<label>
-					<input type="checkbox" value="remember-me"> Remember me
+					<input type="checkbox" value="remember-me"> จดจำฉันไว้
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<button class="btn btn-lg btn-primary btn-block mb-3" type="submit">เข้าสู่หาเจอ</button>
 		</div>
     </div>
   </div>
