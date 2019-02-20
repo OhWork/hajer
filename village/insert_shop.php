@@ -1,4 +1,5 @@
-<?php  ob_start();
+<?php
+	ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
 	if(!empty($_POST['shop_id'])){
@@ -16,17 +17,14 @@
 		$data['shop_ratepricemax'] = $_POST['shop_ratemax'];
 		$data['shop_locationx'] = $_POST['lat'];
 		$data['shop_locationy'] = $_POST['lng'];
+		$data['shopdetail_park'] = $_POST['shopdetail_park'];
+		$data['shopdetail_credit'] = $_POST['shopdetail_credit'];
+		$data['shopdetail_delivery'] = $_POST['shopdetail_delivery'];
+		$data['shopdetail_wifi'] = $_POST['shopdetail_wifi'];
+		$data['shopdetail_thaipost'] = $_POST['shopdetail_thaipost'];
+		$data['shopdetail_debit'] = $_POST['shopdetail_debit'];
 		$data['shop_pic'] = $img_new_name;
 		@$rsfix = $db->update('shop',$data,'shop_id',$_POST['shop_id']);
-		if(@$rsfix){
-			$data['shopdetail_park'] = $_POST['shopdetail_park'];
-			$data['shopdetail_credit'] = $_POST['shopdetail_credit'];
-			$data['shopdetail_delivery'] = $_POST['shopdetail_delivery'];
-			$data['shopdetail_wifi'] = $_POST['shopdetail_wifi'];
-			$data['shopdetail_thaipost'] = $_POST['shopdetail_thaipost'];
-			$data['shopdetail_debit'] = $_POST['shopdetail_debit'];
-			@$rsdetail = $db->update('shopdetail',$data,'shop_id',$_POST['shop_id']);
-		}
 
 	}else{
 	$target_dir = '../images/temp/';
@@ -45,24 +43,16 @@
 	'shop_ratepricemax' => $_POST['shop_ratemax'],
 	'shop_locationx' => $_POST['lat'],
 	'shop_locationy' => $_POST['lng'],
+	'shopdetail_park' => $_POST['shopdetail_park'],
+	'shopdetail_credit' => $_POST['shopdetail_credit'],
+	'shopdetail_delivery' => $_POST['shopdetail_delivery'],
+	'shopdetail_wifi' => $_POST['shopdetail_wifi'],
+	'shopdetail_thaipost' => $_POST['shopdetail_thaipost'],
+	'shopdetail_debit' => $_POST['shopdetail_debit'],
 	'shop_pic' => $img_new_name,
-	'chop_place' => $_POST['shop_place'],
 	'member_member_id' => $_POST['mem_id'],
 	'typeshop_typeshop_id' => $_POST['catshop']
 	));
-	if(@$rs){
-		$selectrs = $db->findAllDESC('shop','shop_id')->executeAssoc();
-		@$rs = $db->insert('shopdetail',array(
-			'shopdetail_park' => $_POST['shopdetail_park'],
-			'shopdetail_credit' => $_POST['shopdetail_credit'],
-			'shopdetail_delivery' => $_POST['shopdetail_delivery'],
-			'shopdetail_wifi' => $_POST['shopdetail_wifi'],
-			'shopdetail_thaipost' => $_POST['shopdetail_thaipost'],
-			'shopdetail_debit' => $_POST['shopdetail_debit'],
-			'shop_id' => $selectrs['shop_id']
-
-		));
-	}
 /*
                 //Log
 		if(getenv(HTTP_X_FORWARDED_FOR)){
