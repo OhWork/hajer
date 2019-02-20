@@ -75,7 +75,8 @@
 		 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
 		 $nameshop->value = $r['shop_name'];
 		 $detailshop->value = $r['shop_detail'];
-// 		 $ocshop->value = $r['shop_oc'];
+		 $openshop->value = $r['shop_open'];
+		 $closeshop->value = $r['shop_close'];
 		 $ratepriceshopmin->value = $r['shop_ratepricemin'];
 		 $ratepriceshopmax->value = $r['shop_ratepricemax'];
 		 $placeshop->value = $r['chop_place'];
@@ -452,5 +453,14 @@ google.maps.event.addDomListener(window, 'load', initMap);
      $('#closeshop').datetimepicker({
         format: 'HH.mm'
      });
+     function checkmap() {
+	      var vallat = $('#lat').val();
+	     var vallng = $('#lng').val();
+	    $("#btnSubmit").prop('disabled', true);
+	    if(vallat != '' && vallng != ''){
+			$("#btnSubmit").prop('disabled', false);
+	    }
+    }
+setInterval(checkmap, 5000);
     </script>
 <?php 	echo $form->close(); ?>
