@@ -80,7 +80,6 @@
         	));
 */
 	}
-
 	if(@$rs || @$rsfix){
     	if(@$rs){
     	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
