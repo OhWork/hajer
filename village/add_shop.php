@@ -87,8 +87,8 @@
 	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shop.php','');
 	 ?>
 <div class="row">
-	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
-	<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pb-3 br3 brd mt-3'>
+	<div class='col-xl-3 col-lg-2 col-md-1'></div>
+	<div class='col-xl-6 col-lg-8 col-md-10 col-sm-12 col-12 pb-3 br3 brd mt-3'>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<h4>เพิ่มข้อมูลร้านค้า</h4>
 		</div>
@@ -115,12 +115,20 @@
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 			<div class="row">
-				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>เริ่ม</p></div>
-				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'><?php echo $openshop; ?></div>
-				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>น.</p></div>
-				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>ถึง</p></div>
-				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'><?php echo $closeshop; ?></div>
-				<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 pt-2'><p>น.</p></div>
+				<div class='col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12'>
+					<div class="row">
+						<div class='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 pt-2'><p>เริ่ม</p></div>
+						<div class='col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8'><?php echo $openshop; ?></div>
+						<div class='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 pt-2'><p>น.</p></div>
+					</div>
+				</div>
+				<div class='col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12'>
+					<div class="row">
+						<div class='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 pt-2'><p>ถึง</p></div>
+						<div class='col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8'><?php echo $closeshop; ?></div>
+						<div class='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 pt-2'><p>น.</p></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
@@ -173,78 +181,97 @@
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
 		</div>
-		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 			<div class="row">
-				<div class="col-md-2">
-					<?php
-						echo  $lbpark;
-					?>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbpark;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiopark;
+							?>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<?php
-						echo  $radiopark;
-					?>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbcredit;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiocredit;
+							?>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-2">
-					<?php
-						echo  $lbcredit;
-					?>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbdelivery;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiodelivery;
+							?>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<?php
-						echo  $radiocredit;
-					?>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbthaipost;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiothaipost;
+							?>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-2">
-					<?php
-						echo  $lbdelivery;
-					?>
-				</div>
-				<div class="col-md-4">
-					<?php
-						echo  $radiodelivery;
-					?>
-				</div>
-				<div class="col-md-2">
-					<?php
-						echo  $lbthaipost;
-					?>
-				</div>
-				<div class="col-md-4">
-					<?php
-						echo  $radiothaipost;
-					?>
-				</div>
-				<div class="col-md-2">
-					<?php
-						echo  $lbdebit;
-					?>
-				</div>
-				<div class="col-md-4">
-					<?php
-						echo  $radiodebit;
-					?>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbdebit;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiodebit;
+							?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<div class="row">
-			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
-			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pl-4 pr-0'>
-				<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
-				<?php echo $button; ?>
-			</div>
-			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'>
-				<a href="admin_index.php?url=shop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
-			</div>
-			<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+				<div class='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-4'></div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-4 pl-4 pr-0'>
+					<input type="hidden" name="mem_id" value="<?php echo $_SESSION['member_id'];?>">
+					<?php echo $button; ?>
+				</div>
+				<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-4'>
+					<a href="admin_index.php?url=shop_status.php&id=<?php echo $id;?>"><button type="button" class="btn btn-danger col-md-12" data-dismiss="modal">ยกเลิก</button></a>
+				</div>
 			</div>
 		</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
 	<input type="hidden" id="lat" name="lat">
 	<input type="hidden" id="lng" name="lng">
 	</div>
-	<div class='col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3'></div>
+	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 </div>
 	<script>
 		var checkid = $('#idnaja').val();
