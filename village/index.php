@@ -20,6 +20,12 @@
     <link rel="stylesheet" href="../CSS/sticky-footer.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="../CSS/jquery-ui.css">
+	<link rel="stylesheet" href="../CSS/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="../CSS/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="../CSS/dataTables.foundation.min.css">
+	<link rel="stylesheet" href="../CSS/dataTables.jqueryui.min.css">
+	<link rel="stylesheet" href="../CSS/dataTables.semanticui.min.css">
+	<link rel="stylesheet" href="../CSS/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../CSS/main.css">
 
   </head>
