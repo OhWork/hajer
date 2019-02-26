@@ -61,15 +61,9 @@
 	 $radiowifi->add('ไม่มีบริการ',0,'checked');
 	 $lbthaipost = new label('ส่งไปรษณีย์');
      $radiothaipost = new radioGroup();
-	 $radiothaipost->name = 'shopdetail_thaipost';
+	 $radiothaipost->name = 'shopdetail_post';
 	 $radiothaipost->add('มีบริการ',1,'');
 	 $radiothaipost->add('ไม่มีบริการ',0,'checked');
-	 $lbdebit = new label('รับบัตรเดบิต');
-     $radiodebit = new radioGroup();
-	 $radiodebit->name = 'shopdetail_debit';
-	 $radiodebit->add('มีบริการ',1,'');
-	 $radiodebit->add('ไม่มีบริการ',0,'checked');
-
 	 @$id = $_GET['id'];
 	 if(!empty($id)){
 		 $r = $db->findByPK22('shop','typeshop','typeshop_typeshop_id','typeshop_id','shop_id',$id)->executeRow();
@@ -268,8 +262,8 @@
 			</div>
 		</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
-	<input type="hidden" id="lat" name="lat">
-	<input type="hidden" id="lng" name="lng">
+	<input type="text" id="lat" name="lat">
+	<input type="text" id="lng" name="lng">
 	</div>
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 </div>
