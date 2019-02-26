@@ -19,8 +19,8 @@
 echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12","user_update_status.php","");
 ?>
 <div class='row'>
-<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
-<div class='col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8' style="border: solid 1px #eaecef;border-radius: 6px;padding-top:16px;padding-bottom:16px;">
+<div class='col-xl-3 col-lg-2 col-md-1 col-sm-1'></div>
+<div class='col-xl-6 col-lg-8 col-md-10 col-sm-10 col-12' style="border: solid 1px #eaecef;border-radius: 6px;padding-top:16px;padding-bottom:16px;">
 	<div class='row'>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12' style="border-bottom: solid 1px #eaecef;">
 			<h4>แบบฟอร์มการแก้ไขข้อมูล และอัพเดตสถานะผู้ใช้</h4>
@@ -70,7 +70,7 @@ echo $form->open("form_reg","form","col-xl-12 col-lg-12 col-md-12 col-sm-12 col-
 		</div>
 	</div>
 </div>
-<div class='col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2'></div>
+<div class='col-xl-3 col-lg-2 col-md-1 col-sm-1'></div>
 </div>
 <script>
 </script>

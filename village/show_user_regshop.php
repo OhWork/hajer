@@ -20,7 +20,7 @@
  <div class="col-md-12">
 <!--  	<a class="text-light" href="admin_index.php?url=add_shop.php"><button type="button" class="btn btn-dark mt-3 mb-3">เพิ่มข้อมูล</button></a> -->
  </div>
- <div class="col-md-12">
+ <div class="col-md-12 mt-3">
 <?php
     $columns = array('member_id','member_username','member_password');
     $rs = $db->findByPK12('member','member_regshop',1,'member_permition',2)->execute();
