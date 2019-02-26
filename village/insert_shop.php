@@ -17,12 +17,11 @@
 		$data['shop_ratepricemax'] = $_POST['shop_ratemax'];
 		$data['shop_locationx'] = $_POST['lat'];
 		$data['shop_locationy'] = $_POST['lng'];
-		$data['shopdetail_park'] = $_POST['shopdetail_park'];
-		$data['shopdetail_credit'] = $_POST['shopdetail_credit'];
-		$data['shopdetail_delivery'] = $_POST['shopdetail_delivery'];
-		$data['shopdetail_wifi'] = $_POST['shopdetail_wifi'];
-		$data['shopdetail_thaipost'] = $_POST['shopdetail_thaipost'];
-		$data['shopdetail_debit'] = $_POST['shopdetail_debit'];
+		$data['shop_park'] = $_POST['shopdetail_park'];
+		$data['shop_credit'] = $_POST['shopdetail_credit'];
+		$data['shop_delivery'] = $_POST['shopdetail_delivery'];
+		$data['shop_wifi'] = $_POST['shopdetail_wifi'];
+		$data['shop_post'] = $_POST['shopdetail_thaipost'];
 		$data['shop_pic'] = $img_new_name;
 		@$rsfix = $db->update('shop',$data,'shop_id',$_POST['shop_id']);
 
@@ -43,12 +42,11 @@
 	'shop_ratepricemax' => $_POST['shop_ratemax'],
 	'shop_locationx' => $_POST['lat'],
 	'shop_locationy' => $_POST['lng'],
-	'shopdetail_park' => $_POST['shopdetail_park'],
-	'shopdetail_credit' => $_POST['shopdetail_credit'],
-	'shopdetail_delivery' => $_POST['shopdetail_delivery'],
-	'shopdetail_wifi' => $_POST['shopdetail_wifi'],
-	'shopdetail_thaipost' => $_POST['shopdetail_thaipost'],
-	'shopdetail_debit' => $_POST['shopdetail_debit'],
+	'shop_park' => $_POST['shopdetail_park'],
+	'shop_credit' => $_POST['shopdetail_credit'],
+	'shop_delivery' => $_POST['shopdetail_delivery'],
+	'shop_wifi' => $_POST['shopdetail_wifi'],
+	'shop_post' => $_POST['shopdetail_thaipost'],
 	'shop_pic' => $img_new_name,
 	'member_member_id' => $_POST['mem_id'],
 	'typeshop_typeshop_id' => $_POST['catshop']

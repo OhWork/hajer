@@ -88,10 +88,20 @@
 // Start Google Login Api
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
+/*
+  console.log(profile);
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+*/
+	$.ajax({
+		url: "insert_user.php",
+		data: {typeuser : 'googlelogin' ,googleid :profile.getId() ,googlename:profile.getName() },
+		type: "POST",
+		success: function(data) {
+		}
+	})
 }
 // End Google Login Api
  </script>
