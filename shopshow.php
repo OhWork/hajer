@@ -17,54 +17,52 @@
 		$i = 0;
 		foreach($rskey as $showkey){
 		?>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-					<div class="row">
-						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-						<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
-							<?php
-							if($showkey['shop_pic'] != ''){
-							?>
-							<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showkey['shop_pic']; ?>">
-							<?php }else{ ?>
-							<img class="d-block w-100 rounded-circle" height="50" src="images/noimage.png">
-							<?php
-							}
-							?>
-						</div>
-						<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-3">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+				<div class="row">
+					<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+					<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+						<?php
+						if($showkey['shop_pic'] != ''){
+						?>
+						<img class="d-block w-100 rounded-circle" height="50" src="images/shop/<?php echo $showkey['shop_pic']; ?>">
+						<?php }else{ ?>
+						<img class="d-block w-100 rounded-circle" height="50" src="images/noimage.png">
+						<?php
+						}
+						?>
 					</div>
+					<div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
 				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showkey['shop_name'];?></p>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showkey['shop_name'];?></p>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showkey['shop_locationx'],',',$showkey['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
+				<p class="distance<?php echo $i;?>"></p>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<?php
+					$shop_id = $showkey['shop_id'];
+					$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
+					$rate = $rsselect['SUM(review_rate)'];
+					$memberrate = $rsselect['COUNT(member_member_id)'];
+					$avgrate = ($rate/$memberrate); ?>
+				<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
+					<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
+					<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
 				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showkey['shop_locationx'],',',$showkey['shop_locationy'];?>"><span data-feather="navigation"></span></a>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-					<p class="distance<?php echo $i;?>"></p>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<?php
-						$shop_id = $showkey['shop_id'];
-						$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
-						$rate = $rsselect['SUM(review_rate)'];
-						$memberrate = $rsselect['COUNT(member_member_id)'];
-						$avgrate = ($rate/$memberrate); ?>
-					<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
-						<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
-						<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
-					</div>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<a href="index.php?url=shopopen.php&id=<?php echo $showkey['shop_id'];?>"><span data-feather="eye"></span></a>
-				</div>
-				<input type="hidden" id="keyword" value="<?php echo $keyword?>">
-				<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showkey['shop_locationx'];?>">
-				<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showkey['shop_locationy'];?>">
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<a href="index.php?url=shopopen.php&id=<?php echo $showkey['shop_id'];?>"><span data-feather="eye"></span></a>
+			</div>
+			<input type="hidden" id="keyword" value="<?php echo $keyword?>">
+			<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showkey['shop_locationx'];?>">
+			<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showkey['shop_locationy'];?>">
 		</div>
-	</div>
-</div>
 		<?php
 			$i++;
 		}
@@ -79,7 +77,7 @@
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 bb1 pb-3"></div>
 				<input type="hidden" id="checkmap" value="<?php echo $i;?>">
 			</div>
-	</div>
+		</div>
 		<?php
 		}
 	}elseif($typeshop != ''){
@@ -87,49 +85,48 @@
 		 $i =0 ;
 		foreach($rstype as $showtype){
 		?>
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showtype['shop_name'];?></p>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-					<div class="row">
-						<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1"></div>
-						<div class="col-xl-7 col-lg-8 col-md-7 col-sm-7 col-3">
-							<?php
-							if($showtype['shop_pic'] != ''){
-							?>
-								<img class="d-block w-100" height="70" src="images/shop/<?php echo $showtype['shop_pic']; ?>">
-							<?php }else{ ?>
-								<img class="d-block w-100" height="70" src="images/noimage.png">
-							<?php
-							}
-							?>
-						</div>
-						<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1 col-9"></div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-3">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showtype['shop_name'];?></p>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+				<div class="row">
+					<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1"></div>
+					<div class="col-xl-7 col-lg-8 col-md-7 col-sm-7 col-3">
+						<?php
+						if($showtype['shop_pic'] != ''){
+						?>
+							<img class="d-block w-100" height="70" src="images/shop/<?php echo $showtype['shop_pic']; ?>">
+						<?php }else{ ?>
+							<img class="d-block w-100" height="70" src="images/noimage.png">
+						<?php
+						}
+						?>
 					</div>
+					<div class="col-xl-1 col-lg-2 col-md-1 col-sm-1 col-9"></div>
 				</div>
-				
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					ตัวนำทาง --><a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				ตัวนำทาง --><a href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $showtype['shop_locationx'],',',$showtype['shop_locationy'];?>"><span data-feather="navigation"></span></a>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
+				ระยะห่างจากร้านค้า <p class="distance<?php echo $i;?>"></p>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				<?php
+				$shop_id = $showtype['shop_id'];
+				$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
+				$rate = $rsselect['SUM(review_rate)'];
+				$memberrate = $rsselect['COUNT(member_member_id)'];
+				$avgrate = ($rate/$memberrate); ?>
+				<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
+					<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
+					<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
 				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0" align="center">
-					ระยะห่างจากร้านค้า <p class="distance<?php echo $i;?>"></p>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					<?php
-					$shop_id = $showtype['shop_id'];
-					$rsselect= $db->specifytable("SUM(review_rate),COUNT(member_member_id)","review","review_shop_id =$shop_id ")->executeAssoc();
-					$rate = $rsselect['SUM(review_rate)'];
-					$memberrate = $rsselect['COUNT(member_member_id)'];
-					$avgrate = ($rate/$memberrate); ?>
-					<div class="col-md-10 lg6" id="rate<?php echo $i;?>" class="starrate">
-						<input type="hidden" id="shop_id" value="<?php echo $showrs['shop_id'];?>">
-						<input type="hidden" id="avg_rating" value="<?php echo $avgrate;?>">
-					</div>
-				</div>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
-					ดูรายละเอียดร้าน <a href="index.php?url=shopopen.php&id=<?php echo $showtype['shop_id'];?>"><span data-feather="eye"></span></a>
-				</div>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
+				ดูรายละเอียดร้าน <a href="index.php?url=shopopen.php&id=<?php echo $showtype['shop_id'];?>"><span data-feather="eye"></span></a>
+			</div>
 		</div>
 		<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
 		<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
