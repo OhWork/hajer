@@ -11,8 +11,8 @@
 						<b><h4>ร้านค้าที่หาเจอแนะนำ</h4></b>
 						<p class="lg6">
 						<?php
-							$rslastid = $db->findAllDESC('shop','shop_id')->executeAssoc();
-							echo 'มากกว่า ',$rslastid['shop_id'],' ร้านที่หาเจอ...';
+							$rslastid = $db->specifytableNoWhere2('COUNT(shop_id)','shop')->executeAssoc();
+							echo 'มากกว่า ',$rslastid['COUNT(shop_id)'],' ร้านที่หาเจอ...';
 						?>
 						</p>
 					</div>
@@ -46,7 +46,18 @@
 							</div>
 							<div class="col-12 lg5 mt-2">
 								<p class="svbd"><?php echo $showrs['shop_name'];?>
+								<?php
+									if($showrs['typeshop_pathpic'] != ''){
+								?>
 								<img src="<?php echo $showrs['typeshop_pathpic']; ?>" width="20px" height="20px" style="float: right;"/>
+								<?php
+									}else{
+										?>
+										<img src="images/noimage.png" width="20px" height="20px" style="float: right;"/>
+								<?php
+									}
+								?>
+
 								</p>
 							</div>
 							<div class="col-12 lg5">
@@ -93,7 +104,7 @@
 					?>
 
 				</div>
-				<input type="hidden" id="num_shop" value="<?php echo $rslastid['shop_id'];?>">
+				<input type="hidden" id="num_shop" value="<?php echo $rslastid['COUNT(shop_id)'];?>">
 				<input type="hidden" id="member_id" value="<?php echo $_SESSION['member_id'];?>">
 			</div>
 		</div>

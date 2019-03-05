@@ -269,118 +269,117 @@
 </div>
 	<script>
 		var checkid = $('#idnaja').val();
- 		if(checkid == ""){
-var map, infoWindow;
-var geocoder;
-function initMap() {
-  geocoder = new google.maps.Geocoder();
-  map = new google.maps.Map(document.getElementById('map_canvas'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 17,
-    streetViewControl: false,
-                      disableDefaultUI: true,
-                      styles: [
-						  {
-						    "featureType": "administrative",
-						    "elementType": "geometry",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "poi",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "road",
-						    "elementType": "labels.icon",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  },
-						  {
-						    "featureType": "transit",
-						    "stylers": [
-						      {
-						        "visibility": "off"
-						      }
-						    ]
-						  }
-                      ]
+ 		if($('#idnaja').val() == ""){
+			var map, infoWindow;
+			var geocoder;
+			function initMap() {
+			  geocoder = new google.maps.Geocoder();
+			  map = new google.maps.Map(document.getElementById('map_canvas'), {
+			    center: {lat: 13.776527, lng: 100.522654},
+			    zoom: 17,
+			    streetViewControl: false,
+			                      disableDefaultUI: true,
+			                      styles: [
+									  {
+									    "featureType": "administrative",
+									    "elementType": "geometry",
+									    "stylers": [
+									      {
+									        "visibility": "off"
+									      }
+									    ]
+									  },
+									  {
+									    "featureType": "poi",
+									    "stylers": [
+									      {
+									        "visibility": "off"
+									      }
+									    ]
+									  },
+									  {
+									    "featureType": "road",
+									    "elementType": "labels.icon",
+									    "stylers": [
+									      {
+									        "visibility": "off"
+									      }
+									    ]
+									  },
+									  {
+									    "featureType": "transit",
+									    "stylers": [
+									      {
+									        "visibility": "off"
+									      }
+									    ]
+									  }
+			                      ]
 
-  });
-  infoWindow = new google.maps.InfoWindow;
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
+			  });
+			  infoWindow = new google.maps.InfoWindow;
+			if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(function(position) {
+			        var pos = {
+			            lat: position.coords.latitude,
+			            lng: position.coords.longitude
+			        };
 
-        var marker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            draggable: true,
-            title: 'Your position'
-        });
-        /*infoWindow.setPosition(pos);
-        infoWindow.setContent('Your position');
-        marker.addListener('click', function() {
-          infoWindow.open(map, marker);
-        });
-        infoWindow.open(map, marker);*/
-        map.setCenter(pos);
+			        var marker = new google.maps.Marker({
+			            position: pos,
+			            map: map,
+			            draggable: true,
+			            title: 'Your position'
+			        });
+			        /*infoWindow.setPosition(pos);
+			        infoWindow.setContent('Your position');
+			        marker.addListener('click', function() {
+			          infoWindow.open(map, marker);
+			        });
+			        infoWindow.open(map, marker);*/
+			        map.setCenter(pos);
 
-      geocodePosition(pos);
+			      geocodePosition(pos);
 
-      // Add dragging event listeners.
+			      // Add dragging event listeners.
 
-      google.maps.event.addListener(marker, 'dragend', function() {
-        geocodePosition(marker.getPosition());
-        map.panTo(marker.getPosition());
-	  $('#lat').val(marker.getPosition().lat());
-	  $('#lng').val(marker.getPosition().lng());
-      });
+			      google.maps.event.addListener(marker, 'dragend', function() {
+			        geocodePosition(marker.getPosition());
+			        map.panTo(marker.getPosition());
+				  $('#lat').val(marker.getPosition().lat());
+				  $('#lng').val(marker.getPosition().lng());
+			      });
 
-    }, function() {
-       handleLocationError(true, infoWindow, map.getCenter());
-    });
-} else {
-  // Browser doesn't support Geolocation
-  handleLocationError(false, infoWindow, map.getCenter());
-}
+			    }, function() {
+			       handleLocationError(true, infoWindow, map.getCenter());
+			    });
+			} else {
+			  // Browser doesn't support Geolocation
+			  handleLocationError(false, infoWindow, map.getCenter());
+			}
 
-}
-function geocodePosition(pos) {
-  geocoder.geocode({
-    latLng: pos
-  }, function(responses) {
-  });
-  $('#lat').val(pos.lat);
-  $('#lng').val(pos.lng);
-}
+			}
+			function geocodePosition(pos) {
+			  geocoder.geocode({
+			    latLng: pos
+			  }, function(responses) {
+			  });
+			  $('#lat').val(pos.lat);
+			  $('#lng').val(pos.lng);
+			}
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
-google.maps.event.addDomListener(window, 'load', initMap);
-      }
-
-      else{
+			function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			  infoWindow.setPosition(pos);
+			  infoWindow.setContent(browserHasGeolocation ?
+			                        'Error: The Geolocation service failed.' :
+			                        'Error: Your browser doesn\'t support geolocation.');
+			  infoWindow.open(map);
+			}
+			google.maps.event.addDomListener(window, 'load', initMap);
+	}/*
+else {
 	       function initMap(uluru) {
-// 					var uluru = {lat: 13.773, lng: 100.516};
+					var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map_canvas'), {
                       zoom: 17,
                       center: uluru,
@@ -453,6 +452,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
 	            }
 	        });
 		}
+*/
       function readURL(input) {
 	        if (input.files && input.files[0]) {
 		            var reader = new FileReader();

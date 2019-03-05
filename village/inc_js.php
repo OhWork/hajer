@@ -1,7 +1,7 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX-mBBK_AjTs-t2_NsF1Nv8Ax52MWJ1yM&callback=initMap"></script>
 <script src="../jquery/jquery-3.2.1.min.js"></script>
 <script src="../jquery/moment.min.js"></script>
 <script src="../jquery/bootstrap-datetimepicker.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX-mBBK_AjTs-t2_NsF1Nv8Ax52MWJ1yM&callback=initMap"></script>
 <script src="../jquery/popper.js"></script>
 <script src="../jquery/bootstrap.js"></script>
 <script src="../jquery/jquery-ui.js"></script>

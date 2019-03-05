@@ -150,6 +150,10 @@
 			$this->sql = "SELECT $tablemain FROM $table $condition";
 			return $this;
 		}
+		function specifytableNoWhere2($tablemain,$table){
+			$this->sql = "SELECT $tablemain FROM $table";
+			return $this;
+		}
 		function in($table,$field,$value){
 			$_value ="";
 			$count = 0;
