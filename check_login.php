@@ -24,8 +24,8 @@
     	$_SESSION['member_id'] = $rs['member_id'];
 		$_SESSION['member_username'] = $rs['member_username'];
 		$_SESSION['member_password'] = $rs['member_password'];
-		$_SESSION['member_permition'] = $rs['member_permition'];
-		if($_SESSION['member_permition'] == 1){
+		$_SESSION['member_permission'] = $rs['member_permission'];
+		if($_SESSION['member_permission'] == 1){
 		?>
 		<div class="modal" id="myModal">
 		  <div class="modal-dialog">

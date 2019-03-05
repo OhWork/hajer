@@ -17,7 +17,7 @@
 		$data['shop_ratepricemax'] = $_POST['shop_ratemax'];
 		$data['shop_locationx'] = $_POST['lat'];
 		$data['shop_locationy'] = $_POST['lng'];
-		$data['shop_park'] = $_POST['shopdetail_park'];
+		$data['shop_detailpark'] = $_POST['shopdetail_park'];
 		$data['shop_credit'] = $_POST['shopdetail_credit'];
 		$data['shop_delivery'] = $_POST['shopdetail_delivery'];
 		$data['shop_wifi'] = $_POST['shopdetail_wifi'];
@@ -42,7 +42,7 @@
 	'shop_ratepricemax' => $_POST['shop_ratemax'],
 	'shop_locationx' => $_POST['lat'],
 	'shop_locationy' => $_POST['lng'],
-	'shop_park' => $_POST['shopdetail_park'],
+	'shop_detailpark' => $_POST['shopdetail_park'],
 	'shop_credit' => $_POST['shopdetail_credit'],
 	'shop_delivery' => $_POST['shopdetail_delivery'],
 	'shop_wifi' => $_POST['shopdetail_wifi'],

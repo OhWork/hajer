@@ -4,7 +4,7 @@
 		var $host = 'localhost';
 		var $user = 'root';
 		var $pass = '';//เปลี่ยน
-		var $db_name = 'hajer';
+		var $db_name = 'hajers_db';
 		var $sql;
 		//คำสั่งเพื่อเชื่อมต่อฐานข้อมูลโดยเลือกเทเบิ้ล
 		function connect(){

@@ -262,8 +262,8 @@
 			</div>
 		</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
-	<input type="text" id="lat" name="lat">
-	<input type="text" id="lng" name="lng">
+	<input type="hidden" id="lat" name="lat">
+	<input type="hidden" id="lng" name="lng">
 	</div>
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 </div>
