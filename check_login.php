@@ -64,7 +64,7 @@
 			}
 		</script>
 		<?php
-		}elseif($_SESSION['member_permition'] == 2){
+		}elseif($_SESSION['member_permission'] == 2){
 		?>
 		<div class="modal" id="myModal2">
 		  <div class="modal-dialog">
@@ -103,7 +103,7 @@
 			}
 			</script>
 		<?php
-		}elseif($_SESSION['member_permition'] == 3){
+		}elseif($_SESSION['member_permission'] == 3){
 		?>
 		<div class="modal" id="myModal2">
 		  <div class="modal-dialog">
