@@ -5,7 +5,7 @@
 	      #map_canvas {
 	        height: 400px;
 	      }
-	       #map_canvas2 {
+	      #map_canvas2 {
 	        height: 400px;
 	      }
 
@@ -161,11 +161,11 @@
 				if(!empty($id)){
 			?>
 			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-				<img src='../images/shop/<?php echo $r['shop_pic'];?>' width="150px" height="150px"'>
+				<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px"'>
 			</div>
 			<?php
 				}else{
-					?>
+			?>
 			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 				<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px"'>
 			</div>
@@ -183,7 +183,7 @@
 		}else{
 		?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas2">
-			<?php } ?>
+		<?php } ?>
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 			<div class="row">
@@ -278,6 +278,7 @@
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 </div>
 	<script>
+	jQuery(document).ready(function($) {
 		var checkid = $('#idnaja').val();
  		if($('#idnaja').val() == ""){
 			var map, infoWindow;
@@ -388,7 +389,7 @@
 			google.maps.event.addDomListener(window, 'load', initMap);
 	}else {
 	       function initMap(uluru) {
-// 					var uluru = {lat: 13.773, lng: 100.516};
+					var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map_canvas2'), {
                       zoom: 17,
                       center: uluru,
@@ -461,6 +462,7 @@
 	            }
 	        });
 		}
+	});
       function readURL(input) {
 	        if (input.files && input.files[0]) {
 		            var reader = new FileReader();
