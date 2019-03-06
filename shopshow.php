@@ -85,7 +85,7 @@
 		 $i =0 ;
 		foreach($rstype as $showtype){
 		?>
-		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mt-3">
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mt-3">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
 				<p id="shop_name<?php echo $i;?>" class="shop_name"><?php echo $showtype['shop_name'];?></p>
 			</div>
@@ -127,12 +127,10 @@
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pl-0 pr-0">
 				ดูรายละเอียดร้าน <a href="index.php?url=shopopen.php&id=<?php echo $showtype['shop_id'];?>"><span data-feather="eye"></span></a>
 			</div>
-		</div>
 		<input type="hidden" id="typeshop" value="<?php echo $typeshop?>">
 		<input type="hidden" id="lat<?php echo $i;?>" class="endlat" value="<?php echo $showtype['shop_locationx'];?>">
 		<input type="hidden" id="lng<?php echo $i;?>" class="endlng" value="<?php echo $showtype['shop_locationy'];?>">
 	</div>
-</div>
 		<?php
 			$i++;
 		}
