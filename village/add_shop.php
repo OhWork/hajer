@@ -5,6 +5,10 @@
 	      #map_canvas {
 	        height: 400px;
 	      }
+	       #map_canvas2 {
+	        height: 400px;
+	      }
+
 	      /* Optional: Makes the sample page fill the window. */
 	      html, body {
 	        height: 100%;
@@ -173,7 +177,13 @@
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo  $lbgoogleshop; ?>
 		</div>
+		<?php if(empty($id)){ ?>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas">
+		<?php
+		}else{
+		?>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="map_canvas2">
+			<?php } ?>
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 			<div class="row">
@@ -376,11 +386,10 @@
 			  infoWindow.open(map);
 			}
 			google.maps.event.addDomListener(window, 'load', initMap);
-	}/*
-else {
+	}else {
 	       function initMap(uluru) {
-					var uluru = {lat: 13.773, lng: 100.516};
-                    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+// 					var uluru = {lat: 13.773, lng: 100.516};
+                    var map = new google.maps.Map(document.getElementById('map_canvas2'), {
                       zoom: 17,
                       center: uluru,
                       streetViewControl: false,
@@ -452,7 +461,6 @@ else {
 	            }
 	        });
 		}
-*/
       function readURL(input) {
 	        if (input.files && input.files[0]) {
 		            var reader = new FileReader();

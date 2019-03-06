@@ -145,7 +145,7 @@
 													 ?>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3">
 														<?php
-														if($rs['shopdetail_park']== 1){
+														if($rs['shop_detailpark']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> มีที่จอดรถ
 														<?php }else{
@@ -157,7 +157,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rs['shopdetail_credit']== 1){
+														if($rs['shop_credit']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเครดิต
 														<?php }else{
@@ -169,7 +169,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rs['shopdetail_delivery']== 1){
+														if($rs['shop_delivery']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> เดลิเวอรี
 														<?php }else{
@@ -181,7 +181,7 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rs['shopdetail_wifi']== 1){
+														if($rs['shop_wifi']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> ไวไฟฟรี
 														<?php }else{
@@ -193,24 +193,12 @@
 													</div>
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 														<?php
-														if($rs['shopdetail_thaipost']== 1){
+														if($rs['shop_post']== 1){
 														?>
 														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับส่งสินค้าทางไปรษณีย์
 														<?php }else{
 															?>
 														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> รับส่งสินค้าทางไปรษณีย์
-														<?php
-															}
-														?>
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pb-3 bb1">
-														<?php
-														if($rs['shopdetail_debit']== 1){
-														?>
-														<span class="mr-3 lg9" style="float:left" data-feather="check-square"></span> รับบัตรเดบิต
-														<?php }else{
-															?>
-														<span class="mr-3 lg12" style="float:left" data-feather="x-square"></span> รับบัตรเดบิต
 														<?php
 															}
 														?>
