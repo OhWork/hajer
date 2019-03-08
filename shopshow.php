@@ -106,7 +106,7 @@
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 							<div class="row">
 								<div class="col-xl-1 col-lg-1 col-md-1 col-sm-2"></div>
-								<div class="col-xl-9 col-lg-8 col-md-7 col-sm-8 col-4">
+								<div class="col-xl-9 col-lg-8 col-md-7 col-sm-8 col-4 mb-3">
 									<?php
 									if($showtype['shop_pic'] != ''){
 									?>
@@ -123,7 +123,7 @@
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 										<div class="row">
-											<div>ระยะห่างจากร้านค้า </div>
+											<div>ระยะทาง</div>
 											<div class="distance<?php echo $i;?> ml-1"></div>
 										</div>
 									</div>
