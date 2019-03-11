@@ -29,6 +29,7 @@
 	 $lbdetailshop = new label('รายละเอียดของร้านค้า');
 	 $picshop = new uploadPic('shop_pic','');
 	 $lbpicshop = new label('รูปภาพของร้านค้า');
+	 $lbpicshopcover = new label('รูปภาพปกของร้านค้า');
 	 $openshop = new textfield('shop_open','openshop','form-control','','');
 	 $closeshop = new textfield('shop_close','closeshop','form-control','','');
 	 $lbocshop = new label('เวลาเปิดปิดของร้านค้า');
@@ -37,7 +38,10 @@
 	 $ratepriceshopmax = new textfield('shop_ratemax','','form-control','กรุณากรอกเป็นตัวเลข เช่น xxx','');
 	 $lbratepriceshopmax = new label('เรทราคาสูงสุด');
 	 $placeshop = new textfield('shop_place','','form-control','','');
+	 $filepiccover = new inputFile('shop_piccover','shop_piccover','shop_piccover');
 	 $filepic = new inputFile('shop_pic','shop_pic','shop_pic');
+	 $filepic2 = new inputFile('shop_pic2','shop_pic2','shop_pic2');
+	 $filepic3 = new inputFile('shop_pic3','shop_pic3','shop_pic3');
 	 $lbplaceshop = new label('สถานที่ตั้ง');
 	 $lbgoogleshop = new label('เลือกตำแหน่งของร้าน');
 	 $selectcatshop = new selectFromDB();
@@ -149,31 +153,110 @@
 		</div>
 	 </div>
 -->
-		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
-			<?php echo  $lbpicshop; ?>
-		</div>
-		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-			<div class="row">
-			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
-				<?php echo $filepic;?>
+<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+		<div class="row">
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+				<?php echo  $lbpicshopcover; ?>
 			</div>
-			<?php
-				if(!empty($id)){
-			?>
-			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-				<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px"'>
-			</div>
-			<?php
-				}else{
-			?>
-			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-				<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px"'>
-			</div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+				<div class="row">
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+					<?php echo $filepiccover;?>
+				</div>
 				<?php
-				}
-			?>
+					if(!empty($id)){
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+				</div>
+				<?php
+					}else{
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img id="preimgcover" class="preimg" src="images/noimage.png" width="150px" height="150px">
+				</div>
+					<?php
+					}
+				?>
+				</div>
+			</div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
+		</div>
+	</div>
+	<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+		<div class="row">
+			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
+				<?php echo  $lbpicshop; ?>
+			</div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+				<div class="row">
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+					<?php echo $filepic;?>
+				</div>
+				<?php
+					if(!empty($id)){
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+				</div>
+				<?php
+					}else{
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px">
+				</div>
+					<?php
+					}
+				?>
+				</div>
+			</div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+				<div class="row">
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+					<?php echo $filepic2;?>
+				</div>
+				<?php
+					if(!empty($id)){
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+				</div>
+				<?php
+					}else{
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img id="preimg2" class="preimg" src="images/noimage.png" width="150px" height="150px">
+				</div>
+					<?php
+					}
+				?>
+				</div>
+			</div>
+			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
+				<div class="row">
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
+					<?php echo $filepic3;?>
+				</div>
+				<?php
+					if(!empty($id)){
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+				</div>
+				<?php
+					}else{
+				?>
+				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+					<img id="preimg3" class="preimg" src="images/noimage.png" width="150px" height="150px">
+				</div>
+					<?php
+					}
+				?>
+				</div>
 			</div>
 		</div>
+	</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo  $lbgoogleshop; ?>
 		</div>
@@ -463,20 +546,30 @@
 	        });
 		}
 	});
-      function readURL(input) {
+      function readURL(input,idimg) {
+	        var nameidimg = idimg ;
 	        if (input.files && input.files[0]) {
 		            var reader = new FileReader();
 
 		            reader.onload = function (e) {
-		                	$('#preimg').attr('src', e.target.result);
+		                	$(nameidimg).attr('src', e.target.result);
 
 		            }
 
 					reader.readAsDataURL(input.files[0]);
 	        }
     	}
+     $('#shop_piccover').on('change',function(e){
+	 	readURL(this,"#preimgcover");
+     });
      $('#shop_pic').on('change',function(e){
-	 	readURL(this);
+	 	readURL(this,"#preimg");
+     });
+     $('#shop_pic2').on('change',function(e){
+	 	readURL(this,"#preimg2");
+     });
+     $('#shop_pic3').on('change',function(e){
+	 	readURL(this,"#preimg3");
      });
 	 $('#openshop').datetimepicker({
         format: 'HH.mm'
