@@ -355,8 +355,19 @@
 			</div>
 		</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
-	<input type="hidden" id="lat" name="lat">
-	<input type="hidden" id="lng" name="lng">
+	<?php
+		if(empty($id)){
+	?>
+	<input type="text" id="lat" name="lat">
+	<input type="text" id="lng" name="lng">
+	<?php
+		}else{
+	?>
+	<input type="text" id="lat" name="lat" value="<?php echo $r['shop_locationx']; ?>">
+	<input type="text" id="lng" name="lng" value="<?php echo $r['shop_locationy']; ?>">
+	<?php
+		}
+	?>
 	</div>
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 </div>

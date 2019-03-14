@@ -52,6 +52,11 @@
 	'typeshop_typeshop_id' => $_POST['catshop']
 	));
 /*
+	if($rs){
+	 $rspic = $db->insert(());
+	}
+*/
+/*
                 //Log
 		if(getenv(HTTP_X_FORWARDED_FOR)){
             $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; // IP proxy
