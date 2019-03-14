@@ -78,5 +78,8 @@
 				</form>
 				</div>
 			</div>
+			<div class="col-12 mt-3">
+				<h1 style="color : red;">เว็บอยู่ระหว่างการปรับปรุง และพัฒนา ระบบอาจใช้งานได้ไม่เต็ม 100% ขออภัยมา ณ ที่นี้ ด้วยครับ</h1>
+			</div>
 		</div>
 		<div class="col-xl-2 col-lg-1 col-md-1 col-sm-1"></div>
