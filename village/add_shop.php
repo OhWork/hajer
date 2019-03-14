@@ -356,7 +356,7 @@
 		</div>
 	<input type="hidden" name= "shop_id" id="idnaja" value="<?php echo $id;?>">
 	<?php
-		if(empty($id)){
+		if(		empty($id)){
 	?>
 	<input type="text" id="lat" name="lat">
 	<input type="text" id="lng" name="lng">
