@@ -71,7 +71,22 @@
 			$this->sql = "UPDATE $table SET $rows WHERE $field = $value";
 			return mysqli_query($con,$this->sql);
 		}
-
+		function update2con($table, $data, $field, $value ,$field2 ,$value2){
+    		$con = $this->connect();
+			$rows ="";
+			$i=0;
+			foreach($data as $k => $v){
+				if($k!=$field){
+					$rows.="$k ='$v'";
+					if($i<count($data)-1){
+						$rows.=',';
+					}
+					$i++;
+				}
+			}
+			$this->sql = "UPDATE $table SET $rows WHERE $field = $value && $field2 = $value2";
+			return mysqli_query($con,$this->sql);
+		}
 		function updateStatus($table, $change, $field, $value){
 		    $con = $this->connect();
 			$this->sql = "UPDATE $table SET $change WHERE $field = $value";

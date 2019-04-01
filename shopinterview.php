@@ -128,6 +128,7 @@ $(document).ready(function(){
 			            success: function(data) {
 					            if(data == 'Nologin'){
 								alert('กรุณาล็อคอินก่อนทำการให้คะแนนร้านค่ะ');
+								window.location.href = "login.php";
 				            }else{
 							    window.location.reload();
 					            $('#rate').addRating({selectedRatings:avg_rating})
