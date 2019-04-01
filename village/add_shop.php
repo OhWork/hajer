@@ -363,8 +363,8 @@
 	<?php
 		}else{
 	?>
-	<input type="text" id="lat" name="lat" value="<?php echo $r['shop_locationx']; ?>">
-	<input type="text" id="lng" name="lng" value="<?php echo $r['shop_locationy']; ?>">
+	<input type="hidden" id="lat" name="lat" value="<?php echo $r['shop_locationx']; ?>">
+	<input type="hidden" id="lng" name="lng" value="<?php echo $r['shop_locationy']; ?>">
 	<?php
 		}
 	?>
@@ -483,7 +483,7 @@
 			google.maps.event.addDomListener(window, 'load', initMap);
 	}else {
 	       function initMap(uluru) {
-					var uluru = {lat: 13.773, lng: 100.516};
+// 					var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map_canvas2'), {
                       zoom: 17,
                       center: uluru,
