@@ -130,7 +130,7 @@
 		width:100%; /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
 	}
 	.bmd {
-		margin-top: 20%;
+		margin-top: 10%;
 	}
 	.dpn {display:inline;}
 	.dpn2 {display:inline;}
@@ -154,7 +154,7 @@
 		height:59px;
 	}
 	.bmd {
-		margin-top: 17%;
+		margin-top: 10%;
 	}
 	.dpn {display:inline;}
 	.lgw {color:#ffffff;}
@@ -168,12 +168,12 @@
 }
 @media (min-width: 1360px){
 	.bmd {
-		margin-top: 15%;
+		margin-top: 8%;
 	}
 }
 @media (min-width: 1680px){
 	.bmd {
-		margin-top: 12%;
+		margin-top: 8%;
 	}
 }
 .fl {
