@@ -2,7 +2,16 @@
 	ob_start();
     include 'database/db_tools.php';
 	include 'connect.php';
-	if(!empty($_POST['shop_id'])){
+	include_once('lib/ImgCompressor.class.php');
+	$setting = array(
+		'directory' => '../images/shop/compressed', // directory file compressed output
+		'file_type' => array( // file format allowed
+						'image/jpeg',
+						'image/png',
+						'image/gif'
+		)
+	);
+		if(!empty($_POST['shop_id'])){
 		$target_dir = '../images/temp/';
 		$target_file = $target_dir.basename($_FILES['shop_piccover']['name']);
 		$img_new_name = basename($_FILES['shop_piccover']['name']);
@@ -91,13 +100,17 @@
 	if(@$rs){
 		$rsselectid = $db->findAllDESC('shop','shop_id')->executeAssoc();
 		if(!empty($_FILES['shop_pic'])){
+				$image = basename($_FILES['shop_pic']['name']);
 				$target_dir = 'temp/';
-				$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
+				$target_file = $target_dir.$image;
 				$path = '../images/shop/';
-				$target_dir_save = $path.basename($_FILES['shop_pic']['name']);
+				$target_dir_save = $path.$image; // example level = 2 same quality 80%, level = 7 same quality 30% etc
 				move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
+				$ImgCompressor = new ImgCompressor($setting);
+				$result = $ImgCompressor->run($target_dir_save,'png', 9);
+				$nameimgnew = $result['data']['compressed']['name'];
 					$rspic = $db->insert('shopimg',array(
-						'shopimg_name' => basename($_FILES['shop_pic']['name']),
+						'shopimg_name' => $nameimgnew,
 						'shopimg_position' => 1,
 						'shopimg_shop_id' => $rsselectid['shop_id']
 					));
@@ -145,6 +158,7 @@
         	));
         	}
 */
+/*
 	if(@$rs || @$rsfix){
 	    	if(@$rs){
 		    	if(@$rspic && @$rspic2 && $rspic3){
@@ -158,5 +172,6 @@
             $link = "admin_index.php?url=show_shop.php";
             header( "Refresh: 2; $link" );
 }
+*/
 ob_end_flush();
 ?>
