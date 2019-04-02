@@ -25,7 +25,7 @@
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"></div>
-					</div>	
+					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-3">
 					<div class="row">
@@ -55,13 +55,13 @@
 									<p><b>สำหรับสมาชิก</b></p>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg7">
-									<p>สมัครสามชิกหาเจอ</p>
+									<p>สมัครสมาชิกหาเจอ</p>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw pl-0">
 									<p><b>ติดต่อหาเจอ</b></p>
 								</div>
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<span class="lg7 lgbw pt-1 pb-1 ml-3" data-feather="facebook"></span>
+									<a href="https://www.facebook.com/Hajers-1990840651034761/"><span class="lg7 lgbw pt-1 pb-1 ml-3" data-feather="facebook"></span></a>
 									<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="youtube"></span>
 									<span class="lg7 lgbw pt-1 pb-1 ml-1" data-feather="twitter"></span>
 								</div>
@@ -75,7 +75,7 @@
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lg3">
 			<div class="row">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 lgw mt-3">
-					<p>copy right by Delicodes</p>
+					<p>&copy; Delicodes</p>
 				</div>
 			</div>
 		</div>

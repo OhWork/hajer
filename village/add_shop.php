@@ -168,7 +168,7 @@
 					if(!empty($id)){
 				?>
 				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+					<img id="preimgcover" src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
 				</div>
 				<?php
 					}else{
@@ -195,10 +195,11 @@
 					<?php echo $filepic;?>
 				</div>
 				<?php
-					if(!empty($id)){
+					$rsshowimg1 = $db->findByPK12('shopimg','shopimg_position',1,'shopimg_shop_id',$_GET['id'])->executeAssoc();
+					if(!empty($rsshowimg1['shopimg_id'])){
 				?>
 				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+					<img id="preimg" src="../images/shop/<?php echo $rsshowimg1['shopimg_name'];?>" width="150px" height="150px">
 				</div>
 				<?php
 					}else{
@@ -217,10 +218,11 @@
 					<?php echo $filepic2;?>
 				</div>
 				<?php
-					if(!empty($id)){
+					$rsshowimg2 = $db->findByPK12('shopimg','shopimg_position',2,'shopimg_shop_id',$_GET['id'])->executeAssoc();
+					if(!empty($rsshowimg2['shopimg_id'])){
 				?>
 				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+					<img id="preimg2" src="../images/shop/<?php echo $rsshowimg2['shopimg_name'];?>" width="150px" height="150px">
 				</div>
 				<?php
 					}else{
@@ -239,10 +241,11 @@
 					<?php echo $filepic3;?>
 				</div>
 				<?php
-					if(!empty($id)){
+					$rsshowimg3 = $db->findByPK12('shopimg','shopimg_position',3,'shopimg_shop_id',$_GET['id'])->executeAssoc();
+					if(!empty($rsshowimg3['shopimg_id'])){
 				?>
 				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img src="../images/shop/<?php echo $r['shop_pic'];?>" width="150px" height="150px">
+					<img id="preimg3" src="../images/shop/<?php echo $rsshowimg3['shopimg_name'];?>" width="150px" height="150px">
 				</div>
 				<?php
 					}else{
@@ -340,6 +343,20 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $lbwifi;
+							?>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12">
+							<?php
+								echo  $radiowifi;
+							?>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
@@ -363,8 +380,8 @@
 	<?php
 		}else{
 	?>
-	<input type="text" id="lat" name="lat" value="<?php echo $r['shop_locationx']; ?>">
-	<input type="text" id="lng" name="lng" value="<?php echo $r['shop_locationy']; ?>">
+	<input type="hidden" id="lat" name="lat" value="<?php echo $r['shop_locationx']; ?>">
+	<input type="hidden" id="lng" name="lng" value="<?php echo $r['shop_locationy']; ?>">
 	<?php
 		}
 	?>
@@ -483,7 +500,7 @@
 			google.maps.event.addDomListener(window, 'load', initMap);
 	}else {
 	       function initMap(uluru) {
-					var uluru = {lat: 13.773, lng: 100.516};
+// 					var uluru = {lat: 13.773, lng: 100.516};
                     var map = new google.maps.Map(document.getElementById('map_canvas2'), {
                       zoom: 17,
                       center: uluru,
