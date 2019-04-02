@@ -158,7 +158,6 @@
         	));
         	}
 */
-/*
 	if(@$rs || @$rsfix){
 	    	if(@$rs){
 		    	if(@$rspic && @$rspic2 && $rspic3){
@@ -172,6 +171,5 @@
             $link = "admin_index.php?url=show_shop.php";
             header( "Refresh: 2; $link" );
 }
-*/
 ob_end_flush();
 ?>
