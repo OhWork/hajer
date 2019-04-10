@@ -37,15 +37,15 @@
 			$rs = $db-> findByPK12('shopimg','shopimg_position',1,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
 			$rs2 = $db-> findByPK12('shopimg','shopimg_position',2,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
 			$rs3 = $db-> findByPK12('shopimg','shopimg_position',3,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
-			echo "<pre>";
-			print_r($_FILES);
 			if(!empty($rs['shopimg_id'])){
 				$target_dir = 'temp/';
 				$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
 				$path = '../images/shop/';
 				$target_dir_save = $path.basename($_FILES['shop_pic']['name']);
 				move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
-
+				$ImgCompressor = new ImgCompressor($setting);
+				$result = $ImgCompressor->run($target_dir_save,'png', 9);
+				$nameimgnew = $result['data']['compressed']['name'];
 				$datapic['shopimg_name'] = basename($_FILES['shop_pic']['name']);
 				$rseditpic = $db->update2con('shopimg',$datapic,'shopimg_position',1,'shopimg_shop_id',$_POST['shop_id']);
 			}
@@ -53,8 +53,11 @@
 					$target_dir = 'temp/';
 					$target_file = $target_dir.basename($_FILES['shop_pic2']['name']);
 					$path = '../images/shop/';
-					$target_dir_save = $path.basename($_FILES['shop_pic2']['name']);
-					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save);
+					$target_dir_save2 = $path.basename($_FILES['shop_pic2']['name']);
+					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save2);
+					$ImgCompressor = new ImgCompressor($setting);
+					$result = $ImgCompressor->run($target_dir_save2,'png', 9);
+					$nameimgnew = $result['data']['compressed']['name'];
 
 					$datapic2['shopimg_name'] = basename($_FILES['shop_pic2']['name']);
 					$rseditpic2 = $db->update2con('shopimg',$datapic2,'shopimg_position',2,'shopimg_shop_id',$_POST['shop_id']);
@@ -64,9 +67,11 @@
 					$target_dir = 'temp/';
 					$target_file = $target_dir.basename($_FILES['shop_pic3']['name']);
 					$path = '../images/shop/';
-					$target_dir_save = $path.basename($_FILES['shop_pic3']['name']);
-					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save);
-
+					$target_dir_save3 = $path.basename($_FILES['shop_pic3']['name']);
+					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save3);
+					$ImgCompressor = new ImgCompressor($setting);
+					$result = $ImgCompressor->run($target_dir_save3,'png', 9);
+					$nameimgnew = $result['data']['compressed']['name'];
 					$datapic3['shopimg_name'] = basename($_FILES['shop_pic3']['name']);
 					$rseditpic3 = $db->update2con('shopimg',$datapic3,'shopimg_position',3,'shopimg_shop_id',$_POST['shop_id']);
 			}
@@ -119,8 +124,11 @@
 					$target_dir = 'temp/';
 					$target_file = $target_dir.basename($_FILES['shop_pic2']['name']);
 					$path = '../images/shop/';
-					$target_dir_save = $path.basename($_FILES['shop_pic2']['name']);
-					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save);
+					$target_dir_save2 = $path.basename($_FILES['shop_pic2']['name']);
+					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save2);
+					$ImgCompressor = new ImgCompressor($setting);
+					$result = $ImgCompressor->run($target_dir_save2,'png', 9);
+					$nameimgnew = $result['data']['compressed']['name'];
 						$rspic2 = $db->insert('shopimg',array(
 							'shopimg_name' => basename($_FILES['shop_pic2']['name']),
 							'shopimg_position' => 2,
@@ -131,8 +139,11 @@
 					$target_dir = 'temp/';
 					$target_file = $target_dir.basename($_FILES['shop_pic3']['name']);
 					$path = '../images/shop/';
-					$target_dir_save = $path.basename($_FILES['shop_pic3']['name']);
-					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save);
+					$target_dir_save3 = $path.basename($_FILES['shop_pic3']['name']);
+					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save3);
+					$ImgCompressor = new ImgCompressor($setting);
+					$result = $ImgCompressor->run($target_dir_save3,'png', 9);
+					$nameimgnew = $result['data']['compressed']['name'];
 						$rspic3 = $db->insert('shopimg',array(
 							'shopimg_name' => basename($_FILES['shop_pic3']['name']),
 							'shopimg_position' => 3,
