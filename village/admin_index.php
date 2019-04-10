@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	ob_start();
-	error_reporting(E_ERROR | E_WARNING | E_PARSE);
+// 	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="../CSS/main.css">
         </head>
 
-<body>
+<body onload="setDefault()">
     <?php include 'admin_menutop.php';?>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 		<div class="row">

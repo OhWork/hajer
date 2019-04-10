@@ -81,13 +81,76 @@
 		 $closeshop->value = $r['shop_close'];
 		 $ratepriceshopmin->value = $r['shop_ratepricemin'];
 		 $ratepriceshopmax->value = $r['shop_ratepricemax'];
-		 $placeshop->value = $r['chop_place'];
 		 $picshop->value = $r['shop_pic'];
-		 $selectcatshop->value  = $r['typeshop_id'];
+		 $selectcatshop = $r['typeshop_typeshop_id'];
 	 }
 	 $button = new buttonok('บันทึก','btnSubmit','btn btn-success col-md-12','');
 	 echo $form->open('form_reg','frmMain','col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','insert_shop.php','');
 	 ?>
+	 <script language = "JavaScript">
+
+		//**** List subzoo (Start) ***//
+		function ListSubzoo(SelectValue)
+		{
+			frmMain.ddlSubzoo.length = 0
+
+			var myOption = new Option('โปรดระบุ','')
+			frmMain.ddlSubzoo.options[frmMain.ddlSubzoo.length]= myOption
+
+			<?php
+			$intRows = 0;
+			$rs = $db->orderASC('typeshop','typeshop_id')->execute();
+			$intRows = 0;
+			while($objResult = mysqli_fetch_array($rs,MYSQLI_ASSOC))
+			{
+			$intRows++;
+			?>
+				x = <?php echo $intRows;?>;
+				mySubList = new Array();
+
+				strGroup = <?php echo $objResult["typeshop_id"];?>;
+				strValue = "<?php echo $objResult["typeshop_id"];?>";
+				strItem = "<?php echo $objResult["typeshop_name"];?>";
+				mySubList[x,0] = strItem;
+				mySubList[x,1] = strGroup;
+				mySubList[x,2] = strValue;
+				if (mySubList[x,1] == SelectValue){
+					var myOption = new Option(mySubList[x,0], mySubList[x,2])
+					frmMain.ddlSubzoo.options[frmMain.ddlSubzoo.length]= myOption
+				}
+			<?php
+			}
+			?>
+		}
+		function setDefault()
+		{
+			<?php
+				/*** ค่า Default ที่ได้จากการจัดเก็บ ***/
+				$strZoo = $selectcatshop;
+			?>
+
+				<?php
+				/*** Default Zoo  ***/
+				if($strZoo != "")
+				{
+				?>
+					var objZoo=document.frmMain.ddlZoo;
+					for (x=0;x<objZoo.length;x++)
+					{
+						if (objZoo.options[x].value=="<?php echo $strZoo?>")
+						{
+							objZoo.options[x].selected = true;
+							break;
+						}
+					}
+
+					ListSubzoo(<?php echo $strZoo;?>)
+				<?php
+				}
+				?>
+
+		}
+	</script>
 <div class="row">
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
 	<div class='col-xl-6 col-lg-8 col-md-10 col-sm-12 col-12 pb-3 br3 brd mt-3'>
@@ -98,8 +161,19 @@
 			<?php echo $lbtypeshop; ?>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-			<?php echo $selectcatshop->selectFromTB('typeshop','typeshop_id','typeshop_name','11'); ?>
-		</div>
+				<select class='form-control css-require' id="ddlZoo" name="subzoo_zoo_zoo_id" onChange = "ListSubzoo(this.value)">
+					<option selected value="">-----โปรดระบุ-----</option>
+					<?php
+						$rs = $db->orderASC('typeshop','typeshop_id')->execute();
+						while($objResult = mysqli_fetch_array($rs,MYSQLI_ASSOC))
+						{
+						?>
+					<option value="<?=$objResult["typeshop_id"];?>"><?=$objResult["typeshop_name"];?></option>
+						<?php
+						}
+						?>
+				</select>
+			</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
 			<?php echo $lbnameshop; ?>
 		</div>
@@ -325,20 +399,6 @@
 						<div class="col-xl-12 col-lg-12 col-md-12">
 							<?php
 								echo  $radiothaipost;
-							?>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6 col-md-6 pb-3">
-					<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12">
-							<?php
-								echo  $lbdebit;
-							?>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12">
-							<?php
-								echo  $radiodebit;
 							?>
 						</div>
 					</div>

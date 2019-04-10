@@ -171,13 +171,13 @@
 */
 	if(@$rs || @$rsfix){
 	    	if(@$rs){
-		    	if(@$rspic && @$rspic2 && $rspic3){
+// 		    	if(@$rspic && @$rspic2 && $rspic3){
 	    	    	echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
-	    	    }
+// 	    	    }
 	    	}else if(@$rsfix){
-		    	 	if(@$rseditpic && @$rseditpic2 && $rseditpic3){
+// 		    	 	if(@$rseditpic && @$rseditpic2 && $rseditpic3){
 	            echo "<div class='statusok'>แก้ไขสำเร็จ</div>";
-	            }
+// 	            }
 	    }
             $link = "admin_index.php?url=show_shop.php";
             header( "Refresh: 2; $link" );
