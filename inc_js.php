@@ -3,7 +3,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="jquery/dropdown2.js"></script>
-<script src="jquery/autocomplete.js"></script>
 <script src="jquery/geolocation-marker.js"></script>
 <script src="jquery/owl.carousel.js"></script>
 <script src="jquery/select2.min.js"></script>
