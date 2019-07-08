@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143458109-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-143458109-1');
-</script>
 <?php
 	session_start();
 	include_once 'inc_js.php';
@@ -26,6 +17,7 @@
         <link rel="stylesheet" href="CSS/animate.min.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
 		<link rel="stylesheet" href="CSS/main.css">
+        <?php include_once 'config/gtag.php'; ?>
 	</head>
 	<script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
