@@ -210,7 +210,7 @@
 																	<div id="" class="col-md-6">
 																		<!-- แก้๊URL ใน Data-href	เพื่อทำการแชร์ -->
 																		<div class="fb-share-button"
-																	    data-href="hajers.com/index.php?url=shopopen.php&id=<?php echo $id;?>"
+																	    data-href="https://hajers.com/index.php?url=shopopen.php&id=<?php echo $id;?>"
 																	    data-layout="button_count"
 																		data-size="large">
 																	</div>
