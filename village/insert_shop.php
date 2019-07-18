@@ -91,7 +91,7 @@
 // 	            }
 	    }
             $link = "admin_index.php?url=show_shop.php";
-//             header( "Refresh: 2; $link" );
+            header( "Refresh: 2; $link" );
 }
 ob_end_flush();
 ?>

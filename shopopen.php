@@ -60,7 +60,7 @@
 														<?php
 															if($rs['shop_pic'] != ''){
 														?>
-																<img class="w-100 pop"  src="images/shop/compressed/<?php echo $rs['shop_pic']?>png">
+																<img class="w-100 pop"  src="images/shop/<?php echo $rs['shop_pic']?>">
 
 														<?php
 															}else{
@@ -70,19 +70,7 @@
 															}
 														?>
 
-													</div>
-													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-														<div class="row">
-															<?php $rspic =$db->findByPK12('shopimg','shopimg_position',1,'shopimg_shop_id',$id)->executeAssoc();
-															?>
-															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pr-0 pop" height="100px" src="images/shop/compressed/<?php echo $rspic['shopimg_name']?>png"/>
-															<?php $rspic2 =$db->findByPK12('shopimg','shopimg_position',2,'shopimg_shop_id',$id)->executeAssoc();?>
-															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pop" height="100px" src="images/shop/compressed/<?php echo $rspic2['shopimg_name']?>png"/>
-															<?php $rspic3 =$db->findByPK12('shopimg','shopimg_position',3,'shopimg_shop_id',$id)->executeAssoc();?>
-															<img class="d-block w-100 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pl-0 pop" height="100px" src="images/shop/compressed/<?php echo $rspic3['shopimg_name']?>png"/>
-														</div>
-													</div>
-												</div>
+													</div>												</div>
 											</div>
 											<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 lg6 mt-3">
 												<div class="row">
