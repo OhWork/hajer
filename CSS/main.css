@@ -403,3 +403,23 @@ a:hover {
 		i {
 			cursor :  pointer;
 		}
+
+.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding-top : 0rem;
+    padding-left : 1rem;
+    padding-right : 1rem;
+    padding-bottom : 1rem;
+.close {
+  top:0;
+  font-size:2rem;
+  font-weight: normal;
+  opacity:1;
+}

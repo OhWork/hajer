@@ -12,6 +12,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <!-- You can use Open Graph tags to customize link previews.
+	    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+	  <meta property="og:url"           content="https://hajers.com/" />
+	  <meta property="og:type"          content="website" />
+	  <meta property="og:title"         content="เทสหัวข้อหน่อยจ้า" />
+	  <meta property="og:description"   content="เทสรายละเอียด" />
+	  <meta property="og:image"         content="images/shop/noiamge.png" />
         <link rel="stylesheet" href="CSS/bootstrap.css">
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/animate.min.css">
