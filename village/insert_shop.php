@@ -17,9 +17,6 @@
 		$img_new_name = basename($_FILES['shop_piccover']['name']);
 		$target_dir_savec = '../images/shop/'.$img_new_name;
 		move_uploaded_file($_FILES['shop_piccover']['tmp_name'], $target_dir_savec);
-		$ImgCompressor = new ImgCompressor($setting);
-		$result = $ImgCompressor->run($target_dir_savec,'png', 9);
-		$nameimgnewc = $result['data']['compressed']['name'];
 		$data['shop_name'] = $_POST['shop_name'];
 		$data['shop_detail'] = $_POST['shop_detail'];
 		$data['shop_open'] = $_POST['shop_open'];
@@ -33,50 +30,12 @@
 		$data['shop_delivery'] = $_POST['shopdetail_delivery'];
 		$data['shop_wifi'] = $_POST['shopdetail_wifi'];
 		$data['shop_post'] = $_POST['shopdetail_post'];
-		$data['shop_pic'] = $nameimgnewc;
+		$data['shop_pic'] = $img_new_name;
 		@$rsfix = $db->update('shop',$data,'shop_id',$_POST['shop_id']);
 		if(@$rsfix){
 			$rs = $db-> findByPK12('shopimg','shopimg_position',1,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
 			$rs2 = $db-> findByPK12('shopimg','shopimg_position',2,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
 			$rs3 = $db-> findByPK12('shopimg','shopimg_position',3,'shopimg_shop_id',$_POST['shop_id'])->executeAssoc();
-			if(!empty($rs['shopimg_id'])){
-				$target_dir = 'temp/';
-				$target_file = $target_dir.basename($_FILES['shop_pic']['name']);
-				$path = '../images/shop/';
-				$target_dir_save = $path.basename($_FILES['shop_pic']['name']);
-				move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
-				$ImgCompressor = new ImgCompressor($setting);
-				$result = $ImgCompressor->run($target_dir_save,'png', 9);
-				$nameimgnew1 = $result['data']['compressed']['name'];
-				$datapic['shopimg_name'] = $nameimgnew1;
-				$rseditpic = $db->update2con('shopimg',$datapic,'shopimg_position',1,'shopimg_shop_id',$_POST['shop_id']);
-			}
-			if(!empty($rs2['shopimg_id'])){
-					$target_dir = 'temp/';
-					$target_file = $target_dir.basename($_FILES['shop_pic2']['name']);
-					$path = '../images/shop/';
-					$target_dir_save2 = $path.basename($_FILES['shop_pic2']['name']);
-					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save2);
-					$ImgCompressor = new ImgCompressor($setting);
-					$result = $ImgCompressor->run($target_dir_save2,'png', 9);
-					$nameimgnew2 = $result['data']['compressed']['name'];
-
-					$datapic2['shopimg_name'] = $nameimgnew2;
-					$rseditpic2 = $db->update2con('shopimg',$datapic2,'shopimg_position',2,'shopimg_shop_id',$_POST['shop_id']);
-
-			}
-			if(!empty($rs3['shopimg_id'])){
-					$target_dir = 'temp/';
-					$target_file = $target_dir.basename($_FILES['shop_pic3']['name']);
-					$path = '../images/shop/';
-					$target_dir_save3 = $path.basename($_FILES['shop_pic3']['name']);
-					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save3);
-					$ImgCompressor = new ImgCompressor($setting);
-					$result = $ImgCompressor->run($target_dir_save3,'png', 9);
-					$nameimgnew3 = $result['data']['compressed']['name'];
-					$datapic3['shopimg_name'] = $nameimgnew3;
-					$rseditpic3 = $db->update2con('shopimg',$datapic3,'shopimg_position',3,'shopimg_shop_id',$_POST['shop_id']);
-			}
 		}
 
 	}else{
@@ -85,9 +44,6 @@
 		$img_new_name = basename($_FILES['shop_piccover']['name']);
 		$target_dir_savec = '../images/shop/'.$img_new_name;
 		move_uploaded_file($_FILES['shop_piccover']['tmp_name'], $target_dir_savec);
-		$ImgCompressor = new ImgCompressor($setting);
-		$result = $ImgCompressor->run($target_dir_savec,'png', 9);
-		$nameimgnewc = $result['data']['compressed']['name'];
 		@$rs = $db->insert('shop',array(
 			'shop_name' => $_POST['shop_name'],
 			'shop_detail' => $_POST['shop_detail'],
@@ -102,59 +58,10 @@
 			'shop_delivery' => $_POST['shopdetail_delivery'],
 			'shop_wifi' => $_POST['shopdetail_wifi'],
 			'shop_post' => $_POST['shopdetail_post'],
-			'shop_pic' => $nameimgnewc,
+			'shop_pic' => $img_new_name,
 			'member_member_id' => $_POST['mem_id'],
 			'typeshop_typeshop_id' => $_POST['catshop']
 		));
-	if(@$rs){
-		$rsselectid = $db->findAllDESC('shop','shop_id')->executeAssoc();
-		if(!empty($_FILES['shop_pic'])){
-				$image = basename($_FILES['shop_pic']['name']);
-				$target_dir = 'temp/';
-				$target_file = $target_dir.$image;
-				$path = '../images/shop/';
-				$target_dir_save = $path.$image; // example level = 2 same quality 80%, level = 7 same quality 30% etc
-				move_uploaded_file($_FILES['shop_pic']['tmp_name'], $target_dir_save);
-				$ImgCompressor = new ImgCompressor($setting);
-				$result = $ImgCompressor->run($target_dir_save,'png', 9);
-				$nameimgnew1 = $result['data']['compressed']['name'];
-					$rspic = $db->insert('shopimg',array(
-						'shopimg_name' => $nameimgnew1,
-						'shopimg_position' => 1,
-						'shopimg_shop_id' => $rsselectid['shop_id']
-					));
-			}
-			if(!empty($_FILES['shop_pic2'])){
-					$target_dir = 'temp/';
-					$target_file = $target_dir.basename($_FILES['shop_pic2']['name']);
-					$path = '../images/shop/';
-					$target_dir_save2 = $path.basename($_FILES['shop_pic2']['name']);
-					move_uploaded_file($_FILES['shop_pic2']['tmp_name'], $target_dir_save2);
-					$ImgCompressor = new ImgCompressor($setting);
-					$result = $ImgCompressor->run($target_dir_save2,'png', 9);
-					$nameimgnew2 = $result['data']['compressed']['name'];
-						$rspic2 = $db->insert('shopimg',array(
-							'shopimg_name' => $nameimgnew2,
-							'shopimg_position' => 2,
-							'shopimg_shop_id' => $rsselectid['shop_id']
-						));
-			}
-			if(!empty($_FILES['shop_pic3'])){
-					$target_dir = 'temp/';
-					$target_file = $target_dir.basename($_FILES['shop_pic3']['name']);
-					$path = '../images/shop/';
-					$target_dir_save3 = $path.basename($_FILES['shop_pic3']['name']);
-					move_uploaded_file($_FILES['shop_pic3']['tmp_name'], $target_dir_save3);
-					$ImgCompressor = new ImgCompressor($setting);
-					$result = $ImgCompressor->run($target_dir_save3,'png', 9);
-					$nameimgnew3 = $result['data']['compressed']['name'];
-						$rspic3 = $db->insert('shopimg',array(
-							'shopimg_name' => $nameimgnew3,
-							'shopimg_position' => 3,
-							'shopimg_shop_id' => $rsselectid['shop_id']
-						));
-			}
-		}
 	}
 	/*
                 //Log

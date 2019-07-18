@@ -35,7 +35,7 @@
 								<?php
 									if($showrs['shop_pic'] != ''){
 								?>
-										<img src="images/shop/compressed/<?php echo $showrs['shop_pic']?>png" width="100%" height="200" style="border-radius:20px;" />
+										<img src="images/shop/<?php echo $showrs['shop_pic']?>" width="100%" height="200" style="border-radius:20px;" />
 								<?php
 									}else{
 										?>

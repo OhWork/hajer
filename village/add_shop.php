@@ -122,34 +122,7 @@
 			}
 			?>
 		}
-		function setDefault()
-		{
-			<?php
-				/*** ค่า Default ที่ได้จากการจัดเก็บ ***/
-				$strZoo = $selectcatshop;
-			?>
 
-				<?php
-				/*** Default Zoo  ***/
-				if($strZoo != "")
-				{
-				?>
-					var objZoo=document.frmMain.ddlZoo;
-					for (x=0;x<objZoo.length;x++)
-					{
-						if (objZoo.options[x].value=="<?php echo $strZoo?>")
-						{
-							objZoo.options[x].selected = true;
-							break;
-						}
-					}
-
-					ListSubzoo(<?php echo $strZoo;?>)
-				<?php
-				}
-				?>
-
-		}
 	</script>
 <div class="row">
 	<div class='col-xl-3 col-lg-2 col-md-1'></div>
@@ -161,7 +134,7 @@
 			<?php echo $lbtypeshop; ?>
 		</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-				<select class='form-control css-require' id="ddlZoo" name="subzoo_zoo_zoo_id" onChange = "ListSubzoo(this.value)">
+				<select class='form-control css-require' id="ddlZoo" name="catshop" onChange = "ListSubzoo(this.value)">
 					<option selected value="">-----โปรดระบุ-----</option>
 					<?php
 						$rs = $db->orderASC('typeshop','typeshop_id')->execute();
@@ -256,82 +229,6 @@
 				</div>
 			</div>
 			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'></div>
-		</div>
-	</div>
-	<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
-		<div class="row">
-			<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
-				<?php echo  $lbpicshop; ?>
-			</div>
-			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
-				<div class="row">
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
-					<?php echo $filepic;?>
-				</div>
-				<?php
-					$rsshowimg1 = $db->findByPK12('shopimg','shopimg_position',1,'shopimg_shop_id',$_GET['id'])->executeAssoc();
-					if(!empty($rsshowimg1['shopimg_id'])){
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg" src="../images/shop/<?php echo $rsshowimg1['shopimg_name'];?>" width="150px" height="150px">
-				</div>
-				<?php
-					}else{
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg" class="preimg" src="images/noimage.png" width="150px" height="150px">
-				</div>
-					<?php
-					}
-				?>
-				</div>
-			</div>
-			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
-				<div class="row">
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
-					<?php echo $filepic2;?>
-				</div>
-				<?php
-					$rsshowimg2 = $db->findByPK12('shopimg','shopimg_position',2,'shopimg_shop_id',$_GET['id'])->executeAssoc();
-					if(!empty($rsshowimg2['shopimg_id'])){
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg2" src="../images/shop/<?php echo $rsshowimg2['shopimg_name'];?>" width="150px" height="150px">
-				</div>
-				<?php
-					}else{
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg2" class="preimg" src="images/noimage.png" width="150px" height="150px">
-				</div>
-					<?php
-					}
-				?>
-				</div>
-			</div>
-			<div class='col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4'>
-				<div class="row">
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ml-3'>
-					<?php echo $filepic3;?>
-				</div>
-				<?php
-					$rsshowimg3 = $db->findByPK12('shopimg','shopimg_position',3,'shopimg_shop_id',$_GET['id'])->executeAssoc();
-					if(!empty($rsshowimg3['shopimg_id'])){
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg3" src="../images/shop/<?php echo $rsshowimg3['shopimg_name'];?>" width="150px" height="150px">
-				</div>
-				<?php
-					}else{
-				?>
-				<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-					<img id="preimg3" class="preimg" src="images/noimage.png" width="150px" height="150px">
-				</div>
-					<?php
-					}
-				?>
-				</div>
-			</div>
 		</div>
 	</div>
 		<div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3'>
@@ -435,8 +332,8 @@
 	<?php
 		if(		empty($id)){
 	?>
-	<input type="text" id="lat" name="lat">
-	<input type="text" id="lng" name="lng">
+	<input type="hidden" id="lat" name="lat">
+	<input type="hidden" id="lng" name="lng">
 	<?php
 		}else{
 	?>
@@ -649,15 +546,6 @@
     	}
      $('#shop_piccover').on('change',function(e){
 	 	readURL(this,"#preimgcover");
-     });
-     $('#shop_pic').on('change',function(e){
-	 	readURL(this,"#preimg");
-     });
-     $('#shop_pic2').on('change',function(e){
-	 	readURL(this,"#preimg2");
-     });
-     $('#shop_pic3').on('change',function(e){
-	 	readURL(this,"#preimg3");
      });
 	 $('#openshop').datetimepicker({
         format: 'HH.mm'
