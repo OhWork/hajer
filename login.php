@@ -60,7 +60,7 @@
       cookie     : true,  // enable cookies to allow the server to access
                           // the session
       xfbml      : true,  // parse social plugins on this page
-      version    : 'v3.2' // The Graph API version to use for the call
+      version    : 'v3.3' // The Graph API version to use for the call
     });
   };
 
