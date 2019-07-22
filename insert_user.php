@@ -1,13 +1,13 @@
 <?php
 	include 'village/database/db_tools.php';
 	include 'village/connect.php';
-	if(@$_POST['typeuser'] == 'googlelogin'){
+	if(@$_POST['typeuser'] == 'fblogin'){
 		@$rs = $db->insert('member',array(
 			'member_name' => $_POST['name'],
 			'member_email' => $_POST['email'],
-			'member_fbid' => $_POST['googleid']
+			'member_fbid' => $_POST['fb_id']
 	}
-	elseif(@$_POST['typeuser'] == 'fblogin'){
+	elseif(@$_POST['typeuser'] == 'googlelogin'){
 		@$rs = $db->insert('member',array(
 			'member_name' => $_POST['googlename'],
 			'member_ggid' => $_POST['googleid']
