@@ -2,7 +2,15 @@
 	include 'village/database/db_tools.php';
 	include 'village/connect.php';
 	if(@$_POST['typeuser'] == 'googlelogin'){
-		print_r($_POST);
+		@$rs = $db->insert('member',array(
+			'member_name' => $_POST['name'],
+			'member_email' => $_POST['email'],
+			'member_fbid' => $_POST['googleid']
+	}
+	elseif(@$_POST['typeuser'] == 'fblogin'){
+		@$rs = $db->insert('member',array(
+			'member_name' => $_POST['googlename'],
+			'member_ggid' => $_POST['googleid']
 
 	}
 	else{
@@ -29,7 +37,7 @@
 			if(@$rs){
 	    	    echo "<div class='statusok'>เพิ่มสำเร็จ</div>";
 	    	     $link = "index.php";
-	             header( "Refresh: 2; $link" );
+// 	             header( "Refresh: 2; $link" );
 	    	}
 		}
 	}

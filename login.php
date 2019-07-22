@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 	  <?php //แก้ content เป็น client id ที่ config ไว้กับ google?>
-	<meta name="google-signin-client_id" content="756684911740-hi7q1a4ubgiu2i8jkc1tmgj3o7j0g032.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="977916372948-p4d07ppqrn4i4m5paush7crr6qvicscq.apps.googleusercontent.com">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -80,7 +80,14 @@
     // /me คือตัวเรา Fields คือ ค่าที่ต้องการจาก Facebook
     FB.api('/me', {fields: 'name,email,gender'}, function(response) {
       console.log('Successful login for: ' + response.name);
-      console.log(response);
+      	$.ajax({
+			url: "insert_user.php",
+			data: {fb_id : response.id , name : response.name ,email : response.email,typeuser : 'fblogin'
+			},
+			type: "POST",
+			success: function(data) {
+			}
+		})
     });
   }
 // End Facebook Login Api
@@ -100,6 +107,7 @@ function onSignIn(googleUser) {
 		data: {typeuser : 'googlelogin' ,googleid :profile.getId() ,googlename:profile.getName() },
 		type: "POST",
 		success: function(data) {
+			console.log(data);
 		}
 	})
 }
