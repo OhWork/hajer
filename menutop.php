@@ -38,7 +38,7 @@
 			</div>
 			</form>
 	<?php } ?>
-	<div class="navbar-collapse collapse" id="navbarHJ">
+	<div class="navbar-collapse collapse mbr" id="navbarHJ">
 		<ul class="navbar-nav ml-auto">
 			<li class="navbar-item pt-1 pb-1 pl-2 pr-2">
 				<a class="navbar-link" href="#">

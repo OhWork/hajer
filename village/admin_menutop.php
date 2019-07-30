@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark col-md-12">
-    <a class="navbar-brand brandedit" href="#" style="margin-right:87%;background-color:#343a40;box-shadow:none;">
-		<h4>Hajer</h4>
-	</a>
+<nav class="navbar navbar-dark bg-dark">
+	<button type="button" id="slidebarCollapse" class="btn slidemenu">
+		<img src="images/menus_while.png" height="24px" width="24px"/>
+	</button>
 	<div class="dropdown" style="color:#ffffff;">
 		<div style="height:34px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<div class="rounded-circle" style="height:31px;padding-left:8px;padding-right:8px;padding-top:3px;float:left;background-color:#455A64;margin-right:3px;">
@@ -24,3 +24,10 @@
 		</div>
 	</div>
 </nav>
+<script>
+$(document).ready(function () {
+    $('#slidebarCollapse').on('click', function () {
+        $('#slidebar').toggleClass('active');
+    });
+	});
+</script>
