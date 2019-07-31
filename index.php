@@ -35,16 +35,11 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 
     <body>
-		<?php include "menutop.php" ?>
-		<?php include "content.php" ?>
-
-		</div>
-		<?php include "footer.php" ?>
-		</div>
+	<div style="margin-top:10%;margin-left:30%;">
+		<img class="" style="margin-left:10%;" width="350px" height="300px" src="images/alert.png" />
+		<h1 style="color:red;">oop!! sorry website unconstuction</h1>
+	</div>
     </body>
-	<footer>
-
-	</footer>
 </html>
  <script>
 feather.replace();
