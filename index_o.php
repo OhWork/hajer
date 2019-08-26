@@ -19,11 +19,12 @@
 	  <meta property="og:title"         content="เทสหัวข้อหน่อยจ้า" />
 	  <meta property="og:description"   content="เทสรายละเอียด" />
 	  <meta property="og:image"         content="images/shop/noiamge.png" />
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="CSS/bootstrap.css">
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/animate.min.css">
         <link rel="stylesheet" href="CSS/select2.min.css">
-		<link rel="stylesheet" href="CSS/main.css">
+        <link rel="stylesheet" href="CSS/main.css">
         <?php include_once 'config/gtag.php'; ?>
 	</head>
 	<script>(function(d, s, id) {

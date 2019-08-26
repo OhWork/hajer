@@ -2,9 +2,6 @@
 	@$url = $_GET['url'];
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bgw w-100">
-	<a class="navbar-brand logomn" href="index.php">
-		<img height="50px;" src="images/Hajerlogo.png">
-	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHJ" aria-controls="#navbarHJ" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -40,6 +37,11 @@
 	<?php } ?>
 	<div class="navbar-collapse collapse mbr" id="navbarHJ">
 		<ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                                <a class="nav-link btn-circle bgr" href="#">
+                                                    <i class="fas fa-home"></i>
+                                                </a>
+                                        </li>
 			<li class="navbar-item pt-1 pb-1 pl-2 pr-2">
 				<a class="navbar-link" href="#">
 					<div class="lg1" style="float:left;">หน้าแรก</div>
