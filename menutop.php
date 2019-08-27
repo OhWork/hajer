@@ -37,33 +37,28 @@
 	<?php } ?>
 	<div class="navbar-collapse collapse mbr" id="navbarHJ">
 		<ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                                <a class="nav-link btn-circle bgr" href="#">
-                                                    <i class="fas fa-home"></i>
+                                        <li class="nav-item">
+                                                <a class="nav-link bgrc" href="#" style="color:#fff;" title="หน้าแรก">
+                                                    <i class="fas fa-home mr-1 ml-1 lg7"></i>
                                                 </a>
                                         </li>
-			<li class="navbar-item pt-1 pb-1 pl-2 pr-2">
-				<a class="navbar-link" href="#">
-					<div class="lg1" style="float:left;">หน้าแรก</div>
-				</a>
-			</li>
-			<li class="navbar-item pt-1 pb-1 pl-2 pr-2 mr-2">
-				<a class="navbar-link" href="index.php?url=aboutus.php">
-					<div class="lg1" style="float:left;">เกี่ยวกับเรา</div>
-				</a>
-			</li>
+                                        <li class="navbar-item ml-1">
+			<a class="nav-link bgrc" href="index.php?url=aboutus.php" style="color:#fff;" title="เกี่ยวกับเรา">
+                                                        <i class="fas fa-chess-queen mr-1 ml-1 lg7"></i>
+			</a>
+                                        </li>
 			<?php if ($_SESSION['member_id'] == ''){?>
-			<li class="navbar-item">
-				<a class="navbar-link" href="login.php">
-					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">เข้าสู่ระบบ</div>
-				</a>
-			</li>
+                                        <li class="navbar-item ml-1">
+			<a class="nav-link bgrc" href="login.php" style="color:#fff;" title="เข้าสู่ระบบ">
+                                                        <i class="fas fa-sign-in-alt mr-1 ml-1 lg7"></i>
+			</a>
+                                        </li>
 			<?php
 				}else{
 			?>
 			<li class="navbar-item">
-				<a class="navbar-link" href="logout.php">
-					<div class="pt-1 pb-1 pl-2 pr-2 lgb lg2" style="float:left;">ออกจากระบบ</div>
+				<a class="nav-link btn-danger" href="logout.php" style="color:#fff;" title="ออกจากระบบ">
+				<i class="fas fa-sign-out-alt mr-1 ml-1"></i>
 				</a>
 			</li>
 			<?php
