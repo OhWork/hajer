@@ -210,9 +210,9 @@
 	}
 }
 @media (min-width: 992px){
-	.inner_position_top{
+/*	.inner_position_top{
 		padding-top:3%;
-	}
+	}*/
 	.slh {
 		font-size:3rem;
 		text-align:center;
@@ -490,7 +490,8 @@
 }
 .sip {
 	border: none;
-	margin-top: 15px;
+                outline: none;
+                margin-top: 5px;
 }
 input:focus,
 select:focus,
@@ -500,6 +501,13 @@ button:focus {
 }
 a:hover {
 	text-decoration:none;
+}
+.onb {width: 40px;height: 40px; text-align: center;padding-top: 13px;}
+.onb1 {
+      padding: 8px 20px; 
+      border: solid 1px #039BE5;
+      border-left: none; 
+      margin-left: -16px; 
 }
 /*shopinterview*/
 .svtop {
