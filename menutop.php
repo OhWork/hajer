@@ -7,33 +7,37 @@
 	</button>
 	<?php
 		if($url != ''){ ?>
-			<form action="index.php?url=shopshow.php" method="post" class="col-xl-8 col-lg-6 col-md-8 dpn2" accept-charset="utf-8">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 pds">
-				<div class="row">
-					<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 br3 bdrl">
-						<input class="sip w-100" style="margin-top:9px;" name="keyword" type="text" placeholder="ชื่อร้าน" />
-					</div>
-					<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 br3 pt-2">
-						<div class="dropdown">
-							<div class="lg6" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<select class="form-control col-12" name="typeshop" id="typeshop">
-							<option value=""> ------- เลือก ------ </option>
-								<?php
-									$rs2 = $db->specifytableNoWhere('*','typeshop','')->execute();
-									foreach ($rs2 as $showrs2){
-										echo '<option value="', $showrs2['typeshop_id'], '">',$showrs2['typeshop_name'],'</option>';
-									}
-								?>
-							</select>
-							</div>
-						</div>
-					</div>
-					<button type="submit" class="col-xl-1 col-lg-2 col-md-12 col-sm-12 btn bgr lg7 pt-2">
-						<span data-feather="search"></span>
-					</button>
-				</div>
-			</div>
-			</form>
+			<div class="col-10 ml-5">
+                                                                        <div class="row">
+                                                                                <form action="index_o.php?url=shopshow.php" method="post" class="col-xl-12 col-lg-12 col-md-12 col-sm-12" accept-charset="utf-8">
+                                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                                                                <div class="row">
+                                                                                                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 pl-4 br3 sll">
+                                                                                                                <input class="w-100 sip" name="keyword" type="text" placeholder="ชื่อร้าน" />
+                                                                                                        </div>
+                                                                                                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 br3" style="border-left: none;">
+                                                                                                          <div class="row">
+                                                                                                                <div class="form-control" style="border:none;">
+                                                                                                                        <select class="col-12" name="typeshop" id="typeshop">
+                                                                                                                                <option value=""> ------- เลือก ------ </option>
+                                                                                                                                <?php
+                                                                                                                                $rs2 = $db->specifytableNoWhere('*','typeshop','')->execute();
+                                                                                                                                foreach ($rs2 as $showrs2){
+                                                                                                                                        echo '<option value="', $showrs2['typeshop_id'], '">',$showrs2['typeshop_name'],'</option>';
+                                                                                                                                }
+                                                                                                                                ?>
+                                                                                                                        </select>
+                                                                                                                </div>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <button type="submit" class="col-xl-1 col-lg-1 col-md-12 col-sm-12 d-flex justify-content-center bgr lg7 slr" style="border:none;">
+                                                                                                                                                                        <i class="fas fa-search mt-1 mr-1"></i><span class="mb-0" style="font-size: 16px;">ค้นหา</span>
+                                                                                                        </button>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </form>
+                                                                        </div>
+                                                                </div>
 	<?php } ?>
 	<div class="navbar-collapse collapse mbr" id="navbarHJ">
 		<ul class="navbar-nav ml-auto">

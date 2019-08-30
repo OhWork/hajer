@@ -13,7 +13,7 @@
                                                                 <div class="col-1"></div>
                                                                 <div class="col-10">
                                                                         <div class="row">
-                                                                                <form action="index.php?url=shopshow.php" method="post" class="col-xl-12 col-lg-12 col-md-12 col-sm-12" accept-charset="utf-8">
+                                                                                <form action="index_o.php?url=shopshow.php" method="post" class="col-xl-12 col-lg-12 col-md-12 col-sm-12" accept-charset="utf-8">
                                                                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                                                                                 <div class="row">
                                                                                                         <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 pl-4 br3 sll">
